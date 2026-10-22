@@ -1,0 +1,2060 @@
+[
+  {
+    "word": "ability",
+    "tag": "zk gk cet4 ky toefl ielts",
+    "bnc": "946",
+    "frq": "783"
+  },
+  {
+    "word": "access",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "999",
+    "frq": "1113"
+  },
+  {
+    "word": "accommodation",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "2048",
+    "frq": "5369"
+  },
+  {
+    "word": "accurate",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "2738",
+    "frq": "2728"
+  },
+  {
+    "word": "achieve",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "592",
+    "frq": "1152"
+  },
+  {
+    "word": "acquire",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1407",
+    "frq": "2063"
+  },
+  {
+    "word": "adapt",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2816",
+    "frq": "2933"
+  },
+  {
+    "word": "adequate",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2398",
+    "frq": "3297"
+  },
+  {
+    "word": "adjust",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2811",
+    "frq": "2300"
+  },
+  {
+    "word": "adopt",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1157",
+    "frq": "1632"
+  },
+  {
+    "word": "advertisement",
+    "tag": "zk gk cet4 ielts",
+    "bnc": "3277",
+    "frq": "5957"
+  },
+  {
+    "word": "affect",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "754",
+    "frq": "963"
+  },
+  {
+    "word": "afford",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "1722",
+    "frq": "1846"
+  },
+  {
+    "word": "agree",
+    "tag": "zk gk",
+    "bnc": "401",
+    "frq": "514"
+  },
+  {
+    "word": "agriculture",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "2274",
+    "frq": "4165"
+  },
+  {
+    "word": "allow",
+    "tag": "zk gk cet4 ky",
+    "bnc": "257",
+    "frq": "339"
+  },
+  {
+    "word": "alternative",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1752",
+    "frq": "2073"
+  },
+  {
+    "word": "apply",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "522",
+    "frq": "938"
+  },
+  {
+    "word": "approach",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "583",
+    "frq": "750"
+  },
+  {
+    "word": "appropriate",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "883",
+    "frq": "1493"
+  },
+  {
+    "word": "architecture",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "2712",
+    "frq": "3509"
+  },
+  {
+    "word": "argument",
+    "tag": "gk cet4 ky ielts",
+    "bnc": "832",
+    "frq": "1185"
+  },
+  {
+    "word": "arrange",
+    "tag": "gk cet4 ky toefl",
+    "bnc": "1324",
+    "frq": "2216"
+  },
+  {
+    "word": "artificial",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "3499",
+    "frq": "4003"
+  },
+  {
+    "word": "assess",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1488",
+    "frq": "2042"
+  },
+  {
+    "word": "assist",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "2162",
+    "frq": "2475"
+  },
+  {
+    "word": "assume",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "886",
+    "frq": "1091"
+  },
+  {
+    "word": "atmosphere",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1855",
+    "frq": "2217"
+  },
+  {
+    "word": "attend",
+    "tag": "gk cet4 ky toefl ielts",
+    "bnc": "1100",
+    "frq": "1168"
+  },
+  {
+    "word": "attract",
+    "tag": "gk cet4 ky toefl",
+    "bnc": "1477",
+    "frq": "1867"
+  },
+  {
+    "word": "automation",
+    "tag": "cet4 cet6 ky ielts gre",
+    "bnc": "10701",
+    "frq": "13580"
+  },
+  {
+    "word": "available",
+    "tag": "zk gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "334",
+    "frq": "622"
+  },
+  {
+    "word": "avoid",
+    "tag": "zk gk cet4 ky toefl ielts gre",
+    "bnc": "835",
+    "frq": "908"
+  },
+  {
+    "word": "aware",
+    "tag": "gk cet4 ky toefl ielts",
+    "bnc": "921",
+    "frq": "1439"
+  },
+  {
+    "word": "battery",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "3400",
+    "frq": "3193"
+  },
+  {
+    "word": "behave",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "2463",
+    "frq": "3660"
+  },
+  {
+    "word": "behaviour",
+    "tag": "zk gk toefl",
+    "bnc": "787",
+    "frq": "10352"
+  },
+  {
+    "word": "benefit",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "656",
+    "frq": "812"
+  },
+  {
+    "word": "biodiversity",
+    "tag": "",
+    "bnc": "29524",
+    "frq": "7767"
+  },
+  {
+    "word": "biological",
+    "tag": "ielts",
+    "bnc": "3586",
+    "frq": "2564"
+  },
+  {
+    "word": "business",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "215",
+    "frq": "246"
+  },
+  {
+    "word": "calculate",
+    "tag": "gk cet4 ky toefl",
+    "bnc": "2168",
+    "frq": "3039"
+  },
+  {
+    "word": "capacity",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1507",
+    "frq": "1777"
+  },
+  {
+    "word": "carbon",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "3062",
+    "frq": "3004"
+  },
+  {
+    "word": "career",
+    "tag": "cet4 ky toefl ielts",
+    "bnc": "1057",
+    "frq": "741"
+  },
+  {
+    "word": "category",
+    "tag": "gk cet6 ky toefl ielts gre",
+    "bnc": "1419",
+    "frq": "1461"
+  },
+  {
+    "word": "cause",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "476",
+    "frq": "601"
+  },
+  {
+    "word": "challenge",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1506",
+    "frq": "984"
+  },
+  {
+    "word": "change",
+    "tag": "zk gk",
+    "bnc": "226",
+    "frq": "306"
+  },
+  {
+    "word": "chemical",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "2548",
+    "frq": "2617"
+  },
+  {
+    "word": "choose",
+    "tag": "zk gk cet4 ky toefl",
+    "bnc": "594",
+    "frq": "600"
+  },
+  {
+    "word": "circumstance",
+    "tag": "gk cet4 cet6 toefl ielts",
+    "bnc": "905",
+    "frq": "1780"
+  },
+  {
+    "word": "citizen",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "1924",
+    "frq": "1084"
+  },
+  {
+    "word": "clear",
+    "tag": "zk gk ielts",
+    "bnc": "390",
+    "frq": "563"
+  },
+  {
+    "word": "climate",
+    "tag": "gk cet4 ky toefl",
+    "bnc": "2643",
+    "frq": "2103"
+  },
+  {
+    "word": "coherent",
+    "tag": "cet6 ky toefl ielts gre",
+    "bnc": "5289",
+    "frq": "7004"
+  },
+  {
+    "word": "collect",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "1222",
+    "frq": "1318"
+  },
+  {
+    "word": "common",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "554",
+    "frq": "710"
+  },
+  {
+    "word": "communicate",
+    "tag": "zk gk cet4 cet6 ky toefl gre",
+    "bnc": "3006",
+    "frq": "2672"
+  },
+  {
+    "word": "community",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "335",
+    "frq": "296"
+  },
+  {
+    "word": "compare",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "773",
+    "frq": "831"
+  },
+  {
+    "word": "compete",
+    "tag": "gk cet4 cet6 ky toefl gre",
+    "bnc": "2583",
+    "frq": "2065"
+  },
+  {
+    "word": "complete",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "998",
+    "frq": "1207"
+  },
+  {
+    "word": "complex",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1339",
+    "frq": "1598"
+  },
+  {
+    "word": "computer",
+    "tag": "zk gk ielts",
+    "bnc": "580",
+    "frq": "589"
+  },
+  {
+    "word": "concentrate",
+    "tag": "gk cet4 cet6 ky ielts gre",
+    "bnc": "1341",
+    "frq": "2358"
+  },
+  {
+    "word": "concept",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1101",
+    "frq": "1158"
+  },
+  {
+    "word": "conclude",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1687",
+    "frq": "1670"
+  },
+  {
+    "word": "conduct",
+    "tag": "gk cet4 cet6 ky toefl gre",
+    "bnc": "1792",
+    "frq": "1162"
+  },
+  {
+    "word": "confirm",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1156",
+    "frq": "1851"
+  },
+  {
+    "word": "connect",
+    "tag": "zk gk cet4 cet6 ky toefl",
+    "bnc": "2042",
+    "frq": "1636"
+  },
+  {
+    "word": "conservation",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "3076",
+    "frq": "2820"
+  },
+  {
+    "word": "consider",
+    "tag": "zk gk cet4 cet6 ky toefl",
+    "bnc": "312",
+    "frq": "394"
+  },
+  {
+    "word": "consist",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1493",
+    "frq": "2190"
+  },
+  {
+    "word": "consistent",
+    "tag": "gk cet4 cet6 ky toefl gre",
+    "bnc": "2670",
+    "frq": "2225"
+  },
+  {
+    "word": "constant",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1915",
+    "frq": "2386"
+  },
+  {
+    "word": "construct",
+    "tag": "gk cet4 cet6 ky toefl gre",
+    "bnc": "2058",
+    "frq": "2477"
+  },
+  {
+    "word": "construction",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1442",
+    "frq": "1415"
+  },
+  {
+    "word": "consume",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "3627",
+    "frq": "3006"
+  },
+  {
+    "word": "consumer",
+    "tag": "cet4 cet6 toefl ielts",
+    "bnc": "1428",
+    "frq": "1052"
+  },
+  {
+    "word": "contain",
+    "tag": "gk cet4 cet6 ky toefl gre",
+    "bnc": "559",
+    "frq": "931"
+  },
+  {
+    "word": "contamination",
+    "tag": "cet6 toefl",
+    "bnc": "8108",
+    "frq": "6525"
+  },
+  {
+    "word": "context",
+    "tag": "cet6 ky toefl ielts gre",
+    "bnc": "1019",
+    "frq": "1427"
+  },
+  {
+    "word": "continuous",
+    "tag": "cet4 cet6 ky toefl",
+    "bnc": "2936",
+    "frq": "3422"
+  },
+  {
+    "word": "contrast",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1451",
+    "frq": "1762"
+  },
+  {
+    "word": "contribute",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1483",
+    "frq": "1312"
+  },
+  {
+    "word": "control",
+    "tag": "zk gk cet4 ky ielts gre",
+    "bnc": "339",
+    "frq": "432"
+  },
+  {
+    "word": "convenient",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "3494",
+    "frq": "5368"
+  },
+  {
+    "word": "convincing",
+    "tag": "cet6 toefl",
+    "bnc": "4925",
+    "frq": "6135"
+  },
+  {
+    "word": "correct",
+    "tag": "zk gk cet4 ky toefl",
+    "bnc": "1580",
+    "frq": "1794"
+  },
+  {
+    "word": "create",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "449",
+    "frq": "332"
+  },
+  {
+    "word": "critical",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1616",
+    "frq": "1126"
+  },
+  {
+    "word": "crop",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "2655",
+    "frq": "2461"
+  },
+  {
+    "word": "crucial",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "2013",
+    "frq": "2397"
+  },
+  {
+    "word": "cultural",
+    "tag": "ielts",
+    "bnc": "1472",
+    "frq": "932"
+  },
+  {
+    "word": "currency",
+    "tag": "gk cet6 ky toefl ielts",
+    "bnc": "2114",
+    "frq": "3738"
+  },
+  {
+    "word": "data",
+    "tag": "gk cet4 ky ielts",
+    "bnc": "552",
+    "frq": "559"
+  },
+  {
+    "word": "debate",
+    "tag": "gk cet4 cet6 ky toefl gre",
+    "bnc": "1210",
+    "frq": "1082"
+  },
+  {
+    "word": "decide",
+    "tag": "zk gk toefl",
+    "bnc": "375",
+    "frq": "456"
+  },
+  {
+    "word": "decline",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2190",
+    "frq": "2000"
+  },
+  {
+    "word": "define",
+    "tag": "cet4 cet6 ky",
+    "bnc": "1053",
+    "frq": "1210"
+  },
+  {
+    "word": "definition",
+    "tag": "cet4 cet6 ky toefl gre",
+    "bnc": "1533",
+    "frq": "2110"
+  },
+  {
+    "word": "deforestation",
+    "tag": "gre",
+    "bnc": "17188",
+    "frq": "13617"
+  },
+  {
+    "word": "demand",
+    "tag": "gk cet4 cet6 ky gre",
+    "bnc": "723",
+    "frq": "1287"
+  },
+  {
+    "word": "demonstrate",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1392",
+    "frq": "1379"
+  },
+  {
+    "word": "dependent",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2356",
+    "frq": "3201"
+  },
+  {
+    "word": "describe",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "398",
+    "frq": "568"
+  },
+  {
+    "word": "design",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "679",
+    "frq": "834"
+  },
+  {
+    "word": "determine",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "845",
+    "frq": "773"
+  },
+  {
+    "word": "develop",
+    "tag": "zk gk toefl",
+    "bnc": "400",
+    "frq": "484"
+  },
+  {
+    "word": "differ",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "2552",
+    "frq": "2990"
+  },
+  {
+    "word": "digital",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "3598",
+    "frq": "2356"
+  },
+  {
+    "word": "discuss",
+    "tag": "zk gk",
+    "bnc": "661",
+    "frq": "847"
+  },
+  {
+    "word": "disposal",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "3208",
+    "frq": "5580"
+  },
+  {
+    "word": "distribute",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2662",
+    "frq": "2944"
+  },
+  {
+    "word": "diverse",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "4813",
+    "frq": "2813"
+  },
+  {
+    "word": "diversity",
+    "tag": "toefl gre",
+    "bnc": "4642",
+    "frq": "2531"
+  },
+  {
+    "word": "divide",
+    "tag": "zk gk cet4 ky toefl",
+    "bnc": "1544",
+    "frq": "1942"
+  },
+  {
+    "word": "domestic",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1381",
+    "frq": "1547"
+  },
+  {
+    "word": "drought",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "7206",
+    "frq": "5353"
+  },
+  {
+    "word": "economic",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "402",
+    "frq": "453"
+  },
+  {
+    "word": "ecosystem",
+    "tag": "cet6 toefl",
+    "bnc": "13316",
+    "frq": "4528"
+  },
+  {
+    "word": "educate",
+    "tag": "gk cet4 ky",
+    "bnc": "3663",
+    "frq": "3033"
+  },
+  {
+    "word": "effective",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1007",
+    "frq": "1133"
+  },
+  {
+    "word": "efficient",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2196",
+    "frq": "2998"
+  },
+  {
+    "word": "emission",
+    "tag": "cet6 toefl",
+    "bnc": "3483",
+    "frq": "2915"
+  },
+  {
+    "word": "emphasis",
+    "tag": "cet4 cet6 ky toefl",
+    "bnc": "1719",
+    "frq": "2346"
+  },
+  {
+    "word": "employment",
+    "tag": "cet4 cet6 ky ielts",
+    "bnc": "933",
+    "frq": "2534"
+  },
+  {
+    "word": "encourage",
+    "tag": "zk gk cet4 cet6 ky toefl",
+    "bnc": "881",
+    "frq": "1184"
+  },
+  {
+    "word": "energy",
+    "tag": "zk cet4 cet6 ky ielts",
+    "bnc": "765",
+    "frq": "615"
+  },
+  {
+    "word": "enhance",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "2669",
+    "frq": "2331"
+  },
+  {
+    "word": "enormous",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "2120",
+    "frq": "1994"
+  },
+  {
+    "word": "ensure",
+    "tag": "cet4 cet6 ky gre",
+    "bnc": "712",
+    "frq": "1754"
+  },
+  {
+    "word": "environment",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "702",
+    "frq": "855"
+  },
+  {
+    "word": "equality",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "4197",
+    "frq": "4590"
+  },
+  {
+    "word": "equipment",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1117",
+    "frq": "1352"
+  },
+  {
+    "word": "erosion",
+    "tag": "cet6 ky toefl ielts",
+    "bnc": "4884",
+    "frq": "5930"
+  },
+  {
+    "word": "essential",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1155",
+    "frq": "1949"
+  },
+  {
+    "word": "establish",
+    "tag": "cet4 cet6 ky ielts",
+    "bnc": "576",
+    "frq": "896"
+  },
+  {
+    "word": "estimate",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1826",
+    "frq": "1798"
+  },
+  {
+    "word": "ethical",
+    "tag": "cet6",
+    "bnc": "5465",
+    "frq": "3454"
+  },
+  {
+    "word": "evaluate",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "3168",
+    "frq": "2339"
+  },
+  {
+    "word": "evident",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "2975",
+    "frq": "3466"
+  },
+  {
+    "word": "examine",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "1050",
+    "frq": "1165"
+  },
+  {
+    "word": "exception",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2045",
+    "frq": "2401"
+  },
+  {
+    "word": "excessive",
+    "tag": "cet4 cet6 ky toefl",
+    "bnc": "3952",
+    "frq": "4564"
+  },
+  {
+    "word": "exist",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "875",
+    "frq": "1016"
+  },
+  {
+    "word": "expand",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2124",
+    "frq": "1572"
+  },
+  {
+    "word": "expect",
+    "tag": "zk gk",
+    "bnc": "313",
+    "frq": "405"
+  },
+  {
+    "word": "experience",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "430",
+    "frq": "420"
+  },
+  {
+    "word": "expert",
+    "tag": "gk cet4 ky ielts",
+    "bnc": "1335",
+    "frq": "899"
+  },
+  {
+    "word": "explain",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "518",
+    "frq": "480"
+  },
+  {
+    "word": "explore",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1882",
+    "frq": "1594"
+  },
+  {
+    "word": "express",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "839",
+    "frq": "1272"
+  },
+  {
+    "word": "extend",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1023",
+    "frq": "1445"
+  },
+  {
+    "word": "external",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1870",
+    "frq": "2864"
+  },
+  {
+    "word": "factor",
+    "tag": "cet4 ky toefl ielts",
+    "bnc": "666",
+    "frq": "729"
+  },
+  {
+    "word": "fail",
+    "tag": "zk gk",
+    "bnc": "616",
+    "frq": "808"
+  },
+  {
+    "word": "finance",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1515",
+    "frq": "2808"
+  },
+  {
+    "word": "flexible",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "3127",
+    "frq": "4227"
+  },
+  {
+    "word": "focus",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1918",
+    "frq": "688"
+  },
+  {
+    "word": "follow",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "186",
+    "frq": "325"
+  },
+  {
+    "word": "foreign",
+    "tag": "zk gk ielts",
+    "bnc": "621",
+    "frq": "689"
+  },
+  {
+    "word": "fossil",
+    "tag": "cet6 ky toefl ielts",
+    "bnc": "4637",
+    "frq": "5043"
+  },
+  {
+    "word": "frequent",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "3109",
+    "frq": "3272"
+  },
+  {
+    "word": "fuel",
+    "tag": "gk cet4 ky toefl ielts",
+    "bnc": "1933",
+    "frq": "1558"
+  },
+  {
+    "word": "function",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "782",
+    "frq": "1442"
+  },
+  {
+    "word": "fundamental",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2031",
+    "frq": "2328"
+  },
+  {
+    "word": "generate",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1716",
+    "frq": "1692"
+  },
+  {
+    "word": "genetic",
+    "tag": "cet4 ky toefl ielts gre",
+    "bnc": "3898",
+    "frq": "2721"
+  },
+  {
+    "word": "global",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2410",
+    "frq": "1110"
+  },
+  {
+    "word": "goal",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "930",
+    "frq": "681"
+  },
+  {
+    "word": "government",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "124",
+    "frq": "201"
+  },
+  {
+    "word": "habitat",
+    "tag": "ky toefl gre",
+    "bnc": "4609",
+    "frq": "3221"
+  },
+  {
+    "word": "health",
+    "tag": "zk gk ielts",
+    "bnc": "373",
+    "frq": "344"
+  },
+  {
+    "word": "housing",
+    "tag": "ky ielts",
+    "bnc": "1446",
+    "frq": "2147"
+  },
+  {
+    "word": "hypothesis",
+    "tag": "cet6 ky toefl ielts gre",
+    "bnc": "3265",
+    "frq": "3377"
+  },
+  {
+    "word": "identify",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "757",
+    "frq": "770"
+  },
+  {
+    "word": "illustrate",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1676",
+    "frq": "2348"
+  },
+  {
+    "word": "immigrant",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "6097",
+    "frq": "2069"
+  },
+  {
+    "word": "impact",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1263",
+    "frq": "919"
+  },
+  {
+    "word": "important",
+    "tag": "zk gk ielts",
+    "bnc": "218",
+    "frq": "266"
+  },
+  {
+    "word": "improve",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "903",
+    "frq": "995"
+  },
+  {
+    "word": "include",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "246",
+    "frq": "292"
+  },
+  {
+    "word": "income",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "744",
+    "frq": "1138"
+  },
+  {
+    "word": "increase",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "523",
+    "frq": "660"
+  },
+  {
+    "word": "independent",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1013",
+    "frq": "1265"
+  },
+  {
+    "word": "indicate",
+    "tag": "gk cet4 cet6 ky toefl gre",
+    "bnc": "812",
+    "frq": "785"
+  },
+  {
+    "word": "individual",
+    "tag": "cet4 cet6 ky ielts gre",
+    "bnc": "738",
+    "frq": "762"
+  },
+  {
+    "word": "industrial",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "863",
+    "frq": "1913"
+  },
+  {
+    "word": "influence",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "1061",
+    "frq": "1392"
+  },
+  {
+    "word": "inform",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "1726",
+    "frq": "2177"
+  },
+  {
+    "word": "infrastructure",
+    "tag": "cet6 ky",
+    "bnc": "5839",
+    "frq": "3613"
+  },
+  {
+    "word": "initial",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1525",
+    "frq": "1943"
+  },
+  {
+    "word": "innovation",
+    "tag": "cet6 ky toefl ielts gre",
+    "bnc": "3151",
+    "frq": "3657"
+  },
+  {
+    "word": "insight",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "3302",
+    "frq": "2840"
+  },
+  {
+    "word": "instruction",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "1594",
+    "frq": "1563"
+  },
+  {
+    "word": "intelligent",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "3621",
+    "frq": "3709"
+  },
+  {
+    "word": "interaction",
+    "tag": "cet4 cet6 toefl gre",
+    "bnc": "2517",
+    "frq": "2075"
+  },
+  {
+    "word": "internal",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1418",
+    "frq": "1728"
+  },
+  {
+    "word": "internet",
+    "tag": "zk gk cet4 ky ielts",
+    "bnc": "31055",
+    "frq": "1467"
+  },
+  {
+    "word": "introduce",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "698",
+    "frq": "1225"
+  },
+  {
+    "word": "investigate",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1708",
+    "frq": "1802"
+  },
+  {
+    "word": "investment",
+    "tag": "cet4 cet6 ky ielts",
+    "bnc": "816",
+    "frq": "1040"
+  },
+  {
+    "word": "involve",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "419",
+    "frq": "656"
+  },
+  {
+    "word": "issue",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "341",
+    "frq": "248"
+  },
+  {
+    "word": "justify",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1959",
+    "frq": "2834"
+  },
+  {
+    "word": "labour",
+    "tag": "zk gk cet4 cet6",
+    "bnc": "724",
+    "frq": "16348"
+  },
+  {
+    "word": "learn",
+    "tag": "zk gk ielts",
+    "bnc": "520",
+    "frq": "304"
+  },
+  {
+    "word": "legislation",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1365",
+    "frq": "2017"
+  },
+  {
+    "word": "leisure",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2752",
+    "frq": "6269"
+  },
+  {
+    "word": "logical",
+    "tag": "cet4 cet6 ky toefl",
+    "bnc": "3188",
+    "frq": "4569"
+  },
+  {
+    "word": "maintain",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "825",
+    "frq": "922"
+  },
+  {
+    "word": "major",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "392",
+    "frq": "444"
+  },
+  {
+    "word": "manage",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "752",
+    "frq": "945"
+  },
+  {
+    "word": "manufacture",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "4506",
+    "frq": "5134"
+  },
+  {
+    "word": "measure",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "889",
+    "frq": "941"
+  },
+  {
+    "word": "method",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "561",
+    "frq": "998"
+  },
+  {
+    "word": "migration",
+    "tag": "toefl ielts",
+    "bnc": "4640",
+    "frq": "4509"
+  },
+  {
+    "word": "mineral",
+    "tag": "gk toefl",
+    "bnc": "3212",
+    "frq": "4583"
+  },
+  {
+    "word": "minor",
+    "tag": "cet4 cet6 ky",
+    "bnc": "1912",
+    "frq": "2610"
+  },
+  {
+    "word": "motivation",
+    "tag": "gk toefl ielts",
+    "bnc": "3870",
+    "frq": "3126"
+  },
+  {
+    "word": "natural",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "709",
+    "frq": "715"
+  },
+  {
+    "word": "negative",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2015",
+    "frq": "1470"
+  },
+  {
+    "word": "nuclear",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1221",
+    "frq": "1176"
+  },
+  {
+    "word": "nutrition",
+    "tag": "gk cet6 ky toefl ielts gre",
+    "bnc": "8940",
+    "frq": "5563"
+  },
+  {
+    "word": "objective",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1322",
+    "frq": "2406"
+  },
+  {
+    "word": "observe",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1288",
+    "frq": "1294"
+  },
+  {
+    "word": "obtain",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "793",
+    "frq": "1595"
+  },
+  {
+    "word": "obvious",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1173",
+    "frq": "1689"
+  },
+  {
+    "word": "occupation",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2591",
+    "frq": "3334"
+  },
+  {
+    "word": "occur",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "634",
+    "frq": "756"
+  },
+  {
+    "word": "offer",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "307",
+    "frq": "373"
+  },
+  {
+    "word": "opportunity",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "618",
+    "frq": "625"
+  },
+  {
+    "word": "organic",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "3457",
+    "frq": "3070"
+  },
+  {
+    "word": "organise",
+    "tag": "gk",
+    "bnc": "1672",
+    "frq": "0"
+  },
+  {
+    "word": "overall",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1565",
+    "frq": "1941"
+  },
+  {
+    "word": "participate",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "2783",
+    "frq": "1482"
+  },
+  {
+    "word": "particular",
+    "tag": "gk cet4 cet6 ky gre",
+    "bnc": "431",
+    "frq": "948"
+  },
+  {
+    "word": "pattern",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "676",
+    "frq": "1017"
+  },
+  {
+    "word": "perform",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1138",
+    "frq": "953"
+  },
+  {
+    "word": "perspective",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "2305",
+    "frq": "1412"
+  },
+  {
+    "word": "plan",
+    "tag": "zk gk ielts",
+    "bnc": "442",
+    "frq": "413"
+  },
+  {
+    "word": "policy",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "250",
+    "frq": "388"
+  },
+  {
+    "word": "pollution",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "2147",
+    "frq": "2913"
+  },
+  {
+    "word": "population",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "683",
+    "frq": "642"
+  },
+  {
+    "word": "positive",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1198",
+    "frq": "1049"
+  },
+  {
+    "word": "potential",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1438",
+    "frq": "1260"
+  },
+  {
+    "word": "poverty",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2666",
+    "frq": "2333"
+  },
+  {
+    "word": "practical",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1259",
+    "frq": "2281"
+  },
+  {
+    "word": "precise",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "2761",
+    "frq": "3826"
+  },
+  {
+    "word": "predict",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "2288",
+    "frq": "1613"
+  },
+  {
+    "word": "prepare",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "893",
+    "frq": "774"
+  },
+  {
+    "word": "prevent",
+    "tag": "zk gk cet4 cet6 ky toefl",
+    "bnc": "937",
+    "frq": "1083"
+  },
+  {
+    "word": "previous",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "824",
+    "frq": "1276"
+  },
+  {
+    "word": "primary",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "1172",
+    "frq": "1504"
+  },
+  {
+    "word": "principle",
+    "tag": "gk cet4 cet6 ky gre",
+    "bnc": "722",
+    "frq": "1341"
+  },
+  {
+    "word": "process",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "343",
+    "frq": "391"
+  },
+  {
+    "word": "produce",
+    "tag": "zk gk cet4 cet6 ky toefl gre",
+    "bnc": "296",
+    "frq": "542"
+  },
+  {
+    "word": "productive",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "4557",
+    "frq": "3966"
+  },
+  {
+    "word": "profit",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "884",
+    "frq": "1704"
+  },
+  {
+    "word": "progress",
+    "tag": "zk gk cet4 cet6 ky toefl",
+    "bnc": "1265",
+    "frq": "1508"
+  },
+  {
+    "word": "promote",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1433",
+    "frq": "1328"
+  },
+  {
+    "word": "prosperity",
+    "tag": "cet4 cet6 ky toefl gre",
+    "bnc": "5349",
+    "frq": "5082"
+  },
+  {
+    "word": "protect",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "1151",
+    "frq": "749"
+  },
+  {
+    "word": "provide",
+    "tag": "zk gk cet4 cet6 ky toefl",
+    "bnc": "172",
+    "frq": "262"
+  },
+  {
+    "word": "public",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "319",
+    "frq": "333"
+  },
+  {
+    "word": "publish",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "828",
+    "frq": "1116"
+  },
+  {
+    "word": "qualification",
+    "tag": "gk cet6 ky toefl ielts",
+    "bnc": "2396",
+    "frq": "6828"
+  },
+  {
+    "word": "range",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "484",
+    "frq": "972"
+  },
+  {
+    "word": "rational",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "3243",
+    "frq": "4481"
+  },
+  {
+    "word": "reasonable",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "1549",
+    "frq": "2510"
+  },
+  {
+    "word": "recent",
+    "tag": "zk gk cet4 cet6 ky toefl",
+    "bnc": "630",
+    "frq": "567"
+  },
+  {
+    "word": "recognise",
+    "tag": "gk",
+    "bnc": "1077",
+    "frq": "0"
+  },
+  {
+    "word": "recommend",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1578",
+    "frq": "1688"
+  },
+  {
+    "word": "recreation",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "5707",
+    "frq": "5867"
+  },
+  {
+    "word": "recycle",
+    "tag": "gk cet6 ky toefl ielts",
+    "bnc": "7344",
+    "frq": "5806"
+  },
+  {
+    "word": "reduce",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "567",
+    "frq": "701"
+  },
+  {
+    "word": "reflect",
+    "tag": "gk cet4 cet6 ky gre",
+    "bnc": "885",
+    "frq": "1004"
+  },
+  {
+    "word": "region",
+    "tag": "cet4 cet6 ky ielts",
+    "bnc": "713",
+    "frq": "793"
+  },
+  {
+    "word": "regional",
+    "tag": "toefl ielts",
+    "bnc": "1253",
+    "frq": "1645"
+  },
+  {
+    "word": "regulation",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1400",
+    "frq": "1675"
+  },
+  {
+    "word": "relationship",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "532",
+    "frq": "486"
+  },
+  {
+    "word": "renewable",
+    "tag": "toefl",
+    "bnc": "12843",
+    "frq": "7302"
+  },
+  {
+    "word": "representative",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1470",
+    "frq": "1976"
+  },
+  {
+    "word": "require",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "321",
+    "frq": "446"
+  },
+  {
+    "word": "reservoir",
+    "tag": "cet6 ky toefl ielts",
+    "bnc": "5419",
+    "frq": "5907"
+  },
+  {
+    "word": "resident",
+    "tag": "cet4 cet6 ky toefl gre",
+    "bnc": "2053",
+    "frq": "1254"
+  },
+  {
+    "word": "resource",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "786",
+    "frq": "769"
+  },
+  {
+    "word": "respond",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1313",
+    "frq": "920"
+  },
+  {
+    "word": "responsible",
+    "tag": "cet4 cet6 ky toefl",
+    "bnc": "1054",
+    "frq": "1365"
+  },
+  {
+    "word": "result",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "264",
+    "frq": "354"
+  },
+  {
+    "word": "retail",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "3601",
+    "frq": "3479"
+  },
+  {
+    "word": "reveal",
+    "tag": "cet4 cet6 ky toefl",
+    "bnc": "968",
+    "frq": "927"
+  },
+  {
+    "word": "revenue",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1772",
+    "frq": "1681"
+  },
+  {
+    "word": "role",
+    "tag": "zk gk cet4 cet6 ky toefl ielts",
+    "bnc": "468",
+    "frq": "451"
+  },
+  {
+    "word": "rural",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1519",
+    "frq": "2006"
+  },
+  {
+    "word": "safety",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "1165",
+    "frq": "1132"
+  },
+  {
+    "word": "scientific",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "1601",
+    "frq": "1605"
+  },
+  {
+    "word": "security",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "632",
+    "frq": "661"
+  },
+  {
+    "word": "select",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1614",
+    "frq": "1733"
+  },
+  {
+    "word": "similar",
+    "tag": "zk gk ielts",
+    "bnc": "543",
+    "frq": "720"
+  },
+  {
+    "word": "social",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "202",
+    "frq": "319"
+  },
+  {
+    "word": "society",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "326",
+    "frq": "507"
+  },
+  {
+    "word": "software",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "1064",
+    "frq": "1577"
+  },
+  {
+    "word": "solar",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "4774",
+    "frq": "2744"
+  },
+  {
+    "word": "solution",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1058",
+    "frq": "1221"
+  },
+  {
+    "word": "solve",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "2279",
+    "frq": "1825"
+  },
+  {
+    "word": "species",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1044",
+    "frq": "1141"
+  },
+  {
+    "word": "specific",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "882",
+    "frq": "979"
+  },
+  {
+    "word": "stable",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "2637",
+    "frq": "2903"
+  },
+  {
+    "word": "strategy",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1127",
+    "frq": "844"
+  },
+  {
+    "word": "structure",
+    "tag": "cet4 cet6 ky",
+    "bnc": "557",
+    "frq": "950"
+  },
+  {
+    "word": "sufficient",
+    "tag": "cet4 cet6 ky toefl ielts gre",
+    "bnc": "1582",
+    "frq": "3099"
+  },
+  {
+    "word": "suggest",
+    "tag": "zk gk toefl",
+    "bnc": "314",
+    "frq": "430"
+  },
+  {
+    "word": "suitable",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1541",
+    "frq": "4756"
+  },
+  {
+    "word": "summary",
+    "tag": "gk cet4 cet6 ky ielts gre",
+    "bnc": "2708",
+    "frq": "4917"
+  },
+  {
+    "word": "supply",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "1048",
+    "frq": "1494"
+  },
+  {
+    "word": "support",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "481",
+    "frq": "524"
+  },
+  {
+    "word": "sustainable",
+    "tag": "",
+    "bnc": "7345",
+    "frq": "4895"
+  },
+  {
+    "word": "technology",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "756",
+    "frq": "585"
+  },
+  {
+    "word": "theory",
+    "tag": "gk cet4 cet6 ky ielts",
+    "bnc": "596",
+    "frq": "918"
+  },
+  {
+    "word": "tourism",
+    "tag": "gk ielts",
+    "bnc": "4425",
+    "frq": "4721"
+  },
+  {
+    "word": "traditional",
+    "tag": "zk gk cet4 cet6 ielts",
+    "bnc": "1006",
+    "frq": "925"
+  },
+  {
+    "word": "training",
+    "tag": "zk gk cet4 cet6 ky ielts",
+    "bnc": "516",
+    "frq": "796"
+  },
+  {
+    "word": "transport",
+    "tag": "gk cet4 cet6 ky ielts gre",
+    "bnc": "1202",
+    "frq": "4640"
+  },
+  {
+    "word": "trend",
+    "tag": "gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1949",
+    "frq": "1697"
+  },
+  {
+    "word": "understand",
+    "tag": "zk gk toefl",
+    "bnc": "391",
+    "frq": "320"
+  },
+  {
+    "word": "unemployment",
+    "tag": "gk cet6 ky ielts",
+    "bnc": "1495",
+    "frq": "3492"
+  },
+  {
+    "word": "university",
+    "tag": "zk gk cet4 cet6 ky",
+    "bnc": "530",
+    "frq": "1106"
+  },
+  {
+    "word": "urban",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "1749",
+    "frq": "1583"
+  },
+  {
+    "word": "valid",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "3211",
+    "frq": "4703"
+  },
+  {
+    "word": "valuable",
+    "tag": "gk cet4 cet6 ky",
+    "bnc": "2236",
+    "frq": "2605"
+  },
+  {
+    "word": "various",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "643",
+    "frq": "859"
+  },
+  {
+    "word": "vary",
+    "tag": "cet4 cet6 ky toefl ielts",
+    "bnc": "1510",
+    "frq": "2371"
+  },
+  {
+    "word": "vehicle",
+    "tag": "zk gk cet4 cet6 ky toefl ielts gre",
+    "bnc": "1319",
+    "frq": "1293"
+  },
+  {
+    "word": "visible",
+    "tag": "cet4 cet6 ky ielts",
+    "bnc": "2760",
+    "frq": "2304"
+  },
+  {
+    "word": "volunteer",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "3012",
+    "frq": "2284"
+  },
+  {
+    "word": "waste",
+    "tag": "zk gk cet4 cet6 ky ielts gre",
+    "bnc": "1624",
+    "frq": "1986"
+  },
+  {
+    "word": "welfare",
+    "tag": "gk cet4 cet6 ky toefl ielts",
+    "bnc": "1883",
+    "frq": "1933"
+  },
+  {
+    "word": "widespread",
+    "tag": "gk cet4 cet6 ky toefl",
+    "bnc": "2621",
+    "frq": "3282"
+  },
+  {
+    "word": "wildlife",
+    "tag": "gk toefl ielts",
+    "bnc": "3597",
+    "frq": "3859"
+  },
+  {
+    "word": "workplace",
+    "tag": "gk",
+    "bnc": "5821",
+    "frq": "4282"
+  }
+]

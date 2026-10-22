@@ -1,0 +1,87 @@
+{
+  "version": "0.3.0",
+  "curated_words": 355,
+  "base_words": 12,
+  "added_words": 343,
+  "groups": {
+    "a": 113,
+    "b": 121,
+    "c": 109
+  },
+  "records": 4151,
+  "by_kind": {
+    "collocation": 722,
+    "derived": 713,
+    "etymology": 42,
+    "example": 710,
+    "morphology": 355,
+    "root_related": 3,
+    "source": 896,
+    "synonym": 710
+  },
+  "four_sections_words": 355,
+  "selection": "编辑选择的常用与雅思主题学习词；不是 IELTS 官方词表。频率及考试标签取自固定版 ECDICT，仅作选词参考。",
+  "added_ielts_tagged": 227,
+  "added_bnc_or_frq_top5000": 331,
+  "sha256": "72f7be8ffbdb4d9585229fddfdba688bc068961337a5452cb7613cd53953dae9",
+  "example_inflection_review": [
+    {
+      "word": "algorithm",
+      "example": "We compared two algorithms using the same set of input files.",
+      "matched_forms": [
+        "algorithms"
+      ],
+      "review_status": "已核对为正常词形变化"
+    },
+    {
+      "word": "classify",
+      "example": "The program classifies each file by its extension.",
+      "matched_forms": [
+        "classifies"
+      ],
+      "review_status": "已核对为正常词形变化"
+    },
+    {
+      "word": "classify",
+      "example": "We classified these responses as requests for technical help.",
+      "matched_forms": [
+        "classified"
+      ],
+      "review_status": "已核对为正常词形变化"
+    },
+    {
+      "word": "derive",
+      "example": "The project derives its name from an old local expression.",
+      "matched_forms": [
+        "derives"
+      ],
+      "review_status": "已核对为正常词形变化"
+    },
+    {
+      "word": "integrate",
+      "example": "The new student gradually integrated into the research team.",
+      "matched_forms": [
+        "integrated"
+      ],
+      "review_status": "已核对为正常词形变化"
+    },
+    {
+      "word": "preserve",
+      "example": "The export function preserves the order of the saved words.",
+      "matched_forms": [
+        "preserves"
+      ],
+      "review_status": "已核对为正常词形变化"
+    },
+    {
+      "word": "research",
+      "example": "Before choosing a framework, I researched its database support.",
+      "matched_forms": [
+        "researched"
+      ],
+      "review_status": "已核对为正常词形变化"
+    }
+  ],
+  "quality_boundary": "结构、中文存在、重复、词表和资源完整性可自动检查；语义说明为编写后的学习整理，不声称经过专业词典编辑逐条审定。",
+  "source_boundary": "新增词的词义与词族参考随包固定版 ECDICT、OEWN 2025 和 etymology-db 2023-12；来源行说明实际依据，网页链接不表示逐页实时核验。"
+}

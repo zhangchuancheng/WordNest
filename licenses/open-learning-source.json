@@ -1,0 +1,51 @@
+{
+  "version": "0.4.0",
+  "selected_words": 7684,
+  "ielts_words": 4948,
+  "new_supplement_words": 6695,
+  "new_records": {
+    "etymology": 989,
+    "example": 14937,
+    "component": 1275,
+    "synonym": 1846,
+    "derived": 2980,
+    "practice": 341
+  },
+  "combined_coverage": {
+    "example": 6260,
+    "derived": 5416,
+    "roots": 6887,
+    "synonym": 6510,
+    "chinese_root": 2234,
+    "new": 6695,
+    "four_sections": 4078
+  },
+  "unique_tatoeba_pairs": 11269,
+  "resource_sha256": "d351cad220b8333f9f1c2e913b99a69cc32acea44a70fe921557014e82d2f051",
+  "uncompressed_bytes": 7209498,
+  "sources_sha256": {
+    "eng-cmn_links.tsv.bz2": "1e9110de03d59a72fb92f1b82d3d3a2218efc320020be223db7784f77a8c7063",
+    "cmn_sentences_detailed.tsv.bz2": "0d1b611c0a13cc38ebeb43157942626b50c0d3ceda857bc7d750542c77977d22",
+    "eng_sentences_detailed.tsv.bz2": "24f742143d9079308d8c6b9c8cb4f6efb54e908a37d27fd5e40f22ab841b3d0d",
+    "zh-en-simplified.jsonl": "9a34deb4d964326d33b30a2b3bacc94e58b5a1624527f23202b8759ce0a2bfcd",
+    "zh-en-traditional.jsonl": "192ebca4ba346264a24ebcd98a8df9e7f3fc8dc6d74cf6f098b2149ee24e1b7f",
+    "user_languages.csv": "8770cd3ae712fd791fc9370f98f6b17abb6d05d151cc5e5b67fe0494163b9376",
+    "tags.tar.bz2": "6c2b5247af7edec4289e52554bfb6b8d33b7e13df0b5e6d23e28b622efda8cbd"
+  },
+  "transforms": [
+    "Whitespace normalization; no translation or script conversion.",
+    "Direct Tatoeba translation links only; 3 different English sentences per word.",
+    "Exclude pending check/change/delete/needs/wrong flags, ambiguous text and quotations; prefer OK/List 907 and self-declared native owners.",
+    "Exact token or source-attested regular/allowlisted inflection; no stemming.",
+    "Wiktionary derived terms may include compounds and phrases; label separately.",
+    "No Wiktionary quotations/examples copied; bilingual examples use Tatoeba."
+  ],
+  "ielts_coverage": {
+    "example": 3926,
+    "derived": 3756,
+    "roots": 4412,
+    "synonym": 4274,
+    "chinese_root": 1295,
+    "new": 4217
+  }
+}

@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.gz binary
+*.jar binary
+*.dll binary
+*.ico binary
+*.png binary
+# Generated resources are compared byte for byte by the data validation scripts.
+src/main/resources/*.tsv -text
+src/main/resources/*.txt -text
+# Keep upstream license files byte-for-byte, including their original whitespace.
+licenses/* -text -whitespace

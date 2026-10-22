@@ -1,0 +1,28 @@
+# Generated build and package output
+/build/
+/dist/
+/releases/
+/test-artifacts/
+/.env
+/.env.*
+*.class
+__pycache__/
+*.pyc
+
+# Local vocabulary, preferences and backups copied into the source tree
+favorites.tsv
+favorites.tsv.*
+settings.properties
+settings.properties.*
+app.lock
+.favorites-*.tmp
+WordNest-生词本*.csv
+/user-data/
+/local-data/
+/data-backup/
+
+# Local logs and operating-system metadata
+*.log
+Thumbs.db
+Desktop.ini
+.DS_Store

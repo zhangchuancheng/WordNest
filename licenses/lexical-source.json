@@ -1,0 +1,378 @@
+{
+  "name": "Open English WordNet",
+  "version": "2025",
+  "repository": "https://github.com/globalwordnet/english-wordnet",
+  "release_url": "https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition",
+  "tag_commit": "dc343f2683279ecbb13fab4e2fd778d7b162d287",
+  "source_url": "https://en-word.net/static/english-wordnet-2025.xml.gz",
+  "source_mirror_url": "https://github.com/globalwordnet/english-wordnet/releases/download/2025-edition/english-wordnet-2025.xml.gz",
+  "source_sha256": "9ca6d1dcb75f822fdd66617f7d9da48142ace38dd544d6ad5e2feca1674ad3fe",
+  "source_bytes": 11363503,
+  "license": "CC BY 4.0; Princeton WordNet attribution for underlying material",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_files": [
+    "OEWN-LICENSE.txt",
+    "OEWN-WNDB-LICENSE.txt"
+  ],
+  "attribution": "Derived from Open English WordNet 2025 by the Open English WordNet Team, incorporating Princeton University WordNet. Reformatted and selected for WordNest; not endorsed by the source projects.",
+  "source_license_urls": [
+    "https://github.com/globalwordnet/english-wordnet/blob/dc343f2683279ecbb13fab4e2fd778d7b162d287/LICENSE.md",
+    "https://github.com/globalwordnet/english-wordnet/blob/dc343f2683279ecbb13fab4e2fd778d7b162d287/WNDB_License.txt"
+  ],
+  "canonical_citation": "John P. McCrae, Alexandre Rademaker, Francis Bond, Ewa Rudnicka and Christiane Fellbaum (2019). English WordNet 2019 - An Open-Source WordNet for English. Proceedings of GWC 2019.",
+  "canonical_citation_url": "https://aclanthology.org/2019.gwc-1.31/",
+  "example_source_attributions": "lexical-example-sources.json",
+  "format": {
+    "container": "deterministic gzip, mtime=0, no stored filename",
+    "magic": "WNL1",
+    "record_count": "int32 big-endian",
+    "fields": [
+      "word",
+      "senseId",
+      "pos",
+      "definition",
+      "examples",
+      "synonyms",
+      "derivations"
+    ],
+    "strings": "int32 big-endian UTF-8 byte length followed by bytes",
+    "multivalue_fields": "examples, synonyms and derivations use real LF between items",
+    "example_items": "text + TAB + original source/author, or Open English WordNet / Princeton WordNet when source has no per-example attribution",
+    "sort_order": "word.lowercase then senseId"
+  },
+  "transformations": [
+    "One record per original lexical sense, retaining original lemma and part of speech.",
+    "English definitions retained as supplied, trimming surrounding XML whitespace only.",
+    "Examples copied from the sense and its synset; flatten internal whitespace and deduplicate exact text/source repetitions.",
+    "Synonyms are other members of the same synset; exclude the query spelling case-insensitively.",
+    "Derivations come only from explicit SenseRelation relType=derivation targets; retain target lemma, collapse repetitions within a source sense.",
+    "Retain same-spelling cross-POS derivation links; these can appear as the original word in the derived list.",
+    "No Chinese example translations, etymology, roots, affix segmentation, guessed relations or generated examples are added.",
+    "Per-example original author/source references are retained in each example after TAB and in lexical-example-sources.json; unsourced examples carry Open English WordNet / Princeton WordNet attribution."
+  ],
+  "usage_notes": [
+    "Examples illustrate a shared sense and may contain another synonym instead of the looked-up headword.",
+    "A synset groups words for this sense; synonyms are not universally interchangeable.",
+    "Derivational links are not etymological roots or automatically determined parent-child direction.",
+    "Missing examples or relations remain empty; absence does not prove none exist in English."
+  ],
+  "coverage": {
+    "source_lexical_entries": 135969,
+    "source_synsets": 107519,
+    "source_sense_records": 185129,
+    "source_example_texts": 49596,
+    "source_example_texts_with_citation": 1092,
+    "source_derivation_links": 73540,
+    "unique_case_insensitive_headwords": 127311,
+    "headwords_with_examples": 35702,
+    "headwords_with_synonyms": 91058,
+    "headwords_with_derivations": 27254,
+    "sense_records_with_examples": 61339,
+    "sense_records_with_synonyms": 122513,
+    "sense_records_with_derivations": 49552,
+    "unresolved_relation_targets": 0,
+    "parts_of_speech": {
+      "a": 30156,
+      "n": 124202,
+      "r": 5601,
+      "s": 23,
+      "v": 25147
+    }
+  },
+  "validation": {
+    "all_records_round_trip": true,
+    "sample_words": [
+      "relevant",
+      "research",
+      "analysis",
+      "derive",
+      "classify",
+      "clarify",
+      "preserve",
+      "serendipity"
+    ],
+    "sample_records": [
+      {
+        "word": "analysis",
+        "senseId": "oewn-analysis__1.04.00..",
+        "pos": "n",
+        "definition": "an investigation of the component parts of a whole and their relations in making up the whole",
+        "examples": "",
+        "synonyms": "",
+        "derivations": "analytical\nanalyze"
+      },
+      {
+        "word": "analysis",
+        "senseId": "oewn-analysis__1.04.01..",
+        "pos": "n",
+        "definition": "a set of techniques for exploring underlying motives and a method of treating various mental disorders; based on the theories of Sigmund Freud",
+        "examples": "his physician recommended psychoanalysis\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "depth psychology\npsychoanalysis",
+        "derivations": "analyze"
+      },
+      {
+        "word": "analysis",
+        "senseId": "oewn-analysis__1.09.00..",
+        "pos": "n",
+        "definition": "the abstract separation of a whole into its constituent parts in order to study the parts and their relations",
+        "examples": "",
+        "synonyms": "analytic thinking",
+        "derivations": "analytic\nanalytical\nanalyze"
+      },
+      {
+        "word": "analysis",
+        "senseId": "oewn-analysis__1.09.02..",
+        "pos": "n",
+        "definition": "a branch of mathematics involving calculus and the theory of limits; sequences and series and integration and differentiation",
+        "examples": "",
+        "synonyms": "",
+        "derivations": "analytic"
+      },
+      {
+        "word": "analysis",
+        "senseId": "oewn-analysis__1.10.00..",
+        "pos": "n",
+        "definition": "a form of literary criticism in which the structure of a piece of writing is analyzed",
+        "examples": "",
+        "synonyms": "",
+        "derivations": ""
+      },
+      {
+        "word": "analysis",
+        "senseId": "oewn-analysis__1.10.01..",
+        "pos": "n",
+        "definition": "the use of closed-class words instead of inflections: e.g., ‘the father of the bride’ instead of ‘the bride's father’",
+        "examples": "",
+        "synonyms": "",
+        "derivations": ""
+      },
+      {
+        "word": "clarify",
+        "senseId": "oewn-clarify__2.30.02..",
+        "pos": "v",
+        "definition": "make clear by removing impurities or solids, as by heating",
+        "examples": "clarify the butter\tOpen English WordNet / Princeton WordNet\nclarify beer\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "",
+        "derivations": "clarification"
+      },
+      {
+        "word": "clarify",
+        "senseId": "oewn-clarify__2.32.00..",
+        "pos": "v",
+        "definition": "make clear and (more) comprehensible",
+        "examples": "clarify the mystery surrounding her death\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "clear up\nelucidate",
+        "derivations": "clarification"
+      },
+      {
+        "word": "classify",
+        "senseId": "oewn-classify__2.31.00..",
+        "pos": "v",
+        "definition": "arrange or order by classes or categories",
+        "examples": "How would you classify these pottery shards — are they prehistoric?\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "assort\nclass\nseparate\nsort\nsort out",
+        "derivations": "class\nclassification\nclassificatory\nclassifier"
+      },
+      {
+        "word": "classify",
+        "senseId": "oewn-classify__2.31.01..",
+        "pos": "v",
+        "definition": "assign to a class or kind",
+        "examples": "How should algae be classified?\tOpen English WordNet / Princeton WordNet\nPeople argue about how to relegate certain mushrooms\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "relegate",
+        "derivations": "class\nclassification\nclassificatory\nclassifier"
+      },
+      {
+        "word": "classify",
+        "senseId": "oewn-classify__2.41.00..",
+        "pos": "v",
+        "definition": "declare unavailable, as for security reasons",
+        "examples": "Classify these documents\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "",
+        "derivations": "classification"
+      },
+      {
+        "word": "derive",
+        "senseId": "oewn-derive__2.30.00..",
+        "pos": "v",
+        "definition": "develop or evolve from a latent or potential state",
+        "examples": "",
+        "synonyms": "educe",
+        "derivations": "derivation\nderivative"
+      },
+      {
+        "word": "derive",
+        "senseId": "oewn-derive__2.30.01..",
+        "pos": "v",
+        "definition": "obtain from a particular source",
+        "examples": "The present name derives from an older form\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "",
+        "derivations": "derivation\nderivative\nderiving"
+      },
+      {
+        "word": "derive",
+        "senseId": "oewn-derive__2.31.00..",
+        "pos": "v",
+        "definition": "reason by deduction; establish by deduction",
+        "examples": "",
+        "synonyms": "deduce\ndeduct\ninfer",
+        "derivations": "derivation"
+      },
+      {
+        "word": "derive",
+        "senseId": "oewn-derive__2.40.00..",
+        "pos": "v",
+        "definition": "obtain",
+        "examples": "derive pleasure from one's garden\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "gain",
+        "derivations": ""
+      },
+      {
+        "word": "derive",
+        "senseId": "oewn-derive__2.42.00..",
+        "pos": "v",
+        "definition": "come from; be connected by a relationship of blood, for example",
+        "examples": "She was descended from an old Italian noble family\tOpen English WordNet / Princeton WordNet\nhe comes from humble origins\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "come\ndescend",
+        "derivations": "derivation\nderivative"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__1.13.00..",
+        "pos": "n",
+        "definition": "fruit preserved by cooking with sugar",
+        "examples": "",
+        "synonyms": "conserve\nconserves\npreserves",
+        "derivations": "preserve"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__1.15.00..",
+        "pos": "n",
+        "definition": "a reservation where animals are protected",
+        "examples": "",
+        "synonyms": "",
+        "derivations": "preserve"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__1.26.00..",
+        "pos": "n",
+        "definition": "a domain that seems to be specially reserved for someone",
+        "examples": "medicine is no longer a male preserve\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "",
+        "derivations": "preserve"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__2.30.00..",
+        "pos": "v",
+        "definition": "prevent (food) from rotting",
+        "examples": "preserved meats\tOpen English WordNet / Princeton WordNet\nkeep potatoes fresh\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "keep",
+        "derivations": "preservative\npreserve\npreserver"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__2.40.00..",
+        "pos": "v",
+        "definition": "keep in safety and protect from harm, decay, loss, or destruction",
+        "examples": "We preserve these archeological findings\tOpen English WordNet / Princeton WordNet\nThe old lady could not keep up the building\tOpen English WordNet / Princeton WordNet\nchildren must be taught to conserve our national heritage\tOpen English WordNet / Princeton WordNet\nThe museum curator conserved the ancient manuscripts\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "conserve\nkeep up\nmaintain",
+        "derivations": "preservation\npreservative"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__2.40.01..",
+        "pos": "v",
+        "definition": "to keep up and reserve for personal or special use",
+        "examples": "She saved the old family photographs in a drawer\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "save",
+        "derivations": "preserve"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__2.42.00..",
+        "pos": "v",
+        "definition": "keep or maintain in unaltered condition; cause to remain or last",
+        "examples": "preserve the peace in the family\tOpen English WordNet / Princeton WordNet\ncontinue the family tradition\tOpen English WordNet / Princeton WordNet\nCarry on the old traditions\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "bear on\ncarry on\ncontinue\nuphold",
+        "derivations": "preservation"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__2.42.01..",
+        "pos": "v",
+        "definition": "maintain in safety from injury, harm, or danger",
+        "examples": "May God keep you\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "keep",
+        "derivations": "preservation\npreserve\npreserver"
+      },
+      {
+        "word": "preserve",
+        "senseId": "oewn-preserve__2.42.07..",
+        "pos": "v",
+        "definition": "keep undisturbed for personal or private use for hunting, shooting, or fishing",
+        "examples": "preserve the forest and the lakes\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "",
+        "derivations": ""
+      },
+      {
+        "word": "relevant",
+        "senseId": "oewn-relevant__3.00.00..",
+        "pos": "a",
+        "definition": "having a bearing on or connection with the subject at issue",
+        "examples": "the scientist corresponds with colleagues in order to learn about matters relevant to her own research\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "",
+        "derivations": "relevance\nrelevancy"
+      },
+      {
+        "word": "research",
+        "senseId": "oewn-research__1.04.00..",
+        "pos": "n",
+        "definition": "systematic investigation to establish facts",
+        "examples": "",
+        "synonyms": "",
+        "derivations": "research"
+      },
+      {
+        "word": "research",
+        "senseId": "oewn-research__1.09.00..",
+        "pos": "n",
+        "definition": "a search for knowledge",
+        "examples": "their pottery deserves more research than it has received\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "enquiry\ninquiry",
+        "derivations": "research"
+      },
+      {
+        "word": "research",
+        "senseId": "oewn-research__2.31.00..",
+        "pos": "v",
+        "definition": "inquire into",
+        "examples": "the students had to research the history of the Second World War for their history project\tOpen English WordNet / Princeton WordNet\nHe searched for information on his relatives on the web\tOpen English WordNet / Princeton WordNet\nScientists are exploring the nature of consciousness\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "explore\nsearch",
+        "derivations": "research\nresearcher"
+      },
+      {
+        "word": "research",
+        "senseId": "oewn-research__2.32.00..",
+        "pos": "v",
+        "definition": "attempt to find out in a systematically and scientific manner",
+        "examples": "The student researched the history of that word\tOpen English WordNet / Princeton WordNet",
+        "synonyms": "",
+        "derivations": "research\nresearcher"
+      },
+      {
+        "word": "serendipity",
+        "senseId": "oewn-serendipity__1.19.00..",
+        "pos": "n",
+        "definition": "good luck in making unexpected and fortunate discoveries",
+        "examples": "",
+        "synonyms": "",
+        "derivations": "serendipitous"
+      }
+    ]
+  },
+  "output_bytes": 9473834,
+  "output_sha256": "11249fb35bacdd07b32c745b9104c0f70f52382b833c4da83b28795a6f106713"
+}

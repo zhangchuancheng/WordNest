@@ -1,0 +1,1488 @@
+example	ability	Her ability to explain difficult ideas makes her an effective teacher.	她善于把难懂的概念讲清楚，因此教学很有成效。	原创学习例句；中文译文为原创整理
+example	ability	The new exercise will test your ability to spot errors in a short program.	这道新练习会考查你找出短程序中错误的能力。	原创学习例句；中文译文为原创整理
+collocation	ability	the ability to do something	做某事的能力	to 后接动词原形，说明能力体现在哪件事上。
+collocation	ability	develop an ability	培养一种能力	具体能力可数；笼统谈能力时也可不加冠词。
+derived	ability	able	adj.｜有能力的	对应形容词，be able to do 表示能够做；这是词族中的词基形式。
+derived	ability	inability	n.｜无能为力；不能	in- 表示否定，与 ability 相对，常接 to do。
+morphology	ability	现代构词与词族	able 与 ability 对应“能做”及“能力”；词源快照记录 able 与 -ity 的构词关系。拼写变化不是直接把 able 和 ity 原样拼在一起；inability 则表达缺乏某种能力。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	ability	capability	n.｜能力；性能	常强调人或系统具备的功能、潜能，尤其适合描述设备与团队。
+synonym	ability	skill	n.｜技能	通常强调通过训练获得的具体技巧，ability 可以包含较宽泛的能力。
+source	ability	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	ability	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	ability	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	access	Students have free access to the library's online journals.	学生可以免费使用图书馆的在线期刊。	原创学习例句；中文译文为原创整理
+example	access	You can access your saved notes even when the device is offline.	即使设备离线，你也能查看已保存的笔记。	原创学习例句；中文译文为原创整理
+collocation	access	access to something	使用或接触某物的机会	名词 access 后常接 to；不要说 an access 来表示一般使用权。
+collocation	access	gain access to something	获得进入或使用某物的权限	gain 强调从没有权限到得到权限的变化。
+derived	access	accessible	adj.｜可进入的；易理解的	与 access 同词族，可指地点容易到达，也可指内容容易理解。
+derived	access	accessibility	n.｜可访问性；无障碍程度	accessible 对应的名词，软件语境还关注残障用户能否使用。
+morphology	access	现代构词与词族	access 可作名词“使用权”或动词“访问”。accessible、accessibility 是相关词族；学习时区分名词 access to the file 与及物动词 access the file，后者不再加 to。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	access	admission	n.｜进入许可	侧重获准进入场所、学校或活动，不能替换所有数字资源访问义。
+synonym	access	entry	n.｜进入；入口	侧重进入这一动作或通道，access 还常涉及使用服务的权利。
+source	access	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	access	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	access	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	access	历史词根：向某处移动	可追溯到拉丁语 accessus、accēdō，相关成分是 ad（向）与 cēdō（移动、让步）。这条来源可辅助理解接近、进入的意思；现代访问数据的用法是后来发展的，不能逐字相加解释所有义项。	https://en.wiktionary.org/wiki/access#English
+source	access	Wiktionary：access	https://en.wiktionary.org/wiki/access#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	accurate	An accurate clock is essential when several devices record the same event.	多台设备记录同一事件时，准确的时钟很重要。	原创学习例句；中文译文为原创整理
+example	accurate	The diagram is simple, but it gives an accurate picture of how the system works.	这张图很简单，却准确呈现了系统的工作方式。	原创学习例句；中文译文为原创整理
+collocation	accurate	accurate information	准确的信息	强调内容符合事实，不只是写得详细。
+collocation	accurate	an accurate estimate	准确的估计	estimate 本身允许近似，accurate 强调与真实结果接近。
+derived	accurate	accuracy	n.｜准确性	accurate 对应的名词；词尾形式发生变化，不写 accuratecy。
+derived	accurate	accurately	adv.｜准确地	accurate 加 -ly，修饰记录、描述或测量等动作。
+morphology	accurate	现代构词与词族	把 accurate、accuracy、accurately 分别与“准确的、准确性、准确地”配对；inaccurate 表示不准确。不要只看到词尾 -ate 就把 accurate 当作动词，它通常是形容词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	accurate	correct	adj.｜正确的	侧重没有错误、符合答案或规则；accurate 更常强调描述或测量与事实相符。
+synonym	accurate	precise	adj.｜精确的	强调界定细致、数值分辨明确；很精细的读数也可能因偏差而不准确。
+source	accurate	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	accurate	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	accurate	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	adequate	The room has adequate lighting for reading, but not for detailed photography.	房间的照明足够阅读，但还不足以进行精细拍摄。	原创学习例句；中文译文为原创整理
+example	adequate	We need adequate evidence before changing the conclusion.	改变结论之前，我们需要足够的证据。	原创学习例句；中文译文为原创整理
+collocation	adequate	adequate for something	足以满足某种需要	for 后说明用途；adequate 通常是达到要求，不一定出色。
+collocation	adequate	an adequate supply of something	充足到够用的某物供应	可用于水、食品或设备等资源。
+derived	adequate	adequacy	n.｜足够；适当	adequate 对应的名词，常用于评价资源或措施是否够用。
+derived	adequate	inadequate	adj.｜不足的；不合适的	in- 表示否定，强调未达到所需标准。
+morphology	adequate	现代构词与词族	adequate 与 adequacy 对应评价及其抽象名词，inadequate 加否定前缀 in-。adequately 是副词；这组词的核心是“是否达到要求”，不要把 adequate 记成“非常优秀”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	adequate	sufficient	adj.｜足够的	更直接强调数量或程度满足需要，常可与 adequate 接近。
+synonym	adequate	satisfactory	adj.｜令人满意的	强调结果达到接受标准，未必特指数量够不够。
+source	adequate	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	adequate	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	adequate	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	alternative	Cycling is a practical alternative to driving for this short journey.	对这段短途行程来说，骑车是开车之外的实用选择。	原创学习例句；中文译文为原创整理
+example	alternative	The team suggested an alternative explanation for the unexpected result.	团队为这个意外结果提出了另一种解释。	原创学习例句；中文译文为原创整理
+collocation	alternative	an alternative to something	某物的替代选择	to 是介词，后接名词或动名词。
+collocation	alternative	have no alternative but to do something	别无选择，只能做某事	but 后在这一结构中接 to do。
+derived	alternative	alternatively	adv.｜或者；作为另一种办法	alternative 对应的副词，用来引出另一选项。
+derived	alternative	alternate	v.｜交替；adj.｜轮流的	同词族形式，突出轮换；不要将“交替发生”与“可替代选择”混为一谈。
+morphology	alternative	现代构词与词族	alternative 可作名词“另一选择”或形容词“可替代的”，alternatively 用于连接方案。alternate 与它同词族，但主要强调交替；an alternative route 是备选路线，并不表示轮流使用路线。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	alternative	option	n.｜选项	泛指可供选择的一项，不一定是在替代原有办法。
+synonym	alternative	substitute	n.｜替代物	强调实际顶替原物或原人，alternative 也可以只是尚未采用的备选方案。
+source	alternative	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	alternative	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	alternative	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	approach	We need a different approach to teaching students how to debug their code.	我们需要换一种方法，教学生调试代码。	原创学习例句；中文译文为原创整理
+example	approach	As you approach the station, the road becomes narrower.	靠近车站时，道路会变窄。	原创学习例句；中文译文为原创整理
+collocation	approach	an approach to a problem	处理问题的方法	这里 to 是介词，后接名词或动名词。
+collocation	approach	approach someone about something	就某事找某人商谈	动词 approach 直接接人，不说 approach to someone。
+derived	approach	approachable	adj.｜平易近人的；可接近的	approach 加 -able，描述人容易交谈或事物可以接近。
+derived	approach	unapproachable	adj.｜难以接近的	un- 否定 approachable，可形容态度冷淡或位置难以到达。
+morphology	approach	现代构词与词族	approach 既有“走近”也有“处理方法”的用法，approachable 把“可接近”扩展到人的态度。构词时保留 approach 的拼写，再加 -able；否定形式是在整个 approachable 前加 un-。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	approach	method	n.｜方法	通常更像具体操作方式，approach 可以是整体思路或立场。
+synonym	approach	way	n.｜办法	用法较日常宽泛，不像 approach 那样常突出处理问题的总体角度。
+source	approach	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	approach	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	approach	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	appropriate	Choose an appropriate example for readers who have never studied programming.	给从未学过编程的读者选择一个合适的例子。	原创学习例句；中文译文为原创整理
+example	appropriate	It may not be appropriate to discuss personal details in a public meeting.	在公开会议上讨论个人细节可能不合适。	原创学习例句；中文译文为原创整理
+collocation	appropriate	appropriate for someone	适合某人	for 常引出适用的人群或场景。
+collocation	appropriate	appropriate to the situation	符合当时情况	to 引出需要与之匹配的环境或要求。
+derived	appropriate	appropriately	adv.｜恰当地	appropriate 加 -ly，说明行动方式合乎情境。
+derived	appropriate	inappropriate	adj.｜不恰当的	in- 否定 appropriate，常评价言语、行为或安排。
+morphology	appropriate	现代构词与词族	形容词 appropriate 表示“恰当的”，可形成 appropriately、appropriateness，前加 in- 得到 inappropriate。另有拼写相同的动词，表示拨用或擅自占用；不能把所有词性都译为“合适”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	appropriate	suitable	adj.｜合适的	强调条件或用途相配；appropriate 常额外涉及场合、礼貌或规范。
+synonym	appropriate	proper	adj.｜恰当的；正规的	常强调符合规定或社会期待，有时比 appropriate 更带规范意味。
+source	appropriate	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	appropriate	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	appropriate	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	argument	The essay presents a clear argument for improving public transport.	这篇文章清楚地论证了为什么应改善公共交通。	原创学习例句；中文译文为原创整理
+example	argument	Each function accepts one argument containing the file name.	每个函数接收一个包含文件名的实参。	原创学习例句；中文译文为原创整理
+collocation	argument	an argument for something	支持某事的论据	for 表示支持，against 表示反对。
+collocation	argument	have an argument with someone	与某人争吵	这里 argument 是口角，不是学术论证。
+derived	argument	argue	v.｜论证；争论	对应动词，是词族中的词基形式；argue that 可引出论点。
+derived	argument	argumentative	adj.｜好争辩的	argument 的相关形容词，常描述喜欢争辩的人，不等于“有说服力的”。
+morphology	argument	现代构词与词族	参考快照记录 argue 与 -ment 的构词关系，argument 不保留 argue 末尾的 e。argument 可以是论证、争吵或程序实参；argumentative 通常指好争辩，不能按“论据充分”来理解。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	argument	reason	n.｜理由	可以是单个依据，argument 常包含由依据推到结论的一整套论证。
+synonym	argument	dispute	n.｜争议；争执	更突出意见分歧或争执事件，不能替换编程中的 argument。
+source	argument	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	argument	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	argument	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	argument	历史词族：论证与说明	argument 经法语等历史形式联系拉丁语 argūmentum；同一词族的 arguō 可表示说明、证明或提出指控。现代可分析为 argue 与 -ment，注意 argument 不保留 argue 末尾的 e；更早词根的来源有争议，这里不作确定拆分。	https://en.wiktionary.org/wiki/argument#English
+source	argument	Wiktionary：argument	https://en.wiktionary.org/wiki/argument#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	argument	Wiktionary：arguo	https://en.wiktionary.org/wiki/arguo#Latin	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	available	A quiet study room is available on the second floor.	二楼有一间安静的自习室可供使用。	原创学习例句；中文译文为原创整理
+example	available	The information is available to anyone with a library card.	持有借书证的人都能获取这些信息。	原创学习例句；中文译文为原创整理
+collocation	available	available to someone	可供某人使用或获得	to 标出能够使用资源的人。
+collocation	available	available for use	可供使用	for 后说明用途；available 也可形容人有时间。
+derived	available	availability	n.｜可获得性；空闲情况	available 对应的名词，谈资源供应或人员时间。
+derived	available	unavailable	adj.｜无法获得的；没空的	un- 表示否定，可指服务不可用或人员不在。
+morphology	available	现代构词与词族	词源快照记录 avail 与 -able；现代学习更常用 available、availability、unavailable 这一组。availability 的词尾是 -ability，而 unavailable 的否定作用覆盖整个 available。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	available	accessible	adj.｜可接近或可使用的	强调能否到达、操作或理解；available 强调资源是否存在并可供使用。
+synonym	available	obtainable	adj.｜可获得的	强调经过获取能够拿到，通常不描述某个人今天有没有空。
+source	available	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	available	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	available	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	aware	Most students are aware of the deadline, but a few have missed the announcement.	多数学生知道截止时间，但有几个人没看到通知。	原创学习例句；中文译文为原创整理
+example	aware	I became aware that the two files contained different versions of the report.	我意识到两个文件里是报告的不同版本。	原创学习例句；中文译文为原创整理
+collocation	aware	be aware of something	知道某事；意识到某事	of 后接名词或动名词。
+collocation	aware	become aware that ...	开始意识到……	that 后接完整从句，强调认识发生变化。
+derived	aware	awareness	n.｜意识；认知	aware 加 -ness，形成名词。
+derived	aware	unaware	adj.｜不知道的；未察觉的	un- 否定 aware，常用 unaware of。
+morphology	aware	现代构词与词族	aware 后加 -ness 得到 awareness，前加 un- 得到 unaware。aware 通常用于 be、become 等动词后；表达“意识到某事”时把 of 或 that 一并记住，比孤立背中文更有用。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	aware	conscious	adj.｜意识到的；有意识的	conscious of 可与 aware of 接近，也有医学上的神志清醒义。
+synonym	aware	informed	adj.｜知情的	强调已得到信息或有足够知识，aware 可能只表示注意到某件事存在。
+source	aware	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	aware	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	aware	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	capacity	The classroom has a capacity of forty students.	这间教室可以容纳四十名学生。	原创学习例句；中文译文为原创整理
+example	capacity	Regular practice can increase your capacity to remember unfamiliar sounds.	经常练习能提高你记住陌生语音的能力。	原创学习例句；中文译文为原创整理
+collocation	capacity	the capacity to do something	做某事的能力	to do 说明潜能或能力的具体内容。
+collocation	capacity	at full capacity	满负荷；达到最大容量	用于工厂、交通或设施的运转状态。
+derived	capacity	capacious	adj.｜容量大的；宽敞的	与 capacity 同词族，侧重能装很多东西，语体较正式。
+derived	capacity	incapacity	n.｜无能力；无行为能力	in- 表示否定，法律语境可能有专门含义。
+morphology	capacity	现代构词与词族	capacity 可指容纳量，也可指潜在能力；capacious 与它构成“容量—宽敞的”词族联系，incapacity 表示能力缺失。不要把容量义直接换成表示具体技巧的 skill。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	capacity	ability	n.｜能力	强调能够完成任务，capacity 还常突出潜能、承载上限或空间容量。
+synonym	capacity	volume	n.｜容积；体积	适合物理空间的大小，不能替换人的学习能力义。
+source	capacity	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	capacity	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	capacity	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	capacity	历史词根：容纳与承载	历史路线联系拉丁语 capācitās、capāx（能够容纳很多）与 capiō（容纳、拿取等）。因此容量义可联系“能够装下多少”，再延伸理解人的能力；这是词源联系，不是现代英语把 cap 与某个后缀直接拼成的词。	https://en.wiktionary.org/wiki/capacity#English
+source	capacity	Wiktionary：capacity	https://en.wiktionary.org/wiki/capacity#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	category	Each expense must be assigned to a category before the report is saved.	保存报告前，必须把每笔支出归入一个类别。	原创学习例句；中文译文为原创整理
+example	category	This book does not fit neatly into a single category.	这本书很难明确归入某一个类别。	原创学习例句；中文译文为原创整理
+collocation	category	fall into a category	属于某一类别	描述分类结果，不一定有人主动进行分类。
+collocation	category	a broad category	范围较广的类别	broad 强调所包含的成员种类较多。
+derived	category	categorize	v.｜分类；归类	category 的相关动词，美式常用 -ize，英式也见 categorise。
+derived	category	categorical	adj.｜明确无疑的；类别的	同词族形容词；a categorical denial 是断然否认，不是“分类否认”。
+morphology	category	现代构词与词族	category、categorize、categorical 共享 categor- 词干形式。categorize 表示归类；categorical 既可与类别有关，也可表示断然明确，不能只靠词根猜它在句中的意思。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	category	class	n.｜类别	分类义与 category 接近，但还可指班级、阶层或程序中的类。
+synonym	category	type	n.｜类型	常按共同特征划分，表达比正式分类体系中的 category 更日常。
+source	category	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	category	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	category	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	category	历史语义：从陈述到类别	历史上可追溯到希腊语 katēgoria，经拉丁语、法语等形式进入英语。希腊语相关词既涉及指控、陈述，也有逻辑中的谓述和类别义；现代 category 的分类义不能按日常“指控”直译。	https://en.wiktionary.org/wiki/category#English
+source	category	Wiktionary：category	https://en.wiktionary.org/wiki/category#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	category	Wiktionary：κατηγορία	https://en.wiktionary.org/wiki/%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%AF%CE%B1#Ancient_Greek	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	challenge	Keeping the interface simple is a challenge when new features are added.	加入新功能时，保持界面简洁是一项挑战。	原创学习例句；中文译文为原创整理
+example	challenge	Researchers should be willing to challenge an explanation that lacks evidence.	研究人员应当敢于质疑缺乏证据的解释。	原创学习例句；中文译文为原创整理
+collocation	challenge	face a challenge	面对挑战	强调遇到需要努力解决的困难。
+collocation	challenge	challenge an assumption	质疑一种假设	challenge 在这里是检验或反对，不是比赛邀约。
+derived	challenge	challenger	n.｜挑战者	challenge 加 -er，表示提出挑战或竞争的人。
+derived	challenge	challengeable	adj.｜可质疑的；可挑战的	challenge 对应的 -able 形容词，常用于决定或主张能否被提出异议。
+morphology	challenge	现代构词与词族	challenge 可作名词或动词，challenger 是人，challengeable 表示可以受到质疑。challenging 常作形容词表示“有难度的”；它也可能是动词进行式，需按句子判断。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	challenge	difficulty	n.｜困难	强调阻碍或难处，challenge 往往还暗含值得尝试克服的任务。
+synonym	challenge	question	v.｜质疑	侧重提出疑问，challenge 往往更明确地反对或要求给出依据。
+source	challenge	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	challenge	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	challenge	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	circumstance	The same decision may be sensible in one circumstance and risky in another.	同一个决定在一种情形下可能合理，在另一种情形下却可能有风险。	原创学习例句；中文译文为原创整理
+example	circumstance	An unexpected circumstance forced the organizers to change the venue.	一件意外情况迫使组织者更换场地。	原创学习例句；中文译文为原创整理
+collocation	circumstance	under the circumstances	在这种情况下	常用于结合现实限制评价某个决定。
+collocation	circumstance	under no circumstances	在任何情况下都不	放在句首时，后面的句子通常需要部分倒装。
+derived	circumstance	circumstantial	adj.｜间接的；与情况有关的	circumstance 的相关形容词；circumstantial evidence 指间接证据。
+derived	circumstance	circumstantially	adv.｜根据情况；间接地	circumstantial 加 -ly，较正式，具体意义须随上下文判断。
+morphology	circumstance	现代构词与词族	circumstance 与 circumstantial、circumstantially 属同一词族。日常“情况、条件”常用复数 circumstances；这是数的变化，不是派生。circumstantial evidence 的意思需作为法律搭配单独记。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	circumstance	condition	n.｜条件；状况	常指影响事情发展的某个具体条件，也可指健康或物体状态。
+synonym	circumstance	situation	n.｜局面；处境	更强调各种因素组成的整体局面，circumstance 可指其中某项情形。
+source	circumstance	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	circumstance	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	circumstance	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	clear	The instructions are clear enough for a new user to follow without help.	说明足够清楚，新用户无需帮助就能照着操作。	原创学习例句；中文译文为原创整理
+example	clear	Please clear the table before we begin the experiment.	开始实验前，请把桌面清空。	原创学习例句；中文译文为原创整理
+collocation	clear	make something clear	把某事讲清楚	make 后可接对象与 clear，强调消除误解。
+collocation	clear	be clear about something	清楚某事	常用于目标、要求或自己的决定。
+derived	clear	clearly	adv.｜清楚地；显然	clear 加 -ly，可说明表达方式，也可强调判断明显。
+derived	clear	clarity	n.｜清晰；明确	与 clear 同词族的名词，拼写使用 clar-，不是简单加 -ity。
+morphology	clear	现代构词与词族	clear 可作形容词“清楚的”，也可作动词“清除”；clearly 说明方式，clarity 是清晰程度。词族还包括 clearness，但 clarity 在谈表达、思路和说明时很常见。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	clear	obvious	adj.｜明显的	强调容易看出，clear 还可强调表达能被理解或视觉无遮挡。
+synonym	clear	understandable	adj.｜容易理解的	只覆盖可理解这一面，也可表示某种情绪反应情有可原。
+source	clear	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	clear	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	clear	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	coherent	Your notes contain useful ideas, but they need a coherent structure.	你的笔记里有有用的想法，但需要一个连贯的结构。	原创学习例句；中文译文为原创整理
+example	coherent	She gave a coherent account of the events despite being tired.	虽然很累，她还是条理清楚地讲述了事情的经过。	原创学习例句；中文译文为原创整理
+collocation	coherent	a coherent argument	连贯的论证	各部分需要在逻辑上衔接，不能只是单句通顺。
+collocation	coherent	a coherent account of something	条理清楚的叙述	account 指对事件的说明，而非账户。
+derived	coherent	coherence	n.｜连贯性；一致性	coherent 对应的名词，常用于文章、论证或计划。
+derived	coherent	incoherent	adj.｜不连贯的；语无伦次的	in- 表示否定，可形容思路或表达。
+morphology	coherent	现代构词与词族	coherent 与 coherence 对应“连贯的—连贯性”，incoherent 在前面加否定 in-。cohere 是同词族动词，表示各部分相互结合；不要把 coherent 只理解成声音清楚。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	coherent	logical	adj.｜合乎逻辑的	突出推理关系合理，coherent 也涉及表达前后衔接和整体统一。
+synonym	coherent	consistent	adj.｜一致的	强调前后不矛盾；一组观点一致，也未必已经组织成连贯叙述。
+source	coherent	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	coherent	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	coherent	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	coherent	历史词根：黏合在一起	来源联系拉丁语 cohaerēns，背后的 co- 与 haereō 表达结合和黏附。可以由“各部分相连”理解文章或论证连贯这一抽象义；现代还可联系 cohere 与 -ent，但它不表示所有观点一定正确。	https://en.wiktionary.org/wiki/coherent#English
+source	coherent	Wiktionary：coherent	https://en.wiktionary.org/wiki/coherent#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	coherent	Wiktionary：haereo	https://en.wiktionary.org/wiki/haereo#Latin	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	coherent	Wiktionary：con-	https://en.wiktionary.org/wiki/con-#Latin	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	common	It is common for beginners to confuse these two words.	初学者混淆这两个词是很常见的。	原创学习例句；中文译文为原创整理
+example	common	The two teams share a common goal despite using different methods.	两个团队虽然采用不同方法，却有共同目标。	原创学习例句；中文译文为原创整理
+collocation	common	a common mistake	常见错误	common 在这里表示经常出现，不是双方共有。
+collocation	common	have something in common	有共同之处	固定表达，common 放在 in 之后。
+derived	common	commonly	adv.｜通常；普遍地	common 加 -ly，说明某行为或用法出现得普遍。
+derived	common	uncommon	adj.｜不常见的	un- 表示否定；也可形容难得的品质。
+morphology	common	现代构词与词族	common 的“普遍”和“共同”两层意思要分开记。commonly 常对应“通常”，commonality 表示共同点或共有特征，uncommon 表示不常见；不能把 commonly 机械译成“共同地”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	common	usual	adj.｜通常的	强调符合惯常情况，common 更直接强调在许多人或地方经常出现。
+synonym	common	shared	adj.｜共有的	可替换共同目标中的 common，但不表示某种错误很常见。
+source	common	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	common	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	common	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	complex	A complex problem becomes easier when it is divided into smaller tasks.	把复杂问题拆成小任务后，它就更容易解决。	原创学习例句；中文译文为原创整理
+example	complex	The sports complex includes a swimming pool and two indoor courts.	这个体育综合设施包括一个游泳池和两座室内球场。	原创学习例句；中文译文为原创整理
+collocation	complex	a complex system	复杂系统	强调多个部分及其相互关系。
+collocation	complex	increasingly complex	越来越复杂的	increasingly 修饰形容词，表示程度随时间增加。
+derived	complex	complexity	n.｜复杂性	complex 对应的名词，可讨论系统、任务或关系的复杂程度。
+derived	complex	complexly	adv.｜复杂地	complex 加 -ly，较少见；写作中常改用 in a complex way。
+morphology	complex	现代构词与词族	complex 作形容词表示复杂，complexity 是抽象名词；作名词还可表示建筑群或综合设施。词源资料含构词成分记录，但现代理解应以整体词义为主，不把复杂性等同于“难懂”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	complex	complicated	adj.｜复杂难懂的	常突出处理起来麻烦或理解费力，complex 可中性地描述结构复杂。
+synonym	complex	intricate	adj.｜错综复杂的；精细复杂的	更强调细节很多且交织紧密，适合图案、机制或设计。
+source	complex	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	complex	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	complex	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	concept	The teacher used a simple diagram to explain the concept of a database index.	老师用一张简单的图解释数据库索引的概念。	原创学习例句；中文译文为原创整理
+example	concept	We tested the concept with a paper model before building the full application.	开发完整应用前，我们先用纸面模型检验这个构想。	原创学习例句；中文译文为原创整理
+collocation	concept	the concept of something	某事物的概念	of 引出概念所指的内容。
+collocation	concept	a key concept	关键概念	用于某一学科或论证的基础思想。
+derived	concept	conceptual	adj.｜概念上的	concept 的相关形容词，强调思想框架而非具体实现。
+derived	concept	conceptualize	v.｜形成概念；构思	由 conceptual 相关词形构成的动词，也写作 conceptualise。
+morphology	concept	现代构词与词族	concept、conceptual、conceptualize 可按“概念—概念上的—形成概念”记忆。conceive 也是同词族动词，但不是 concept 加一个后缀；描述设计时应区分抽象构想与实际实现。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	concept	idea	n.｜想法；观念	范围更广、更日常，可以只是一个临时念头。
+synonym	concept	notion	n.｜概念；看法	常指个人形成的认识，有时带尚不明确或未充分验证的意味。
+source	concept	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	concept	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	concept	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	concept	历史词族：把想法纳入心中	concept 经法语联系拉丁语 conceptus，相关动词 concipiō 有接纳、构想等意思。它与 conceive 有历史词族联系；把概念理解为头脑中形成的观念是助记，不要把英语 con- 当作万能前缀去任意拆词。	https://en.wiktionary.org/wiki/concept#English
+source	concept	Wiktionary：concept	https://en.wiktionary.org/wiki/concept#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	consistent	The results are consistent with our earlier observations.	这些结果与我们之前的观察一致。	原创学习例句；中文译文为原创整理
+example	consistent	A consistent naming style makes the code easier to read.	一致的命名风格让代码更容易阅读。	原创学习例句；中文译文为原创整理
+collocation	consistent	consistent with something	与某事一致	with 后接比较对象，常用于证据与解释是否相符。
+collocation	consistent	consistent performance	稳定的表现	强调不同时间的表现保持在相近水平。
+derived	consistent	consistency	n.｜一致性；稳定性	consistent 对应的名词；还可表示液体或混合物的稠度。
+derived	consistent	inconsistent	adj.｜不一致的；不稳定的	in- 表示否定，常用于说法矛盾或表现时好时坏。
+morphology	consistent	现代构词与词族	consistent 与 consistency 对应性质及其名词，inconsistent 在前加否定 in-。consist 虽与它形式接近，日常常用 consist of“由……组成”；不要把一致性和组成关系混用。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	consistent	steady	adj.｜稳定的	强调变化小或持续稳定，未必涉及两种说法相互吻合。
+synonym	consistent	compatible	adj.｜相容的	强调能够并存或一起使用；consistent 更强调前后没有矛盾。
+source	consistent	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	consistent	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	consistent	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	constant	The room stayed at a constant temperature throughout the experiment.	整个实验期间，房间的温度保持不变。	原创学习例句；中文译文为原创整理
+example	constant	The constant noise from the road made it hard to concentrate.	道路上持续不断的噪声让人难以集中注意力。	原创学习例句；中文译文为原创整理
+collocation	constant	remain constant	保持不变	用于温度、速度或数量等指标。
+collocation	constant	a constant reminder	持续的提醒	不一定每秒都在发生，也可指反复使人想到某事。
+derived	constant	constancy	n.｜恒定；忠贞	constant 对应的名词，可指状态不变或感情坚定。
+derived	constant	constantly	adv.｜不断地；经常地	constant 加 -ly，日常也可带有对反复发生的事情不满的语气。
+morphology	constant	现代构词与词族	constant 可作形容词“不变的”，也可作名词“常量”；constancy 表示恒定，constantly 表示不断或频繁发生。编程中的 constant 是常量概念，不能与“反复执行”混为一谈。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	constant	continuous	adj.｜连续不断的	强调没有中断，constant 的数值义则强调大小不发生变化。
+synonym	constant	steady	adj.｜稳定的	强调变化平稳或波动较小，不总要求数值完全相同。
+source	constant	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	constant	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	constant	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	context	The meaning of this sentence becomes clear when you read it in context.	结合上下文阅读时，这句话的意思就清楚了。	原创学习例句；中文译文为原创整理
+example	context	The report places the increase in energy use within a wider economic context.	报告把能源使用量的增加放在更广的经济背景下分析。	原创学习例句；中文译文为原创整理
+collocation	context	in context	结合上下文；在具体背景中	用于理解词句，也用于分析事件。
+collocation	context	out of context	脱离上下文	常指引文被抽离原有环境，导致意思被误解。
+derived	context	contextual	adj.｜与上下文有关的	context 加相关形容词词尾，强调背景因素。
+derived	context	contextualize	v.｜置于背景中理解	contextual 的相关动词，也写作 contextualise。
+morphology	context	现代构词与词族	context 表示上下文或背景，contextual 说明与背景有关，contextualize 表示把信息放回具体背景理解。不要按英文字符把 context 拆成 con 与现代 text 后随意推导历史意义。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	context	background	n.｜背景	常指已有历史或基本资料，context 更强调影响当前理解的周围条件。
+synonym	context	setting	n.｜环境；背景	常偏向事件发生的场所与时代，context 也可只是文本中的前后语句。
+source	context	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	context	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	context	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	context	历史词根：连接与编织	context 来自拉丁语 contextus，相关含义有编织、连接与结构；它又与 contexō 相连。可把上下文想成彼此织在一起的语句，但这是理解词义的助记，并不等于现代英语把 con 和 text 任意组合。	https://en.wiktionary.org/wiki/context#English
+source	context	Wiktionary：context	https://en.wiktionary.org/wiki/context#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	context	Wiktionary：contextus	https://en.wiktionary.org/wiki/contextus#Latin	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	continuous	The device recorded a continuous stream of temperature readings.	设备连续记录了一串温度读数。	原创学习例句；中文译文为原创整理
+example	continuous	After three hours of continuous work, we took a short break.	连续工作三小时后，我们短暂休息了一下。	原创学习例句；中文译文为原创整理
+collocation	continuous	continuous improvement	持续改进	强调改进过程持续推进，不必理解为每一秒都在修改。
+collocation	continuous	a continuous flow of something	连续不断的某物流动	用于水流、信息或人员流动。
+derived	continuous	continuity	n.｜连续性；连贯性	continuous 的相关名词，强调前后衔接或不间断。
+derived	continuous	continuously	adv.｜连续地	continuous 加 -ly，修饰持续进行的动作。
+morphology	continuous	现代构词与词族	continuous、continuity、continuously 分别表示性质、抽象概念与方式。continual 形式相近，常强调反复发生；continuous 更常强调不中断，但真实语境中两者也有重叠。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	continuous	uninterrupted	adj.｜未中断的	直接强调没有被打断，常与 continuous 接近。
+synonym	continuous	constant	adj.｜持续的；恒定的	可表示不断出现，也可指数值不变；连续变化的曲线不一定是 constant。
+source	continuous	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	continuous	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	continuous	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	contrast	The contrast between the two photographs shows how much the town has changed.	两张照片的对比显示了小镇发生的巨大变化。	原创学习例句；中文译文为原创整理
+example	contrast	We can contrast the survey results with the interview findings.	我们可以把问卷结果与访谈发现进行对照。	原创学习例句；中文译文为原创整理
+collocation	contrast	in contrast to something	与某事形成对比	强调不同之处，常用于连接观点。
+collocation	contrast	a sharp contrast	鲜明的对比	sharp 强调差异明显。
+derived	contrast	contrastive	adj.｜对比的；形成对照的	contrast 的相关形容词，常用于语言学或分析方法。
+derived	contrast	contrasting	adj.｜形成鲜明对比的	常作分词形容词，如 contrasting colours；具体句中也可能是动词形式。
+morphology	contrast	现代构词与词族	contrast 既可作名词“对比”，也可作动词“对照”。contrastive 是相关形容词，contrasting 常描述差异明显的事物；后者的形容词用法要与正在进行的动词动作区分。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	contrast	difference	n.｜差别	泛指不相同之处，contrast 更强调把两者放在一起凸显差别。
+synonym	contrast	comparison	n.｜比较	既可比较相同点也可比较不同点，contrast 主要突出不同。
+source	contrast	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	contrast	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	contrast	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	convenient	The apartment is convenient for the station and several shops.	这套公寓去车站和几家商店都很方便。	原创学习例句；中文译文为原创整理
+example	convenient	Would tomorrow afternoon be a convenient time to review the draft?	明天下午方便一起看初稿吗？	原创学习例句；中文译文为原创整理
+collocation	convenient	convenient for someone	对某人方便的	常用 it is convenient for someone，不把人直接说成 convenient。
+collocation	convenient	at a convenient time	在方便的时间	用于安排会面、电话或任务。
+derived	convenient	convenience	n.｜方便；便利	convenient 对应的名词，常见 for your convenience。
+derived	convenient	inconvenient	adj.｜不方便的	in- 表示否定，说明时间、地点或安排不合适。
+morphology	convenient	现代构词与词族	convenient 与 convenience 的词尾分别是 -ent、-ence；conveniently 是副词，inconvenient 是否定形式。描述个人时间安排时，用 a convenient time 或 convenient for me，比说 I am convenient 准确。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	convenient	handy	adj.｜方便的；手边可用的	较口语，常指工具顺手或位置近便。
+synonym	convenient	practical	adj.｜实用的；可行的	强调能解决实际问题，不一定表示省事或交通便利。
+source	convenient	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	convenient	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	convenient	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	convincing	The speaker gave a convincing explanation of why the first test had failed.	演讲者令人信服地解释了第一次测试失败的原因。	原创学习例句；中文译文为原创整理
+example	convincing	A convincing argument needs more than a confident voice.	有说服力的论证需要的不只是自信的声音。	原创学习例句；中文译文为原创整理
+collocation	convincing	convincing evidence	有说服力的证据	强调证据能够支持判断，而非看起来很专业。
+collocation	convincing	a convincing explanation	令人信服的解释	解释需要与已知事实相符。
+derived	convincing	convince	v.｜使相信；说服	convincing 对应的动词词基，常用 convince someone that。
+derived	convincing	convincingly	adv.｜令人信服地	形容词 convincing 加 -ly，说明表达或证明的方式。
+morphology	convincing	现代构词与词族	convincing 是由 convince 形成的分词形容词，表示“使人信服的”；convinced 常描述人“已经信服”。这里收录 convince 为词基，convincingly 为副词，不把所有 -ing 形式都当作新派生词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	convincing	persuasive	adj.｜有说服力的	常强调影响别人态度或行动的能力，convincing 更强调使人相信其真实性。
+synonym	convincing	compelling	adj.｜令人信服的；强有力的	语气更强，常形容难以忽视的证据或理由。
+source	convincing	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	convincing	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+example	correct	Please correct the spelling before you publish the announcement.	发布通知前，请改正拼写。	原创学习例句；中文译文为原创整理
+example	correct	The answer is correct, but the explanation skips an important step.	答案是正确的，但解释漏掉了一个重要步骤。	原创学习例句；中文译文为原创整理
+collocation	correct	the correct answer	正确答案	强调符合题目或事实要求。
+collocation	correct	correct a mistake	改正错误	correct 作及物动词，直接接错误。
+derived	correct	correction	n.｜改正；更正内容	correct 的相关名词，可指修改行为或具体改动。
+derived	correct	correctness	n.｜正确性	形容词 correct 加 -ness，表示是否正确这一性质。
+morphology	correct	现代构词与词族	correct 的形容词义是“正确的”，动词义是“改正”；correction 通常对应纠正动作，correctness 对应正确这一性质。incorrect 是否定形容词，不能代替“把错误改正”的动词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	correct	right	adj.｜正确的	更日常，也可表示合适或道德上正确，语义范围比 correct 广。
+synonym	correct	accurate	adj.｜准确的	突出描述、数据与事实相符，不总用于按格式或规则判断对错。
+source	correct	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	correct	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	correct	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	critical	Critical thinking helps us examine a claim before accepting it.	批判性思维帮助我们先检验主张，再决定是否接受。	原创学习例句；中文译文为原创整理
+example	critical	A reliable backup is critical to recovering the lost files.	可靠的备份对恢复丢失文件至关重要。	原创学习例句；中文译文为原创整理
+collocation	critical	critical of something	对某事持批评态度	of 后接被批评的对象。
+collocation	critical	critical to success	对成功至关重要	to 后接名词；这里不是“批评成功”。
+derived	critical	criticism	n.｜批评；评论	同词族名词，可指负面评价，也可指作品分析。
+derived	critical	critically	adv.｜批判性地；严重地	critical 加 -ly，意思随所修饰内容变化。
+morphology	critical	现代构词与词族	critical 与 critic、criticism 属同词族，但 critical 还表示“关键的”或病情“危急的”。critically evaluate 是审慎分析，critically ill 则是病危；不要把它一律理解为挑毛病。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	critical	crucial	adj.｜至关重要的	对应 critical 的关键义，不含批评态度这一层意思。
+synonym	critical	analytical	adj.｜善于分析的	对应认真分析的部分用法，但不自动包含质疑证据或判断可靠性的要求。
+source	critical	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	critical	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	critical	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	crucial	The final interview was crucial in helping us understand the students' concerns.	最后一次访谈对理解学生的顾虑起了关键作用。	原创学习例句；中文译文为原创整理
+example	crucial	It is crucial to save your work before updating the software.	更新软件前保存工作十分重要。	原创学习例句；中文译文为原创整理
+collocation	crucial	crucial to something	对某事至关重要	强调对结果有重大影响。
+collocation	crucial	a crucial stage	关键阶段	指可能决定后续发展的一段过程。
+derived	crucial	crucially	adv.｜关键地；至关重要地	crucial 加 -ly，也可用于突出句中最关键的信息。
+derived	crucial	cruciality	n.｜关键性	crucial 的相关名词，较正式且少见；日常也常说 importance。
+morphology	crucial	现代构词与词族	crucial、crucially、cruciality 分别是形容词、副词和较少见的名词。学习时优先掌握 crucial to 与 it is crucial to do；不要因词尾 -ial 就把它硬拆成现代独立词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	crucial	essential	adj.｜必不可少的	更强调缺了就不能满足需要，crucial 更突出关键影响。
+synonym	crucial	vital	adj.｜极重要的	语气较强，也有维持生命所必需的含义。
+source	crucial	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	crucial	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	crucial	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	cultural	The festival gives visitors a chance to learn about local cultural traditions.	这个节日让游客有机会了解当地文化传统。	原创学习例句；中文译文为原创整理
+example	cultural	Cultural differences can affect how people interpret the same gesture.	文化差异会影响人们如何理解同一个手势。	原创学习例句；中文译文为原创整理
+collocation	cultural	cultural diversity	文化多样性	指不同文化背景与表达方式的存在。
+collocation	cultural	cultural heritage	文化遗产	包括有形遗产，也可包括语言、技艺与习俗。
+derived	cultural	culture	n.｜文化	cultural 对应的词基名词，不是 cultural 的后缀派生词。
+derived	cultural	culturally	adv.｜在文化上	cultural 加 -ly，说明从文化角度看某事。
+morphology	cultural	现代构词与词族	参考快照记录 culture 与 -al 的构词关系；culture 去掉末尾 e 后形成 cultural，再加 -ly 得到 culturally。culture 也有生物培养等专门含义，不能将每个语境都译成社会文化。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	cultural	social	adj.｜社会的	范围更广，可指人际关系或社会结构，不都涉及文化传统。
+synonym	cultural	artistic	adj.｜艺术的	只覆盖文化中与艺术创作相关的一部分，不能替换所有 cultural。
+source	cultural	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	cultural	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	cultural	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	data	The data suggest that students review more often when the sessions are short.	这些数据表明，复习时段较短时，学生复习得更频繁。	原创学习例句；中文译文为原创整理
+example	data	Please remove personal details before sharing the data with the class.	与全班分享数据前，请先删除个人信息。	原创学习例句；中文译文为原创整理
+collocation	data	collect data	收集数据	强调取得材料；并不保证数据本身已经可靠。
+collocation	data	data analysis	数据分析	data 在这里修饰名词 analysis，通常不用所有格。
+derived	data	database	n.｜数据库	data 与 base 构成的复合词，指有组织地存储的数据集合。
+derived	data	dataset	n.｜数据集	data 与 set 构成的复合词，也常写作 data set。
+morphology	data	现代构词与词族	data 历史上是 datum 的复数，但现代用法既有复数一致，也有集合性单数一致，写作时保持风格统一。database、dataset 是复合词；datum 与 data 的关系是数的变化，不能当作派生。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	data	information	n.｜信息	通常强调经过理解、能传达意义的内容，data 更常指可记录和分析的材料。
+synonym	data	figures	n.｜数字；统计数据	只覆盖数值信息，文字、图像等数据不都能叫 figures。
+source	data	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	data	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	data	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	debate	The proposal started a debate about how the university should use its budget.	这项提议引发了关于大学应如何使用预算的讨论。	原创学习例句；中文译文为原创整理
+example	debate	The students will debate whether exams should be replaced by projects.	学生们将辩论是否应以项目代替考试。	原创学习例句；中文译文为原创整理
+collocation	debate	a debate about something	关于某事的争论	about 或 over 引出争论主题。
+collocation	debate	open to debate	尚有争议；可以讨论	表示结论并未确定。
+derived	debate	debatable	adj.｜有争议的；可讨论的	debate 的相关 -able 形容词，强调存在讨论空间。
+derived	debate	debater	n.｜辩论者	debate 加表示人的 -er，保留一个 e。
+morphology	debate	现代构词与词族	debate 可作名词或动词；debatable 表示尚可争论，debater 表示参与辩论的人。debatable 并不等于“已经证明错误”，只是说明事情还不是毫无疑问的。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	debate	discussion	n.｜讨论	可以是合作交流而非意见交锋，debate 常有较明确的对立观点。
+synonym	debate	argument	n.｜争论；论证	可以指口角或单方论证，debate 更容易指围绕问题进行的多方讨论。
+source	debate	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	debate	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	debate	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	decline	The number of printed newspapers continued to decline during the study period.	研究期间，纸质报纸的数量持续下降。	原创学习例句；中文译文为原创整理
+example	decline	I had to decline the invitation because I was already working that evening.	我不得不谢绝邀请，因为那晚已经安排了工作。	原创学习例句；中文译文为原创整理
+collocation	decline	a decline in something	某方面的下降	in 后接下降的指标，如销量或人数。
+collocation	decline	decline an offer	婉拒提议	语气比直接说 refuse 通常更委婉。
+derived	decline	declination	n.｜偏角；赤纬；拒绝	与 decline 同词族，现代常见于专门术语，不能普遍代替 decline 的下降义。
+derived	decline	declension	n.｜词形变化；衰退	同词族名词，在语法中常指名词等的变格。
+morphology	decline	现代构词与词族	decline 同时有“下降”和“婉拒”两种常用动词义，也可作名词。declination、declension 是词典记录的同词族形式，但多用于特定领域，不应为了用派生词把普通 a decline 换成它们。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	decline	decrease	v.｜减少；下降	只对应数量或程度降低，不表达谢绝邀请。
+synonym	decline	refuse	v.｜拒绝	对应拒绝义，通常比 decline 更直接，未必带礼貌或委婉色彩。
+source	decline	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	decline	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	decline	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	definition	The report begins with a clear definition of digital literacy.	报告开头明确界定了数字素养。	原创学习例句；中文译文为原创整理
+example	definition	Without a shared definition, the two teams may count different things.	如果没有共同的定义，两个团队可能统计的是不同对象。	原创学习例句；中文译文为原创整理
+collocation	definition	a definition of something	某事物的定义	of 后接需要说明的概念。
+collocation	definition	by definition	按照定义；本质上	用于说明某个特征由概念本身决定。
+derived	definition	define	v.｜定义；界定	definition 对应的动词词基。
+derived	definition	definitional	adj.｜定义上的；与定义有关的	definition 的相关形容词，常用于学术讨论。
+morphology	definition	现代构词与词族	define 与 definition 对应“界定—定义”；参考快照保留了这一词基关系。definitional 表示与定义有关，而 definitive 常表示最终的或权威的，不能仅凭相似拼写混用。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	definition	meaning	n.｜意思；含义	范围较广，一个词在语境中的 meaning 不一定是一条正式定义。
+synonym	definition	explanation	n.｜解释	可以说明原因、过程或用法，definition 更集中在概念的边界。
+source	definition	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	definition	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	definition	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	demand	Demand for quiet study spaces rises during the examination period.	考试期间，对安静自习空间的需求增加。	原创学习例句；中文译文为原创整理
+example	demand	Passengers can demand a clear explanation when a service is cancelled.	服务取消时，乘客可以要求得到清楚的解释。	原创学习例句；中文译文为原创整理
+collocation	demand	demand for something	对某物的需求	名词需求义后接 for。
+collocation	demand	in demand	需求大；受欢迎	常形容人才、技能或商品。
+derived	demand	demanding	adj.｜要求高的；费力的	常作分词形容词，指任务困难或人要求很多，不只是动词进行式。
+derived	demand	demander	n.｜要求者；需求方	demand 加 -er，较正式，经济学中可指提出需求的一方。
+morphology	demand	现代构词与词族	demand 作名词可指需求，也可指强烈要求；动词直接接对象。demanding 是常见形容词，a demanding task 意为费力的任务；其 -ing 形容词用法要与正在提出要求的动作区分。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	demand	request	n.｜请求	通常比 demand 语气温和，较少暗含对方必须照办。
+synonym	demand	need	n.｜需要	强调实际需要，市场 demand 还可能涉及有能力且愿意购买的需求。
+source	demand	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	demand	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	demand	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	dependent	The village is dependent on a single road for deliveries.	村里的物资运输依赖唯一的一条公路。	原创学习例句；中文译文为原创整理
+example	dependent	Your access to the course is dependent on completing the registration form.	你能否进入课程，取决于是否填写完注册表。	原创学习例句；中文译文为原创整理
+collocation	dependent	dependent on something	依赖某物；取决于某事	on 后说明依赖对象或条件。
+collocation	dependent	financially dependent	经济上依赖他人的	financially 说明依赖发生在哪个方面。
+derived	dependent	depend	v.｜依靠；取决于	dependent 对应的动词词基，常用 depend on。
+derived	dependent	dependence	n.｜依赖	dependent 对应的名词，也常接 on。
+morphology	dependent	现代构词与词族	depend、dependent、dependence 分别是动词、形容词及名词；independent 在前加否定 in-。dependent 也可作名词表示受供养者，英式英语中这个名词还常写作 dependant。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	dependent	reliant	adj.｜依赖的	reliant on 与 dependent on 接近，常强调实际依靠某人或资源。
+synonym	dependent	conditional	adj.｜有条件的	对应“取决于某条件”的用法，不等于经济上依赖别人。
+source	dependent	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	dependent	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	dependent	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	diverse	The workshop brought together students from diverse backgrounds.	这次工作坊汇集了背景各异的学生。	原创学习例句；中文译文为原创整理
+example	diverse	A diverse collection of examples makes the lesson more useful.	类型丰富的例子能让这节课更实用。	原创学习例句；中文译文为原创整理
+collocation	diverse	diverse backgrounds	不同的背景	可指文化、教育、职业或生活经历。
+collocation	diverse	a diverse range of something	多种多样的某物	强调种类差异，而非单纯数量大。
+derived	diverse	diversity	n.｜多样性	diverse 对应的名词，可用于生物、文化或意见。
+derived	diverse	diversify	v.｜使多样化；多元发展	同词族动词，强调增加不同类型或降低单一依赖。
+morphology	diverse	现代构词与词族	diverse、diversity、diversify 可按“多样的—多样性—使多样化”成组记。diversity 不只是人或物数量多，还涉及差异；diverse 的末尾拼写与 diversity 的形式需整体记忆。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	diverse	varied	adj.｜多种多样的	常强调内容有变化、并不单调，与 diverse 的许多用法接近。
+synonym	diverse	different	adj.｜不同的	只说明不相同，diverse 通常强调集合内部存在多种差异。
+source	diverse	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	diverse	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	diverse	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	economic	The report examines the economic effects of opening a new railway station.	报告考察了新建火车站带来的经济影响。	原创学习例句；中文译文为原创整理
+example	economic	Economic growth does not automatically improve everyone's living conditions.	经济增长并不会自动改善每个人的生活条件。	原创学习例句；中文译文为原创整理
+collocation	economic	economic growth	经济增长	关注经济活动或产出的增长。
+collocation	economic	economic policy	经济政策	不要写成 economical policy 来表达这一常见含义。
+derived	economic	economy	n.｜经济；节约	economic 的相关名词词基形式，含义随语境变化。
+derived	economic	economically	adv.｜在经济上；节约地	economic 与 economical 对应的副词形式相同，须看上下文。
+morphology	economic	现代构词与词族	economic 主要表示与经济有关，economical 主要表示节省资源或费用；两者都与 economy 同词族。economically 可能指经济层面，也可能指节约地，不能仅凭词形决定译法。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	economic	financial	adj.｜财务的；金融的	更集中在资金、收支或金融事务，economic 可涉及就业、生产和整个经济。
+synonym	economic	commercial	adj.｜商业的	强调买卖和经营活动，只覆盖经济活动的一部分。
+source	economic	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	economic	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	economic	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	effective	A short reminder can be effective when it arrives at the right time.	如果时机合适，一条简短提醒也能起作用。	原创学习例句；中文译文为原创整理
+example	effective	The new rule will be effective from the first day of next term.	新规定将从下学期开学第一天起生效。	原创学习例句；中文译文为原创整理
+collocation	effective	effective in doing something	在做某事方面有效	in 后接动名词，说明取得成效的方面。
+collocation	effective	an effective solution	有效的解决办法	强调确实解决问题，不一定意味着成本最低。
+derived	effective	effect	n.｜效果；影响	effective 的相关词基名词；常见 have an effect on。
+derived	effective	effectiveness	n.｜有效性	effective 加 -ness，表示达到目的的程度。
+morphology	effective	现代构词与词族	effect 与 effective 对应“效果—有效的”，effectiveness 把性质转为名词。effective 还可表示规定开始生效；ineffective 是否定形式。不要把 effect 与动词 affect“影响”混为同一个词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	effective	successful	adj.｜成功的	强调取得预期结果，可形容整个活动或人；effective 常评价方法、措施能否起作用。
+synonym	effective	efficacious	adj.｜有效验的	较正式，常用于治疗或干预效果，日常范围不如 effective 广。
+source	effective	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	effective	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	effective	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	efficient	An efficient search function should find the answer without wasting time.	高效的搜索功能应当能找到答案，又不浪费时间。	原创学习例句；中文译文为原创整理
+example	efficient	The new insulation makes the building more energy efficient.	新的隔热材料提高了建筑的能源利用效率。	原创学习例句；中文译文为原创整理
+collocation	efficient	an efficient use of resources	高效利用资源	重点是减少时间、材料或精力的浪费。
+collocation	efficient	energy efficient	节能的；能源利用效率高的	作名词前的复合修饰语时常加连字符。
+derived	efficient	efficiency	n.｜效率	efficient 对应的名词，衡量投入与产出的关系。
+derived	efficient	inefficient	adj.｜效率低的	in- 否定 efficient，强调浪费或投入过多。
+morphology	efficient	现代构词与词族	efficient 与 efficiency 的词尾对应 -ent、-ency；inefficient 表示效率低，efficiently 是副词。efficient 关注资源消耗，effective 关注有没有达到目标，两者不能不加区分地互换。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	efficient	productive	adj.｜富有成效的；产出高的	强调产出了多少成果，不一定说明投入很少。
+synonym	efficient	economical	adj.｜节省的	强调少花钱或少耗资源，未必能全面描述一个流程的工作效率。
+source	efficient	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	efficient	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	efficient	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	emphasis	The course places emphasis on explaining ideas clearly rather than memorizing terms.	这门课着重训练清楚解释概念，而不是死记术语。	原创学习例句；中文译文为原创整理
+example	emphasis	Her emphasis on careful preparation helped the team avoid several mistakes.	她对认真准备的重视帮助团队避免了几个错误。	原创学习例句；中文译文为原创整理
+collocation	emphasis	place emphasis on something	强调某事	on 后说明强调的重点。
+collocation	emphasis	with particular emphasis on something	尤其重视某事	常用于课程、报告或政策的重点说明。
+derived	emphasis	emphasize	v.｜强调	emphasis 的对应动词，也写作 emphasise。
+derived	emphasis	emphatic	adj.｜强调的；坚决的	同词族形容词，如 an emphatic refusal 表示断然拒绝。
+morphology	emphasis	现代构词与词族	emphasis、emphasize、emphatic 分别对应名词、动词和形容词，词干形式会变化。emphatic 不仅是“加了重点”，还可表示态度坚决；emphases 是 emphasis 的复数，不是另一个派生词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	emphasis	stress	n.｜强调；重点	强调义与 emphasis 接近，但 stress 也常指压力。
+synonym	emphasis	focus	n.｜重点；关注中心	强调注意力集中在哪一点，emphasis 更偏向给予某方面的重要程度。
+source	emphasis	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	emphasis	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	emphasis	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	enormous	The archive contains an enormous collection of historical photographs.	档案馆收藏了数量庞大的历史照片。	原创学习例句；中文译文为原创整理
+example	enormous	Moving the event online saved an enormous amount of travel time.	把活动改到线上节省了大量出行时间。	原创学习例句；中文译文为原创整理
+collocation	enormous	an enormous amount of something	大量的某物	amount of 后通常接不可数名词。
+collocation	enormous	an enormous difference	巨大的差异	强调程度很大，并不自动涉及统计显著性。
+derived	enormous	enormously	adv.｜极其；非常	enormous 加 -ly，可修饰受益、变化或情感程度。
+derived	enormous	enormousness	n.｜巨大	enormous 加 -ness，较少见，表示规模或程度很大。
+morphology	enormous	现代构词与词族	enormous 常与数量、规模和程度有关，enormously 是常见副词。enormity 虽与它同词族，却常含极端严重、骇人或罪恶的意味；中性描述“大”时优先用 size、scale 或 enormousness。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	enormous	huge	adj.｜巨大的	较日常，可用于物体、数量和影响。
+synonym	enormous	immense	adj.｜极大的；广大的	语气较强，常用于面积、程度或难以估量的数量。
+source	enormous	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	enormous	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	enormous	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	essential	Clean water is essential for the health of the whole community.	洁净饮水对整个社区的健康必不可少。	原创学习例句；中文译文为原创整理
+example	essential	The summary includes the essential details but leaves out minor examples.	摘要保留了必要细节，省略了次要例子。	原创学习例句；中文译文为原创整理
+collocation	essential	essential for something	对某事必不可少	for 后常接需要得到保障的目标或用途。
+collocation	essential	it is essential to do something	做某事十分必要	to do 引出必须完成的行动。
+derived	essential	essence	n.｜本质；精髓	essential 的同词族名词，不是简单去掉 -ial 就得到的现代拼接结果。
+derived	essential	essentially	adv.｜本质上；基本上	essential 加 -ly，常用于概括事物的根本特征。
+morphology	essential	现代构词与词族	essential 有“必需的”和“本质的”两层常见含义，与 essence“本质”相联系。essentially 通常是“基本上、本质上”，不能见到 essential 就把副词一概译为“必要地”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	essential	necessary	adj.｜必要的	直接说明为了某目标不能缺少，语气通常比 essential 平实。
+synonym	essential	indispensable	adj.｜不可或缺的	强调无法替代、缺了不行，语气通常更强。
+source	essential	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	essential	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	essential	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	evident	It became evident that the delay was caused by a missing file.	问题逐渐明确了：延迟是由文件缺失造成的。	原创学习例句；中文译文为原创整理
+example	evident	The improvement was evident in the students' second set of essays.	学生的第二批作文中可以看出明显进步。	原创学习例句；中文译文为原创整理
+collocation	evident	it is evident that ...	显然……	that 后接作为判断内容的完整从句。
+collocation	evident	evident from something	从某事可以看出的	from 引出判断依据。
+derived	evident	evidence	n.｜证据；根据	与 evident 同词族，但不是“明显”这一性质的直接同义词。
+derived	evident	evidently	adv.｜显然；据现有迹象看	evident 加 -ly，有时表示说话人依据迹象作出判断。
+morphology	evident	现代构词与词族	evident、evidently、evidence 的形式相连，但分别表示明显、据迹象看及证据材料。证据可能还不充分，所以有 evidence 并不自动意味着结论已经 evident。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	evident	apparent	adj.｜明显的；表面上的	有时只是看起来如此，并不保证真实，需要结合语境。
+synonym	evident	obvious	adj.｜显而易见的	通常更强调很容易察觉或不需解释。
+source	evident	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	evident	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	evident	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	exception	Every file must have a name, with one exception for temporary system data.	每个文件都必须有名称，临时系统数据是唯一的例外。	原创学习例句；中文译文为原创整理
+example	exception	The program should record the exception before showing an error message.	程序应先记录异常，再显示错误提示。	原创学习例句；中文译文为原创整理
+collocation	exception	with the exception of something	除某事物之外	用于明确排除项。
+collocation	exception	make an exception	破例	指某次不按通常规则处理，不意味着永久更改规则。
+derived	exception	except	prep.｜除了；v.｜把……除外	exception 的同词族形式，日常以介词用法常见。
+derived	exception	exceptional	adj.｜杰出的；例外的	exception 的相关形容词，常含超过通常水平的正面评价。
+morphology	exception	现代构词与词族	exception 是例外或程序异常，exceptional 常表示非同寻常甚至杰出，不能一律译为“发生异常的”。except 与它同词族；exceptionally 是副词，用于特别高的程度或例外情况。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	exception	exclusion	n.｜排除；排除项	强调主动不纳入，exception 强调与一般规则不同的情况。
+synonym	exception	anomaly	n.｜异常现象	强调偏离预期或常态，不一定是规则中正式允许的例外。
+source	exception	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	exception	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	exception	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	excessive	Excessive noise can make a shared study space difficult to use.	噪声过大会让共享自习空间难以使用。	原创学习例句；中文译文为原创整理
+example	excessive	The application uses excessive memory when too many images are opened.	打开太多图片时，这个应用会占用过多内存。	原创学习例句；中文译文为原创整理
+collocation	excessive	excessive use of something	过度使用某物	excessive 带超过合理需要的评价。
+collocation	excessive	excessive pressure	过大的压力	可指物理压力，也可指心理或工作压力。
+derived	excessive	excess	n.｜过量；超额部分	excessive 的同词族名词，强调超出某个限度。
+derived	excessive	excessively	adv.｜过度地	excessive 加 -ly，修饰行为或程度。
+morphology	excessive	现代构词与词族	excess 与 excessive 对应“过量—过量的”，excessively 是副词；exceed 是表示超出的相关动词。excessive 自带“超过合理程度”的判断，不等于中性的 large 或 much。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	excessive	undue	adj.｜过分的；不应有的	更强调没有正当理由或超出应有程度，如 undue influence。
+synonym	excessive	extreme	adj.｜极端的	强调达到很高程度或边界，不总像 excessive 那样评价为过量。
+source	excessive	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	excessive	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	excessive	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	experience	You do not need previous experience to join the beginner workshop.	参加入门工作坊不需要以往经验。	原创学习例句；中文译文为原创整理
+example	experience	Visitors can experience how local crafts are made.	游客可以亲身体验当地手工艺品的制作过程。	原创学习例句；中文译文为原创整理
+collocation	experience	gain experience in something	获得某方面的经验	这里 experience 通常不可数。
+collocation	experience	a memorable experience	难忘的经历	指具体发生的一件事时，experience 可以可数。
+derived	experience	experiential	adj.｜体验的；以经验为基础的	与 experience 同词族，常见 experiential learning。
+derived	experience	inexperienced	adj.｜缺乏经验的	否定形容词 experienced，常用来描述新手。
+morphology	experience	现代构词与词族	experience 作不可数名词是“经验”，作可数名词是“一次经历”，也可作动词“体验”。experiential 表示通过体验的；experienced、inexperienced 是描述经验多少的形容词，不要把它们只当时态形式。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	experience	knowledge	n.｜知识	可来自学习或阅读，experience 更强调亲自做过、经历过。
+synonym	experience	encounter	n.｜遭遇；接触	通常是某次较具体、可能短暂的接触，不表示长期积累的经验。
+source	experience	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	experience	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	experience	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	expert	An expert in database design reviewed our plan before implementation.	一位数据库设计专家在实施前审阅了我们的方案。	原创学习例句；中文译文为原创整理
+example	expert	The museum offers expert advice on caring for old photographs.	博物馆提供保存旧照片的专业建议。	原创学习例句；中文译文为原创整理
+collocation	expert	an expert in something	某领域的专家	in 后常接知识或专业领域。
+collocation	expert	expert advice	专业建议	expert 在这里作形容词，不需要所有格。
+derived	expert	expertise	n.｜专业知识与技能	expert 的相关名词，通常不可数。
+derived	expert	expertly	adv.｜熟练地；专业地	expert 加 -ly，说明完成动作的方式。
+morphology	expert	现代构词与词族	expert 可指专家，也可形容专业熟练；expertise 是专业知识与技能，expertly 是副词。expertise 一般不写成复数来指多个专家，表达具体的人仍用 experts。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	expert	specialist	n.｜专门人才；专家	强调专注某一细分领域，不仅是整体水平高。
+synonym	expert	authority	n.｜权威人士	强调某人在领域中被广泛认可、有影响力，expert 不一定包含这一声望。
+source	expert	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	expert	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	expert	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	external	Store a second copy of the project on an external drive.	把项目的第二份副本保存在外置硬盘上。	原创学习例句；中文译文为原创整理
+example	external	External factors, such as transport costs, can affect the final price.	运输费用等外部因素会影响最终价格。	原创学习例句；中文译文为原创整理
+collocation	external	external factors	外部因素	通常与系统、组织或个人内部因素相对。
+collocation	external	an external source	外部来源	计算机或研究语境中要说明相对于哪个范围而言。
+derived	external	externally	adv.｜在外部；从外部	external 加 -ly。
+derived	external	externality	n.｜外部性	同词族名词，经济学中常指影响未直接反映在交易价格中。
+morphology	external	现代构词与词族	external（外部的）与 internal（内部的）构成内外对照；external 加 -ly 得到 externally。externality 有专门经济学含义，不能把所有外部因素都称为 externalities。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	external	outside	adj.｜外部的	较日常，如 outside help；external 更常用于正式或技术说明。
+synonym	external	outer	adj.｜外层的	强调物体在空间上的外层，不一定适用于外部机构或信息来源。
+source	external	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	external	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	external	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	factor	Travel time was the main factor in choosing our new apartment.	通勤时间是我们选择新公寓时的主要考虑因素。	原创学习例句；中文译文为原创整理
+example	factor	We should factor maintenance costs into the budget.	我们应把维护费用计入预算。	原创学习例句；中文译文为原创整理
+collocation	factor	a key factor in something	某事中的关键因素	in 引出受影响的过程或结果。
+collocation	factor	factor something into something	把某因素计入某事	factor 作动词，常用于预算、决定或计算。
+derived	factor	factorize	v.｜分解因数；因式分解	factor 的数学相关动词，也写作 factorise。
+derived	factor	factorization	n.｜因式分解	factorize 的相关名词，不等于一般的因素分析。
+morphology	factor	现代构词与词族	factor 的一般名词义是因素，数学义是因数或因式；factorize、factorization 属于数学词族。factor something in/into 表示把某因素纳入考虑，与因式分解不是同一个用法。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	factor	element	n.｜要素；组成部分	强调构成整体的一部分，factor 更强调对结果起作用。
+synonym	factor	influence	n.｜影响因素；影响力	侧重作用或影响本身，factor 也可能是用于分析的具体变量。
+source	factor	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	factor	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	factor	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	flexible	A flexible timetable allows students to balance study and part-time work.	灵活的时间安排让学生能够兼顾学习与兼职。	原创学习例句；中文译文为原创整理
+example	flexible	The cable is flexible enough to fit behind the narrow desk.	这根线缆足够柔韧，可以放到狭窄的书桌后面。	原创学习例句；中文译文为原创整理
+collocation	flexible	a flexible approach	灵活的处理方式	强调能根据情况调整。
+collocation	flexible	flexible working hours	弹性工作时间	指时间安排有调整空间，并不一定意味着工作更少。
+derived	flexible	flexibility	n.｜灵活性；柔韧性	flexible 对应的名词，具体与抽象义都常用。
+derived	flexible	inflexible	adj.｜不灵活的；僵硬的	in- 表示否定，可评价材料或态度。
+morphology	flexible	现代构词与词族	flex 与 flexible 同词族，参考快照记录 flex 与 -ible 的关系。flexibility 表示可弯曲或可调整的性质；inflexible 可描述僵硬材料，也可描述不愿变通的人或规定。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	flexible	adaptable	adj.｜适应性强的	强调能适应新环境或用途，flexible 更常强调可以调整。
+synonym	flexible	pliable	adj.｜易弯曲的；易受影响的	更偏材料柔软易塑，也可形容人易被左右，未必是褒义。
+source	flexible	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	flexible	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	flexible	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	flexible	历史词根：弯曲	flexible 经法语联系拉丁语 flexibilis，进一步联系 flectō（弯曲）。现代构词分析还可联系 flex 与 -ible；材料能弯曲的意思进一步用于安排、态度能够变通，不能只把它记成身体柔软。	https://en.wiktionary.org/wiki/flexible#English
+source	flexible	Wiktionary：flexible	https://en.wiktionary.org/wiki/flexible#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	frequent	Frequent interruptions make a short task take much longer.	频繁的打断会让一个小任务耗时大幅增加。	原创学习例句；中文译文为原创整理
+example	frequent	The route has frequent buses during the morning rush hour.	早高峰时，这条线路的公交班次很密。	原创学习例句；中文译文为原创整理
+collocation	frequent	a frequent visitor	常客	指经常到访的人。
+collocation	frequent	frequent changes	频繁的变化	强调发生次数多，而不是一次变化很大。
+derived	frequent	frequency	n.｜频率；发生次数	frequent 对应的名词，也用于物理学频率。
+derived	frequent	frequently	adv.｜频繁地；经常	frequent 加 -ly。
+morphology	frequent	现代构词与词族	frequent 是“频繁的”，frequently 修饰动作，frequency 表示频率。infrequent 是否定形式。frequent 也可作动词表示常去某处，词性变化还会影响读音重音，查词时要注意音标。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	frequent	regular	adj.｜经常的；有规律的	强调规律性，regular meetings 可以每月一次，并不一定非常频繁。
+synonym	frequent	repeated	adj.｜反复的	强调发生不止一次，但不直接说明单位时间内有多密集。
+source	frequent	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	frequent	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	frequent	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	function	The main function of this button is to save the current note.	这个按钮的主要功能是保存当前笔记。	原创学习例句；中文译文为原创整理
+example	function	The heater cannot function properly without a steady power supply.	没有稳定供电，这台暖气设备就不能正常运转。	原创学习例句；中文译文为原创整理
+collocation	function	the function of something	某物的功能	of 后说明执行功能的对象。
+collocation	function	function as something	起某种作用；充当某物	as 后接所扮演的角色。
+derived	function	functional	adj.｜功能性的；能正常工作的	function 的相关形容词，也可评价设计重实用。
+derived	function	functionality	n.｜功能；功能性	functional 的相关名词，软件语境中常指提供的功能集合。
+morphology	function	现代构词与词族	function 可作名词“功能、函数”，也可作动词“运转”。functional 评价功能或可用状态，functionality 表示功能性；一个功能存在并不保证整体操作方便，不能与 usability 混为一谈。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	function	purpose	n.｜目的；用途	强调设计或使用的意图，function 更强调实际承担的作用。
+synonym	function	operate	v.｜运作；操作	运转义与 function 接近，但 operate 还可作及物动词表示操作设备。
+source	function	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	function	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	function	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	fundamental	Understanding variables is fundamental to learning how to program.	理解变量是学习编程的基础。	原创学习例句；中文译文为原创整理
+example	fundamental	The discussion revealed a fundamental difference in our goals.	讨论揭示了我们目标上的根本差异。	原创学习例句；中文译文为原创整理
+collocation	fundamental	fundamental to something	对某事是基础性的	to 后接建立在这一基础上的内容。
+collocation	fundamental	a fundamental principle	基本原则	强调对其他规则或结论起支撑作用。
+derived	fundamental	fundamentally	adv.｜根本上；从基础上	fundamental 加 -ly。
+derived	fundamental	fundamentalism	n.｜原教旨主义；严格坚持根本教义	同词族名词，有特定宗教或思想语境，不能泛指学习基础知识。
+morphology	fundamental	现代构词与词族	fundamental 的核心是“基础的、根本的”，fundamentally 用于说明根本层面。fundamentalism 已形成特定含义；fundamentals 常指基本原理，是名词复数用法，不要当作新的后缀派生词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	fundamental	basic	adj.｜基础的	更日常，也可能指简单初级；fundamental 强调对整体具有根本作用。
+synonym	fundamental	underlying	adj.｜根本的；潜在的	强调表面现象背后的基础原因，不一定是学习顺序中的入门内容。
+source	fundamental	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	fundamental	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	fundamental	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	global	Climate change is a global problem that requires cooperation across borders.	气候变化是需要跨国合作解决的全球问题。	原创学习例句；中文译文为原创整理
+example	global	A global setting changes the appearance of every page in the application.	全局设置会改变应用中每一页的外观。	原创学习例句；中文译文为原创整理
+collocation	global	the global economy	全球经济	global 修饰经济活动的覆盖范围。
+collocation	global	a global perspective	全球视角	关注多个地区之间的关系，而不是只看本地。
+derived	global	globe	n.｜地球；球体；地球仪	global 的词基形式，参考快照记录 globe 与 -al。
+derived	global	globalization	n.｜全球化	global 的相关派生词族，也写作 globalisation。
+morphology	global	现代构词与词族	globe 去末尾 e，加 -al 得 global，globally 是副词。global 在技术中也可指全局范围，例如全局设置，不一定涉及地球；globalization 则常指跨地区联系日益增强的过程。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	global	worldwide	adj.｜世界范围的	直接强调地域覆盖全世界，不能代替程序中的全局作用域义。
+synonym	global	international	adj.｜国际的	只需涉及两个或更多国家，不一定覆盖全球。
+source	global	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	global	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	global	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	goal	My first goal is to build a small application that I can use every day.	我的第一个目标是做出一款每天都能用的小应用。	原创学习例句；中文译文为原创整理
+example	goal	The team scored a goal in the final minute of the match.	球队在比赛最后一分钟进了一球。	原创学习例句；中文译文为原创整理
+collocation	goal	achieve a goal	实现目标	achieve 强调达到结果，set a goal 强调确立目标。
+collocation	goal	a long-term goal	长期目标	与较短期、可分阶段完成的任务区分。
+derived	goal	goalkeeper	n.｜守门员	goal 与 keeper 构成复合词，来自体育中的球门义。
+derived	goal	goalless	adj.｜没有进球的	goal 加 -less，常形容比赛未进球，不表示某人缺乏人生目标。
+morphology	goal	现代构词与词族	goal 的“目标”和“球门、进球”两类用法需要分开。goalkeeper、goalless 属体育义的复合或派生形式；学习词族时先确认采用的是哪个义项，不能仅凭共同拼写联想全部含义。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	goal	aim	n.｜目标；目的	常指想努力达到的方向，goal 更容易指较明确的终点。
+synonym	goal	objective	n.｜具体目标	常用于计划或正式任务中可说明、可衡量的目标。
+source	goal	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	goal	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	goal	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	hypothesis	The experiment was designed to test a hypothesis about how memory changes over time.	这个实验旨在检验一个关于记忆如何随时间变化的假设。	原创学习例句；中文译文为原创整理
+example	hypothesis	A useful hypothesis should lead to predictions that can be checked.	一个有用的假设应能产生可供检验的预测。	原创学习例句；中文译文为原创整理
+collocation	hypothesis	test a hypothesis	检验假设	实验结果可能支持或不支持假设，不应预先保证证实。
+collocation	hypothesis	formulate a hypothesis	提出明确的假设	formulate 强调把想法组织成清楚表述。
+derived	hypothesis	hypothesize	v.｜假设；提出假说	hypothesis 的相关动词，也写作 hypothesise。
+derived	hypothesis	hypothetical	adj.｜假设性的	同词族形容词，表示设想条件，并不一定已得到证据支持。
+morphology	hypothesis	现代构词与词族	hypothesis、hypothesize、hypothetical 分别表示假设、提出假设及假设性的。hypotheses 是名词复数形式，不是派生词；hypothetical example 是设想的例子，也不必是一项正在检验的科学假说。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	hypothesis	assumption	n.｜假定；前提	可以是不经当前检验而暂时接受的条件，hypothesis 往往是待检验的解释。
+synonym	hypothesis	theory	n.｜理论	科学语境中通常是组织起来的解释体系，不只是随意猜测；不能把所有 theory 都说成未证实假设。
+source	hypothesis	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	hypothesis	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	hypothesis	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	hypothesis	历史词根：放在下面作为基础	可追溯到希腊语 hupothesis，相关动词由 hupo（在下面）与 tithēmi（放置）构成。历史上有作为论证基础的设定之意；现代科学中的 hypothesis 是待检验的假说，不是凭词根就能认定为真的前提。	https://en.wiktionary.org/wiki/hypothesis#English
+source	hypothesis	Wiktionary：hypothesis	https://en.wiktionary.org/wiki/hypothesis#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	impact	The survey measured the impact of long commutes on students' sleep.	这项调查测量了长时间通勤对学生睡眠的影响。	原创学习例句；中文译文为原创整理
+example	impact	A small change in the schedule can have a large impact on attendance.	时间安排上的小变化也可能对出席率产生很大影响。	原创学习例句；中文译文为原创整理
+collocation	impact	have an impact on something	对某事产生影响	on 引出受到影响的对象。
+collocation	impact	environmental impact	环境影响	需要结合具体指标说明影响是什么。
+derived	impact	impactful	adj.｜有明显影响的	impact 加 -ful，常用于商业或宣传语境，正式写作也可用 effective 等更具体词。
+derived	impact	impaction	n.｜嵌塞；紧密挤压	同词族名词，主要见于医学或技术语境，不代替一般社会影响义。
+morphology	impact	现代构词与词族	impact 本身可以是名词或动词，既有碰撞冲击义，也有影响义。impactful 属影响义的相关形容词，impaction 多用于专门领域；不要把共享词干的各形式都译成“影响”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	impact	effect	n.｜影响；结果	范围很广，impact 常让人联想到较明显或重要的作用。
+synonym	impact	influence	n.｜影响力；影响	可强调缓慢或持续的作用，impact 往往更突出可见的效果或冲击。
+source	impact	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	impact	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	impact	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	important	It is important to explain why the answer is correct, not just show the result.	不仅给出结果，还说明答案为什么正确，这一点很重要。	原创学习例句；中文译文为原创整理
+example	important	The archive is an important source of information about the town's history.	这座档案馆是了解小镇历史的重要资料来源。	原创学习例句；中文译文为原创整理
+collocation	important	important to someone	对某人重要	to 常说明个人在意的对象或价值。
+collocation	important	important for something	对某事有重要作用	for 常说明达到目标时需要它。
+derived	important	importance	n.｜重要性	important 对应的名词，常用 the importance of。
+derived	important	unimportant	adj.｜不重要的	un- 表示否定，不等于信息一定不相关。
+morphology	important	现代构词与词族	important 与 importance 的词尾对应 -ant、-ance；unimportant 是否定形式。importantly 是副词，常用 more importantly 引出更关键的信息；important 强调重要程度，relevant 强调与议题有无关系。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	important	significant	adj.｜重要的；显著的	还可用于统计显著性或变化明显，不能总按“重要”理解。
+synonym	important	major	adj.｜主要的；重大的	强调在同类中占有较大地位，常放在名词前。
+source	important	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	important	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	important	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	independent	The study received an independent review from researchers outside the team.	研究接受了团队以外研究人员的独立审查。	原创学习例句；中文译文为原创整理
+example	independent	The two devices are independent of the main computer and can run on their own.	这两台设备不依赖主计算机，可以自行运行。	原创学习例句；中文译文为原创整理
+collocation	independent	independent of something	不依赖某物；不受某事影响	of 引出不依赖的对象。
+collocation	independent	an independent assessment	独立评估	强调评估者与相关利益或执行方保持独立。
+derived	independent	independence	n.｜独立；自主	independent 对应的名词。
+derived	independent	independently	adv.｜独立地	independent 加 -ly，常修饰工作、运行或判断。
+morphology	independent	现代构词与词族	independent 可从否定前缀 in- 与 dependent 的关系理解；independence 是名词，independently 是副词。dependence 表示依赖，independence 表示独立，两者都可谈政治、经济或个人生活。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	independent	autonomous	adj.｜自主的	突出能够自行管理或作出决定，不等于完全没有外部支持。
+synonym	independent	self-reliant	adj.｜自立的	常形容人依靠自己的能力处理生活或工作，不必涉及正式组织独立。
+source	independent	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	independent	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	independent	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	individual	Each individual student can choose a topic for the final project.	每个学生都可以为最终项目选择一个主题。	原创学习例句；中文译文为原创整理
+example	individual	The policy should protect the rights of the individual as well as the community.	这项政策应同时保护个人和群体的权利。	原创学习例句；中文译文为原创整理
+collocation	individual	individual needs	个人需求	强调不同的人可能需要不同安排。
+collocation	individual	an individual approach	因人而异的处理方式	要结合上下文区分个别化方法与单人执行。
+derived	individual	individuality	n.｜个性；独特性	individual 的相关名词，强调与别人不同的特征。
+derived	individual	individually	adv.｜单独地；逐个地	individual 加 -ly，强调分开处理各个成员。
+morphology	individual	现代构词与词族	individual 可作形容词“个别的”或名词“个人”；individually 是逐个处理，individuality 是独特个性。individualism 表示个人主义，是另一个概念，不能简单当作 individuality 的同义词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	individual	separate	adj.｜各自的；分开的	强调彼此不合在一起，不一定突出人的个性或权利。
+synonym	individual	personal	adj.｜个人的	常涉及私人生活、所有权或感受，individual 更常突出群体中的单个成员。
+source	individual	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	individual	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	individual	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	initial	Our initial plan was to finish the prototype in two weeks.	我们最初计划用两周完成原型。	原创学习例句；中文译文为原创整理
+example	initial	The initial results looked promising, but we needed more observations.	最初的结果看起来不错，但我们还需要更多观察。	原创学习例句；中文译文为原创整理
+collocation	initial	an initial assessment	初步评估	表示在早期阶段作出的判断，可能以后修正。
+collocation	initial	the initial stage of something	某事的初始阶段	与后续发展阶段相对。
+derived	initial	initially	adv.｜起初；最初	initial 加 -ly，常用于对比后来发生的变化。
+derived	initial	initialize	v.｜初始化	initial 的相关技术动词，也写作 initialise。
+morphology	initial	现代构词与词族	initial 强调开始时的状态，initially 是副词；initialize 表示把系统或变量设为初始状态。initials 指姓名首字母，是名词用法；并不是 initialize 的缩写。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	initial	first	adj.｜第一个的；最初的	最日常的顺序表达，initial 常带早期且可调整的意味。
+synonym	initial	preliminary	adj.｜初步的；预备的	强调在正式活动之前准备，initial 也可指正式过程的第一个阶段。
+source	initial	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	initial	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	initial	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	innovation	The award recognizes innovation in low-cost water treatment.	这个奖项表彰低成本水处理方面的创新。	原创学习例句；中文译文为原创整理
+example	innovation	One useful innovation was a search box that corrected simple typing errors.	一个实用的创新是能纠正简单输入错误的搜索框。	原创学习例句；中文译文为原创整理
+collocation	innovation	technological innovation	技术创新	可指创新活动，也可指具体技术进步。
+collocation	innovation	encourage innovation	鼓励创新	innovation 作创新活动解时通常不可数。
+derived	innovation	innovate	v.｜创新；革新	innovation 对应的动词词基。
+derived	innovation	innovative	adj.｜创新的	innovate 的相关形容词，评价方法或产品有新意。
+morphology	innovation	现代构词与词族	参考快照记录 innovate 与 -ion 的关系，innovation 表示创新活动或创新成果，innovative 形容有创新性。innovator 是实施创新的人；新颖不自动等于有效，还需看实际用途。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	innovation	invention	n.｜发明	通常更突出创造此前不存在的东西，innovation 也包括采用或改进现有办法。
+synonym	innovation	novelty	n.｜新奇；新颖事物	强调不常见或有新鲜感，不一定带来实用改进。
+source	innovation	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	innovation	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	innovation	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	innovation	历史词族：更新与革新	innovation 经法语联系拉丁语 innovatio、innovō；innovō 有更新、恢复和改变的含义。现代还可按 innovate 与 -ion 学习动作和名词的关系，但创新不只是把旧事物原样再做一遍。	https://en.wiktionary.org/wiki/innovation#English
+source	innovation	Wiktionary：innovation	https://en.wiktionary.org/wiki/innovation#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	innovation	Wiktionary：innovo	https://en.wiktionary.org/wiki/innovo#Latin	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	insight	The interviews gave us insight into why students stopped using the app.	访谈让我们更深入地理解了学生停用这款应用的原因。	原创学习例句；中文译文为原创整理
+example	insight	Her insight helped us notice a pattern that the numbers alone had hidden.	她的洞察帮助我们发现了仅看数字时忽略的一种规律。	原创学习例句；中文译文为原创整理
+collocation	insight	insight into something	对某事的深入理解	into 后接需要理解的问题。
+collocation	insight	gain insight	获得深入认识	常接 into，强调理解的加深。
+derived	insight	insightful	adj.｜有洞察力的	insight 加 -ful，评价意见或人看得深入。
+derived	insight	insightfully	adv.｜富有洞察力地	insightful 加 -ly，说明分析或评论的方式。
+morphology	insight	现代构词与词族	词源快照保留 in- 与 sight 的构词成分；可把“看入内部”作为理解洞察的助记，但实际含义是深入认识，不是眼睛朝里看。insightful（有洞察力的）与 insightfully（富有洞察力地）可成组记忆。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	insight	understanding	n.｜理解	范围较广，insight 更强调抓住不明显的关键关系。
+synonym	insight	perception	n.｜感知；认识	可以是感官印象或个人看法，不一定达到深入洞察的程度。
+source	insight	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	insight	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	insight	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	instruction	Each instruction in the guide should describe one action clearly.	指南中的每条指示都应清楚说明一个动作。	原创学习例句；中文译文为原创整理
+example	instruction	The course combines classroom instruction with practical exercises.	课程把课堂教学与实践练习结合起来。	原创学习例句；中文译文为原创整理
+collocation	instruction	follow the instructions	按照说明操作	复数常指一整套步骤或指示。
+collocation	instruction	give instruction in something	教授某方面的知识或技能	教学义的 instruction 通常不可数。
+derived	instruction	instruct	v.｜指导；指示	instruction 对应的动词词基。
+derived	instruction	instructional	adj.｜教学的；指导性的	instruction 加相关形容词词尾，常形容材料或视频。
+morphology	instruction	现代构词与词族	instruct 与 -ion 构成 instruction 的词族关系，instructional 说明有教学用途。instruction 作具体指令时可数，作教学过程时常不可数；instructions 的复数不算派生词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	instruction	direction	n.｜指示；说明	指操作指示时接近 instruction，也可指方向，须看语境。
+synonym	instruction	teaching	n.｜教学	对应传授知识这一义项，不替换处理器指令等技术用法。
+source	instruction	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	instruction	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	instruction	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	intelligent	An intelligent question can reveal a weakness in a complicated argument.	一个有见地的问题能揭示复杂论证中的薄弱之处。	原创学习例句；中文译文为原创整理
+example	intelligent	The system makes intelligent suggestions, but users still need to check them.	系统会提出智能建议，但用户仍需核查。	原创学习例句；中文译文为原创整理
+collocation	intelligent	an intelligent decision	明智的决定	强调经过理解和判断，不只表示考试成绩好。
+collocation	intelligent	artificial intelligence	人工智能	固定名词搭配，形容词是 intelligent，不能写成 artificial intelligent 来作完整名词。
+derived	intelligent	intelligence	n.｜智力；智能	intelligent 对应的名词，也有情报义。
+derived	intelligent	intelligently	adv.｜明智地；智能地	intelligent 加 -ly。
+morphology	intelligent	现代构词与词族	intelligent 与 intelligence 的词尾对应 -ent、-ence，intelligently 是副词。intelligible 虽然相似，却表示“可理解的”；人聪明与一句话能被理解是不同性质。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	intelligent	clever	adj.｜聪明的；巧妙的	更日常，也可评价某个小办法很巧妙。
+synonym	intelligent	smart	adj.｜聪明的；智能的	口语常见，但也可表示穿着整洁或时髦，并非所有义项都对应 intelligent。
+source	intelligent	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	intelligent	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	intelligent	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	interaction	Regular interaction with readers helped the author improve the draft.	与读者经常交流帮助作者完善了初稿。	原创学习例句；中文译文为原创整理
+example	interaction	The study examines the interaction between sleep and stress.	这项研究考察睡眠与压力之间的相互作用。	原创学习例句；中文译文为原创整理
+collocation	interaction	interaction between A and B	A 与 B 的相互作用	强调双向关系，不能自动理解为 A 单方面影响 B。
+collocation	interaction	social interaction	社会交往；人际互动	可指面对面或线上交流。
+derived	interaction	interact	v.｜相互作用；互动	interaction 对应的动词，常用 interact with。
+derived	interaction	interactive	adj.｜互动的；交互式的	同词族形容词，常用于学习活动或软件界面。
+morphology	interaction	现代构词与词族	2023 词源快照记录 inter- 与 action 的构词分析；interact、interaction、interactive 可按动作、过程和性质成组记。交互不一定只是点击按钮，也可以是人之间或因素之间的相互作用。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	interaction	communication	n.｜交流；沟通	强调信息传递，interaction 也可指没有语言参与的相互影响。
+synonym	interaction	interplay	n.｜相互影响；相互作用	较正式，常用于多个因素如何共同产生结果。
+source	interaction	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	interaction	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	interaction	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	interaction	构词前缀：相互与之间	英语中可用 inter-（相互、在……之间）与 action（行动）理解这一构词结构。2023 关系快照保留这项分析，当前词源页也记有中古拉丁语借入路线；结构分析与最初借入历史是不同层面，不应拼成唯一来源。	https://en.wiktionary.org/wiki/interaction#English
+source	interaction	Wiktionary：interaction	https://en.wiktionary.org/wiki/interaction#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	interaction	Wiktionary：inter-	https://en.wiktionary.org/wiki/inter-#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	internal	The internal battery keeps the clock running during a short power cut.	短暂停电时，内置电池能让时钟继续运行。	原创学习例句；中文译文为原创整理
+example	internal	The company carried out an internal review of its training process.	公司对培训流程开展了内部审查。	原创学习例句；中文译文为原创整理
+collocation	internal	internal communication	内部沟通	指组织内部成员之间的信息交流。
+collocation	internal	internal structure	内部结构	用于物体、系统或组织的内部组成。
+derived	internal	internally	adv.｜在内部；对内	internal 加 -ly。
+derived	internal	internalize	v.｜内化；把观念纳入自身	internal 的相关动词，也写作 internalise。
+morphology	internal	现代构词与词族	internal 与 external 形成内部和外部的对照，internally 是副词。internalize 常表示把规则或观念逐渐吸收为自己的习惯，不是简单地把一个文件放进文件夹。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	internal	inner	adj.｜内部的；内心的	常指较内层空间或人的心理，范围与 internal 不完全相同。
+synonym	internal	in-house	adj.｜机构内部的	专指由本组织人员完成或使用，不能替换人体器官等内部义。
+source	internal	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	internal	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	internal	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	issue	The meeting focused on one issue: how to make the entrance accessible.	会议只讨论一个问题：如何让入口便于无障碍通行。	原创学习例句；中文译文为原创整理
+example	issue	The office will issue a new card after checking your details.	核对信息后，办公室会发放一张新卡。	原创学习例句；中文译文为原创整理
+collocation	issue	address an issue	处理问题	address 在这里是着手处理，不是填写地址。
+collocation	issue	issue a statement	发表声明	issue 作及物动词，强调正式发布。
+derived	issue	issuer	n.｜发行者；发放机构	issue 加表示执行者的 -er，常用于银行卡或证券发行。
+derived	issue	reissue	v.｜重新发行；n.｜再版	re- 表示再次，常用于书籍、唱片或文件。
+morphology	issue	现代构词与词族	issue 可指问题、期刊某一期，也可表示发布。issuer、reissue 属发布或发行这一支词义；它们并不是从“难题”义自然推出来的，词族学习仍需按义项区分。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	issue	problem	n.｜问题；困难	侧重需要解决的障碍，issue 也可能只是有待讨论的议题。
+synonym	issue	topic	n.｜话题；主题	强调讨论内容，不一定像 issue 那样涉及争议或待处理事项。
+source	issue	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	issue	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	issue	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	logical	There is a logical connection between the two steps, but it needs to be explained.	这两个步骤之间有逻辑联系，但需要加以说明。	原创学习例句；中文译文为原创整理
+example	logical	The most logical next step is to check whether the file exists.	接下来最合乎逻辑的步骤是检查文件是否存在。	原创学习例句；中文译文为原创整理
+collocation	logical	a logical conclusion	合乎逻辑的结论	推理合理还要建立在可靠前提上。
+collocation	logical	a logical sequence	合乎逻辑的顺序	强调步骤或观点之间的衔接关系。
+derived	logical	logic	n.｜逻辑；推理方式	logical 的词基名词。
+derived	logical	illogical	adj.｜不合逻辑的	否定前缀 il- 是 in- 在 l 前的形式，作用于 logical。
+morphology	logical	现代构词与词族	参考快照记录 logic 加 -al 得 logical，logically 是副词。illogical 表示不合逻辑；logical 的形容词形式不保证前提为真，错误前提也可能被按规则推演。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	logical	rational	adj.｜理性的；合理的	强调依据理性思考，logical 更强调推理结构与结论的关系。
+synonym	logical	reasonable	adj.｜合情合理的	可综合常识、情境和公平性判断，不一定是在检验形式逻辑。
+source	logical	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	logical	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	logical	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	logical	历史词根：言说与理性	logical 在现代英语中由 logic 加 -al 构成；logic 的更早来源联系希腊语 logos（言说、理性）及其相关词形。这里解释的是这一词族的历史联系，不表示任何含 log 字母的英文词都共享这个词根。	https://en.wiktionary.org/wiki/logical#English
+source	logical	Wiktionary：logical	https://en.wiktionary.org/wiki/logical#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+source	logical	Wiktionary：logic	https://en.wiktionary.org/wiki/logic#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	major	The new bridge is expected to bring major changes to local transport.	预计这座新桥将给当地交通带来重大变化。	原创学习例句；中文译文为原创整理
+example	major	She decided to major in computer science after taking an introductory course.	上过一门入门课后，她决定主修计算机科学。	原创学习例句；中文译文为原创整理
+collocation	major	a major concern	主要担忧	major 强调在多个问题中的重要程度。
+collocation	major	major in something	主修某专业	主要见于美式教育语境，in 后接学科。
+derived	major	majority	n.｜大多数	与 major 同词族，通常指超过一半或占较大部分。
+derived	major	majorship	n.｜少校职位或军衔	major 的军衔义加 -ship，较少见，不表示大学主修专业。
+morphology	major	现代构词与词族	major 有“主要的”、大学“主修”和军衔“少校”等义项；majority 表示多数，majorship 属军衔义。major 的含义不能靠“多数”一条线贯穿所有语境；与 minor 对照时要先看词性和领域。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	major	principal	adj.｜主要的；首要的	突出最重要的一项，常用于原因、目标或人物。
+synonym	major	significant	adj.｜重大的；显著的	强调重要或明显，另有统计义，不能替换 major in 这种动词结构。
+source	major	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	major	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	major	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	method	We used the same method to compare all three designs.	我们用同一种方法比较三个设计。	原创学习例句；中文译文为原创整理
+example	method	This method works well for small files but becomes slow with larger ones.	这种方法处理小文件效果不错，处理大文件却会变慢。	原创学习例句；中文译文为原创整理
+collocation	method	a method of doing something	做某事的方法	of 后接动名词。
+collocation	method	a reliable method	可靠的方法	强调在适用条件下能稳定产生可信结果。
+derived	method	methodical	adj.｜有条理的；系统的	method 的相关形容词，常评价人的做事方式。
+derived	method	methodology	n.｜方法论；研究方法体系	与 method 构成复合词族，通常不只是单个操作步骤。
+morphology	method	现代构词与词族	method 是具体方法，methodical 形容做事有条理；methodology 常讨论选择、组织方法的体系或原则。不要为了显得正式，就把任何一个 method 都改写为 methodology。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	method	procedure	n.｜程序；步骤	更强调按顺序执行的过程，method 可以是一种更宽的做法。
+synonym	method	technique	n.｜技术；技巧	更强调操作技能或特定实现手段，常比 method 更具体。
+source	method	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	method	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	method	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	minor	The update fixes several minor errors in the settings page.	这次更新修复了设置页面中的几个小错误。	原创学习例句；中文译文为原创整理
+example	minor	A minor change in wording made the instruction much easier to understand.	措辞上的一个小改动让这条指示更容易理解。	原创学习例句；中文译文为原创整理
+collocation	minor	a minor problem	小问题	强调严重程度较低，不代表完全不需处理。
+collocation	minor	a minor role	次要角色	指作用或出场份量相对较小。
+derived	minor	minority	n.｜少数；少数群体	minor 的同词族名词，常与 majority 对照。
+derived	minor	minus	prep.｜减去；adj.｜负的	词源快照列为同源异形词，现代表示减去或负的；不是 minor 加后缀得到。
+morphology	minor	现代构词与词族	minor 作形容词是较小或次要，作名词可指未成年人；minority 可指少数，也有未成年相关法律义。minus 被词源快照列为同源异形词，现代常表示减去；这不是在 minor 后简单加后缀。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	minor	small	adj.｜小的	范围更广，能表示尺寸；minor 更常评价重要性或严重程度。
+synonym	minor	secondary	adj.｜次要的	强调相对主要事物的地位，不一定说明实际规模小。
+source	minor	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	minor	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	minor	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	negative	The interview included both positive and negative comments about the service.	访谈同时收集了对这项服务的正面和负面意见。	原创学习例句；中文译文为原创整理
+example	negative	A negative number is less than zero.	负数小于零。	原创学习例句；中文译文为原创整理
+collocation	negative	a negative effect on something	对某事的负面影响	需要说明具体损害，不只给出评价。
+collocation	negative	a negative attitude	消极态度	用于人的看法或行为方式。
+derived	negative	negativity	n.｜消极态度；负面性	negative 的相关名词。
+derived	negative	negatively	adv.｜消极地；负面地	negative 加 -ly，也可表示回答是否定的。
+morphology	negative	现代构词与词族	negative 可以表示否定、消极、负数或检验阴性，negativity、negatively 的意义也随场景变化。医学报告中的 negative 不宜直接译成“坏的”，数学负数也不带情绪评价。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	negative	adverse	adj.｜不利的	强调造成阻碍或损害，只对应 negative 的部分负面影响义。
+synonym	negative	unfavorable	adj.｜不利的；不赞成的	适合评价条件或意见，不代替数学负数或语法否定义。
+source	negative	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	negative	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	negative	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	objective	The main objective is to reduce the time students spend searching for notes.	主要目标是减少学生查找笔记所花的时间。	原创学习例句；中文译文为原创整理
+example	objective	An objective review should consider the evidence, including results we dislike.	客观的审查应考虑证据，包括我们不喜欢的结果。	原创学习例句；中文译文为原创整理
+collocation	objective	achieve an objective	实现目标	objective 作名词，常用于明确的工作或研究任务。
+collocation	objective	an objective assessment	客观评估	强调判断依据证据，尽量不受个人偏好影响。
+derived	objective	objectivity	n.｜客观性	objective 的形容词义对应的名词。
+derived	objective	objectively	adv.｜客观地	objective 加 -ly，评价观察或判断方式。
+morphology	objective	现代构词与词族	objective 作名词表示目标，作形容词表示客观；objectivity、objectively 属客观这一支词义。subjective 表示主观，两者经常对照，但不能把 objective 一律当作“目标的”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	objective	aim	n.｜目标	对应名词义，通常更日常或更宽泛。
+synonym	objective	impartial	adj.｜公正无偏的	强调不偏袒任何一方，objective 更强调以事实和证据为依据。
+source	objective	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	objective	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	objective	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	obvious	The mistake was obvious once we compared the two dates.	把两个日期一比较，错误就很明显了。	原创学习例句；中文译文为原创整理
+example	obvious	There is no obvious reason for the sudden fall in attendance.	出席率突然下降，目前没有明显的原因。	原创学习例句；中文译文为原创整理
+collocation	obvious	it is obvious that ...	很明显……	that 后接完整判断；正式论证仍应交代依据。
+collocation	obvious	an obvious difference	明显差异	说明容易看出，不等于已经说明差异的原因。
+derived	obvious	obviously	adv.｜显然	obvious 加 -ly，常用于表明说话人认为信息很明确。
+derived	obvious	obviousness	n.｜明显程度	obvious 加 -ness。
+morphology	obvious	现代构词与词族	obvious、obviously、obviousness 分别是形容词、副词和名词。obviously 在交流中可能让人觉得“这还用说”，解释初学内容时要考虑语气，不能用它代替真正的理由。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	obvious	evident	adj.｜明显的	常让人联想到可以从迹象或证据中看出，语体稍正式。
+synonym	obvious	clear	adj.｜清楚的	除明显之外，还可表示易懂、透明或没有障碍。
+source	obvious	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	obvious	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	obvious	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	opportunity	The internship gave me an opportunity to work with a real development team.	这次实习让我有机会与真正的开发团队共事。	原创学习例句；中文译文为原创整理
+example	opportunity	We should use this opportunity to ask residents what they need.	我们应利用这个机会询问居民需要什么。	原创学习例句；中文译文为原创整理
+collocation	opportunity	an opportunity to do something	做某事的机会	to 后接可借此完成的行动。
+collocation	opportunity	take the opportunity	抓住机会	常接 to do，说明利用机会做了什么。
+derived	opportunity	opportune	adj.｜适时的；恰好的	opportunity 的同词族词基形式，常形容时机。
+derived	opportunity	opportunistic	adj.｜机会主义的；伺机而动的	同词族形容词，常有只顾利用机会获利的评价，不只是“有机会的”。
+morphology	opportunity	现代构词与词族	opportunity 与 opportune 对应机会与适时，参考快照记录 opportune 和 -ity 的关系。opportunistic 的含义已经带有特定态度或专门意义，不能从 opportunity 直接推成中性褒义词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	opportunity	chance	n.｜机会	更日常，也可以表示概率；opportunity 常突出有利于行动的条件。
+synonym	opportunity	opening	n.｜机会；职位空缺	常指一个具体入口或空缺，不能替换 chance 的概率义。
+source	opportunity	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	opportunity	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	opportunity	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	overall	The overall quality improved, although a few errors remained.	整体质量提高了，不过仍有少量错误。	原创学习例句；中文译文为原创整理
+example	overall	Overall, the shorter lessons were easier for students to fit into their day.	总的来说，较短的课程更容易融入学生的日常安排。	原创学习例句；中文译文为原创整理
+collocation	overall	the overall effect	整体效果	把各部分共同造成的结果放在一起评价。
+collocation	overall	overall performance	总体表现	不是只看某一次成绩或单个指标。
+derived	overall	over	prep. / adv.｜在……之上；遍及	overall 的复合词成分，不是 overall 的派生词。
+derived	overall	all	det. / pron.｜全部	overall 的另一构词成分，与 over 一起形成整体意义。
+morphology	overall	现代构词与词族	词源快照把 overall 记为 over 与 all 的复合词。overall 可作形容词“总体的”或副词“总的说来”；overalls 则常指工作服，不能把所有形式都按“整体”直译。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	overall	general	adj.｜总体的；概括的	可指大致情况，也可表示不具体，overall 更强调把全部部分一起考虑。
+synonym	overall	total	adj.｜总计的；全部的	常强调加总后的数量或完整范围，overall 可用于综合评价而非数字总和。
+source	overall	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	overall	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	overall	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	particular	Is there a particular reason why you chose this topic?	你选择这个主题有什么特定原因吗？	原创学习例句；中文译文为原创整理
+example	particular	The editor is particular about how sources are cited.	这位编辑对来源的引用方式很讲究。	原创学习例句；中文译文为原创整理
+collocation	particular	in particular	尤其；特别	用于从整体中突出某一项。
+collocation	particular	particular about something	对某事讲究或挑剔	通常用于人对细节的要求。
+derived	particular	particularly	adv.｜尤其；特别	particular 加 -ly。
+derived	particular	particularity	n.｜独特之处；细节性	particular 的相关名词，通常较正式。
+morphology	particular	现代构词与词族	particular 有特定、特别和挑剔等用法，particularly 常表示尤其。particularity 是相关名词，但日常表示具体细节也常用复数 particulars；复数形式本身不是派生。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	particular	specific	adj.｜特定的；具体的	与特定义接近，也可强调描述明确，而 particular 还可形容人挑剔。
+synonym	particular	special	adj.｜特别的	常含不寻常或有额外意义的感觉，particular reason 未必是特殊珍贵的理由。
+source	particular	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	particular	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	particular	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	pattern	We noticed a pattern in the times when students opened the application.	我们发现学生打开应用的时间存在某种规律。	原创学习例句；中文译文为原创整理
+example	pattern	The fabric has a simple pattern of blue and white lines.	这块布的图案是简单的蓝白条纹。	原创学习例句；中文译文为原创整理
+collocation	pattern	a pattern of behavior	行为模式	描述反复出现的行为特征，不必等于固定不变的规则。
+collocation	pattern	identify a pattern	识别规律或模式	需要比较多个观察，不能只凭一次现象下结论。
+derived	pattern	patternless	adj.｜无图案的；没有明显模式的	pattern 加 -less，具体意义取决于物体或数据语境。
+derived	pattern	patterning	n.｜图案的形成；模式分布	这里是专门的名词用法，不是把任意动词进行式当派生。
+morphology	pattern	现代构词与词族	pattern 可指视觉图案，也可指重复出现的规律；patternless 是否定性质，patterning 可作表示模式形成或分布的名词。发现 pattern 并不自动说明有因果关系，还需要进一步检验。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	pattern	design	n.｜图案；设计	图案义接近，但 design 往往含有有意设计，pattern 也可能自然产生。
+synonym	pattern	trend	n.｜趋势	强调随时间发展的方向，pattern 可以是不随时间排序的重复结构。
+source	pattern	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	pattern	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	pattern	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	perspective	Reading the same event from another person's perspective changed my view.	从另一个人的角度了解同一事件，改变了我的看法。	原创学习例句；中文译文为原创整理
+example	perspective	The painting uses perspective to make the narrow street appear deeper.	这幅画运用透视法，让狭窄的街道显得更有纵深。	原创学习例句；中文译文为原创整理
+collocation	perspective	from a different perspective	从不同角度	常用于重新理解问题。
+collocation	perspective	put something into perspective	恰当地看待某事	通过比较背景与重要性，让评价更合理。
+derived	perspective	perspectival	adj.｜视角的；透视的	perspective 的相关形容词，较正式，常见于艺术或理论讨论。
+derived	perspective	perspectivism	n.｜视角主义	同词族的哲学术语，强调认识与视角的关系，不等于普通意见。
+morphology	perspective	现代构词与词族	perspective 有观点和绘画透视两种常用义，perspectival 是相关形容词，perspectivism 是特定思想术语。它与 prospective“预期的、潜在的”拼写相近，但不是同一个词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	perspective	viewpoint	n.｜观点；观察角度	与观点义接近，常突出个人立场。
+synonym	perspective	outlook	n.｜看法；前景	可表示对生活的总体态度或未来预期，不对应绘画的透视法。
+source	perspective	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	perspective	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	perspective	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	policy	The library has a clear policy on borrowing digital equipment.	图书馆对借用数字设备有明确规定。	原创学习例句；中文译文为原创整理
+example	policy	Read the insurance policy carefully before deciding what protection you need.	决定需要哪些保障之前，请仔细阅读保险单。	原创学习例句；中文译文为原创整理
+collocation	policy	a policy on something	关于某事的政策	on 后引出政策针对的事项。
+collocation	policy	implement a policy	实施政策	强调把规定付诸实际行动。
+derived	policy	policymaker	n.｜政策制定者	policy 与 maker 构成复合词，也常写作 policy-maker。
+derived	policy	policymaking	n.｜政策制定	policy 与 making 构成复合名词，表示制定政策的活动。
+morphology	policy	现代构词与词族	policy 有政策和保险单两种常见意义，其历史来源并非简单的一条线。policymaker、policymaking 属政策义的复合词族；policyholder 则属于保险义，学习时应按分支区分。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	policy	rule	n.｜规则	通常是某项具体要求，policy 可以是一整套行动方向或管理原则。
+synonym	policy	guideline	n.｜指导方针；准则	常给出推荐做法，约束程度不一定与正式 policy 相同。
+source	policy	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	policy	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	policy	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	positive	The first trial received positive feedback from most of the participants.	第一次试用收到了多数参与者的积极反馈。	原创学习例句；中文译文为原创整理
+example	positive	The account shows a positive balance after all the bills have been paid.	付清所有账单后，账户余额仍为正。	原创学习例句；中文译文为原创整理
+collocation	positive	a positive attitude	积极态度	描述看待事情的方式，不意味着忽略问题。
+collocation	positive	a positive effect on something	对某事的积极影响	应说明具体收益，避免只作笼统评价。
+derived	positive	positivity	n.｜积极性；正值性质	positive 的相关名词，具体意义随情境变化。
+derived	positive	positively	adv.｜积极地；肯定地	positive 加 -ly，也可能表示确实或完全。
+morphology	positive	现代构词与词族	positive 可表示积极、肯定、正数或检测阳性；positivity、positively 同样需要按领域理解。检测 positive 只是结果类型，不能直接按日常褒义译成“好结果”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	positive	favorable	adj.｜有利的；赞许的	可对应意见或效果的正面义，不替换数学正数义。
+synonym	positive	optimistic	adj.｜乐观的	强调对未来抱有希望，positive 也可指当下已经出现的有利结果。
+source	positive	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	positive	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	positive	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	potential	The prototype has potential, but its search function still needs work.	这个原型有发展潜力，不过搜索功能仍需改进。	原创学习例句；中文译文为原创整理
+example	potential	We discussed the potential risks before collecting any personal information.	收集任何个人信息之前，我们讨论了潜在风险。	原创学习例句；中文译文为原创整理
+collocation	potential	the potential to do something	做某事的潜力	to do 说明可能实现的能力或作用。
+collocation	potential	potential benefits	潜在好处	表示有可能实现，不能当作已经得到的效果。
+derived	potential	potentially	adv.｜潜在地；可能地	potential 加 -ly，用于未必已经发生的影响。
+derived	potential	potentiality	n.｜潜能；可能性	potential 的相关名词，较正式。
+morphology	potential	现代构词与词族	potential 可作名词“潜力”或形容词“潜在的”，potentially 是副词，potentiality 是较正式的相关名词。potential 与 actual“实际的”常作对照，具有潜力不等于已经实现。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	potential	possible	adj.｜可能的	范围更广，potential 常指条件中已有实现某种结果的可能。
+synonym	potential	promise	n.｜成功的希望；潜力	有潜力义时常带积极期待，potential 也可修饰风险等负面结果。
+source	potential	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	potential	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	potential	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	practical	The workshop offers practical advice on organizing a small research project.	工作坊为组织小型研究项目提供实用建议。	原创学习例句；中文译文为原创整理
+example	practical	This design looks attractive, but it may not be practical for a crowded kitchen.	这个设计很好看，但对拥挤的厨房来说可能不实用。	原创学习例句；中文译文为原创整理
+collocation	practical	practical experience	实践经验	强调亲自操作，与只学习理论相对。
+collocation	practical	a practical solution	可行而实用的办法	既能实施，也能解决实际问题。
+derived	practical	practice	n.｜实践；练习	practical 的同词族名词形式，英式动词常写 practise。
+derived	practical	practicality	n.｜实用性；可行性	practical 的相关名词，用于评价能否在现实中实施。
+morphology	practical	现代构词与词族	practical 与 practice 同词族，practicality 表示实用程度；practically 是副词，但常有“几乎”的意思。practically finished 往往是快完成了，不是“以实践方式完成”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	practical	useful	adj.｜有用的	强调能帮上忙，practical 还可强调可实施、重实际操作。
+synonym	practical	feasible	adj.｜可行的	强调现有条件下做得到，不一定说明它是最实用的选择。
+source	practical	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	practical	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	practical	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	precise	Please give a precise description of the error message you saw.	请准确具体地描述你看到的报错信息。	原创学习例句；中文译文为原创整理
+example	precise	The diagram shows the precise position of each sensor.	这张图标出了每个传感器的确切位置。	原创学习例句；中文译文为原创整理
+collocation	precise	a precise measurement	精密的测量	precision 与 accuracy 在科学语境中要区别，精密不自动保证无偏差。
+collocation	precise	to be precise	确切地说	用于进一步限定或修正前面的表达。
+derived	precise	precision	n.｜精确；精密度	precise 的相关名词，技术语境可有专门定义。
+derived	precise	precisely	adv.｜精确地；恰好	precise 加 -ly。
+morphology	precise	现代构词与词族	precise、precision、precisely 构成常用词族，imprecise 表示不够确切。测量中的 precision 常关注结果离散程度等特性，而 accuracy 关注与参考真值的接近程度，不宜简单当完全同义词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	precise	exact	adj.｜确切的；精确的	常突出完全吻合或没有含糊，适用于时间、数量和措辞。
+synonym	precise	accurate	adj.｜准确的	强调符合事实或真实值，不能单凭数据位数多就认为 accurate。
+source	precise	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	precise	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	precise	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	previous	The previous version of the application stored notes in a different format.	应用的上一个版本使用了另一种笔记存储格式。	原创学习例句；中文译文为原创整理
+example	previous	No previous knowledge of databases is required for this lesson.	学习这节课不需要已有的数据库知识。	原创学习例句；中文译文为原创整理
+collocation	previous	the previous day	前一天	相对于文中某个时间点，不一定是今天的昨天。
+collocation	previous	previous experience	以往经验	招聘或课程要求中常见，experience 一般不可数。
+derived	previous	previously	adv.｜以前；先前	previous 加 -ly。
+derived	previous	previousness	n.｜先前性；在前	previous 加 -ness，较少见，不宜代替常用的 previous experience 等表达。
+morphology	previous	现代构词与词族	previous 是“先前的”，previously 用于说明事情先前发生。previousness 虽是名词形式却很少见；优先掌握 previous + 名词及 previously + 动词，不为了词族齐全而在普通写作中强用生僻形式。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	previous	earlier	adj.｜更早的	突出时间先后比较，previous 常指紧邻之前或已提到的先前一项。
+synonym	previous	former	adj.｜以前的	常表示已经不再担任某身份或不再处于某状态。
+source	previous	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	previous	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+example	primary	The primary aim of the survey is to understand why readers stop midway.	这次调查的首要目的是了解读者为什么中途停止阅读。	原创学习例句；中文译文为原创整理
+example	primary	The school provides primary education for children in nearby villages.	这所学校为附近村庄的儿童提供小学教育。	原创学习例句；中文译文为原创整理
+collocation	primary	a primary concern	首要关注的问题	primary 强调在优先顺序中的地位。
+collocation	primary	a primary source	一手资料	研究中指直接来自事件、观察或原始记录的材料，仍需评价可信度。
+derived	primary	primarily	adv.｜主要地；首先	primary 对应的副词，y 变为 i 后接 -ly。
+derived	primary	primacy	n.｜首要地位；优先	与 primary 同词族的名词，不是简单按拼写逐段相加。
+morphology	primary	现代构词与词族	primary、primarily、primacy 可联系首要地位这一词义；primary 也可指初级或小学阶段。primary source 指材料的来源层级，并不保证它没有错误或偏见。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	primary	main	adj.｜主要的	更日常，表示最重要或最大部分。
+synonym	primary	principal	adj.｜首要的；主要的	语体较正式，与 primary 的首要义接近，但不对应小学等固定用法。
+source	primary	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	primary	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	primary	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	principle	The design follows the principle that users should be able to undo mistakes.	这个设计遵循一条原则：用户应能撤销误操作。	原创学习例句；中文译文为原创整理
+example	principle	We learned the basic principle behind how a simple electric motor works.	我们学习了简单电动机工作的基本原理。	原创学习例句；中文译文为原创整理
+collocation	principle	in principle	原则上；大体上	通常表示总体同意，细节或实际实施仍可能受限。
+collocation	principle	a basic principle	基本原理；基本原则	可指解释自然现象的规则，也可指行动准则。
+derived	principle	principled	adj.｜有原则的	由 principle 形成的形容词，常评价人的立场。
+derived	principle	unprincipled	adj.｜无原则的；不讲道德的	un- 否定 principled，通常带负面评价。
+morphology	principle	现代构词与词族	principle 是原则或原理，principled 形容遵守原则的人，unprincipled 表示缺乏原则。principal 则常是形容词“主要的”或名词“校长”，读音相近但拼写、词性和含义不同。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	principle	rule	n.｜规则	可以是具体操作要求，principle 更像支撑多条规则的基本准则。
+synonym	principle	doctrine	n.｜学说；信条	通常属于较成体系的思想或组织信念，未必是一般实用原则。
+source	principle	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	principle	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	principle	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	principle	历史词源：开端与基础	principle 经法语联系拉丁语 prīncipium（开端、基础），进一步与 prīnceps 的“首要”含义相连。可由基础性的东西理解原则或原理；历史词族联系不能消除 principle 与 principal 的现代拼写和用法区别。	https://en.wiktionary.org/wiki/principle#English
+source	principle	Wiktionary：principle	https://en.wiktionary.org/wiki/principle#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	process	The application can process several documents while you continue reading.	你继续阅读时，应用可以同时处理几份文档。	原创学习例句；中文译文为原创整理
+example	process	Learning to write clearly is a gradual process.	学会清楚地写作是一个循序渐进的过程。	原创学习例句；中文译文为原创整理
+collocation	process	in the process of doing something	正在做某事的过程中	of 后接动名词。
+collocation	process	a decision-making process	决策过程	关注从信息到选择所经过的步骤。
+derived	process	processor	n.｜处理器；加工设备	process 加表示执行者或设备的 -or。
+derived	process	processing	n.｜处理；加工	此处是活动名词，如 data processing；句中也可能是动词形式。
+morphology	process	现代构词与词族	process 可作名词“过程、进程”或动词“处理”，processor 常指执行处理的设备。processing 在 data processing 中是名词用法；不是任意出现 -ing 就多出一个独立派生词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	process	procedure	n.｜步骤；程序	通常是规定或安排好的做法，process 也可指自然发生的发展过程。
+synonym	process	handle	v.｜处理	较宽泛日常，process 常涉及按系统规则加工信息或材料。
+source	process	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	process	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	process	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	progress	The students made steady progress after they began reviewing a little each day.	开始每天少量复习后，学生们取得了稳定进步。	原创学习例句；中文译文为原创整理
+example	progress	We can measure progress by comparing what the prototype could do last week with what it can do now.	我们可以比较原型上周和现在的功能，以衡量进展。	原创学习例句；中文译文为原创整理
+collocation	progress	make progress	取得进步	progress 在这一用法中不可数，不说 make a progress。
+collocation	progress	in progress	正在进行中	常用于工作、比赛或调查尚未结束的状态。
+derived	progress	progression	n.｜发展；推进；递进	progress 的相关名词，常强调按顺序推进的过程。
+derived	progress	progressive	adj.｜逐步发展的；进步的	同词族形容词，也有政治或医学等专门含义。
+morphology	progress	现代构词与词族	progress 可作名词或动词，progression 强调推进过程，progressive 形容逐步发展。progressive disease 指逐步加重的疾病，并非“有积极进步的疾病”，应按领域理解。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	progress	advancement	n.｜进展；提升	常含技术发展或地位提高的意思，语体较正式。
+synonym	progress	improvement	n.｜改善；进步	明确强调变得更好，progress 也可仅指一项任务向完成推进。
+source	progress	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	progress	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	progress	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	range	The shop offers a wide range of notebooks at different prices.	这家店出售价格不同、种类丰富的笔记本。	原创学习例句；中文译文为原创整理
+example	range	The temperatures range from ten to twenty degrees during the day.	白天的温度在十到二十度之间变化。	原创学习例句；中文译文为原创整理
+collocation	range	a wide range of something	多种多样的某物	range 强调整体涵盖的种类或区间。
+collocation	range	range from A to B	范围从 A 到 B	用于数量、类别或不同情况。
+derived	range	ranger	n.｜护林员；巡护员	与 range 的巡行、管理地域义相关，不是“范围”这一抽象义的直接同义词。
+derived	range	rangy	adj.｜身材瘦长的；活动范围大的	词典记录的同词族形容词，具体意义与描述对象有关。
+morphology	range	现代构词与词族	range 的范围义常用 from ... to ...；作为动词还可涉及延伸或游走。ranger、rangy 与这些较具体的词义相连，不能把所有词族形式都直接译成范围。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	range	scope	n.｜范围；涉及面	常强调工作、研究或权限涵盖哪些内容，未必是数值区间。
+synonym	range	variety	n.｜多样性；多种类型	强调种类不同，range 还可说明上下限或覆盖宽度。
+source	range	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	range	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	range	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	rational	A rational decision should consider both the costs and the likely benefits.	理性的决定应同时考虑成本与可能收益。	原创学习例句；中文译文为原创整理
+example	rational	The disagreement became easier to resolve after both sides gave rational explanations.	双方作出合理解释后，分歧更容易解决了。	原创学习例句；中文译文为原创整理
+collocation	rational	a rational explanation	合理解释	强调能由理由支持，不只是听起来令人安心。
+collocation	rational	rational thinking	理性思考	通常指依据理由和证据思考。
+derived	rational	rationality	n.｜理性；合理性	rational 的相关名词。
+derived	rational	irrational	adj.｜不理性的；无理的	否定前缀 ir- 是 in- 在 r 前的形式；数学中也可指无理数的。
+morphology	rational	现代构词与词族	rational、rationality、rationally 是常见词族，irrational 表示否定。数学里的 rational number 是有理数，irrational number 是无理数；这里的“理”不是在评价数字聪不聪明。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	rational	reasonable	adj.｜合理的	可综合公平、常识和现实情况，rational 更强调基于理性推理。
+synonym	rational	logical	adj.｜合乎逻辑的	更突出推理步骤不矛盾，不必然覆盖现实决策的全部考虑。
+source	rational	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	rational	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	rational	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	reasonable	A reasonable deadline gives everyone enough time to check their work.	合理的截止时间能让每个人有足够时间检查工作。	原创学习例句；中文译文为原创整理
+example	reasonable	It is reasonable to ask how the data were collected.	询问数据是如何收集的，这是合理的。	原创学习例句；中文译文为原创整理
+collocation	reasonable	a reasonable price	合理的价格	通常表示不过高、可以接受，不一定是最便宜。
+collocation	reasonable	a reasonable assumption	合理假设	表示有一定根据，仍可能需要进一步检验。
+derived	reasonable	reason	n.｜理由；理性	reasonable 的同词族词基形式。
+derived	reasonable	reasonableness	n.｜合理性	reasonable 加 -ness，评价要求、行为或判断是否适当。
+morphology	reasonable	现代构词与词族	reason 与 reasonable 可联系理由和合理性，reasonably 是副词，unreasonable 是否定形式。reasonably good 常表示还不错、相当好，程度未必达到 very good。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	reasonable	fair	adj.｜公平的；合理的	强调对各方公正，reasonable 还可评价推断或价格。
+synonym	reasonable	sensible	adj.｜明智的；切合实际的	强调符合常识、可行，常用于决定或建议。
+source	reasonable	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	reasonable	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	reasonable	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	recent	Recent studies have examined how short breaks affect concentration.	近来的研究考察了短暂休息如何影响注意力。	原创学习例句；中文译文为原创整理
+example	recent	The museum displays photographs from both its early years and its recent history.	博物馆展示了早期和近年历史的照片。	原创学习例句；中文译文为原创整理
+collocation	recent	in recent years	近年来	时间范围相对于当前或叙述时点，常搭配完成时。
+collocation	recent	a recent development	近期进展	表示发生不久，不一定就是最新的一项。
+derived	recent	recently	adv.｜最近	recent 加 -ly。
+derived	recent	recency	n.｜新近性；近期程度	recent 的相关名词，在研究中可用于 recency effect 等术语。
+morphology	recent	现代构词与词族	recent 作形容词放在名词前或表语位置，recently 作副词描述时间；recency 是抽象名词。recent 不必是 latest“最新的”，它可以包括一段时间内的多项变化。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	recent	latest	adj.｜最新的	强调按时间排序最靠后的一项，范围通常比 recent 更窄。
+synonym	recent	new	adj.｜新的	可以指从未使用或刚出现，recent 更直接强调时间距今不久。
+source	recent	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	recent	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	recent	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	region	The region is known for its forests and small mountain villages.	这个地区以森林和山间村落闻名。	原创学习例句；中文译文为原创整理
+example	region	Rainfall varies greatly from one region to another.	不同地区的降雨量差异很大。	原创学习例句；中文译文为原创整理
+collocation	region	a rural region	乡村地区	描述地区的性质，不是正式行政等级。
+collocation	region	in the region of a number	大约某个数量	这一固定表达表示约数，不是地理位置。
+derived	region	regional	adj.｜地区的；区域性的	region 加 -al。
+derived	region	regionally	adv.｜在地区层面；按区域	regional 加 -ly。
+morphology	region	现代构词与词族	region、regional、regionally 分别表示地区、区域性的及在地区层面。region 可以是自然、文化或行政范围，不必等于一个省；in the region of 还可引出大致数额。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	region	area	n.｜地区；区域	最宽泛日常，也可指研究领域或面积。
+synonym	region	district	n.｜区；地区	更容易指正式划定或承担特定用途的地区，region 通常范围更宽。
+source	region	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	region	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	region	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	regulation	The new regulation requires clear labels on all rechargeable batteries.	新规定要求所有充电电池标注清楚的信息。	原创学习例句；中文译文为原创整理
+example	regulation	Temperature regulation is essential for keeping the samples stable.	温度调节对保持样品稳定十分重要。	原创学习例句；中文译文为原创整理
+collocation	regulation	comply with a regulation	遵守规定	comply 后接 with，不直接接 regulation。
+collocation	regulation	the regulation of something	对某事物的管理或调节	可指行业监管，也可指生理或机械调节。
+derived	regulation	regulate	v.｜管理；调节	regulation 对应的动词词基。
+derived	regulation	regulatory	adj.｜监管的；调节的	同词族形容词，常见 regulatory body。
+morphology	regulation	现代构词与词族	词源快照记录 regulate 与 -ion；regulation 可作可数名词“规定”，也可表示不可数的调节过程。regulatory 是相关形容词，regular 则通常表示规律的，不可因相似就混用。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	regulation	rule	n.｜规则	更一般，可以是游戏或个人规定，regulation 常有正式管理机构背景。
+synonym	regulation	control	n.｜控制；管理	对应调节或管理过程，不一定是一条书面的正式规定。
+source	regulation	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	regulation	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	regulation	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	relationship	The study explores the relationship between reading habits and vocabulary growth.	这项研究探索阅读习惯与词汇增长之间的关系。	原创学习例句；中文译文为原创整理
+example	relationship	A good relationship with colleagues makes it easier to ask for help.	与同事关系良好，会让求助更容易。	原创学习例句；中文译文为原创整理
+collocation	relationship	the relationship between A and B	A 与 B 之间的关系	研究中有关联不自动意味着存在因果关系。
+collocation	relationship	build a relationship with someone	与某人建立关系	常用于信任、合作或长期联系。
+derived	relationship	relation	n.｜关系；联系	relationship 的词基名词，参考快照记录 relation 与 -ship。
+derived	relationship	relational	adj.｜关系的；关系型的	relation 的相关形容词，计算机中常见 relational database。
+morphology	relationship	现代构词与词族	relationship 由 relation 加 -ship 形成，表示关系状态。relational 属 relation 这一词基的另一分支；它不是在 relationship 后加词尾产生的，数据库中的关系型也有专门含义。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	relationship	connection	n.｜联系	较宽泛，可能只是一个联系点，relationship 常含较持续或有结构的关系。
+synonym	relationship	association	n.｜关联	研究中常指观察到的相关性，不应直接改写为因果影响。
+source	relationship	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	relationship	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	relationship	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	representative	Each class will choose a representative for the student meeting.	每个班将选出一名代表参加学生会议。	原创学习例句；中文译文为原创整理
+example	representative	The sample should be representative of the population we want to study.	样本应能代表我们想研究的总体。	原创学习例句；中文译文为原创整理
+collocation	representative	a representative of something	某组织的代表	of 后接所代表的群体或机构。
+collocation	representative	representative of something	能代表某事物的	形容词用法，强调典型性或反映整体特点。
+derived	representative	represent	v.｜代表；表现	representative 的动词词基。
+derived	representative	representation	n.｜代表；呈现方式	represent 的相关名词，与 representative 属同一词族。
+morphology	representative	现代构词与词族	represent 是动作，representation 可指代表或呈现，representative 可指代表人，也可表示有代表性的。统计样本是否 representative 取决于抽样方式与目标总体，不能只看样本数量大不大。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	representative	delegate	n.｜代表	常指被授权参加会议或行使职责的人，权限可能更明确。
+synonym	representative	typical	adj.｜典型的	强调具有某类常见特征，representative 常强调足以反映更大整体。
+source	representative	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	representative	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	representative	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	resource	The guide is a useful resource for students planning their first project.	这份指南是学生规划第一个项目时的实用资料。	原创学习例句；中文译文为原创整理
+example	resource	Clean water is a resource that the community cannot afford to waste.	洁净水源是这个社区不能浪费的资源。	原创学习例句；中文译文为原创整理
+collocation	resource	natural resources	自然资源	常用复数，涵盖水、森林、矿产等。
+collocation	resource	make use of a resource	利用某项资源	resource 可以是物资，也可以是信息或支持。
+derived	resource	resourceful	adj.｜足智多谋的；善于应变的	resource 加 -ful，强调善于找到解决办法，不只是资源多。
+derived	resource	resourcefulness	n.｜应变能力；机智	resourceful 加 -ness。
+morphology	resource	现代构词与词族	resource 可以是可利用的物资、资料或办法；resourceful 表示善于找办法，resourcefulness 表示这种能力。资源丰富的地区通常说 resource-rich，不能简单用 resourceful 代替。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	resource	asset	n.｜资产；有用之物	强调具有价值、能带来帮助，resource 更突出可以调用或使用。
+synonym	resource	material	n.｜材料；资料	指可使用的物质或内容，只覆盖 resource 的部分范围。
+source	resource	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	resource	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	resource	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	responsible	The project leader is responsible for keeping the schedule up to date.	项目负责人负责及时更新时间表。	原创学习例句；中文译文为原创整理
+example	responsible	A responsible decision considers how other people may be affected.	负责任的决定会考虑其他人可能受到的影响。	原创学习例句；中文译文为原创整理
+collocation	responsible	responsible for something	对某事负责；是某事的原因	for 后可以是职责，也可以是造成的结果。
+collocation	responsible	responsible to someone	向某人负责	to 常引出上级或需要交代工作的对象。
+derived	responsible	responsibility	n.｜责任；职责	responsible 对应的名词，-ible 与 -ibility 形成词尾变化。
+derived	responsible	irresponsible	adj.｜不负责任的	ir- 是否定前缀在 r 前的形式。
+morphology	responsible	现代构词与词族	responsible、responsibility、responsibly 对应性质、责任概念与行为方式；irresponsible 表示否定。responsible for a delay 可以指造成延误，不一定是在表扬负责人有责任心。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	responsible	accountable	adj.｜负有解释责任的	更强调需要说明决定、承担问责，responsible 也可只是分管一项任务。
+synonym	responsible	reliable	adj.｜可靠的	强调值得依赖、表现稳定，与负责有联系但不等于承担某项职责。
+source	responsible	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	responsible	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	responsible	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	result	The result was different from what we had predicted.	结果与我们之前预测的不同。	原创学习例句；中文译文为原创整理
+example	result	A missing configuration file can result in a startup failure.	缺少配置文件可能导致启动失败。	原创学习例句；中文译文为原创整理
+collocation	result	result in something	导致某种结果	in 后接结果，方向与 result from 相反。
+collocation	result	result from something	由某事引起	from 后接原因。
+derived	result	resultant	adj.｜由此产生的；n.｜合成结果	result 的相关形式，形容词常用于较正式说明。
+derived	result	resulting	adj.｜随之产生的	分词形容词，如 the resulting delay；具体句中也可能是动词形式。
+morphology	result	现代构词与词族	result 可作名词“结果”或动词“导致、源于”；resultant 与 resulting 常形容随后产生的事物。最需要分清的是 result in 接结果、result from 接原因，不能只记一个“导致”。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	result	outcome	n.｜结果；结局	常指一段过程结束后的整体结果，result 也可指单次计算或测量值。
+synonym	result	consequence	n.｜后果	强调由某行为引起，日常常带负面意味，但并非只能用于坏结果。
+source	result	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	result	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	result	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	role	Teachers play an important role in helping students judge online information.	教师在帮助学生判断网上信息方面发挥重要作用。	原创学习例句；中文译文为原创整理
+example	role	Her role in the project is to test the interface with new users.	她在项目中的职责是与新用户一起测试界面。	原创学习例句；中文译文为原创整理
+collocation	role	play a role in something	在某事中起作用	in 后接受影响的活动或结果。
+collocation	role	take on a role	承担角色或职责	强调开始接受一项责任。
+derived	role	role-play	v. / n.｜角色扮演	role 与 play 构成复合词，常用于训练或课堂活动。
+derived	role	role-playing	n. / adj.｜角色扮演；角色扮演的	复合活动名词及其修饰用法，不把普通进行时自动算作派生。
+morphology	role	现代构词与词族	role 指角色、职责或作用；role-play 与 role-playing 是相应复合词。roll 虽与 role 有历史联系，但现代常指滚动、卷轴或名单，拼写相近不代表可以互换。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	role	function	n.｜功能；作用	强调实际承担的用途，role 更常涉及人、组织或某因素在整体中的位置。
+synonym	role	part	n.｜角色；参与作用	戏剧角色义接近，也可用于 play a part in，表达较日常。
+source	role	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	role	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	role	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	scientific	A scientific explanation should be open to testing and revision.	科学解释应当允许检验与修正。	原创学习例句；中文译文为原创整理
+example	scientific	The museum shows how scientific instruments changed the study of light.	博物馆展示了科学仪器如何改变人们对光的研究。	原创学习例句；中文译文为原创整理
+collocation	scientific	scientific evidence	科学证据	需要结合研究方法、数据质量与适用范围理解。
+collocation	scientific	scientific research	科学研究	research 表示一般研究活动时通常不可数。
+derived	scientific	science	n.｜科学；学科	scientific 的同词族名词形式，不是把完整 science 原样加后缀。
+derived	scientific	scientifically	adv.｜以科学方法；在科学上	scientific 的副词形式，词尾为 -ically。
+morphology	scientific	现代构词与词族	science、scientist、scientific、scientifically 分别关联学科、研究者、性质与方法。scientific 的拼写使用 scient-，scientifically 以 -ically 结尾；带着科学术语不自动等于结论可靠。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	scientific	empirical	adj.｜基于观察或实验的	强调证据来自经验观察，scientific 还涉及理论建模与方法规范。
+synonym	scientific	systematic	adj.｜系统的	强调有计划、有秩序，系统地做一件事不一定就是科学研究。
+source	scientific	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	scientific	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	scientific	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	similar	The two apps have similar layouts, but their search tools work differently.	两个应用的布局相似，但搜索工具的工作方式不同。	原创学习例句；中文译文为原创整理
+example	similar	I had a similar problem when I moved the files to another computer.	我把文件移到另一台电脑时，也遇到过类似问题。	原创学习例句；中文译文为原创整理
+collocation	similar	similar to something	与某物相似	用 to 引出比较对象，不用 with。
+collocation	similar	similar in some way	在某方面相似	in 后说明相似的具体维度。
+derived	similar	similarity	n.｜相似性；相似之处	similar 对应的名词，可指抽象性质或具体相似点。
+derived	similar	similarly	adv.｜相似地；同样	similar 加 -ly，也可用于连接相似情况。
+morphology	similar	现代构词与词族	similar、similarity、similarly 构成常用词族，dissimilar 表示不相似。similar 只是某些方面接近，identical 才强调相同；描述研究对象时最好说明 similar in 哪些方面。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	similar	alike	adj.｜相像的	常用于表语，如 the two look alike，不通常直接放在名词前。
+synonym	similar	comparable	adj.｜可比较的；相当的	强调存在有意义的比较基础，不一定外观或全部特征都相似。
+source	similar	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	similar	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	similar	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	specific	Please give a specific example instead of saying that the interface is confusing.	请给出具体例子，不要只说界面令人困惑。	原创学习例句；中文译文为原创整理
+example	specific	This tool was designed for a specific group of users.	这个工具是为特定用户群设计的。	原创学习例句；中文译文为原创整理
+collocation	specific	specific to something	某事物特有的	to 引出特征所属的领域、物种或群体。
+collocation	specific	a specific requirement	具体要求	应当清楚说明需要做到什么。
+derived	specific	specifically	adv.｜具体地；专门地	specific 的副词形式，以 -ically 结尾。
+derived	specific	specificity	n.｜具体性；特异性	specific 的相关名词，统计或医学中可能有专门定义。
+morphology	specific	现代构词与词族	specific 表示具体或特定，specifically 可以说明“专门为了某目的”，specificity 表示这种性质。特定领域的 specificity 不能只靠日常“具体”来猜含义，应查相应定义。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	specific	particular	adj.｜特定的	强调某个指定对象，specific 还常强调细节明确。
+synonym	specific	precise	adj.｜确切的	更强调表达或测量没有含糊，specific 可以只是限定了对象。
+source	specific	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	specific	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	specific	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	stable	The connection remained stable throughout the online interview.	整个线上访谈期间，连接一直很稳定。	原创学习例句；中文译文为原创整理
+example	stable	The project needs stable funding before it can expand.	项目需要稳定的资金来源，才能扩大规模。	原创学习例句；中文译文为原创整理
+collocation	stable	a stable environment	稳定的环境	强调条件不易出现剧烈变化。
+collocation	stable	remain stable	保持稳定	用于价格、状态、系统表现等。
+derived	stable	stability	n.｜稳定性	stable 的形容词义对应的名词。
+derived	stable	unstable	adj.｜不稳定的	un- 表示否定，可指物体易倒、系统波动或情况不稳。
+morphology	stable	现代构词与词族	stable 的形容词义“稳定”对应 stability、unstable；名词 stable 还表示马厩，属于不同的词义分支。描述软件版本 stable 时谈的是运行稳定性，不是建筑物。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	stable	steady	adj.｜稳定的；平稳的	常强调持续变化不大，适用于速度、增长或状态。
+synonym	stable	secure	adj.｜稳固的；有保障的	更强调不易失去或受到威胁，stable 更强调状态不易波动。
+source	stable	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	stable	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	stable	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	strategy	Our strategy is to release a small working version before adding advanced features.	我们的策略是先发布能用的小版本，再增加高级功能。	原创学习例句；中文译文为原创整理
+example	strategy	The school developed a strategy for reducing food waste.	学校制定了减少食物浪费的策略。	原创学习例句；中文译文为原创整理
+collocation	strategy	a strategy for doing something	做某事的策略	for 后接动名词，说明策略目的。
+collocation	strategy	develop a strategy	制定策略	通常需要把目标、资源与行动联系起来。
+derived	strategy	strategic	adj.｜战略性的；策略上的	strategy 的相关形容词。
+derived	strategy	strategist	n.｜策略制定者；战略家	strategy 的相关表示人的名词。
+morphology	strategy	现代构词与词族	strategy、strategic、strategist 分别是策略、策略性的与制定策略的人；strategically 是副词。strategy 通常是较整体的安排，具体某一步战术可用 tactic，二者层级并不完全相同。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	strategy	plan	n.｜计划	范围较广，可只是安排时间和步骤，strategy 更强调实现目标的整体办法。
+synonym	strategy	approach	n.｜思路；处理方式	可指一般态度或方法，未必像 strategy 那样包含具体目标与资源安排。
+source	strategy	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	strategy	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	strategy	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	strategy	历史词根：带领军队	来源联系希腊语 stratēgia 和 stratēgos，后者的成分涉及 stratos（军队）与 agō（带领）。军事指挥的历史背景有助于理解整体谋划；现代 strategy 广泛用于学习、商业等领域，并不限于战争。	https://en.wiktionary.org/wiki/strategy#English
+source	strategy	Wiktionary：strategy	https://en.wiktionary.org/wiki/strategy#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	structure	A clear structure helps readers follow a long explanation.	清楚的结构能帮助读者理解较长的说明。	原创学习例句；中文译文为原创整理
+example	structure	We can structure the workshop around three practical problems.	我们可以围绕三个实际问题安排工作坊。	原创学习例句；中文译文为原创整理
+collocation	structure	the structure of something	某事物的结构	关注组成部分及其相互安排。
+collocation	structure	structure something around something	围绕某内容组织某事	structure 作及物动词，around 引出组织中心。
+derived	structure	structural	adj.｜结构的	structure 的相关形容词，拼写不保留末尾 e。
+derived	structure	restructure	v.｜重组；调整结构	re- 加 structure，强调重新组织既有结构。
+morphology	structure	现代构词与词族	structure 可指结构，也可表示组织安排，structural 是形容词，restructure 表示重组。structural change 指组成方式发生变化，不只是表面颜色或单个细节修改。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	structure	framework	n.｜框架	强调支撑其他内容的基本组织，structure 可以指整个组成方式。
+synonym	structure	organization	n.｜组织方式；结构安排	侧重如何安排各部分，也有机构本身这一名词义。
+source	structure	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	structure	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	structure	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+etymology	structure	历史词根：堆起、组织与建造	structure 经法语联系拉丁语 structūra，与 struere 及其分词形式 structus 相连，含堆起、安排、组装和建造的意思。struct- 可帮助联想 construct、instruct 等历史词族，但各词的现代含义仍需分别学习。	https://en.wiktionary.org/wiki/structure#English
+source	structure	Wiktionary：structure	https://en.wiktionary.org/wiki/structure#English	本轮实际读取该词条的词源或相关历史词义；中文为原创概述，保留历史来源、现代构词与助记之间的区别。
+example	sufficient	Two examples are sufficient to show how the rule works.	两个例子就足以说明这条规则如何运作。	原创学习例句；中文译文为原创整理
+example	sufficient	We do not yet have sufficient information to explain the difference.	我们目前还没有足够信息来解释这一差异。	原创学习例句；中文译文为原创整理
+collocation	sufficient	sufficient for something	足以满足某事	for 后说明需要或用途。
+collocation	sufficient	sufficient to do something	足以做某事	to do 说明可达成的效果。
+derived	sufficient	suffice	v.｜足够；满足需要	sufficient 的同词族动词。
+derived	sufficient	insufficient	adj.｜不足的	in- 表示否定，常用于时间、资源或证据不够。
+morphology	sufficient	现代构词与词族	suffice 表示足够，sufficient 是相应形容词，sufficiency 是名词。insufficient 是否定形式；充分条件中的 sufficient condition 有专门逻辑含义，不代表它一定也是必要条件。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	sufficient	enough	adj. / det.｜足够的	更日常，位置规则与 sufficient 不同，如 enough time。
+synonym	sufficient	adequate	adj.｜够用的；适当的	常强调达到可接受标准，sufficient 更直接说明数量或程度足够。
+source	sufficient	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	sufficient	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	sufficient	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	suitable	The activity is suitable for students who have learned basic Java syntax.	这项活动适合已学过 Java 基本语法的学生。	原创学习例句；中文译文为原创整理
+example	suitable	We need a suitable place to record the interview without background noise.	我们需要找一个适合录制访谈、没有背景噪声的地方。	原创学习例句；中文译文为原创整理
+collocation	suitable	suitable for someone	适合某人	for 后常接使用者或活动。
+collocation	suitable	a suitable candidate	合适的人选	强调人选与具体要求匹配。
+derived	suitable	suit	v.｜适合；满足需要	suitable 的词基动词。
+derived	suitable	suitability	n.｜适合程度；适宜性	suitable 对应的名词，词尾 -able 变为 -ability。
+morphology	suitable	现代构词与词族	参考快照记录 suit 与 -able 的关系，suitable 表示适合，suitability 是名词，unsuitable 是否定形式。suit 作动词的“适合”与名词“套装”是不同用法，不能只记服装义。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	suitable	appropriate	adj.｜恰当的	更常考虑场合、规范与礼貌；suitable 更强调用途或条件相配。
+synonym	suitable	fit	adj.｜适合的；胜任的	常用 fit for，尤其强调能满足用途或达到身体条件。
+source	suitable	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	suitable	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	suitable	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	summary	The first page contains a short summary of the main findings.	第一页包含主要发现的简短摘要。	原创学习例句；中文译文为原创整理
+example	summary	Your summary should preserve the author's central point without copying every example.	摘要应保留作者的核心观点，无需照搬每一个例子。	原创学习例句；中文译文为原创整理
+collocation	summary	a summary of something	某内容的摘要	of 引出被概括的材料。
+collocation	summary	in summary	总之；概括而言	常用于收束前面讨论，不应用来代替具体结论。
+derived	summary	summarize	v.｜总结；概括	summary 的相关动词，也写作 summarise。
+derived	summary	summarization	n.｜摘要生成；概括	summarize 的相关名词，技术中常用于文本摘要任务。
+morphology	summary	现代构词与词族	summary 指摘要，summarize 表示进行概括，summarization 表示概括过程。summary 还可作形容词“简略的、立即的”，例如某些法律用语中，不能只按摘要名词理解。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	summary	overview	n.｜概览	更强调让人看清整体范围，不一定紧缩原文各主要观点。
+synonym	summary	abstract	n.｜摘要	常指论文或报告的正式摘要，通常有更明确的结构和篇幅要求。
+source	summary	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	summary	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	summary	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	sustainable	The town is looking for sustainable ways to reduce household waste.	这个城镇正在寻找能够长期持续的办法，减少家庭垃圾。	原创学习例句；中文译文为原创整理
+example	sustainable	Working late every night is not a sustainable routine.	每天熬夜工作不是一种能长期维持的作息。	原创学习例句；中文译文为原创整理
+collocation	sustainable	sustainable development	可持续发展	通常考虑长期资源、环境与社会需求。
+collocation	sustainable	a sustainable way of doing something	一种可长期维持的做法	不只用于环保，也可用于时间安排或财务。
+derived	sustainable	sustain	v.｜维持；支撑	sustainable 的词基动词。
+derived	sustainable	sustainability	n.｜可持续性	sustainable 对应的名词，词尾形成 -ability。
+morphology	sustainable	现代构词与词族	sustain 加 -able 得 sustainable，表示能被持续维持；sustainability 是名词，unsustainable 是否定形式。可持续并不自动等于所有环节都环保，需要说明所谈的是资源、财务还是工作节奏。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	sustainable	viable	adj.｜可行的；能够继续存在的	强调能实际运作或存活，未必包含对长期环境影响的要求。
+synonym	sustainable	maintainable	adj.｜可维持的；可维护的	更直接强调能够保持或维护，在软件中常指代码易维护。
+source	sustainable	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	sustainable	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	sustainable	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	theory	The theory explains why the same material expands when heated.	这一理论解释了为什么这种材料受热会膨胀。	原创学习例句；中文译文为原创整理
+example	theory	In theory, the two methods should produce the same answer.	按理论推断，这两种方法应当得出同一答案。	原创学习例句；中文译文为原创整理
+collocation	theory	in theory	理论上	常与实际操作结果作对照。
+collocation	theory	develop a theory	建立理论	通常需要把解释、证据及其适用范围联系起来。
+derived	theory	theoretical	adj.｜理论的	theory 的相关形容词。
+derived	theory	theorist	n.｜理论家	theory 的相关表示人的名词。
+morphology	theory	现代构词与词族	theory、theoretical、theorist 分别表示理论、理论性的与研究理论的人；theorize 是动词。科学理论通常是有结构的解释体系，日常 theory 也可表示个人猜想，必须看语境。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	theory	hypothesis	n.｜假说	通常是具体待检验的解释，未必达到理论体系的范围。
+synonym	theory	explanation	n.｜解释	范围更宽，可以只是说明一件事的原因或过程。
+source	theory	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	theory	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	theory	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	traditional	The family uses a traditional method to dry the fruit in the sun.	这家人用传统方法在阳光下晾晒水果。	原创学习例句；中文译文为原创整理
+example	traditional	The course combines traditional lectures with small group discussions.	课程把传统讲授与小组讨论结合起来。	原创学习例句；中文译文为原创整理
+collocation	traditional	traditional knowledge	传统知识	强调由群体长期积累、传承的知识，不自动等于已经科学验证。
+collocation	traditional	a traditional approach	传统做法	可用于与较新的方法比较。
+derived	traditional	tradition	n.｜传统；惯例	traditional 的词基名词。
+derived	traditional	traditionally	adv.｜传统上；按照惯例	traditional 加 -ly。
+morphology	traditional	现代构词与词族	tradition 加 -al 得 traditional，traditionally 是副词。traditionalist 表示倾向维护传统的人，与单纯介绍某种传统的研究者并不等同；传统与有效性也不是同一个判断。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	traditional	conventional	adj.｜常规的；惯常的	强调当前普遍接受的做法，不一定有很长历史。
+synonym	traditional	customary	adj.｜习惯上的；惯例的	更强调某群体通常怎么做，常用于礼节或安排。
+source	traditional	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	traditional	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	traditional	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	trend	The chart shows a clear trend toward shorter daily study sessions.	图表显示，日常学习时段正趋向变短。	原创学习例句；中文译文为原创整理
+example	trend	One unusual month is not enough to establish a long-term trend.	一个不寻常月份不足以证明存在长期趋势。	原创学习例句；中文译文为原创整理
+collocation	trend	an upward trend	上升趋势	描述总体方向，期间仍可能有短期下降。
+collocation	trend	a trend toward something	朝某方向发展的趋势	toward 后可接名词或动名词。
+derived	trend	trendy	adj.｜时髦的；赶潮流的	trend 加 -y，主要属于时尚流行义。
+derived	trend	trendiness	n.｜时髦；潮流感	trendy 对应的名词，y 变为 i 后加 -ness。
+morphology	trend	现代构词与词族	trend 可指数据变化方向，也可指社会流行；trendy、trendiness 主要来自流行这一支。统计图中的趋势不能自动译成“时髦”，短期波动也不等于长期趋势。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	trend	tendency	n.｜倾向	可指人或事物通常会怎样，未必需要按时间排列的数据。
+synonym	trend	pattern	n.｜规律；模式	可以是重复结构，trend 更强调变化方向。
+source	trend	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	trend	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	trend	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	valid	The ticket is valid for one journey on the local network.	这张票可在本地交通网络中使用一次。	原创学习例句；中文译文为原创整理
+example	valid	Your criticism is valid, so I will revise that part of the design.	你的批评有道理，因此我会修改设计中的那一部分。	原创学习例句；中文译文为原创整理
+collocation	valid	a valid argument	有效的论证；有道理的论据	形式逻辑中的有效性与前提是否真实需区分。
+collocation	valid	valid for a period of time	在某段时间内有效	常用于证件、票券或优惠。
+derived	valid	validity	n.｜有效性；合理性	valid 对应的名词，不同领域有专门标准。
+derived	valid	invalidate	v.｜使无效；推翻效力	同词族动词，表示使原本的有效性不再成立。
+morphology	valid	现代构词与词族	valid、validity、validate、invalidate 属同词族；invalid 作形容词表示无效。一个论证在形式上 valid 不等于前提已被证实，票券 valid 则通常是在使用期限或条件内有效。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	valid	legitimate	adj.｜正当的；合法的	强调符合规则或具有正当理由，不完全等于逻辑上的有效。
+synonym	valid	sound	adj.｜可靠的；合理的	一般语境可接近 valid；形式逻辑中 sound 还要求前提为真。
+source	valid	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	valid	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	valid	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	valuable	The interview provided valuable information about how people use the library.	访谈提供了人们如何使用图书馆的宝贵信息。	原创学习例句；中文译文为原创整理
+example	valuable	Keep valuable equipment away from the open window.	把贵重设备放在远离敞开窗户的地方。	原创学习例句；中文译文为原创整理
+collocation	valuable	valuable information	有价值的信息	information 不可数，价值可来自有用性而非价格。
+collocation	valuable	a valuable lesson	宝贵的教训或经验	不一定是学校中的一节课。
+derived	valuable	value	n.｜价值；v.｜珍视	valuable 的词基形式。
+derived	valuable	invaluable	adj.｜极有价值的；无价的	已经形成“价值难以估量”的意思，不是普通否定的“没用”。
+morphology	valuable	现代构词与词族	value 加 -able 构成 valuable，拼写不保留 value 末尾的 e；invaluable 常表示非常宝贵。真正表达没有价值通常用 valueless 或 worthless，不能机械把 in- 加进去当否定。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	valuable	useful	adj.｜有用的	突出实际帮助，不一定涉及金钱或稀缺性。
+synonym	valuable	precious	adj.｜珍贵的	常有稀少、情感上值得珍惜的意味，比 valuable 更具情感色彩。
+source	valuable	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	valuable	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	valuable	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	various	Students proposed various ways to make the campus easier to navigate.	学生提出了多种办法，让校园路线更容易辨认。	原创学习例句；中文译文为原创整理
+example	various	The exhibition contains photographs taken at various stages of the project.	展览收录了项目不同阶段拍摄的照片。	原创学习例句；中文译文为原创整理
+collocation	various	various kinds of something	各种某物	kinds 常用复数，强调种类不同。
+collocation	various	for various reasons	由于各种原因	较概括的说法，正式解释通常仍需列出具体原因。
+derived	various	variety	n.｜多样性；种类	various 的同词族名词，可见 a variety of。
+derived	various	variously	adv.｜以不同方式；被不同地	various 加 -ly，常见于不同描述或分类。
+morphology	various	现代构词与词族	various、variety、variously 共享“不同、多种”的词族意义，vary 是相关动词。various 通常修饰复数名词；a variety of 则是另一套名词结构，不要机械套用相同句法。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	various	several	det.｜几个	强调不止一个但数量有限，不一定突出种类差异。
+synonym	various	diverse	adj.｜多样的	比 various 更突出集合内部差异明显，而不只是有若干种。
+source	various	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	various	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	various	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	visible	The new button is clearly visible against the pale background.	新按钮在浅色背景上十分醒目。	原创学习例句；中文译文为原创整理
+example	visible	There was no visible damage to the outside of the box.	箱子外面没有看得见的损坏。	原创学习例句；中文译文为原创整理
+collocation	visible	visible to the naked eye	肉眼可见	naked eye 指不借助放大仪器的肉眼。
+collocation	visible	a visible difference	看得出的差异	说明可观察到，不自动说明原因或统计可靠性。
+derived	visible	visibility	n.｜可见性；能见度	visible 对应的名词，天气或界面设计中都常见。
+derived	visible	invisible	adj.｜不可见的	in- 表示否定。
+morphology	visible	现代构词与词族	visible、visibility、visibly 对应可见的、可见性及明显可见地；invisible 是否定形式。visibility 可指气象能见度，也可指界面元素容易被看见，不能只记成一个固定中文词。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	visible	observable	adj.｜可观察的	包括通过仪器或记录能观察到，不一定肉眼直接可见。
+synonym	visible	apparent	adj.｜明显的；表面上的	可表示根据迹象看来如此，也可能后来证明并非事实。
+source	visible	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	visible	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	visible	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。
+example	widespread	The report found widespread support for longer library opening hours.	报告发现，延长图书馆开放时间得到了广泛支持。	原创学习例句；中文译文为原创整理
+example	widespread	Heavy rain caused widespread disruption to local transport.	大雨使当地交通大范围受阻。	原创学习例句；中文译文为原创整理
+collocation	widespread	widespread concern	普遍担忧	强调许多人或许多地方存在这一反应。
+collocation	widespread	widespread use of something	广泛使用某物	不只说明某个人使用频繁。
+derived	widespread	wide	adj.｜宽的；广泛的	widespread 的复合词成分，属于词基关系。
+derived	widespread	spread	v.｜传播；展开	widespread 的另一构词成分，不是它的后缀派生词。
+morphology	widespread	现代构词与词族	参考快照把 widespread 记录为 wide 与 spread 的复合词，整体表示分布范围广。这里 wide、spread 是构词词基；widespread 本身没有必要再凑普通后缀派生，重点记范围而非发生次数。	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b
+synonym	widespread	common	adj.｜常见的；普遍的	强调出现得多，未必说明分布覆盖很大地域。
+synonym	widespread	prevalent	adj.｜普遍存在的；盛行的	较正式，常指某时某地的现象、观点或疾病较常见。
+source	widespread	ECDICT 固定版词库	https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b	已读取随包固定版词条及相关词条的释义、词性；例句、中文搭配和辨析为原创学习整理，并非词典原例句。
+source	widespread	Open English WordNet 2025	https://github.com/globalwordnet/english-wordnet/releases/tag/2025-edition	已读取离线词义与词族关系；关系可能双向，语义接近不代表所有场景可互换，未逐词在线核验页面。
+source	widespread	etymology-db 2023-12 离线快照	https://github.com/droher/etymology-db/releases/tag/2023-12	已读取该词的离线构词和历史关系；快照不等同当前网页，历史词形、词基与现代派生在说明中分别标明。

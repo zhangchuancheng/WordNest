@@ -1,0 +1,63 @@
+{
+  "name": "ECDICT",
+  "repository": "https://github.com/skywind3000/ECDICT",
+  "commit": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+  "source_url": "https://raw.githubusercontent.com/skywind3000/ECDICT/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+  "source_filename": "ecdict.csv",
+  "source_sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+  "source_bytes": 65933428,
+  "original_data_rows": 770611,
+  "exported_entries": 770611,
+  "discarded_empty_headwords": 0,
+  "duplicate_case_insensitive_rows": 0,
+  "license": "MIT",
+  "license_url": "https://raw.githubusercontent.com/skywind3000/ECDICT/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+  "license_file": "ECDICT-LICENSE.txt",
+  "copyright": "Copyright (c) 2025 Linwei",
+  "format": {
+    "container": "gzip, deterministic mtime=0 and no original filename",
+    "magic": "WND1",
+    "record_count": "signed int32 big-endian",
+    "fields_in_order": [
+      "word",
+      "phonetic",
+      "translation",
+      "definition",
+      "tag",
+      "exchange"
+    ],
+    "string_encoding": "int32 big-endian byte length followed by UTF-8 bytes"
+  },
+  "transformations": [
+    "Parse the original UTF-8 CSV with Python csv.DictReader.",
+    "Expand literal backslash-n in each retained field and strip leading/trailing whitespace.",
+    "Retain original headword spelling; use its lowercase form for deduplication and sort order.",
+    "On duplicate keys prefer more populated fields, then longer content, then the first row.",
+    "Retain phrases and inflected forms. No translations, pronunciations or definitions are generated.",
+    "Serialize six original fields; leave missing source fields empty."
+  ],
+  "coverage": {
+    "entries_with_chinese_translation": 768739,
+    "entries_with_phonetic": 218065,
+    "entries_with_english_definition": 160884
+  },
+  "validation": {
+    "round_trip_all_records": true,
+    "sample_words_present": [
+      "integrate",
+      "preserve",
+      "preserved",
+      "classify",
+      "clarify",
+      "serendipity",
+      "algorithm",
+      "hello",
+      "perceive",
+      "gave",
+      "teeth",
+      "undo"
+    ]
+  },
+  "output_bytes": 24579079,
+  "output_sha256": "0eeddb7903a116161a8baef7b448b7673f377910b240003b8486f95e69e5a92a"
+}
