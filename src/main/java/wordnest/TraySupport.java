@@ -4,6 +4,7 @@ import java.awt.AWTError;
 import java.awt.AWTException;
 import java.awt.CheckboxMenuItem;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -61,31 +62,26 @@ final class TraySupport implements AutoCloseable {
                 return false;
             }
             candidateTray = SystemTray.getSystemTray();
-            PopupMenu menu = new PopupMenu();
-            candidateIcon = new TrayIcon(image, tooltip(), menu);
+            candidateIcon = new TrayIcon(image, tooltip());
             candidateIcon.setImageAutoSize(true);
             TrayIcon eventSource = candidateIcon;
             // Windows maps the native default action to double-click and keyboard activation.
             // Using only the ActionListener avoids dispatching the same double-click twice.
             candidateIcon.addActionListener(e -> dispatch(eventSource, showWindow));
-            menu.add(menuItem("显示拾词", eventSource, showWindow));
-            CheckboxMenuItem candidateClipboard = new CheckboxMenuItem("复制查词", clipboardEnabled);
-            candidateClipboard.addItemListener(e -> {
-                boolean enabled = e.getStateChange() == ItemEvent.SELECTED;
-                dispatch(eventSource, () -> {
+            MenuControls controls = createMenu(clipboardEnabled,
+                () -> dispatch(eventSource, showWindow),
+                enabled -> dispatch(eventSource, () -> {
                     clipboardEnabled = enabled;
                     trayIcon.setToolTip(tooltip());
                     clipboardChanged.accept(enabled);
-                });
-            });
-            menu.add(candidateClipboard);
-            menu.add(menuItem("窗口与后台设置…", eventSource, openSettings));
-            menu.addSeparator();
-            menu.add(menuItem("退出拾词", eventSource, exitApplication));
+                }),
+                () -> dispatch(eventSource, openSettings),
+                () -> dispatch(eventSource, exitApplication));
+            candidateIcon.setPopupMenu(controls.popup());
             candidateTray.add(candidateIcon);
             systemTray = candidateTray;
             trayIcon = candidateIcon;
-            clipboardItem = candidateClipboard;
+            clipboardItem = controls.clipboard();
             failureReason = "";
             return true;
         } catch (SecurityException e) {
@@ -161,9 +157,29 @@ final class TraySupport implements AutoCloseable {
         }
     }
 
-    private MenuItem menuItem(String label, TrayIcon eventSource, Runnable action) {
+    record MenuControls(PopupMenu popup, CheckboxMenuItem clipboard) { }
+
+    /** Builds menu objects only; does not register a tray icon or create native peers. */
+    static MenuControls createMenu(boolean clipboardEnabled, Runnable showWindow,
+                                   Consumer<Boolean> clipboardChanged, Runnable openSettings,
+                                   Runnable exitApplication) {
+        PopupMenu menu = new PopupMenu();
+        // AWT menus do not inherit Swing/FlatLaf fonts. Set a physical Chinese font
+        // before creating peers so both normal and checkbox items inherit it.
+        menu.setFont(Theme.font(Font.PLAIN, 13));
+        menu.add(menuItem("显示拾词", showWindow));
+        CheckboxMenuItem clipboard = new CheckboxMenuItem("复制查词", clipboardEnabled);
+        clipboard.addItemListener(e -> clipboardChanged.accept(e.getStateChange() == ItemEvent.SELECTED));
+        menu.add(clipboard);
+        menu.add(menuItem("窗口与后台设置…", openSettings));
+        menu.addSeparator();
+        menu.add(menuItem("退出拾词", exitApplication));
+        return new MenuControls(menu, clipboard);
+    }
+
+    private static MenuItem menuItem(String label, Runnable action) {
         MenuItem item = new MenuItem(label);
-        item.addActionListener(e -> dispatch(eventSource, action));
+        item.addActionListener(e -> action.run());
         return item;
     }
 

@@ -482,7 +482,7 @@ final class MainWindow extends JFrame {
         return "\"" + safe.replace("\"", "\"\"") + "\"";
     }
     private void showAbout() {
-        String info = "拾词 WordNest  0.4.2\n\n" +
+        String info = "拾词 WordNest  0.4.3\n\n" +
                 "手动输入单词，或在其他软件中复制单个英文单词。\n中文、句子和图片不会改变当前词条。\n复制查词不会抢焦点，可随时用顶部按钮暂停。\n\n" +
                 "关闭时可选择后台运行或退出；顶部「设置」可更改记住的选择。\n托盘图标可能收在右下角的小箭头中，双击即可显示窗口。\n再次打开 EXE 也可唤回窗口；右键托盘菜单可彻底退出。\n\n" +
                 "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n你的个人例句会自动保存到生词本。\n所有查询在本机完成，不调用网络或 AI 服务。\n\n" +

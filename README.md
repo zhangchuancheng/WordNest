@@ -2,7 +2,7 @@
 
 面向 Windows 的离线英汉查词与生词本。阅读时复制单个英文单词，即可查看中文释义、音标和英文解释；还可切换“例句、派生、词根、近义词”四个学习分页，记录自己的例句并翻卡复习。
 
-当前版本：**0.4.2**。使用 Java 17 / Swing，内置 ECDICT **770,611 条词条**。日常使用不需要账号、API Key 或联网服务。
+当前版本：**0.4.3**。使用 Java 17 / Swing，内置 ECDICT **770,611 条词条**。日常使用不需要账号、API Key 或联网服务。
 
 项目创建与维护：[zhangchuancheng](https://github.com/zhangchuancheng)。第三方词库、语料与界面库保留各自作者署名及许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
@@ -10,13 +10,13 @@
 
 ![WordNest 0.4.2 双语例句卡片与逐句出处](docs/learning-preview.png)
 
-上图由实际 Swing 控件离屏绘制，仅展示正文布局，不含操作系统窗口标题栏。
+上图保留 0.4.2 的实际 Swing 控件离屏预览，仅展示正文布局，不含操作系统窗口标题栏或系统托盘菜单。
 
 ## 启动
 
 ### Windows 便携版
 
-1. 到 [0.4.2 下载页](https://github.com/zhangchuancheng/WordNest/releases/tag/v0.4.2) 下载 `WordNest-0.4.2-Windows-x64.zip` 并完整解压。普通用户不需要下载源码压缩包。
+1. 到 [0.4.3 下载页](https://github.com/zhangchuancheng/WordNest/releases/tag/v0.4.3) 下载 `WordNest-0.4.3-Windows-x64.zip` 并完整解压。普通用户不需要下载源码压缩包。
 2. 打开其中的 `WordNest` 文件夹，双击 `WordNest.exe`。
 3. 等待离线资料加载完成，输入单词并按 Enter。
 
@@ -24,7 +24,9 @@
 
 点击关闭按钮 × 时，默认询问“最小化到系统托盘”或“退出程序”，也可取消；勾选“记住我的选择”后会沿用该选择。顶部“设置”可以随时修改关闭与最小化方式，详见下文。
 
-0.4.2 使用独立的便携目录与 ZIP，保留旧版本包。升级前先**完全退出旧版**：如果仍在托盘运行，右键拾词图标选择“退出拾词”。随后备份 `%LOCALAPPDATA%\WordNest`，再完整解压新包到新目录。不同版本共用此目录中的收藏与设置，不要向旧程序文件夹零散覆盖文件。
+0.4.3 使用独立的便携目录与 ZIP，保留旧版本包。升级前先**完全退出旧版**：如果仍在托盘运行，右键拾词图标选择“退出拾词”。随后备份 `%LOCALAPPDATA%\WordNest`，再完整解压新包到新目录并启动新版。不同版本共用此目录中的收藏与设置，不要向旧程序文件夹零散覆盖文件。
+
+**旧版托盘菜单显示方框时**：双击托盘图标恢复主窗口，点击顶部“设置”，把“点击关闭按钮 × 时”改为“退出程序”，点击“保存”，再点击窗口 × 退出。旧实例未退出时，再次打开 EXE 只会唤回旧窗口，不会自动切换为新版。
 
 ### 源码版
 
@@ -38,6 +40,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run.ps1
 系统存在多个 Java 时，可分别传入 `build.ps1 -JdkPath 'C:\Path\To\JDK'` 与 `run.ps1 -JavaPath 'C:\Path\To\JDK'`。源码启动器使用 `javaw.exe`。
 
 ## 界面与阅读
+
+### 0.4.3：托盘菜单中文字体修复
+
+修复系统托盘右键菜单中文显示为方框的问题：为 AWT 原生托盘菜单显式设置支持中文的字体，并覆盖普通菜单项与“复制查词”勾选项。沿用 0.4.2 的双语卡片、展开方式、托盘操作和个人数据格式。
 
 ### 0.4.2：例句与学习分页
 
@@ -144,17 +150,17 @@ ECDICT 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`；Open English
 # 生成 Java 17+ 可运行的 JAR
 .\scripts\build.ps1 -JdkPath 'C:\Path\To\Your\JDK'
 
-# 生成 0.4.2 独立便携目录；不会安装到系统
+# 生成 0.4.3 独立便携目录；不会安装到系统
 .\scripts\build.ps1 `
   -JdkPath 'C:\Path\To\Your\JDK' `
   -RuntimePath 'C:\Path\To\Temurin-JRE-17' `
-  -BuildVariant v042 `
-  -PackageOutputPath 'C:\Path\To\WordNest-Windows-0.4.2'
+  -BuildVariant v043 `
+  -PackageOutputPath 'C:\Path\To\WordNest-Windows-0.4.3'
 ```
 
 第二条命令使用 `jpackage --type app-image`，输出 `WordNest/WordNest.exe`。`-RuntimePath` 指向包含 `bin/java.exe` 的合法可分发运行时。本次运行时为 Eclipse Temurin 17.0.20.1+1；开发机上的 Oracle JDK 只负责构建，不随包分发。
 
-脚本仅清理带有本项目标记的构建子目录。如果目标已有 WordNest 文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v042` 将构建结果放入 `build/v042/classes` 和 `build/v042/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
+脚本仅清理带有本项目标记的构建子目录。如果目标已有 WordNest 文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v043` 将构建结果放入 `build/v043/classes` 和 `build/v043/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
 
 ### 重新生成数据
 
@@ -182,7 +188,9 @@ python .\scripts\prepare_etymology.py --source 'C:\Path\To\etymology-2023-12.csv
 
 ## 验证记录
 
-本版真实验证结果见 [VALIDATION.md](VALIDATION.md)。0.4.2 的验证范围包括 Java 17 无窗口逻辑与数据检查、真实 Swing JPanel 离屏布局、原生 EXE 资源自检。窗口与托盘功能使用无窗口 host 和临时文件验证逻辑，**未在真实桌面进行托盘、关闭、最小化、唤回、焦点或系统 DPI 交互验收**，也未读取真实剪贴板。以下 0.2.0 与 0.1.0 段落保留为历史记录，不代表本版重复执行桌面验收。
+本版真实验证结果见 [VALIDATION.md](VALIDATION.md)。0.4.3 的修复验证范围为字体字符覆盖、菜单对象的无窗口检测和原生 EXE 资源自检；**未弹出真实系统托盘菜单进行屏幕验收**，没有以新截图证明菜单显示结果。
+
+0.4.2 的历史验证包括 Java 17 无窗口逻辑与数据检查、真实 Swing JPanel 离屏布局及原生 EXE 自检。窗口与托盘功能当时使用无窗口 host 和临时文件验证逻辑，未进行真实桌面的关闭、最小化、唤回、焦点或系统 DPI 交互验收，也未读取真实剪贴板。以下 0.2.0 与 0.1.0 段落同样保留为历史记录。
 
 ### 0.2.0：历史无窗口验证
 

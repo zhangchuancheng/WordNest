@@ -1,3 +1,18 @@
+# WordNest 0.4.3 验证记录（2026-10-23）
+
+本次修复用户截图中系统托盘右键菜单中文显示为方框的问题。Swing/FlatLaf 的字体设置不覆盖 AWT 原生菜单；现在由实际菜单工厂在创建子项及原生 peer 前设置 Microsoft YaHei UI 13pt，普通项与勾选项继承该字体。
+
+- 完整源码以 `javac --release 17 -encoding UTF-8` 编译通过，使用发行包自带 Eclipse Temurin 17.0.20.1 运行本轮检查。
+- TrayMenuFontTest：44 项断言通过。调用与生产一致的菜单工厂，检查四条真实中文标签、实际解析的字体族为 Microsoft YaHei UI、每个字符（含省略号）有字形、普通项和 CheckboxMenuItem 随父菜单字体变化、开关初始状态及动作/勾选回调。
+- 上述测试必须使用 `-Djava.awt.headless=false` 才能构造 AWT MenuComponent，但仅创建未建立 peer 的菜单对象；没有调用 addNotify、显示菜单、注册 TrayIcon 或创建 Window。它验证字体配置与字形覆盖，不等于 Windows 原生菜单的屏幕验收。
+- TraySupportTest：14 项；BackgroundControllerTest：121 项；ActivationRequestsTest：40 项通过，全部使用无窗口或临时数据验证。
+- ThemeTest 通过：界面依赖 SHA-256 正确，FlatLaf 3.7.2 生效，Windows DLL 加载成功，创建 Window 数量为零。
+- 通过 `scripts/build.ps1 -BuildVariant release043-package` 构建 Windows app-image，实际原生 EXE 自检退出码 0、`status=PASS`、`app.version=0.4.3`、`headless=true`；EXE FileVersion 与 ProductVersion 均为 0.4.3。
+
+没有弹出或操作真实托盘菜单，没有读取剪贴板或个人生词本。本次未重跑与字体修复无关的全部词库及阅读布局测试；0.4.2 的完整检查记录保留如下，正文预览也沿用该版。
+
+---
+
 # WordNest 0.4.2 验证记录（2026-10-23）
 
 本次针对学习分页的信息层次、相关性分组、来源折叠、窄窗换行，以及已有窗口与后台功能的发布集成；下文旧版记录保留为历史。
