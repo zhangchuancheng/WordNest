@@ -15,6 +15,9 @@ favorites.tsv.*
 settings.properties
 settings.properties.*
 app.lock
+history.tsv
+history.tsv.*
+.history-*.tmp
 .favorites-*.tmp
 WordNest-生词本*.csv
 /user-data/

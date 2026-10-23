@@ -1,3 +1,25 @@
+# WordNest 0.5.0 验证记录（2026-10-23）
+
+本次增加取消收藏后的笔记保留与恢复、最近查词及会话前进后退，并整理现有例句的筛选、去重和义项分组。所有数据测试使用临时目录；没有读写实际个人生词本、历史或设置。
+
+- 完整生产源码及全部测试源码以 `javac --release 17 -encoding UTF-8` 编译通过。运行检查使用发行包自带 Eclipse Temurin 17.0.20.1。
+- CoreTest：1,045 项；FavoritesRecoveryTest：73 项。覆盖取消收藏保留完整笔记、重开后恢复、编辑保留笔记不重新收藏、恢复最新笔记、v1 只读加载、首次写入前保留原字节备份、不同旧备份不覆盖、备份/写入失败不提交状态，以及损坏数据保留。
+- LookupHistoryTest：256 项。覆盖最近 100 个不同词、大小写去重、重开持久化、独立会话导航、回退后新分支、重复查询、清空、坏文件/UTF-8/长度边界、写入失败和纯内存降级。
+- LookupSessionTest：54 项。测试生产使用的保存与导航协调器及实际导航 JPanel：未保存笔记阻止切换、历史保存失败仍可查词及会话导航、查无词页面先返回最近成功词、不改变历史位置、按钮状态/回调以及窄宽度布局。
+- ExampleSelectionTest：31 项。覆盖实际词形匹配、合格句优先、同等匹配时学习卡/原创练习/社区顺序、短句筛选、归一去重后保留全部原文/译文/出处，以及缺少合格句的回退。排序规则不能证明语法、自然度或翻译准确性；本版未增加或改写语料。
+- LearningPanelTest：12,490 项。使用实际 Swing 控件覆盖 340/440/640 像素宽度、推荐与更多语料、逐句来源、WordNet 真实义项分组、页签与折叠状态，生成 63 张离屏图。另用 100%/125%/150%/200% 的 Graphics2D 缩放验证真实字形宽度；统一 fractional 字宽测量与绘制，修复 relevant 长句原本在 2 倍绘制下被裁掉的问题。临时移除该修复时，新回归确实失败于字宽 422 大于容器 414。已查看 relevant 默认、certificate 默认及窄版全部展开预览。
+- WordDetailPanelTest：8,026 项；LearningRepositoryTest --full：504 项；CuratedCoverageTest：6,810 项；OpenLearningTest：202,239 项。主词库 770,611 条，355 张原有学习卡、710 条原有原创双语例句、14,937 条社区展示记录及 341 条补充原创例句保持有效；学习覆盖数据未变。
+- TraySupportTest：14 项；BackgroundControllerTest：121 项；ActivationRequestsTest：40 项通过。ThemeTest 验证固定依赖 SHA-256、FlatLaf 3.7.2、Windows DLL 加载与零 Window。
+- TrayMenuFontTest：44 项，通过未建立 peer 的 AWT 菜单对象验证中文字体、字形与回调；没有显示菜单、注册托盘或创建窗口。
+- WordNestPreview：coordinate / relevant / certificate 的 440/520/640 宽度共九张离屏图，包含生产导航控件；README 中两张预览已更新。主界面预览使用演示状态，未伪造原生标题栏。
+- 通过 `scripts/build.ps1 -BuildVariant release050-package` 构建 Windows app-image。实际原生 EXE 执行 `--self-check`：退出码 0、`status=PASS`、`app.version=0.5.0`、`headless=true`，Java 来自候选发行目录的 runtime；EXE FileVersion 与 ProductVersion 均为 0.5.0。自检先于个人数据目录、锁和界面初始化执行。
+
+MainWindowStateTest 中的 75 项窗口状态回归定义仅完成编译，**没有执行**，因为它会创建 JFrame。本轮没有创建应用窗口、读取真实剪贴板、操作鼠标键盘或系统托盘；离屏缩放回归不等于真实系统 DPI、焦点、快捷键及窗口交互验收。
+
+可复现方式：先构建应用，将 tests 下源码以 Java 17 目标编译，classpath 包含应用 JAR 和 `lib/flatlaf-3.7.2.jar`。上述无窗口测试使用 `-Djava.awt.headless=true -Xmx512m`；WordDetailPanelTest、LearningPanelTest、WordNestPreview 还需传入预览输出目录。TrayMenuFontTest 单独使用 `-Djava.awt.headless=false`，但不建立原生 peer。不要在禁止桌面操作的验证环境中运行 MainWindowStateTest。
+
+---
+
 # WordNest 0.4.3 验证记录（2026-10-23）
 
 本次修复用户截图中系统托盘右键菜单中文显示为方框的问题。Swing/FlatLaf 的字体设置不覆盖 AWT 原生菜单；现在由实际菜单工厂在创建子项及原生 peer 前设置 Microsoft YaHei UI 13pt，普通项与勾选项继承该字体。

@@ -153,6 +153,8 @@ public final class CoreTest {
         reopened.remove(" HeLLo ");
         FavoritesStore afterRemoval = new FavoritesStore(directory);
         check(!afterRemoval.contains("hello"), "removal survives restart");
+        check(afterRemoval.get("hello").orElseThrow().note().equals("修改后的笔记\n第二行"),
+                "cancelled favorite retains its personal note after restart");
         check(afterRemoval.list().size() == 1, "other favorite preserved");
         afterRemoval.remove("missing");
         check(afterRemoval.list().size() == 1, "missing removal is harmless");

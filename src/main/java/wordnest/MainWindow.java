@@ -21,6 +21,12 @@ final class MainWindow extends JFrame {
     private DictionaryRepository dictionary;
     private LearningRepository learning = LearningRepository.empty();
     private FavoritesStore favorites;
+    private LookupHistory history;
+    private LookupSession lookupSession;
+    private LookupNavigationBar navigation;
+    private final JButton undoFavorite = Theme.button("撤销取消收藏", false);
+    private final JButton retainedFavorites = Theme.button("最近取消收藏", false);
+    private String lastUnfavoritedWord;
     private WordEntry current;
     private final JTextField search = field("输入英文单词，按 Enter 查询");
     private final JTextField librarySearch = field("搜索收藏的单词或例句");
@@ -136,6 +142,14 @@ final class MainWindow extends JFrame {
         getRootPane().getActionMap().put("search", new AbstractAction() {
             @Override public void actionPerformed(ActionEvent e) { pages.show(pagePanel, "lookup"); lookupTab.setSelected(true); search.requestFocusInWindow(); search.selectAll(); }
         });
+        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("alt LEFT"), "history-back");
+        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("alt RIGHT"), "history-forward");
+        getRootPane().getActionMap().put("history-back", new AbstractAction() {
+            @Override public void actionPerformed(ActionEvent e) { navigateHistory(false); }
+        });
+        getRootPane().getActionMap().put("history-forward", new AbstractAction() {
+            @Override public void actionPerformed(ActionEvent e) { navigateHistory(true); }
+        });
         showEmpty("让阅读继续。", "正在准备本地词库，首次打开请稍候。", null);
         loadData();
     }
@@ -240,7 +254,11 @@ final class MainWindow extends JFrame {
         JPanel searchRow = Theme.panel(new BorderLayout(8, 0));
         searchRow.add(search, BorderLayout.CENTER);
         JButton go = Theme.button("查询", true); go.addActionListener(e -> lookup(search.getText(), false));
-        searchRow.add(go, BorderLayout.EAST); p.add(searchRow, BorderLayout.NORTH);
+        searchRow.add(go, BorderLayout.EAST);
+        JPanel lookupControls = Theme.panel(new BorderLayout(0, 7));
+        lookupControls.add(searchRow, BorderLayout.NORTH);
+        navigation = new LookupNavigationBar(() -> navigateHistory(false), () -> navigateHistory(true), this::showHistory);
+        lookupControls.add(navigation, BorderLayout.SOUTH); p.add(lookupControls, BorderLayout.NORTH);
         JScrollPane scroll = new JScrollPane(details);
         scroll.setBorder(null); scroll.setOpaque(false); scroll.getViewport().setOpaque(false);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -272,7 +290,14 @@ final class MainWindow extends JFrame {
         JButton open = Theme.button("查看词条", true); open.addActionListener(e -> openSelected());
         JButton review = Theme.button("翻卡复习", false); review.addActionListener(e -> review());
         JButton export = Theme.button("导出 CSV", false); export.addActionListener(e -> export());
-        actions.add(open); actions.add(review); actions.add(export); bottom.add(actions, BorderLayout.SOUTH); p.add(bottom, BorderLayout.SOUTH);
+        actions.add(open); actions.add(review); actions.add(export);
+        JPanel libraryActions = Theme.panel(new BorderLayout(0, 3));
+        libraryActions.add(actions, BorderLayout.NORTH);
+        JPanel recoveryRow = Theme.panel(new FlowLayout(FlowLayout.LEFT, 6, 0));
+        retainedFavorites.addActionListener(e -> showRetainedFavorites());
+        retainedFavorites.setEnabled(false); recoveryRow.add(retainedFavorites);
+        libraryActions.add(recoveryRow, BorderLayout.SOUTH);
+        bottom.add(libraryActions, BorderLayout.SOUTH); p.add(bottom, BorderLayout.SOUTH);
         onChange(librarySearch, this::refreshLibrary);
         library.addMouseListener(new MouseAdapter() { @Override public void mouseClicked(MouseEvent e) { if (e.getClickCount() == 2) openSelected(); } });
         library.getInputMap().put(KeyStroke.getKeyStroke("ENTER"), "open");
@@ -282,7 +307,13 @@ final class MainWindow extends JFrame {
 
     private JPanel footer() {
         JPanel p = Theme.panel(new BorderLayout(0, 4)); Theme.pad(p, 10, 19, 10, 19);
-        p.add(message, BorderLayout.NORTH);
+        JPanel statusRow = Theme.panel(new BorderLayout(6, 0));
+        statusRow.add(message, BorderLayout.CENTER);
+        undoFavorite.setFont(Theme.font(Font.PLAIN, 11));
+        undoFavorite.setBorder(new EmptyBorder(3, 7, 3, 7));
+        undoFavorite.setVisible(false);
+        undoFavorite.addActionListener(e -> restoreFavorite(lastUnfavoritedWord));
+        statusRow.add(undoFavorite, BorderLayout.EAST); p.add(statusRow, BorderLayout.NORTH);
         p.add(footer, BorderLayout.SOUTH);
         return p;
     }
@@ -292,8 +323,12 @@ final class MainWindow extends JFrame {
             private FavoritesStore loadedFavorites;
             private LearningRepository loadedLearning = LearningRepository.empty();
             private boolean learningFailed;
+            private LookupHistory loadedHistory;
+            private boolean historyFailed;
             @Override protected DictionaryRepository doInBackground() throws Exception {
                 loadedFavorites = new FavoritesStore(dataDir);
+                try { loadedHistory = new LookupHistory(dataDir); }
+                catch (IOException e) { loadedHistory = LookupHistory.sessionOnly(); historyFailed = true; }
                 InputStream in = MainWindow.class.getResourceAsStream("/dictionary.bin.gz");
                 if (in == null) throw new IOException("找不到随软件附带的离线词库");
                 DictionaryRepository loadedDictionary;
@@ -305,12 +340,15 @@ final class MainWindow extends JFrame {
             @Override protected void done() {
                 try {
                     dictionary = get(); favorites = loadedFavorites; learning = loadedLearning; loaded = true;
+                    history = loadedHistory;
+                    lookupSession = new LookupSession(history, dictionary::lookup, MainWindow.this::flushNote, MainWindow.this::displayWord);
                     footer.setText("本地离线  ·  " + NumberFormat.getIntegerInstance().format(dictionary.size()) + " 个词条  ·  ECDICT");
                     refreshLibrary();
-                    lookup(settings.getProperty("lastWord", "relevant"), false);
+                    lookup(settings.getProperty("lastWord", "relevant"), false, false);
                     watcher.setEnabled(watch.isSelected());
                     status(watch.isSelected() ? "已开启复制查词 · 不抢占正在阅读的窗口" : "输入单词查询，或开启复制查词", false);
                     if (learningFailed) status("学习资料加载失败，基础查词和生词本仍可使用", true);
+                    if (historyFailed) status("历史记录未能读取，原文件已保留；本次查询历史仅保存在内存", true);
                 } catch (Exception e) {
                     Throwable cause = e.getCause() == null ? e : e.getCause();
                     showEmpty("暂时无法打开词库", "本地数据已保留。\n" + cause.getMessage(), null);
@@ -322,6 +360,10 @@ final class MainWindow extends JFrame {
     }
 
     private void lookup(String text, boolean automatic) {
+        lookup(text, automatic, true);
+    }
+
+    private void lookup(String text, boolean automatic, boolean remember) {
         if (!loaded) { status("词库正在加载，请稍候", false); return; }
         String query = text.strip();
         if (query.isEmpty() || query.length() > 120 || query.contains("\n")) {
@@ -336,20 +378,28 @@ final class MainWindow extends JFrame {
             current = null; noteArea = null; noteState = null; favoriteButton = null;
             List<String> suggestions = dictionary.suggest(query, 5);
             showEmpty("没有找到这个词", "检查一下拼写，或试试单词原形。", suggestions);
+            updateNavigation();
             status("离线词库并不包含所有词汇", false); return;
         }
-        if (!flushNote()) return;
-        current = result.get();
+        LookupSession.Result outcome = lookupSession.visit(result.get(), remember);
+        if (!outcome.opened()) return;
+        status(outcome.warning().isEmpty()
+                ? automatic ? "已查询复制的单词 · " + current.word() : "查询完成 · " + current.word()
+                : outcome.warning(), !outcome.warning().isEmpty());
+    }
+
+    private void displayWord(WordEntry entry) {
+        current = entry;
         search.setText(current.word());
         settings.setProperty("lastWord", current.word());
         renderWord(); pages.show(pagePanel, "lookup"); lookupTab.setSelected(true);
-        status(automatic ? "已查询复制的单词 · " + current.word() : "查询完成 · " + current.word(), false);
+        updateNavigation();
     }
 
     private void renderWord() {
         JPanel body = Theme.panel(null); body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
         favoriteButton = Theme.button(favorites.contains(current.word()) ? "已收藏" : "收藏", false);
-        favoriteButton.setToolTipText("收藏或取消收藏当前词条"); favoriteButton.addActionListener(e -> toggleFavorite());
+        favoriteButton.setToolTipText("取消收藏会保留个人例句，可撤销或稍后恢复"); favoriteButton.addActionListener(e -> toggleFavorite());
         JButton base = null;
         String lemma = lemma(current.exchange());
         if (lemma != null && !lemma.equalsIgnoreCase(current.word()) && dictionary.lookup(lemma).isPresent()) {
@@ -364,12 +414,12 @@ final class MainWindow extends JFrame {
         Theme.Card notes = new Theme.Card(new BorderLayout(0, 10)); Theme.pad(notes, 15, 17, 15, 17); notes.setAlignmentX(Component.LEFT_ALIGNMENT);
         JPanel noteHeading = Theme.panel(new BorderLayout());
         noteHeading.add(Theme.label("我的例句", 13, Theme.INK), BorderLayout.WEST);
-        noteState = Theme.label("填写后自动收藏并保存", 10, Theme.MUTED); noteHeading.add(noteState, BorderLayout.EAST);
+        noteState = Theme.label(noteStatus(), 10, Theme.MUTED); noteHeading.add(noteState, BorderLayout.EAST);
         notes.add(noteHeading, BorderLayout.NORTH);
         noteArea = new JTextArea(3, 24); noteArea.setLineWrap(true); noteArea.setWrapStyleWord(true);
         noteArea.setFont(Theme.font(Font.PLAIN, 13)); noteArea.setForeground(Theme.INK); noteArea.setBackground(new Color(0xF5F7F3));
         noteArea.setBorder(new EmptyBorder(8, 10, 8, 10));
-        noteArea.setToolTipText("写一句包含这个词的例句，或记录你遇到它的语境。输入会自动保存到生词本。");
+        noteArea.setToolTipText("记录例句或原文语境，输入自动保存。取消收藏后仍保留笔记，继续编辑不会重新收藏。");
         updatingNote = true;
         noteArea.setText(favorites.get(current.word()).map(SavedWord::note).orElse(""));
         updatingNote = false; noteDirty = false;
@@ -398,8 +448,8 @@ final class MainWindow extends JFrame {
         String note = noteArea.getText();
         if (note.length() > 20000) { status("例句过长，请控制在 20,000 字符内", true); return false; }
         try {
-            if (!note.isBlank() || favorites.contains(current.word())) favorites.save(current, note);
-            noteDirty = false; if (noteState != null) noteState.setText("已保存到本机");
+            if (!note.isBlank() || favorites.get(current.word()).isPresent()) favorites.save(current, note);
+            noteDirty = false; if (noteState != null) noteState.setText(noteStatus());
             if (favoriteButton != null) favoriteButton.setText(favorites.contains(current.word()) ? "已收藏" : "收藏");
             refreshLibrary(); return true;
         } catch (IOException e) { status("保存失败，内容仍保留在窗口中", true); if (noteState != null) noteState.setText("保存失败"); return false; }
@@ -412,9 +462,16 @@ final class MainWindow extends JFrame {
         try {
             if (wasFavorite) {
                 favorites.remove(current.word());
-                updatingNote = true; noteArea.setText(""); updatingNote = false; noteDirty = false;
-                noteState.setText("填写后自动收藏并保存"); status("已取消收藏", false);
-            } else { favorites.save(current, noteArea == null ? "" : noteArea.getText()); status("已加入生词本", false); }
+                lastUnfavoritedWord = current.word(); undoFavorite.setVisible(true);
+                status("已取消收藏，个人例句仍保留", false);
+            } else {
+                favorites.setFavorite(current, noteArea == null ? "" : noteArea.getText(), true);
+                if (current.word().equalsIgnoreCase(Objects.toString(lastUnfavoritedWord, ""))) {
+                    lastUnfavoritedWord = null; undoFavorite.setVisible(false);
+                }
+                status("已加入生词本", false);
+            }
+            noteState.setText(noteStatus());
             favoriteButton.setText(favorites.contains(current.word()) ? "已收藏" : "收藏"); refreshLibrary();
         } catch (IOException e) { status("收藏保存失败：" + e.getMessage(), true); }
     }
@@ -428,6 +485,107 @@ final class MainWindow extends JFrame {
         }
         libraryTab.setText("生词本  " + all.size());
         libraryCount.setText(all.isEmpty() ? "查词时点「收藏」，在这里留住新词。" : "共 " + all.size() + " 个收藏 · 当前显示 " + libraryModel.size() + " 个");
+        int retained = favorites.listUnfavorited().size();
+        retainedFavorites.setText(retained == 0 ? "最近取消收藏" : "最近取消收藏 · " + retained);
+        retainedFavorites.setEnabled(retained > 0);
+    }
+
+    private String noteStatus() {
+        Optional<SavedWord> saved = favorites.get(current.word());
+        return saved.isEmpty() ? "填写后自动收藏并保存"
+                : saved.get().favorite() ? "已保存到生词本" : "笔记已保留 · 未收藏";
+    }
+
+    private void restoreFavorite(String word) {
+        if (word == null || favorites == null || !flushNote()) return;
+        try {
+            favorites.restoreFavorite(word);
+            if (word.equalsIgnoreCase(Objects.toString(lastUnfavoritedWord, ""))) {
+                lastUnfavoritedWord = null; undoFavorite.setVisible(false);
+            }
+            if (current != null && current.word().equalsIgnoreCase(word)) {
+                favoriteButton.setText(favorites.contains(word) ? "已收藏" : "收藏");
+                noteState.setText(noteStatus());
+            }
+            refreshLibrary(); status("已恢复收藏 · " + word, false);
+        } catch (IOException e) { status("恢复失败，保留的例句未被删除，请检查数据目录", true); }
+    }
+
+    private void showRetainedFavorites() {
+        if (modalOpen || favorites == null || !flushNote()) return;
+        List<SavedWord> retained = favorites.listUnfavorited();
+        if (retained.isEmpty()) return;
+        JList<SavedWord> list = new JList<>(retained.toArray(SavedWord[]::new));
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); list.setSelectedIndex(0);
+        list.setCellRenderer((items, item, index, selected, focused) -> {
+            String preview = item.note().replace('\n', ' ').replace('\r', ' ');
+            if (preview.length() > 70) preview = preview.substring(0, 70) + "…";
+            JLabel row = new JLabel(item.entry().word() + "  —  "
+                    + (preview.isBlank() ? "没有个人例句" : preview));
+            row.putClientProperty("html.disable", true); row.setOpaque(true);
+            row.setFont(Theme.font(Font.PLAIN, 13)); row.setBorder(new EmptyBorder(9, 10, 9, 10));
+            row.setBackground(selected ? Theme.PALE : Theme.WHITE); row.setForeground(Theme.INK);
+            return row;
+        });
+        JScrollPane scroll = new JScrollPane(list); scroll.setPreferredSize(new Dimension(360, 260));
+        JPanel content = Theme.panel(new BorderLayout(0, 10));
+        content.add(Theme.text("取消收藏的词和个人例句仍在本机。\n可以恢复收藏，也可以打开词条继续编辑。", 12, Theme.MUTED, 350), BorderLayout.NORTH);
+        content.add(scroll, BorderLayout.CENTER);
+        modalOpen = true;
+        int choice;
+        try {
+            choice = JOptionPane.showOptionDialog(this, content, "最近取消收藏",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null,
+                    new Object[]{"恢复收藏", "查看词条", "关闭"}, "恢复收藏");
+        } finally { modalOpen = false; }
+        SavedWord selected = list.getSelectedValue();
+        if (selected == null) return;
+        if (choice == 0) restoreFavorite(selected.entry().word());
+        else if (choice == 1) lookup(selected.entry().word(), false);
+    }
+
+    private void updateNavigation() {
+        if (navigation != null && history != null)
+            navigation.update(current == null ? history.current().isPresent() : history.canBack(),
+                    current != null && history.canForward(), history.recent().size());
+    }
+
+    private void navigateHistory(boolean forward) {
+        if (!loaded || modalOpen || lookupSession == null) return;
+        if (forward && current == null) return;
+        LookupSession.Result result = forward ? lookupSession.forward()
+                : current == null ? lookupSession.redisplayCurrent() : lookupSession.back();
+        updateNavigation();
+        if (!result.warning().isEmpty()) status(result.warning(), true);
+        else if (result.opened()) status((forward ? "已前进 · " : "已返回 · ") + current.word(), false);
+    }
+
+    private void showHistory() {
+        if (modalOpen || history == null || history.recent().isEmpty()) return;
+        JList<String> list = new JList<>(history.recent().toArray(String[]::new));
+        list.setFont(Theme.font(Font.PLAIN, 14)); list.setFixedCellHeight(30);
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); list.setSelectedIndex(0);
+        list.setSelectionBackground(Theme.PALE); list.setSelectionForeground(Theme.INK);
+        JScrollPane scroll = new JScrollPane(list); scroll.setPreferredSize(new Dimension(330, 280));
+        JPanel content = Theme.panel(new BorderLayout(0, 9));
+        content.add(Theme.label("最近 100 个成功查询的词，仅保存在本机", 12, Theme.MUTED), BorderLayout.NORTH);
+        content.add(scroll, BorderLayout.CENTER);
+        modalOpen = true;
+        int choice;
+        try {
+            choice = JOptionPane.showOptionDialog(this, content, "查词历史",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null,
+                    new Object[]{"查看词条", "清空历史", "关闭"}, "查看词条");
+            if (choice == 1 && JOptionPane.showConfirmDialog(this,
+                    "清空查询历史？收藏和个人例句不受影响。", "清空历史", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                try {
+                    history.clear();
+                    if (current != null) history.seedSession(current.word());
+                    updateNavigation(); status("已清空查词历史", false);
+                } catch (IOException e) { status("历史记录未能清空，原记录已保留", true); }
+            }
+        } finally { modalOpen = false; }
+        if (choice == 0 && list.getSelectedValue() != null) lookup(list.getSelectedValue(), false);
     }
 
     private void openSelected() {
@@ -482,12 +640,12 @@ final class MainWindow extends JFrame {
         return "\"" + safe.replace("\"", "\"\"") + "\"";
     }
     private void showAbout() {
-        String info = "拾词 WordNest  0.4.3\n\n" +
+        String info = "拾词 WordNest  0.5.0\n\n" +
                 "手动输入单词，或在其他软件中复制单个英文单词。\n中文、句子和图片不会改变当前词条。\n复制查词不会抢焦点，可随时用顶部按钮暂停。\n\n" +
                 "关闭时可选择后台运行或退出；顶部「设置」可更改记住的选择。\n托盘图标可能收在右下角的小箭头中，双击即可显示窗口。\n再次打开 EXE 也可唤回窗口；右键托盘菜单可彻底退出。\n\n" +
-                "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n你的个人例句会自动保存到生词本。\n所有查询在本机完成，不调用网络或 AI 服务。\n\n" +
+                "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n个人例句自动保存在本机，取消收藏仍保留，可从生词本恢复。\n查词历史保留最近 100 个词，可清空；所有查询在本机完成，不调用网络或 AI 服务。\n\n" +
                 "英汉例句：Tatoeba 社区语料与拾词原创。\n派生和近义词：Open English WordNet / 中文维基词典。\n词源：中文维基词典与 etymology-db（2023 快照）。\n新增资料优先覆盖常用词与雅思标签词；355 张原有完整中文卡片继续保留。\n各项实际覆盖见程序目录 LEARNING_COVERAGE.md。\n每个分页标明来源；社区资料可能有疏漏，缺项不会自动补写。\n\n" +
-                "本地收藏与设置：\n" + dataDir + "\n\n快捷键：Ctrl+L 聚焦搜索，Enter 查询。";
+                "本地收藏、笔记、历史与设置：\n" + dataDir + "\n\n快捷键：Ctrl+L 聚焦搜索，Enter 查询，Alt+← / → 后退 / 前进。";
         boolean previousModal = modalOpen; modalOpen = true;
         try { JOptionPane.showMessageDialog(this, info, "关于拾词", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(icon())); }
         finally { modalOpen = previousModal; }

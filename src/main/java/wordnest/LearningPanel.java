@@ -2,6 +2,7 @@ package wordnest;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -70,69 +71,58 @@ final class LearningPanel extends JPanel {
     }
 
     private void examples() {
-        List<ExampleCard> bilingual = new ArrayList<>();
-        for (CuratedItem item : cards("example")) {
-            bilingual.add(new ExampleCard(item.first(), item.second(), "拾词原创 · 非考试真题", item.third(), "", word));
-        }
-        for (SupplementItem item : supplements("practice")) {
-            bilingual.add(new ExampleCard(item.first(), item.second(), "拾词原创学习例句 · 非考试真题", item.attribution(), item.sourceUrl(), word));
-        }
+        List<ExampleSelection.Candidate> candidates = new ArrayList<>();
+        for (CuratedItem item : cards("example")) candidates.add(new ExampleSelection.Candidate(
+                item.first(), item.second(), "拾词原创 · 非考试真题", item.third(), "", word, ExampleSelection.SourceKind.CURATED));
+        for (SupplementItem item : supplements("practice")) candidates.add(new ExampleSelection.Candidate(
+                item.first(), item.second(), "拾词原创学习例句 · 非考试真题", item.attribution(), item.sourceUrl(), word, ExampleSelection.SourceKind.PRACTICE));
         for (SupplementItem item : supplements("example")) {
             String form = word;
             int marker = item.attribution().indexOf("例句词形：");
             if (marker >= 0) form = item.attribution().substring(marker + "例句词形：".length()).strip();
-            bilingual.add(new ExampleCard(item.first(), item.second(), "语料 · Tatoeba", item.attribution(), item.sourceUrl(), form));
+            candidates.add(new ExampleSelection.Candidate(item.first(), item.second(), "语料 · Tatoeba",
+                    item.attribution(), item.sourceUrl(), form, ExampleSelection.SourceKind.CORPUS));
         }
-        if (!bilingual.isEmpty()) {
-            heading("双语例句 · " + bilingual.size());
-            List<ExampleCard> visible = limit(bilingual, 3, "examples-bilingual");
-            for (int i = 0; i < visible.size(); i++) {
-                ExampleCard item = visible.get(i);
-                int index = i;
-                card(() -> {
-                    paragraph(String.format("%02d", index + 1) + "  " + item.label(), 10, Theme.GREEN);
-                    gap(5);
-                    sentence(item.english(), item.form());
-                    paragraph(item.chinese(), 13, Theme.INK);
-                    if (!item.form().equalsIgnoreCase(word)) paragraph("例句词形：" + item.form(), 10, Theme.MUTED);
-                    disclosure("example-source-" + index, "出处", "收起出处", false, () -> {
-                        paragraph(item.attribution(), 10, Theme.MUTED);
-                        if (!item.url().isBlank()) sourceLine("原句与译文", item.url());
-                        if (item.label().contains("Tatoeba")) {
-                            paragraph("社区原译文保留简繁体，请结合语境阅读。", 10, Theme.MUTED);
-                            sourceLine("许可与编辑记录（亦见程序目录 licenses）", "https://creativecommons.org/licenses/by/2.0/fr/");
-                        }
-                    });
-                });
-            }
-            more(bilingual.size(), 3, "examples-bilingual");
+        ExampleSelection.Result selection = ExampleSelection.select(word, candidates);
+        List<ExampleSelection.Group> additional = selection.additional();
+        if (!selection.recommended().isEmpty()) {
+            heading("推荐双语例句 · " + selection.recommended().size());
+            for (int i = 0; i < selection.recommended().size(); i++)
+                bilingualCard(selection.recommended().get(i), i + 1, "example-source-" + i);
+        } else if (!additional.isEmpty()) {
+            heading("双语语料参考");
+            paragraph("暂无符合短句筛选条件的条目，先保留一条供参考。", 11, Theme.MUTED);
+            bilingualCard(additional.get(0), 1, "example-source-0");
+            additional = additional.subList(1, additional.size());
         }
+        if (!additional.isEmpty()) {
+            List<ExampleSelection.Group> moreExamples = additional;
+            disclosure("examples-bilingual-more", "更多语料（" + moreExamples.size() + "）", "收起更多语料", false, () -> {
+                paragraph("包含其余例句、长句和需要补充语境的条目；原句与原译文保持不变。", 11, Theme.MUTED);
+                List<ExampleSelection.Group> visible = limit(moreExamples, 6, "examples-more-items");
+                for (int i = 0; i < visible.size(); i++) bilingualCard(visible.get(i), i + 1, "example-more-source-" + i);
+                more(moreExamples.size(), 6, "examples-more-items");
+            });
+        }
+        if (!candidates.isEmpty()) disclosure("examples-selection", "筛选依据与来源说明", "收起筛选说明", false, () -> {
+            paragraph("优先展示含查询词或来源明确标注词形、3–24 个英文词、180 字符以内、带句末标点且无省略或分段的句子。同等匹配条件下，先展示已有中文学习卡例句，其次原创练习和社区语料；同类再按长度排序。", 11, Theme.MUTED);
+            paragraph("这些可检查的信号只用于阅读排序，不判断语法、自然度或译文准确性，也不代表人工审校。社区例句没有对应的词典义项标注，不自动归入下方义项。", 11, Theme.MUTED);
+            paragraph("大小写、空白与标点差异相同的英文合并展示，保留缩略形式与单词边界。原始 " + selection.rawCount()
+                    + " 条记录整理为 " + selection.uniqueCount() + " 组；所有不同的原句、原译文和来源都可在各卡出处中查看。", 11, Theme.MUTED);
+        });
 
-        List<SenseExample> direct = new ArrayList<>();
-        List<SenseExample> related = new ArrayList<>();
-        Set<String> seen = new HashSet<>();
-        for (LexicalSense sense : data.senses(word)) for (Example example : sense.examples()) {
-            // WordNet examples describe a synset, and need not contain the queried headword.
-            // Keep the original sense and credit, including distinct senses sharing a sentence.
-            if (!seen.add(sense.id() + "\n" + example.text() + "\n" + example.source())) continue;
-            (containsWord(example.text(), word) ? direct : related).add(new SenseExample(sense, example));
-        }
-        if (!direct.isEmpty()) {
-            disclosure("examples-english", "英文例句（" + direct.size() + "）", "收起英文例句", bilingual.isEmpty(), () -> {
-                paragraph("原资料未提供中文译文。", 11, Theme.MUTED);
-                wordnetExamples(direct, "english");
-            });
-        }
-        if (!related.isEmpty()) {
-            disclosure("examples-related", "补充英文例句（" + related.size() + "）", "收起补充英文例句", false, () -> {
-                paragraph("这些句子未使用当前查询词的拼写，可能使用词形变化或同义词。原资料未提供中文译文。", 11, Theme.MUTED);
-                wordnetExamples(related, "related");
-            });
-        }
-        if (bilingual.isEmpty() && direct.isEmpty()) {
-            empty("暂未收录这个词的直接例句。", related.isEmpty()
-                    ? "可在下方记下你遇到的原句。" : "可展开补充英文例句作为参考。");
-        }
+        List<SenseExamples> direct = senseExamples(true);
+        List<SenseExamples> related = senseExamples(false);
+        if (!direct.isEmpty()) disclosure("examples-english", "英文例句（" + direct.size() + " 个义项）", "收起英文例句", candidates.isEmpty(), () -> {
+            paragraph("按词典原始义项分组；原资料未提供中文译文。双语语料不自动对应这些义项。", 11, Theme.MUTED);
+            wordnetExamples(direct, "english");
+        });
+        if (!related.isEmpty()) disclosure("examples-related", "补充英文例句（" + related.size() + " 个义项）", "收起补充英文例句", false, () -> {
+            paragraph("这些句子未使用当前查询词的拼写，可能使用词形变化或同义词。原资料未提供中文译文。", 11, Theme.MUTED);
+            wordnetExamples(related, "related");
+        });
+        if (candidates.isEmpty() && direct.isEmpty()) empty("暂未收录这个词的直接例句。", related.isEmpty()
+                ? "可在下方记下你遇到的原句。" : "可展开补充英文例句作为参考。");
         if (!cards("collocation").isEmpty()) disclosure("examples-collocations", "常用搭配", "收起常用搭配", false, () -> {
             for (CuratedItem item : cards("collocation")) card(() -> {
                 paragraph(item.first(), 14, Theme.INK);
@@ -143,38 +133,93 @@ final class LearningPanel extends JPanel {
         curatedSources();
     }
 
-    private record ExampleCard(String english, String chinese, String label, String attribution, String url, String form) { }
-    private record SenseExample(LexicalSense sense, Example example) { }
+    private void bilingualCard(ExampleSelection.Group group, int number, String sourceKey) {
+        ExampleSelection.Candidate item = group.primary();
+        card(() -> {
+            paragraph(String.format("%02d", number) + "  " + item.label(), 10, Theme.GREEN);
+            gap(5);
+            sentence(item.english(), group.matchedForm());
+            paragraph(item.chinese(), 13, Theme.INK);
+            if (!group.matchedForm().isBlank() && !group.matchedForm().equalsIgnoreCase(word))
+                paragraph("例句词形：" + group.matchedForm(), 10, Theme.MUTED);
+            if (!group.notes().isEmpty()) paragraph(String.join("；", group.notes()) + "。", 10, Theme.MUTED);
+            String label = group.originals().size() == 1 ? "出处" : "出处与原译文（" + group.originals().size() + " 条记录）";
+            disclosure(sourceKey, label, "收起出处", false, () -> {
+                for (int i = 0; i < group.originals().size(); i++) {
+                    ExampleSelection.Candidate original = group.originals().get(i);
+                    if (group.originals().size() > 1) {
+                        heading("原始记录 " + (i + 1) + " · " + original.label());
+                        paragraph(original.english(), 12, Theme.INK);
+                        paragraph(original.chinese(), 12, Theme.INK);
+                    }
+                    paragraph(original.attribution(), 10, Theme.MUTED);
+                    if (!original.url().isBlank()) sourceLine("原句与译文", original.url());
+                    if (!original.original()) {
+                        paragraph("社区原译文保留简繁体，请结合语境阅读。", 10, Theme.MUTED);
+                        sourceLine("许可与编辑记录（亦见程序目录 licenses）", "https://creativecommons.org/licenses/by/2.0/fr/");
+                    }
+                }
+            });
+        });
+    }
 
-    private void wordnetExamples(List<SenseExample> examples, String key) {
-        List<SenseExample> visible = limit(examples, 3, "examples-" + key + "-items");
+    private record SenseExamples(LexicalSense sense, int number, List<List<Example>> sentences) { }
+
+    /** Duplicate normalization is confined to a real source sense, never inferred from bilingual text. */
+    private List<SenseExamples> senseExamples(boolean direct) {
+        List<SenseExamples> result = new ArrayList<>();
+        List<LexicalSense> senses = data.senses(word);
+        for (int i = 0; i < senses.size(); i++) {
+            LexicalSense sense = senses.get(i);
+            Map<String, List<Example>> unique = new LinkedHashMap<>();
+            for (Example example : sense.examples()) {
+                if (ExampleSelection.containsWord(example.text(), word) != direct) continue;
+                unique.computeIfAbsent(ExampleSelection.normalizedSentence(example.text()), ignored -> new ArrayList<>()).add(example);
+            }
+            if (unique.isEmpty()) continue;
+            List<List<Example>> grouped = new ArrayList<>();
+            for (List<Example> examples : unique.values()) grouped.add(examples.stream().distinct().toList());
+            grouped.sort(Comparator.comparingInt(examples -> ExampleSelection.wordCount(examples.get(0).text())));
+            result.add(new SenseExamples(sense, i + 1, List.copyOf(grouped)));
+        }
+        return result;
+    }
+
+    private void wordnetExamples(List<SenseExamples> senses, String key) {
+        List<SenseExamples> visible = limit(senses, 3, "examples-" + key + "-senses");
         for (int i = 0; i < visible.size(); i++) {
-            SenseExample row = visible.get(i);
-            int index = i;
+            SenseExamples row = visible.get(i);
+            String senseKey = "examples-" + key + "-sense-" + i;
             card(() -> {
-                sentence(row.example().text(), word);
-                paragraph(pos(row.sense().pos()) + " · " + row.sense().definition(), 11, Theme.MUTED);
-                disclosure("example-" + key + "-source-" + index, "出处", "收起出处", false, () -> {
-                    paragraph(row.example().source(), 10, Theme.MUTED);
-                    wordnetSource();
-                });
+                body.setName("wordnet-sense-" + key + "-" + row.number());
+                heading(pos(row.sense().pos()) + " · 义项 " + row.number());
+                paragraph(row.sense().definition(), 12, Theme.INK);
+                List<List<Example>> sentences = limit(row.sentences(), 3, senseKey + "-items");
+                for (int j = 0; j < sentences.size(); j++) {
+                    List<Example> originals = sentences.get(j);
+                    gap(7);
+                    sentence(originals.get(0).text(), word);
+                    disclosure(senseKey + "-source-" + j, "出处", "收起出处", false, () -> {
+                        paragraph("词典义项编号：" + row.sense().id(), 10, Theme.MUTED);
+                        for (Example original : originals) {
+                            if (originals.size() > 1) paragraph(original.text(), 12, Theme.INK);
+                            paragraph(original.source(), 10, Theme.MUTED);
+                        }
+                        wordnetSource();
+                    });
+                }
+                more(row.sentences().size(), 3, senseKey + "-items");
             });
         }
-        more(examples.size(), 3, "examples-" + key + "-items");
+        more(senses.size(), 3, "examples-" + key + "-senses");
     }
 
-    private static Pattern wordPattern(String value) {
-        return Pattern.compile("(?iu)(?<![\\p{L}\\p{N}_])" + Pattern.quote(value.strip()) + "(?![\\p{L}\\p{N}_])");
-    }
-    private static boolean containsWord(String text, String value) {
-        return !value.isBlank() && wordPattern(value).matcher(text).find();
-    }
     private void sentence(String text, String form) {
         JTextArea area = new WrappedText(text, 16, Theme.INK);
         area.setFont(Theme.latin(Font.PLAIN, 16));
         area.setName("example-english");
         if (!form.isBlank()) {
-            var matches = wordPattern(form).matcher(text);
+            var matches = ExampleSelection.wordPattern(form).matcher(text);
             while (matches.find()) try {
                 area.getHighlighter().addHighlight(matches.start(), matches.end(),
                         new DefaultHighlighter.DefaultHighlightPainter(Theme.PALE));
@@ -182,7 +227,6 @@ final class LearningPanel extends JPanel {
         }
         body.add(area); gap(7);
     }
-
     private void derivations() {
         paragraph("派生词是构成的新词；复数、过去式等属于词形变化。", 11, Theme.MUTED);
         Set<String> seen = new HashSet<>();
@@ -490,10 +534,32 @@ final class LearningPanel extends JPanel {
 
     /** Computes wrapping from the actual layout width instead of an estimated row count. */
     private static final class WrappedText extends JTextArea {
+        private Font measuredFont;
+        private FontMetrics measuredMetrics;
         WrappedText(String text, int size, Color color) {
             super(text); setEditable(false); setOpaque(false); setLineWrap(true); setWrapStyleWord(true);
             setFont(Theme.font(Font.PLAIN, size)); setForeground(color); setBorder(null);
             setAlignmentX(Component.LEFT_ALIGNMENT);
+        }
+        /** Fractional advances do not change when a window moves between screen scale factors. */
+        @Override public FontMetrics getFontMetrics(Font font) {
+            if (!font.equals(measuredFont)) {
+                Graphics2D metrics = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB).createGraphics();
+                try {
+                    textHints(metrics);
+                    measuredMetrics = metrics.getFontMetrics(font);
+                    measuredFont = font;
+                } finally { metrics.dispose(); }
+            }
+            return measuredMetrics;
+        }
+        @Override protected void paintComponent(Graphics graphics) {
+            Graphics2D text = (Graphics2D) graphics.create();
+            try { textHints(text); super.paintComponent(text); } finally { text.dispose(); }
+        }
+        private static void textHints(Graphics2D graphics) {
+            graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            graphics.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
         }
         @Override public Dimension getPreferredSize() {
             Container parent = getParent();

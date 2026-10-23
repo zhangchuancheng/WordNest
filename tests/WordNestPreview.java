@@ -42,7 +42,11 @@ public final class WordNestPreview {
         search.setForeground(Theme.INK); search.setBackground(Theme.WHITE);
         search.setBorder(BorderFactory.createCompoundBorder(new LineBorder(Theme.LINE, 1, true), new EmptyBorder(10, 11, 10, 11)));
         searchRow.add(search, BorderLayout.CENTER); searchRow.add(Theme.button("查询", true), BorderLayout.EAST);
-        page.add(searchRow, BorderLayout.NORTH);
+        JPanel lookupControls = Theme.panel(new BorderLayout(0, 7));
+        lookupControls.add(searchRow, BorderLayout.NORTH);
+        LookupNavigationBar navigation = new LookupNavigationBar(() -> { }, () -> { }, () -> { });
+        navigation.update(true, false, 12);
+        lookupControls.add(navigation, BorderLayout.SOUTH); page.add(lookupControls, BorderLayout.NORTH);
         JPanel body = Theme.panel(null); body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
         body.add(new WordDetailPanel(dictionary.lookup(word).orElseThrow(), Theme.button("已收藏", false), null));
         body.add(Box.createVerticalStrut(12));

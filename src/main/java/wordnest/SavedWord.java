@@ -2,8 +2,13 @@ package wordnest;
 
 import java.util.Objects;
 
-/** A dictionary entry with a personal note and its last save time in epoch milliseconds. */
-public record SavedWord(WordEntry entry, String note, long savedAt) {
+/** A retained dictionary entry, personal note, last save time, and independent favorite state. */
+public record SavedWord(WordEntry entry, String note, long savedAt, boolean favorite) {
+    /** Existing callers creating a newly saved word still opt in to the favorites list. */
+    public SavedWord(WordEntry entry, String note, long savedAt) {
+        this(entry, note, savedAt, true);
+    }
+
     public SavedWord {
         Objects.requireNonNull(entry, "entry");
         Objects.requireNonNull(note, "note");

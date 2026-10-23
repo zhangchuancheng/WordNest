@@ -149,7 +149,7 @@ if (Test-Path -LiteralPath (Join-Path $PackageOutputPath 'WordNest')) {
 $packageArguments = @(
     '--type', 'app-image',
     '--name', 'WordNest',
-    '--app-version', '0.4.3',
+    '--app-version', '0.5.0',
     '--vendor', 'WordNest',
     '--description', 'Offline English-Chinese desktop dictionary and vocabulary notebook',
     '--input', $inputPath,

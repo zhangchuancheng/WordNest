@@ -28,12 +28,18 @@ public final class LearningPanelTest {
         LearningRepository learning = LearningRepository.load();
         LearningRepository grouped = fixture(true);
         LearningRepository englishOnly = fixture(false);
+        LearningRepository quality = qualityFixture();
+        LearningRepository fallback = fromRows(List.of(),
+                "example\trun\tRun!\t跑！\tOriginal short expression\n"
+                + "example\trun\ta run in the park\t公园里的一次跑步\tOriginal fragment\n");
         SwingUtilities.invokeAndWait(() -> {
             Theme.install();
             try {
                 check(Window.getWindows().length == 0, "No windows exist before panel tests");
                 certificate(learning, dictionary, output);
+                scaledSentenceWrapping(learning, dictionary, output);
                 progressiveDisclosure(grouped, englishOnly, dictionary, output);
+                qualityAndSenses(quality, fallback, dictionary, output);
                 referencesAndNavigation(learning, dictionary);
                 bundledMaterial(learning, dictionary, output);
                 check(Window.getWindows().length == 0, "No windows created by rendering or button actions");
@@ -75,6 +81,23 @@ public final class LearningPanelTest {
         namedButton(panel, "examples-related").doClick();
         check(!text(panel).contains("he held several valuable securities"), "Related examples collapse without removing bilingual material");
         check(text(panel).contains("Where's my birth certificate?"), "Bilingual example survives other section toggles");
+    }
+
+    private static void scaledSentenceWrapping(LearningRepository learning, DictionaryRepository dictionary, Path output) throws Exception {
+        LearningPanel panel = new LearningPanel("relevant", learning, dictionary, ignored -> { });
+        String sentence = "Her experience with databases is relevant to this internship.";
+        var english = components(panel).stream().filter(c -> c instanceof JTextArea && "example-english".equals(c.getName()))
+                .map(c -> ((JTextArea)c).getText()).toList();
+        check(english.get(0).equals(sentence), "An eligible contextual learning card precedes a shorter generic community sentence");
+        for (int width : WIDTHS) {
+            render(panel, width, output.resolve("relevant-default-" + width + ".png"));
+            for (double scale : new double[]{1, 1.25, 1.5, 2}) assertRenderedTextWidths(panel, scale);
+            if (width == 440) {
+                JTextArea area = area(panel, sentence);
+                check(area.modelToView2D(sentence.length()).getY() > 0,
+                        "The 414px text area wraps the relevant internship sentence rather than clipping its final word");
+            }
+        }
     }
 
     private static void progressiveDisclosure(LearningRepository grouped, LearningRepository englishOnly,
@@ -151,6 +174,57 @@ public final class LearningPanelTest {
         }
     }
 
+    private static void qualityAndSenses(LearningRepository quality, LearningRepository fallback,
+                                         DictionaryRepository dictionary, Path output) throws Exception {
+        LearningPanel panel = new LearningPanel("run", quality, dictionary, ignored -> { });
+        check(text(panel).contains("推荐双语例句"), "Primary section describes the reading recommendations");
+        check(sentenceCount(panel) == 3, "Only three unique bilingual sentences occupy the default view");
+        check(text(panel).contains("We run every morning.") && !text(panel).contains("WE RUN, EVERY MORNING!"),
+                "Case and punctuation variants occupy one default card");
+        check(!text(panel).contains("many different neighborhoods") && !text(panel).contains("a run in the park"),
+                "Long sentences and possible fragments start in More corpus");
+        check(!text(panel).contains("They jog outside."), "Unrecorded word relationships are not guessed");
+        check(!text(panel).contains("A period of running.") && !text(panel).contains("Move quickly on foot."),
+                "Bilingual corpus is not silently assigned a WordNet sense");
+        for (int width : WIDTHS) render(panel, width, output.resolve("quality-default-" + width + ".png"));
+        button(panel, "出处与原译文（2 条记录）").doClick();
+        check(text(panel).contains("我们每天早上跑步。") && text(panel).contains("我們每個早晨都跑步！"),
+                "Duplicate grouping preserves both original translations verbatim");
+        check(text(panel).contains("Source A") && text(panel).contains("Source B") && text(panel).contains("WE RUN, EVERY MORNING!"),
+                "Duplicate source details retain both credits and original spelling");
+        namedButton(panel, "examples-bilingual-more").doClick();
+        check(text(panel).contains("many different neighborhoods") && text(panel).contains("长句"),
+                "Long example remains available with the sorting reason");
+        check(text(panel).contains("a run in the park") && text(panel).contains("句末标点"),
+                "Fragment heuristic is explained when expanded");
+        check(text(panel).contains("They jog outside.") && text(panel).contains("未直接出现查询词"),
+                "Indirect material stays accessible and is labelled precisely");
+        namedButton(panel, "examples-english").doClick();
+        Container first = namedContainer(panel, "wordnet-sense-english-1");
+        Container second = namedContainer(panel, "wordnet-sense-english-2");
+        check(text(first).contains("名词 · 义项 1") && text(first).contains("A period of running."),
+                "First source sense keeps its part of speech and definition");
+        check(text(second).contains("动词 · 义项 2") && text(second).contains("Move quickly on foot."),
+                "Second source sense is not collapsed into another sense");
+        check(sentenceCount(first) == 2 && sentenceCount(second) == 1,
+                "WordNet duplicate grouping stays within one real sense, never across senses");
+        namedButton(panel, "examples-english-sense-0-source-1").doClick();
+        check(text(panel).contains("WordNet credit A") && text(panel).contains("WordNet credit B"),
+                "WordNet punctuation variants retain all source credits");
+        namedButton(panel, "examples-selection").doClick();
+        check(text(panel).contains("不判断语法、自然度或译文准确性"), "Selection does not claim automated semantic review");
+        for (int width : WIDTHS) render(panel, width, output.resolve("quality-expanded-" + width + ".png"));
+
+        LearningPanel limited = new LearningPanel("run", fallback, dictionary, ignored -> { });
+        check(text(limited).contains("双语语料参考") && !text(limited).contains("推荐双语例句"),
+                "Fallback does not mislabel low-signal material as a recommendation");
+        check(text(limited).contains("Run!") && sentenceCount(limited) == 1,
+                "A corpus with no eligible short sentences still exposes a labelled reference");
+        namedButton(limited, "examples-bilingual-more").doClick();
+        check(text(limited).contains("a run in the park"), "Fallback preserves the rest of the source material");
+        for (int width : WIDTHS) render(limited, width, output.resolve("fallback-expanded-" + width + ".png"));
+    }
+
     private static void bundledMaterial(LearningRepository learning, DictionaryRepository dictionary, Path output) throws Exception {
         LearningPanel missing = new LearningPanel("qznotawordqz", learning, dictionary, ignored -> { });
         for (String tab : TABS) {
@@ -174,6 +248,10 @@ public final class LearningPanelTest {
                     default -> "synonym";
                 };
                 var item = learning.curated(word).stream().filter(i -> i.kind().equals(kind)).findFirst().orElseThrow();
+                if (tab.equals("例句") && !text(panel).contains(item.first())) {
+                    for (int width : WIDTHS) render(panel, width, null);
+                    namedButton(panel, "examples-bilingual-more").doClick();
+                }
                 check(text(panel).contains(tab.equals("词根") ? item.second() : item.first()),
                         word + " existing Chinese material remains in " + tab);
                 if (word.equals("relevant") && tab.equals("词根")) {
@@ -189,7 +267,10 @@ public final class LearningPanelTest {
         for (String word : List.of("accumulate", "allocate", "abandon", "ability", "scheme", "happy")) {
             LearningPanel panel = new LearningPanel(word, learning, dictionary, ignored -> { });
             if (word.equals("allocate")) check(text(panel).contains("原创"), "Supplemental practice keeps its original-material label");
-            if (word.equals("accumulate")) check(text(panel).contains("例句词形："), "Corpus inflection label is retained");
+            if (word.equals("accumulate")) {
+                if (!text(panel).contains("例句词形：")) namedButton(panel, "examples-bilingual-more").doClick();
+                check(text(panel).contains("例句词形："), "Corpus inflection label is retained");
+            }
             for (String tab : TABS) {
                 toggle(panel, tab).doClick();
                 if (word.equals("abandon") && tab.equals("词根")) check(text(panel).contains("中文词源资料"), "Chinese etymology remains visible");
@@ -212,9 +293,29 @@ public final class LearningPanelTest {
         StringBuilder curated = new StringBuilder();
         if (bilingual) for (int i = 1; i <= 5; i++) curated.append("example\trun\tOriginal bilingual card ")
                 .append(i).append(" includes run.\t原创双语卡片 ").append(i).append("。\t原创学习例句；非考试真题\n");
+        return fromRows(rows, curated.toString());
+    }
+
+    private static LearningRepository qualityFixture() throws Exception {
+        List<String[]> rows = List.of(
+                new String[]{"run", "source-sense-n", "n", "A period of running.",
+                        "We run every morning.\tWordNet credit A\nWE RUN, EVERY MORNING!\tWordNet credit B\nThey run outside.\tWordNet credit C", "", ""},
+                new String[]{"run", "source-sense-v", "v", "Move quickly on foot.",
+                        "We run every morning.\tWordNet credit D", "", ""});
+        String curated = "example\trun\tWe run through " + "many different neighborhoods ".repeat(10) + "before breakfast.\t长句原译文。\tLong source\n"
+                + "example\trun\tWe run every morning.\t我们每天早上跑步。\tSource A\n"
+                + "example\trun\tWE RUN, EVERY MORNING!\t我們每個早晨都跑步！\tSource B\n"
+                + "example\trun\tThey run outside.\t他们在外面跑步。\tSource C\n"
+                + "example\trun\tThey jog outside.\t他们在外面慢跑。\tIndirect source\n"
+                + "example\trun\ta run in the park\t公园里的一次跑步\tFragment source\n"
+                + "example\trun\tWe run after school.\t我们放学后跑步。\tSource D\n";
+        return fromRows(rows, curated);
+    }
+
+    private static LearningRepository fromRows(List<String[]> rows, String curated) throws Exception {
         return LearningRepository.load(new ByteArrayInputStream(binary(0x574e4c31, rows)),
                 new ByteArrayInputStream(binary(0x574e4531, List.of())),
-                new ByteArrayInputStream(curated.toString().getBytes(StandardCharsets.UTF_8)));
+                new ByteArrayInputStream(curated.getBytes(StandardCharsets.UTF_8)));
     }
 
     private static byte[] binary(int magic, List<String[]> rows) throws Exception {
@@ -242,10 +343,11 @@ public final class LearningPanelTest {
             JButton next = components(panel).stream().filter(c -> c instanceof JButton).map(c -> (JButton)c)
                     .filter(b -> b.getText() != null && (b.getText().equals("出处") || b.getText().equals("开放资料出处")
                             || b.getText().equals("词典资料出处")
+                            || b.getText().startsWith("更多语料（") || b.getText().startsWith("出处与原译文（")
                             || b.getText().startsWith("参考来源（") || b.getText().startsWith("展开其余 ")
                             || (b.getName() != null && (b.getName().equals("examples-english")
                             || b.getName().equals("examples-related") || b.getName().equals("roots-records")
-                            || b.getName().equals("examples-collocations")) && !b.getText().startsWith("收起"))))
+                            || b.getName().equals("examples-collocations") || b.getName().equals("examples-selection")) && !b.getText().startsWith("收起"))))
                     .findFirst().orElse(null);
             if (next == null) return;
             next.doClick();
@@ -265,7 +367,36 @@ public final class LearningPanelTest {
         Graphics2D graphics = image.createGraphics(); graphics.scale(scale, scale);
         graphics.setColor(Theme.WHITE); graphics.fillRect(0, 0, width, panel.getHeight());
         panel.printAll(graphics); graphics.dispose();
+        assertRenderedTextWidths(panel, scale);
         if (file != null) ImageIO.write(image, "png", file.toFile());
+    }
+
+    /** Caret bounds alone miss integer font-advance changes on scaled Graphics2D contexts. */
+    private static void assertRenderedTextWidths(JPanel panel, double scale) throws Exception {
+        BufferedImage image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D graphics = image.createGraphics();
+        try {
+            graphics.scale(scale, scale);
+            for (Component component : components(panel)) if (component instanceof JTextArea area
+                    && "example-english".equals(area.getName()) && !area.getText().isEmpty()) {
+                var metrics = area.getFontMetrics(area.getFont()).getFontRenderContext();
+                graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, metrics.getAntiAliasingHint());
+                graphics.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, metrics.getFractionalMetricsHint());
+                String value = area.getText(); int start = 0;
+                double y = area.modelToView2D(0).getY();
+                for (int i = 1; i <= value.length(); i++) {
+                    double nextY = area.modelToView2D(i).getY();
+                    if (nextY > y || i == value.length()) {
+                        String line = value.substring(start, i).stripTrailing();
+                        double renderedWidth = area.getFont().getStringBounds(line, graphics.getFontRenderContext()).getWidth();
+                        check(renderedWidth <= area.getWidth() + 1,
+                                "Actual scaled glyph advances fit the visual line at " + scale + "x: " + line
+                                + "; rendered=" + renderedWidth + "; available=" + area.getWidth());
+                        start = i; y = nextY;
+                    }
+                }
+            }
+        } finally { graphics.dispose(); }
     }
 
     private static void assertTextBounds(JPanel panel, int width) throws Exception {
@@ -306,6 +437,13 @@ public final class LearningPanelTest {
     private static JTextArea area(Container root, String exact) {
         return components(root).stream().filter(c -> c instanceof JTextArea a && exact.equals(a.getText()))
                 .map(c -> (JTextArea)c).findFirst().orElseThrow(() -> new AssertionError("Missing text area: " + exact));
+    }
+    private static Container namedContainer(Container root, String name) {
+        return components(root).stream().filter(c -> c instanceof Container && name.equals(c.getName()))
+                .map(c -> (Container)c).findFirst().orElseThrow(() -> new AssertionError("Missing named container: " + name));
+    }
+    private static long sentenceCount(Container root) {
+        return components(root).stream().filter(c -> c instanceof JTextArea && "example-english".equals(c.getName())).count();
     }
     private static JToggleButton toggle(Container root, String name) {
         return components(root).stream().filter(c -> c instanceof JToggleButton b && name.equals(b.getText()))
