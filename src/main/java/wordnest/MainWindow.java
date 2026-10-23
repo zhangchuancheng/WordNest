@@ -21,6 +21,8 @@ final class MainWindow extends JFrame {
     private DictionaryRepository dictionary;
     private LearningRepository learning = LearningRepository.empty();
     private FavoritesStore favorites;
+    private ReviewStore reviewStore;
+    private final SpeechControls speech;
     private LookupHistory history;
     private LookupSession lookupSession;
     private LookupNavigationBar navigation;
@@ -59,6 +61,14 @@ final class MainWindow extends JFrame {
         super("拾词 · WordNest");
         this.dataDir = dataDir;
         readSettings();
+        int preferredRate;
+        try { preferredRate = Integer.parseInt(settings.getProperty("speech.rate", "0")); }
+        catch (NumberFormatException invalid) { preferredRate = 0; }
+        speech = new SpeechControls(settings.getProperty("speech.voice", ""), preferredRate, (voice, rate) -> {
+            settings.setProperty("speech.voice", voice);
+            settings.setProperty("speech.rate", Integer.toString(rate));
+            writeSettings();
+        });
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         setIconImage(icon());
         Rectangle available = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -92,7 +102,7 @@ final class MainWindow extends JFrame {
             }
             @Override public boolean ensureTray() { return tray.install(); }
             @Override public int windowState() { return getExtendedState(); }
-            @Override public void hideWindow() { setVisible(false); }
+            @Override public void hideWindow() { speech.stop(); setVisible(false); }
             @Override public void showWindow(int state, boolean focus) {
                 setAutoRequestFocus(focus);
                 try {
@@ -119,7 +129,7 @@ final class MainWindow extends JFrame {
         pin.addActionListener(e -> { setAlwaysOnTop(pin.isSelected()); writeSettings(); });
         watch.addActionListener(e -> setClipboardEnabled(watch.isSelected()));
         lookupTab.addActionListener(e -> pages.show(pagePanel, "lookup"));
-        libraryTab.addActionListener(e -> { if (flushNote()) { refreshLibrary(); pages.show(pagePanel, "library"); } else lookupTab.setSelected(true); });
+        libraryTab.addActionListener(e -> { if (flushNote()) { speech.stop(); refreshLibrary(); pages.show(pagePanel, "library"); } else lookupTab.setSelected(true); });
         search.addActionListener(e -> lookup(search.getText(), false));
         addWindowListener(new WindowAdapter() {
             @Override public void windowClosing(WindowEvent e) {
@@ -173,6 +183,7 @@ final class MainWindow extends JFrame {
 
     private void stopBackgroundWork() {
         watcher.stop(); saveNoteTimer.stop(); trayMonitor.stop();
+        speech.close();
     }
 
     private void setClipboardEnabled(boolean enabled) {
@@ -258,7 +269,10 @@ final class MainWindow extends JFrame {
         JPanel lookupControls = Theme.panel(new BorderLayout(0, 7));
         lookupControls.add(searchRow, BorderLayout.NORTH);
         navigation = new LookupNavigationBar(() -> navigateHistory(false), () -> navigateHistory(true), this::showHistory);
-        lookupControls.add(navigation, BorderLayout.SOUTH); p.add(lookupControls, BorderLayout.NORTH);
+        JPanel navigationAndSpeech = Theme.panel(new BorderLayout(0, 5));
+        navigationAndSpeech.add(navigation, BorderLayout.NORTH);
+        navigationAndSpeech.add(speech, BorderLayout.SOUTH);
+        lookupControls.add(navigationAndSpeech, BorderLayout.SOUTH); p.add(lookupControls, BorderLayout.NORTH);
         JScrollPane scroll = new JScrollPane(details);
         scroll.setBorder(null); scroll.setOpaque(false); scroll.getViewport().setOpaque(false);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -288,7 +302,7 @@ final class MainWindow extends JFrame {
         JPanel bottom = Theme.panel(new BorderLayout(0, 8)); bottom.add(libraryCount, BorderLayout.NORTH);
         JPanel actions = Theme.panel(new FlowLayout(FlowLayout.LEFT, 6, 0));
         JButton open = Theme.button("查看词条", true); open.addActionListener(e -> openSelected());
-        JButton review = Theme.button("翻卡复习", false); review.addActionListener(e -> review());
+        JButton review = Theme.button("计划复习", false); review.addActionListener(e -> review());
         JButton export = Theme.button("导出 CSV", false); export.addActionListener(e -> export());
         actions.add(open); actions.add(review); actions.add(export);
         JPanel libraryActions = Theme.panel(new BorderLayout(0, 3));
@@ -321,12 +335,15 @@ final class MainWindow extends JFrame {
     private void loadData() {
         new SwingWorker<DictionaryRepository, Void>() {
             private FavoritesStore loadedFavorites;
+            private ReviewStore loadedReview;
             private LearningRepository loadedLearning = LearningRepository.empty();
             private boolean learningFailed;
             private LookupHistory loadedHistory;
             private boolean historyFailed;
             @Override protected DictionaryRepository doInBackground() throws Exception {
                 loadedFavorites = new FavoritesStore(dataDir);
+                try { loadedReview = new ReviewStore(dataDir); }
+                catch (IOException e) { /* Preserve damaged review data; dictionary and notes remain available. */ }
                 try { loadedHistory = new LookupHistory(dataDir); }
                 catch (IOException e) { loadedHistory = LookupHistory.sessionOnly(); historyFailed = true; }
                 InputStream in = MainWindow.class.getResourceAsStream("/dictionary.bin.gz");
@@ -340,6 +357,7 @@ final class MainWindow extends JFrame {
             @Override protected void done() {
                 try {
                     dictionary = get(); favorites = loadedFavorites; learning = loadedLearning; loaded = true;
+                    reviewStore = loadedReview;
                     history = loadedHistory;
                     lookupSession = new LookupSession(history, dictionary::lookup, MainWindow.this::flushNote, MainWindow.this::displayWord);
                     footer.setText("本地离线  ·  " + NumberFormat.getIntegerInstance().format(dictionary.size()) + " 个词条  ·  ECDICT");
@@ -376,6 +394,7 @@ final class MainWindow extends JFrame {
             if (automatic) { status("未收录「" + query + "」，已保留当前词条", false); return; }
             if (!flushNote()) return;
             current = null; noteArea = null; noteState = null; favoriteButton = null;
+            speech.stop();
             List<String> suggestions = dictionary.suggest(query, 5);
             showEmpty("没有找到这个词", "检查一下拼写，或试试单词原形。", suggestions);
             updateNavigation();
@@ -389,6 +408,7 @@ final class MainWindow extends JFrame {
     }
 
     private void displayWord(WordEntry entry) {
+        speech.stop();
         current = entry;
         search.setText(current.word());
         settings.setProperty("lastWord", current.word());
@@ -405,11 +425,11 @@ final class MainWindow extends JFrame {
         if (lemma != null && !lemma.equalsIgnoreCase(current.word()) && dictionary.lookup(lemma).isPresent()) {
             base = Theme.button("查看原形  " + lemma, false); base.addActionListener(e -> lookup(lemma, false));
         }
-        WordDetailPanel card = new WordDetailPanel(current, favoriteButton, base);
+        WordDetailPanel card = new WordDetailPanel(current, favoriteButton, base, speech::play);
         body.add(card); body.add(Box.createVerticalStrut(12));
         Theme.Card learningCard = new Theme.Card(new BorderLayout());
         Theme.pad(learningCard, 14, 17, 16, 17); learningCard.setAlignmentX(Component.LEFT_ALIGNMENT);
-        learningCard.add(new LearningPanel(current.word(), learning, dictionary, value -> lookup(value, false)), BorderLayout.CENTER);
+        learningCard.add(new LearningPanel(current.word(), learning, dictionary, value -> lookup(value, false), speech::play), BorderLayout.CENTER);
         body.add(learningCard); body.add(Box.createVerticalStrut(12));
         Theme.Card notes = new Theme.Card(new BorderLayout(0, 10)); Theme.pad(notes, 15, 17, 15, 17); notes.setAlignmentX(Component.LEFT_ALIGNMENT);
         JPanel noteHeading = Theme.panel(new BorderLayout());
@@ -426,7 +446,13 @@ final class MainWindow extends JFrame {
         noteArea.getDocument().addDocumentListener(listener(() -> {
             if (!updatingNote) { noteDirty = true; noteState.setText("正在保存…"); saveNoteTimer.restart(); }
         }));
-        notes.add(noteArea, BorderLayout.CENTER); body.add(notes); body.add(Box.createVerticalStrut(4));
+        notes.add(noteArea, BorderLayout.CENTER);
+        JPanel noteActions = Theme.panel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        JButton readNote = Theme.button("朗读我的例句", false);
+        readNote.setFont(Theme.font(Font.PLAIN, 11));
+        readNote.addActionListener(event -> speech.play(noteArea.getText()));
+        noteActions.add(readNote); notes.add(noteActions, BorderLayout.SOUTH);
+        body.add(notes); body.add(Box.createVerticalStrut(4));
         details.removeAll(); details.add(body, BorderLayout.NORTH); details.revalidate(); details.repaint();
         SwingUtilities.invokeLater(() -> { var scroll = (JScrollPane)SwingUtilities.getAncestorOfClass(JScrollPane.class, details); if (scroll != null) scroll.getVerticalScrollBar().setValue(0); });
     }
@@ -595,22 +621,34 @@ final class MainWindow extends JFrame {
     }
 
     private void review() {
-        if (favorites == null || favorites.list().isEmpty()) { status("先收藏几个词，再来翻卡复习", false); return; }
+        if (modalOpen || favorites == null) return;
+        if (reviewStore == null) { status("复习记录未能读取，原文件已保留；查词与生词本仍可使用", true); return; }
         if (!flushNote()) return;
-        List<SavedWord> cards = new ArrayList<>(favorites.list()); Collections.shuffle(cards);
-        JDialog dialog = new JDialog(this, "拾词 · 翻卡复习", true); dialog.setSize(440, 450); dialog.setLocationRelativeTo(this);
-        JPanel content = new JPanel(new BorderLayout(0, 18)); Theme.pad(content, 24, 24, 24, 24);
-        JLabel position = Theme.label("", 12, Theme.MUTED); content.add(position, BorderLayout.NORTH);
-        JTextArea question = Theme.text("", 18, Theme.INK, 350); question.setEditable(false);
-        JScrollPane scroll = new JScrollPane(question); scroll.setBorder(null); scroll.setOpaque(false); scroll.getViewport().setOpaque(false); content.add(scroll, BorderLayout.CENTER);
-        JPanel actions = Theme.panel(new FlowLayout(FlowLayout.CENTER, 8, 0));
-        JButton reveal = Theme.button("显示释义", false); JButton next = Theme.button("下一张", true); actions.add(reveal); actions.add(next); content.add(actions, BorderLayout.SOUTH);
-        int[] index = {0};
-        Runnable render = () -> { SavedWord item = cards.get(index[0]); position.setText("回忆一下这个词的意思    " + (index[0] + 1) + " / " + cards.size()); question.setText(item.entry().word() + "\n\n" + (item.note().isBlank() ? "想一想，你在哪里遇到过它？" : item.note())); question.setCaretPosition(0); reveal.setEnabled(true); };
-        reveal.addActionListener(e -> { SavedWord item = cards.get(index[0]); question.append("\n\n" + item.entry().translation()); reveal.setEnabled(false); });
-        next.addActionListener(e -> { index[0] = (index[0] + 1) % cards.size(); render.run(); });
-        render.run(); dialog.setContentPane(content); modalOpen = true;
-        try { dialog.setVisible(true); } finally { modalOpen = false; dialog.dispose(); }
+        speech.stop();
+        JDialog dialog = new JDialog(this, "拾词 · 计划复习", true);
+        dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        ReviewPanel content = new ReviewPanel(reviewStore, favorites::list, () -> {
+            dialog.dispose(); refreshLibrary(); pages.show(pagePanel, "library"); libraryTab.setSelected(true);
+        }, speech::play, speech::stop);
+        Rectangle available = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+        dialog.setSize(Math.min(500, available.width), Math.min(620, available.height - 20));
+        dialog.setMinimumSize(new Dimension(Math.min(380, available.width), Math.min(480, available.height - 20)));
+        JPanel reviewContent = Theme.panel(new BorderLayout());
+        reviewContent.add(content, BorderLayout.CENTER);
+        JPanel audioActions = Theme.panel(new BorderLayout(8, 0)); Theme.pad(audioActions, 5, 18, 12, 18);
+        JTextArea speechStatus = new JTextArea(speech.statusText(), 2, 20);
+        speechStatus.setName("review-speech-status"); speechStatus.setEditable(false); speechStatus.setOpaque(false);
+        speechStatus.setLineWrap(true); speechStatus.setWrapStyleWord(true);
+        speechStatus.setFont(Theme.font(Font.PLAIN, 11)); speechStatus.setForeground(Theme.MUTED);
+        java.beans.PropertyChangeListener speechUpdates = event -> speechStatus.setText((String) event.getNewValue());
+        speech.addPropertyChangeListener("speechStatus", speechUpdates);
+        audioActions.add(speechStatus, BorderLayout.CENTER);
+        JButton stopReading = Theme.button("停止朗读", false);
+        stopReading.addActionListener(event -> speech.stop()); audioActions.add(stopReading, BorderLayout.EAST);
+        reviewContent.add(audioActions, BorderLayout.SOUTH);
+        dialog.setLocationRelativeTo(this); dialog.setContentPane(reviewContent); modalOpen = true;
+        try { content.refresh(); dialog.setVisible(true); }
+        finally { speech.removePropertyChangeListener("speechStatus", speechUpdates); speech.stop(); modalOpen = false; dialog.dispose(); }
     }
 
     private void export() {
@@ -640,12 +678,13 @@ final class MainWindow extends JFrame {
         return "\"" + safe.replace("\"", "\"\"") + "\"";
     }
     private void showAbout() {
-        String info = "拾词 WordNest  0.5.0\n\n" +
+        String info = "拾词 WordNest  0.6.0\n\n" +
                 "手动输入单词，或在其他软件中复制单个英文单词。\n中文、句子和图片不会改变当前词条。\n复制查词不会抢焦点，可随时用顶部按钮暂停。\n\n" +
                 "关闭时可选择后台运行或退出；顶部「设置」可更改记住的选择。\n托盘图标可能收在右下角的小箭头中，双击即可显示窗口。\n再次打开 EXE 也可唤回窗口；右键托盘菜单可彻底退出。\n\n" +
                 "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n个人例句自动保存在本机，取消收藏仍保留，可从生词本恢复。\n查词历史保留最近 100 个词，可清空；所有查询在本机完成，不调用网络或 AI 服务。\n\n" +
                 "英汉例句：Tatoeba 社区语料与拾词原创。\n派生和近义词：Open English WordNet / 中文维基词典。\n词源：中文维基词典与 etymology-db（2023 快照）。\n新增资料优先覆盖常用词与雅思标签词；355 张原有完整中文卡片继续保留。\n各项实际覆盖见程序目录 LEARNING_COVERAGE.md。\n每个分页标明来源；社区资料可能有疏漏，缺项不会自动补写。\n\n" +
-                "本地收藏、笔记、历史与设置：\n" + dataDir + "\n\n快捷键：Ctrl+L 聚焦搜索，Enter 查询，Alt+← / → 后退 / 前进。";
+                "计划复习：每轮 10 / 20 词，显示释义后选择忘记或记住；答题进度与下次复习时间自动保存在本机。\n朗读使用 Windows 已安装的英文桌面语音，支持语音选择、调速与停止。\n\n" +
+                "本地收藏、笔记、历史、复习与设置：\n" + dataDir + "\n\n快捷键：Ctrl+L 聚焦搜索，Enter 查询，Alt+← / → 后退 / 前进。";
         boolean previousModal = modalOpen; modalOpen = true;
         try { JOptionPane.showMessageDialog(this, info, "关于拾词", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(icon())); }
         finally { modalOpen = previousModal; }

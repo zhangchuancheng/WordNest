@@ -1,3 +1,24 @@
+# WordNest 0.6.0 验证记录（2026-10-23）
+
+本版新增有限轮次、固定间隔的计划复习，以及 Windows 本机英文语音朗读。生产源码与全部测试以 `javac --release 17 -encoding UTF-8` 编译；本轮检查实际使用 Eclipse Temurin 17.0.20.1，新增功能的最终测试直接加载候选 Windows 包中的 JAR。
+
+- ReviewStoreTest：119 项通过。使用临时文件与可控时钟验证 10/20 词轮次、到期优先/新词补充、不用未到期词凑数、重开续做、有限结束、取消收藏跳过、固定 1/3/7/14/30/60 天间隔及忘记 10 分钟后到期；损坏文件、写入失败和陈旧题目回答不会覆盖原进度或误答下一题。
+- ReviewPanelTest：57 项通过（传入预览目录）。使用生产主题，覆盖揭晓后评分、20 词选择、续轮、完成统计、保存失败保留当前题、语音回调与切题停止；340/460 宽度的 16 张 2 倍离屏图含真实 relevant 词条及临时长笔记。长文只滚动题面，评分按钮固定可见；没有创建 Window。
+- SpeechServiceTest：21 项；WindowsSpeechEngineTest：18 项通过。使用假语音引擎/假进程测试连续请求替换、停止、关闭、异常、过长文字、数据与脚本分离以及超时；总截止时间覆盖子进程不读取 stdin 导致的写入阻塞。
+- SpeechControlsTest：101 项通过。覆盖保存语音/语速、初始化不覆盖缺失首选项、无语音与失败提示、停止状态、340/440/640 宽度，以及用于复习窗口的 speechStatus 属性广播、EDT 回调与移除监听。共 9 张离屏图；未调用真实播放。
+- SpeechButtonsTest：76 项通过。实际词条与例句控件在 340/440/640 宽度下的按钮边界、完整英文回调及标点保留均通过；回调只记录文字，没有创建语音引擎或播放声音。
+- WindowsSpeechProbe：从最终候选包 JAR 中读取固定脚本，实际枚举本机可用英文桌面语音，得到 Microsoft Zira Desktop / en-US。用该语音无声生成临时 WAV：215,852 字节，RIFF/WAVE 头正确，data 块 215,806 字节且含非零音频数据；随后删除临时文件。没有输出到扬声器，因此不能据此声称音质、口音自然度或实际音量已听测。
+- 本轮同时重跑 CoreTest 1,045、FavoritesRecoveryTest 73、LookupHistoryTest 256、LookupSessionTest 54、ExampleSelectionTest 31、WordDetailPanelTest 8,026、LearningPanelTest 12,490、LearningRepositoryTest --full 504、CuratedCoverageTest 6,810、OpenLearningTest 202,239，全部通过。原词库与学习覆盖保持不变。
+- TraySupportTest 14、BackgroundControllerTest 121、ActivationRequestsTest 40、TrayMenuFontTest 44 通过；ThemeTest 验证固定依赖、FlatLaf 3.7.2、Windows DLL 与零 Window。托盘字体检查仅构造无 peer 的 AWT 菜单，没有注册系统托盘。
+- WordNestPreview 生成九张包含朗读控件的离屏主页面预览；语音列表与导航数量使用演示状态，不读取个人数据。README 的主页面、例句与复习预览已更新。
+- `scripts/build.ps1 -BuildVariant release060-package` 构建 Windows app-image 成功。实际原生 EXE 执行 `--self-check` 退出码 0，报告 `status=PASS`、`app.version=0.6.0`、`headless=true`，运行时来自候选包，语音桥接资源存在；EXE FileVersion 与 ProductVersion 均为 0.6.0。此自检不枚举语音、不播放声音，也不打开个人数据目录。
+
+MainWindowStateTest 仅编译，未执行其 JFrame 测试。没有打开应用窗口、操作真实桌面、读取剪贴板、播放声音或修改个人收藏/复习数据。界面离屏图、无声语音合成与真实桌面、焦点、系统 DPI、快捷键、音量及听音验收是不同的验证范围。
+
+复现：构建后编译 tests 下源码，classpath 包含应用 JAR 与 `lib/flatlaf-3.7.2.jar`。纯 Java/Swing 测试使用 `-Djava.awt.headless=true -Xmx512m`；ReviewPanelTest、SpeechControlsTest、SpeechButtonsTest 和 WordNestPreview 传入临时预览目录。真实无声语音探测需额外显式传入 `-Dwordnest.speech.probe=true` 并运行 wordnest.WindowsSpeechProbe。TrayMenuFontTest 单独使用 `-Djava.awt.headless=false`，不建立原生 peer。
+
+---
+
 # WordNest 0.5.0 验证记录（2026-10-23）
 
 本次增加取消收藏后的笔记保留与恢复、最近查词及会话前进后退，并整理现有例句的筛选、去重和义项分组。所有数据测试使用临时目录；没有读写实际个人生词本、历史或设置。

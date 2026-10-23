@@ -15,21 +15,30 @@ public final class WordNestPreview {
         Path output = Path.of(args[0]); Files.createDirectories(output);
         DictionaryRepository dictionary = DictionaryRepository.load(App.class.getResourceAsStream("/dictionary.bin.gz"));
         LearningRepository learning = LearningRepository.load();
+        SpeechService previewSpeech = new SpeechService(new PreviewSpeechEngine());
+        previewSpeech.voices().join();
+        java.util.List<JPanel> panels = new java.util.ArrayList<>();
         SwingUtilities.invokeAndWait(() -> {
             Theme.install();
+            for (String word : new String[]{"coordinate", "relevant", "certificate"})
+                for (int width : new int[]{440, 520, 640}) panels.add(build(word, dictionary, learning, previewSpeech));
+        });
+        SwingUtilities.invokeAndWait(() -> {
             try {
+                int index = 0;
                 for (String word : new String[]{"coordinate", "relevant", "certificate"}) {
-                    render(build(word, dictionary, learning), 440, 570, output.resolve(word + "-content-440.png"));
-                    render(build(word, dictionary, learning), 520, 705, output.resolve(word + "-content-520.png"));
-                    render(build(word, dictionary, learning), 640, 900, output.resolve(word + "-content-640.png"));
+                    render(panels.get(index++), 440, 570, output.resolve(word + "-content-440.png"));
+                    render(panels.get(index++), 520, 705, output.resolve(word + "-content-520.png"));
+                    render(panels.get(index++), 640, 900, output.resolve(word + "-content-640.png"));
                 }
                 if (Window.getWindows().length != 0) throw new AssertionError("A Window was unexpectedly constructed");
                 System.out.println("PASS: nine offscreen content previews; no native title bar simulated; no windows created");
             } catch (Exception e) { throw new RuntimeException(e); }
         });
+        previewSpeech.close();
     }
 
-    private static JPanel build(String word, DictionaryRepository dictionary, LearningRepository learning) {
+    private static JPanel build(String word, DictionaryRepository dictionary, LearningRepository learning, SpeechService speech) {
         JPanel root = new JPanel(new BorderLayout()); root.setBackground(Theme.PAPER);
         JToggleButton lookup = Theme.toggle("查词");
         JToggleButton library = Theme.toggle("生词本  2");
@@ -46,13 +55,16 @@ public final class WordNestPreview {
         lookupControls.add(searchRow, BorderLayout.NORTH);
         LookupNavigationBar navigation = new LookupNavigationBar(() -> { }, () -> { }, () -> { });
         navigation.update(true, false, 12);
-        lookupControls.add(navigation, BorderLayout.SOUTH); page.add(lookupControls, BorderLayout.NORTH);
+        JPanel navigationAndSpeech = Theme.panel(new BorderLayout(0, 5));
+        navigationAndSpeech.add(navigation, BorderLayout.NORTH);
+        navigationAndSpeech.add(new SpeechControls(speech, "示例英文语音", 0, (voice, rate) -> { }), BorderLayout.SOUTH);
+        lookupControls.add(navigationAndSpeech, BorderLayout.SOUTH); page.add(lookupControls, BorderLayout.NORTH);
         JPanel body = Theme.panel(null); body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
-        body.add(new WordDetailPanel(dictionary.lookup(word).orElseThrow(), Theme.button("已收藏", false), null));
+        body.add(new WordDetailPanel(dictionary.lookup(word).orElseThrow(), Theme.button("已收藏", false), null, ignored -> { }));
         body.add(Box.createVerticalStrut(12));
         Theme.Card learningCard = new Theme.Card(new BorderLayout());
         Theme.pad(learningCard, 14, 17, 16, 17); learningCard.setAlignmentX(Component.LEFT_ALIGNMENT);
-        learningCard.add(new LearningPanel(word, learning, dictionary, ignored -> { }), BorderLayout.CENTER);
+        learningCard.add(new LearningPanel(word, learning, dictionary, ignored -> { }, ignored -> { }), BorderLayout.CENTER);
         body.add(learningCard);
         JPanel details = Theme.panel(new BorderLayout()); details.add(body, BorderLayout.NORTH);
         JScrollPane scroll = new JScrollPane(details); scroll.setBorder(null); scroll.setOpaque(false);
@@ -82,5 +94,13 @@ public final class WordNestPreview {
     }
     private static void layout(Container root) {
         root.doLayout(); for (Component c : root.getComponents()) if (c instanceof Container nested) layout(nested);
+    }
+    private static final class PreviewSpeechEngine implements SpeechService.Engine {
+        @Override public java.util.List<SpeechService.Voice> voices(SpeechService.Cancellation cancellation) {
+            return java.util.List.of(new SpeechService.Voice("示例英文语音", "en-US"));
+        }
+        @Override public void speak(SpeechService.Request request, SpeechService.Cancellation cancellation) { throw new AssertionError("Preview cannot play audio"); }
+        @Override public void saveWave(SpeechService.Request request, Path file, SpeechService.Cancellation cancellation) { throw new AssertionError("Preview cannot write audio"); }
+        @Override public void close() { }
     }
 }

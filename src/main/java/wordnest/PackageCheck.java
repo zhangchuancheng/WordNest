@@ -31,6 +31,9 @@ final class PackageCheck {
                 throw new IllegalStateException("Dictionary sample is incomplete");
             }
             if (App.class.getResource("/app.ico") == null) throw new IllegalStateException("Icon resource is missing");
+            if (App.class.getResource("/speech/windows-speech.ps1") == null)
+                throw new IllegalStateException("Local Windows speech bridge is missing");
+            report.setProperty("speech.bridge", "bundled; voice availability requires Windows runtime check");
             report.setProperty("dictionary.entries", Integer.toString(dictionary.size()));
             report.setProperty("sample.word", sample.word());
             report.setProperty("sample.translation", sample.translation());
@@ -72,7 +75,7 @@ final class PackageCheck {
             report.setProperty("learning.curated.four.sections", Integer.toString(curatedWords.size()));
             report.putAll(LearningCoverage.verify(learning, dictionary));
             report.putAll(Theme.verify());
-            report.setProperty("app.version", "0.5.0");
+            report.setProperty("app.version", "0.6.0");
             report.setProperty("status", "PASS");
         } catch (Exception e) {
             report.setProperty("status", "FAIL");

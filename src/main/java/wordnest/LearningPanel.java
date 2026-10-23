@@ -19,14 +19,20 @@ final class LearningPanel extends JPanel {
     private final LearningRepository data;
     private final DictionaryRepository dictionary;
     private final Consumer<String> navigate;
+    private final Consumer<String> speak;
     private final JPanel content = Theme.panel(new BorderLayout());
     private final Set<String> expanded = new HashSet<>();
     private String selected = "例句";
     private JPanel body;
 
     LearningPanel(String word, LearningRepository data, DictionaryRepository dictionary, Consumer<String> navigate) {
+        this(word, data, dictionary, navigate, null);
+    }
+
+    LearningPanel(String word, LearningRepository data, DictionaryRepository dictionary,
+                  Consumer<String> navigate, Consumer<String> speak) {
         super(new BorderLayout(0, 14));
-        this.word = word; this.data = data; this.dictionary = dictionary; this.navigate = navigate;
+        this.word = word; this.data = data; this.dictionary = dictionary; this.navigate = navigate; this.speak = speak;
         setOpaque(false);
         JPanel tabs = Theme.panel(new GridLayout(1, 4, 5, 0));
         ButtonGroup group = new ButtonGroup();
@@ -226,6 +232,14 @@ final class LearningPanel extends JPanel {
             } catch (javax.swing.text.BadLocationException impossible) { throw new IllegalStateException(impossible); }
         }
         body.add(area); gap(7);
+        if (speak != null) {
+            JButton play = Theme.button("朗读例句", false);
+            play.setName("speak-example"); play.setFont(Theme.font(Font.PLAIN, 11));
+            play.setBorder(new EmptyBorder(4, 9, 4, 9));
+            play.getAccessibleContext().setAccessibleDescription(text);
+            play.addActionListener(event -> speak.accept(text));
+            body.add(play); gap(7);
+        }
     }
     private void derivations() {
         paragraph("派生词是构成的新词；复数、过去式等属于词形变化。", 11, Theme.MUTED);

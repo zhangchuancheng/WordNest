@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.function.Consumer;
 
 /** Dictionary reading surface. Source definitions stay intact; English starts collapsed. */
 final class WordDetailPanel extends JPanel {
@@ -26,6 +27,10 @@ final class WordDetailPanel extends JPanel {
             "cet4", "四级", "cet6", "六级", "ky", "考研", "ielts", "雅思", "toefl", "托福", "gre", "GRE");
 
     WordDetailPanel(WordEntry entry, JButton favorite, JButton lemmaButton) {
+        this(entry, favorite, lemmaButton, null);
+    }
+
+    WordDetailPanel(WordEntry entry, JButton favorite, JButton lemmaButton, Consumer<String> speak) {
         super(new BorderLayout()); setOpaque(false); setAlignmentX(LEFT_ALIGNMENT);
         Theme.Card card = new Theme.Card(null);
         card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS)); Theme.pad(card, 20, 18, 18, 18);
@@ -40,7 +45,15 @@ final class WordDetailPanel extends JPanel {
         wordRow.add(favoriteWrap, BorderLayout.EAST); card.add(wordRow); gap(card, 6);
         ReadingText phonetic = new ReadingText(entry.phonetic().isBlank() ? "该词条暂无音标" : "/ " + entry.phonetic() + " /",
                 entry.phonetic().isBlank() ? Theme.font(Font.PLAIN, 12) : Theme.latin(Font.PLAIN, 15), Theme.MUTED);
-        card.add(textRow(phonetic));
+        JPanel pronunciation = textRow(phonetic);
+        if (speak != null) {
+            JButton play = Theme.button("朗读单词", false);
+            play.setName("speak-word"); play.setFont(Theme.font(Font.PLAIN, 11));
+            play.getAccessibleContext().setAccessibleName("朗读单词 " + entry.word());
+            play.addActionListener(event -> speak.accept(entry.word()));
+            pronunciation.add(play, BorderLayout.EAST);
+        }
+        card.add(pronunciation);
         TagRow tags = new TagRow();
         for (String tag : entry.tags().split("\\s+")) if (TAGS.containsKey(tag)) {
             JLabel chip = Theme.label(TAGS.get(tag), 10, Theme.GREEN);
