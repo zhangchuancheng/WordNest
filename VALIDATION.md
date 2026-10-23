@@ -1,3 +1,20 @@
+# WordNest 0.4.2 验证记录（2026-10-23）
+
+本次针对学习分页的信息层次、相关性分组、来源折叠、窄窗换行，以及已有窗口与后台功能的发布集成；下文旧版记录保留为历史。
+
+- 完整源码以 `javac --release 17` 编译通过，使用 Eclipse Temurin 17.0.20.1 运行测试。
+- LearningPanelTest：10,475 项断言通过。覆盖 certificate 的默认双语卡、来源展开/收起、未直接使用查询拼写的 WordNet 例句隔离、原创与社区标签、词形提示、完整词边界高亮、组间和页签间独立状态、完整来源和许可地址、相关词跳转及缺项状态。
+- 使用实际 Swing JPanel 检查 340 / 440 / 640 像素宽度，以及例句、派生、词根、近义词默认与展开状态的末行、末字和容器边界；abandon 词根页在来源展开后按 640 → 340 → 440 调整宽度，未依赖递归失效辅助也没有裁字。生产布局按实际内宽重新测高，避免旧 BoxLayout 缓存过期高度。
+- CoreTest：1,044 项；WordDetailPanelTest：8,026 项；BackgroundControllerTest：121 项；ActivationRequestsTest：40 项；TraySupportTest：14 项通过。后台部分使用无窗口 host / 临时文件协议，只证明被测逻辑，未实际注册系统托盘。
+- LearningRepositoryTest --full：504 项；CuratedCoverageTest：6,810 项；OpenLearningTest：202,239 项通过。主词库与学习资料的覆盖保持不变：355 张中文卡、710 条原有原创双语例句、14,937 条社区例句展示记录和 341 条补充原创例句。
+- ThemeTest 通过：固定界面依赖 SHA-256 正确，FlatLaf 3.7.2 生效，原生 Windows DLL 加载成功，创建 Window 数量为零。
+- WordNestPreview：coordinate / relevant / certificate 的 440 / 520 / 640 宽度共九张真实控件离屏图；没有模拟原生标题栏。学习局部预览保存在 `test-artifacts/reading-ui/`，不进入运行资源。
+- 通过 `scripts/build.ps1 -BuildVariant release042-package` 构建独立 Windows app-image。原生 EXE 的 `--self-check` 实际退出码 0、`status=PASS`、`app.version=0.4.2`、`headless=true`，Java 来自发行目录自带的 runtime；主词库 770,611 条。EXE ProductVersion 与 FileVersion 均为 0.4.2。
+
+本轮没有创建应用窗口、操作鼠标键盘、读取真实剪贴板或读写用户生词本。未进行真实桌面上的焦点、系统 DPI、窗口与托盘交互验收；无窗口策略测试不能代替原生托盘验收。源码、EXE 构建元数据、自检和使用说明统一为 0.4.2。
+
+---
+
 # WordNest 0.4.1 验证记录
 
 本版采用 A 布局和统一绿色；中文按词性分行，形容词显示 adj.、副词显示 adv.，英文释义默认收起。原词库义项顺序、内容及个人数据格式保持不变。

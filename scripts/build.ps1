@@ -149,7 +149,7 @@ if (Test-Path -LiteralPath (Join-Path $PackageOutputPath 'WordNest')) {
 $packageArguments = @(
     '--type', 'app-image',
     '--name', 'WordNest',
-    '--app-version', '0.4.1',
+    '--app-version', '0.4.2',
     '--vendor', 'WordNest',
     '--description', 'Offline English-Chinese desktop dictionary and vocabulary notebook',
     '--input', $inputPath,
@@ -167,9 +167,11 @@ Write-Host 'Creating a portable Windows app (no installer or system changes)...'
 if ($LASTEXITCODE -ne 0) { throw "jpackage failed with exit code $LASTEXITCODE" }
 $appPath = Join-Path $PackageOutputPath 'WordNest'
 Copy-Item -LiteralPath (Join-Path $resourcePath 'expanded-coverage.tsv') -Destination (Join-Path $appPath 'learning-coverage.tsv') -Force
-$licensesPath = Join-Path $projectRoot 'licenses'
-if (Test-Path -LiteralPath $licensesPath) {
-    Copy-Item -LiteralPath $licensesPath -Destination $appPath -Recurse -Force
+foreach ($folder in @('licenses', 'docs')) {
+    $folderPath = Join-Path $projectRoot $folder
+    if (Test-Path -LiteralPath $folderPath) {
+        Copy-Item -LiteralPath $folderPath -Destination $appPath -Recurse -Force
+    }
 }
 foreach ($document in @('README.md', '使用说明.txt', 'THIRD_PARTY_NOTICES.md', 'CHANGELOG.md', 'LEARNING_COVERAGE.md', 'CURATED_COVERAGE.md', 'VALIDATION.md', 'LICENSE')) {
     $documentPath = Join-Path $projectRoot $document

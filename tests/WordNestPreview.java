@@ -18,13 +18,13 @@ public final class WordNestPreview {
         SwingUtilities.invokeAndWait(() -> {
             Theme.install();
             try {
-                for (String word : new String[]{"coordinate", "relevant"}) {
+                for (String word : new String[]{"coordinate", "relevant", "certificate"}) {
                     render(build(word, dictionary, learning), 440, 570, output.resolve(word + "-content-440.png"));
                     render(build(word, dictionary, learning), 520, 705, output.resolve(word + "-content-520.png"));
                     render(build(word, dictionary, learning), 640, 900, output.resolve(word + "-content-640.png"));
                 }
                 if (Window.getWindows().length != 0) throw new AssertionError("A Window was unexpectedly constructed");
-                System.out.println("PASS: six offscreen content previews; no native title bar simulated; no windows created");
+                System.out.println("PASS: nine offscreen content previews; no native title bar simulated; no windows created");
             } catch (Exception e) { throw new RuntimeException(e); }
         });
     }
@@ -35,7 +35,7 @@ public final class WordNestPreview {
         JToggleButton library = Theme.toggle("生词本  2");
         JToggleButton pin = Theme.toggle("置顶"); pin.setSelected(true);
         JToggleButton watch = Theme.toggle("复制查词"); watch.setSelected(true);
-        root.add(new LookupToolbar(lookup, library, pin, watch, Theme.button("说明", false)), BorderLayout.NORTH);
+        root.add(new LookupToolbar(lookup, library, pin, watch, Theme.button("设置", false)), BorderLayout.NORTH);
         JPanel page = Theme.panel(new BorderLayout(0, 12)); Theme.pad(page, 0, 18, 0, 18);
         JPanel searchRow = Theme.panel(new BorderLayout(8, 0));
         JTextField search = new JTextField(word); search.setFont(Theme.font(Font.PLAIN, 14));

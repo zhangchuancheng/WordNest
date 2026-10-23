@@ -7,6 +7,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.regex.Pattern;
+import javax.swing.border.EmptyBorder;
+import javax.swing.text.DefaultHighlighter;
 import wordnest.LearningRepository.*;
 
 /** Four learning views; switching views never replaces the personal-note editor. */
@@ -18,8 +21,6 @@ final class LearningPanel extends JPanel {
     private final JPanel content = Theme.panel(new BorderLayout());
     private final Set<String> expanded = new HashSet<>();
     private String selected = "例句";
-    private boolean showSources;
-    private boolean showOpenSources;
     private JPanel body;
 
     LearningPanel(String word, LearningRepository data, DictionaryRepository dictionary, Consumer<String> navigate) {
@@ -57,7 +58,7 @@ final class LearningPanel extends JPanel {
         return data.supplemental(word).stream().filter(item -> item.kind().equals(kind)).toList();
     }
     private void render() {
-        body = Theme.panel(null); body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
+        body = new ReadingColumn();
         switch (selected) {
             case "例句" -> examples();
             case "派生" -> derivations();
@@ -69,51 +70,117 @@ final class LearningPanel extends JPanel {
     }
 
     private void examples() {
-        if (!cards("collocation").isEmpty()) {
-            heading("常用搭配");
-            for (CuratedItem item : cards("collocation")) {
-                paragraph(item.first(), 15, Theme.INK);
-                paragraph(item.second(), 13, Theme.MUTED);
-                if (!item.third().isBlank()) paragraph(item.third(), 11, Theme.MUTED);
-                gap(9);
-            }
-        }
+        List<ExampleCard> bilingual = new ArrayList<>();
         for (CuratedItem item : cards("example")) {
-            paragraph(item.first(), 15, Theme.INK); paragraph(item.second(), 13, Theme.MUTED);
-            paragraph(item.third(), 10, Theme.MUTED); gap(14);
+            bilingual.add(new ExampleCard(item.first(), item.second(), "拾词原创 · 非考试真题", item.third(), "", word));
         }
         for (SupplementItem item : supplements("practice")) {
-            paragraph(item.first(), 15, Theme.INK); paragraph(item.second(), 13, Theme.MUTED);
-            paragraph(item.attribution(), 10, Theme.MUTED); gap(14);
+            bilingual.add(new ExampleCard(item.first(), item.second(), "拾词原创学习例句 · 非考试真题", item.attribution(), item.sourceUrl(), word));
         }
-        if (!supplements("example").isEmpty()) {
-            heading("英汉语料例句");
-            paragraph("Tatoeba 社区原译文；保留简繁体。例句可能采用词形变化或其他义项，请结合语境阅读。", 11, Theme.MUTED);
-            for (SupplementItem item : supplements("example")) {
-                paragraph(item.first(), 15, Theme.INK); paragraph(item.second(), 13, Theme.MUTED);
-                paragraph(item.attribution(), 10, Theme.MUTED); gap(14);
+        for (SupplementItem item : supplements("example")) {
+            String form = word;
+            int marker = item.attribution().indexOf("例句词形：");
+            if (marker >= 0) form = item.attribution().substring(marker + "例句词形：".length()).strip();
+            bilingual.add(new ExampleCard(item.first(), item.second(), "语料 · Tatoeba", item.attribution(), item.sourceUrl(), form));
+        }
+        if (!bilingual.isEmpty()) {
+            heading("双语例句 · " + bilingual.size());
+            List<ExampleCard> visible = limit(bilingual, 3, "examples-bilingual");
+            for (int i = 0; i < visible.size(); i++) {
+                ExampleCard item = visible.get(i);
+                int index = i;
+                card(() -> {
+                    paragraph(String.format("%02d", index + 1) + "  " + item.label(), 10, Theme.GREEN);
+                    gap(5);
+                    sentence(item.english(), item.form());
+                    paragraph(item.chinese(), 13, Theme.INK);
+                    if (!item.form().equalsIgnoreCase(word)) paragraph("例句词形：" + item.form(), 10, Theme.MUTED);
+                    disclosure("example-source-" + index, "出处", "收起出处", false, () -> {
+                        paragraph(item.attribution(), 10, Theme.MUTED);
+                        if (!item.url().isBlank()) sourceLine("原句与译文", item.url());
+                        if (item.label().contains("Tatoeba")) {
+                            paragraph("社区原译文保留简繁体，请结合语境阅读。", 10, Theme.MUTED);
+                            sourceLine("许可与编辑记录（亦见程序目录 licenses）", "https://creativecommons.org/licenses/by/2.0/fr/");
+                        }
+                    });
+                });
             }
+            more(bilingual.size(), 3, "examples-bilingual");
         }
-        List<LexicalSense> senses = data.senses(word).stream().filter(s -> !s.examples().isEmpty()).toList();
-        if (!senses.isEmpty()) {
-            heading("词典义项例句");
-            paragraph("英文原例句按词义分组，可能使用同组词；原资料未提供中文译文。", 11, Theme.MUTED);
-            Set<String> seen = new HashSet<>();
-            for (LexicalSense sense : limit(senses, 5)) {
-                List<Example> examples = sense.examples().stream().filter(e -> seen.add(e.text())).toList();
-                if (examples.isEmpty()) continue;
-                heading(pos(sense.pos()) + " · " + sense.definition());
-                for (Example example : examples) {
-                    paragraph(example.text(), 14, Theme.INK);
-                    paragraph("来源：" + example.source(), 10, Theme.MUTED); gap(9);
-                }
-            }
-            more(senses.size(), 5);
-        } else if (cards("example").isEmpty() && supplements("example").isEmpty() && supplements("practice").isEmpty()) {
-            empty("暂未收录这个词的例句。", "你仍可在下方记录自己的例句；这里不会自动编写词典例句。");
+
+        List<SenseExample> direct = new ArrayList<>();
+        List<SenseExample> related = new ArrayList<>();
+        Set<String> seen = new HashSet<>();
+        for (LexicalSense sense : data.senses(word)) for (Example example : sense.examples()) {
+            // WordNet examples describe a synset, and need not contain the queried headword.
+            // Keep the original sense and credit, including distinct senses sharing a sentence.
+            if (!seen.add(sense.id() + "\n" + example.text() + "\n" + example.source())) continue;
+            (containsWord(example.text(), word) ? direct : related).add(new SenseExample(sense, example));
         }
+        if (!direct.isEmpty()) {
+            disclosure("examples-english", "英文例句（" + direct.size() + "）", "收起英文例句", bilingual.isEmpty(), () -> {
+                paragraph("原资料未提供中文译文。", 11, Theme.MUTED);
+                wordnetExamples(direct, "english");
+            });
+        }
+        if (!related.isEmpty()) {
+            disclosure("examples-related", "补充英文例句（" + related.size() + "）", "收起补充英文例句", false, () -> {
+                paragraph("这些句子未使用当前查询词的拼写，可能使用词形变化或同义词。原资料未提供中文译文。", 11, Theme.MUTED);
+                wordnetExamples(related, "related");
+            });
+        }
+        if (bilingual.isEmpty() && direct.isEmpty()) {
+            empty("暂未收录这个词的直接例句。", related.isEmpty()
+                    ? "可在下方记下你遇到的原句。" : "可展开补充英文例句作为参考。");
+        }
+        if (!cards("collocation").isEmpty()) disclosure("examples-collocations", "常用搭配", "收起常用搭配", false, () -> {
+            for (CuratedItem item : cards("collocation")) card(() -> {
+                paragraph(item.first(), 14, Theme.INK);
+                paragraph(item.second(), 12, Theme.MUTED);
+                if (!item.third().isBlank()) paragraph(item.third(), 11, Theme.MUTED);
+            });
+        });
         curatedSources();
-        openSources("example");
+    }
+
+    private record ExampleCard(String english, String chinese, String label, String attribution, String url, String form) { }
+    private record SenseExample(LexicalSense sense, Example example) { }
+
+    private void wordnetExamples(List<SenseExample> examples, String key) {
+        List<SenseExample> visible = limit(examples, 3, "examples-" + key + "-items");
+        for (int i = 0; i < visible.size(); i++) {
+            SenseExample row = visible.get(i);
+            int index = i;
+            card(() -> {
+                sentence(row.example().text(), word);
+                paragraph(pos(row.sense().pos()) + " · " + row.sense().definition(), 11, Theme.MUTED);
+                disclosure("example-" + key + "-source-" + index, "出处", "收起出处", false, () -> {
+                    paragraph(row.example().source(), 10, Theme.MUTED);
+                    wordnetSource();
+                });
+            });
+        }
+        more(examples.size(), 3, "examples-" + key + "-items");
+    }
+
+    private static Pattern wordPattern(String value) {
+        return Pattern.compile("(?iu)(?<![\\p{L}\\p{N}_])" + Pattern.quote(value.strip()) + "(?![\\p{L}\\p{N}_])");
+    }
+    private static boolean containsWord(String text, String value) {
+        return !value.isBlank() && wordPattern(value).matcher(text).find();
+    }
+    private void sentence(String text, String form) {
+        JTextArea area = new WrappedText(text, 16, Theme.INK);
+        area.setFont(Theme.latin(Font.PLAIN, 16));
+        area.setName("example-english");
+        if (!form.isBlank()) {
+            var matches = wordPattern(form).matcher(text);
+            while (matches.find()) try {
+                area.getHighlighter().addHighlight(matches.start(), matches.end(),
+                        new DefaultHighlighter.DefaultHighlightPainter(Theme.PALE));
+            } catch (javax.swing.text.BadLocationException impossible) { throw new IllegalStateException(impossible); }
+        }
+        body.add(area); gap(7);
     }
 
     private void derivations() {
@@ -128,8 +195,8 @@ final class LearningPanel extends JPanel {
         if (!terms.isEmpty()) {
             heading("词典派生关系");
             paragraph("关系可以双向连接：可能指向词基，也可能指向派生词。", 11, Theme.MUTED);
-            for (String value : limit(terms, 16)) term(value, gloss(value));
-            more(terms.size(), 16); wordnetSource();
+            for (String value : limit(terms, 6, "derived-wordnet")) term(value, gloss(value));
+            more(terms.size(), 6, "derived-wordnet");
         } else if (cards("derived").isEmpty() && supplements("derived").isEmpty()) {
             empty("暂未收录派生关系。", "不根据相似拼写猜测词族。");
         }
@@ -138,11 +205,12 @@ final class LearningPanel extends JPanel {
         if (!families.isEmpty()) {
             heading("词典派生词、复合词与词组");
             paragraph("以下来自中文维基词典的派生条目；其中也包含复合词和词组，并非全部是加词缀形成的新词。", 11, Theme.MUTED);
-            for (SupplementItem item : limit(families, 8)) {
-                term(item.first(), item.second() + "\n" + item.attribution());
+            for (SupplementItem item : limit(families, 5, "derived-open")) {
+                term(item.first(), item.second());
             }
-            more(families.size(), 8);
+            more(families.size(), 5, "derived-open");
         }
+        if (!terms.isEmpty()) disclosure("derived-credit", "词典资料出处", "收起词典资料出处", false, this::wordnetSource);
         curatedSources();
         openSources("derived");
     }
@@ -150,24 +218,23 @@ final class LearningPanel extends JPanel {
     private void roots() {
         for (String kind : List.of("morphology", "etymology")) {
             for (CuratedItem item : cards(kind)) {
-                heading(item.first()); paragraph(item.second(), 14, Theme.INK);
+                card(() -> { heading(item.first()); paragraph(item.second(), 14, Theme.INK); });
             }
         }
         List<SupplementItem> explanations = supplements("etymology");
         if (!explanations.isEmpty()) {
             heading("中文词源资料");
             paragraph("保留原条目的推测和异说；历史来源与现代构词不一定相同。", 11, Theme.MUTED);
-            for (SupplementItem item : limit(explanations, 2)) {
-                heading(item.first()); paragraph(item.second(), 13, Theme.INK);
-                paragraph(item.attribution(), 10, Theme.MUTED);
+            for (SupplementItem item : limit(explanations, 2, "roots-chinese")) {
+                card(() -> { heading(item.first()); paragraph(item.second(), 13, Theme.INK); });
             }
-            more(explanations.size(), 2);
+            more(explanations.size(), 2, "roots-chinese");
         }
         if (!supplements("component").isEmpty()) {
             heading("构词成分的中文释义");
             paragraph("这些成分见于下方词源记录。这里列出词缀的一般含义，不能把每种含义都套到本词上。", 11, Theme.MUTED);
             for (SupplementItem item : supplements("component")) {
-                heading(item.first()); paragraph(item.second(), 13, Theme.INK);
+                card(() -> { heading(item.first()); paragraph(item.second(), 13, Theme.INK); });
             }
         }
         if (!cards("root_related").isEmpty()) {
@@ -177,22 +244,25 @@ final class LearningPanel extends JPanel {
         }
         List<EtymologyLink> links = data.origins(word);
         if (!links.isEmpty()) {
-            heading("词源与构词记录");
+            disclosure("roots-records", "词源原始记录（" + links.size() + "）", "收起词源原始记录", false, () -> {
             paragraph("同形词可能有不同来源。序号保留原资料顺序，并不表示所有记录组成一条确定路径；来源链中的成分也不一定是本词的直接词根。带 * 的形式是语言学重构。", 11, Theme.MUTED);
-            for (EtymologyLink link : limit(links, 12)) {
+            for (EtymologyLink link : limit(links, 6, "roots-record-items")) {
+                card(() -> {
                 String label = relation(link.relation()) + " · " + language(link.language());
                 paragraph(label, 11, Theme.GREEN);
                 String target = link.target();
                 String kind = link.relation().split(" ", 2)[0];
                 if (kind.equals("has_suffix") && !target.startsWith("-")) target = "-" + target;
                 if (kind.equals("has_prefix") && !target.endsWith("-")) target += "-";
-                paragraph(target, 16, Theme.INK); gap(10);
+                paragraph(target, 16, Theme.INK);
+                });
             }
-            more(links.size(), 12);
+            more(links.size(), 6, "roots-record-items");
             paragraph("来源：Wiktionary / etymology-db · 2023-12 快照 · CC BY-SA 3.0", 10, Theme.MUTED);
             String source = links.stream().map(EtymologyLink::sourceUrl).filter(s -> !s.isBlank()).findFirst()
                     .orElse("https://en.wiktionary.org/wiki/" + URLEncoder.encode(word, StandardCharsets.UTF_8).replace("+", "%20") + "#English");
             sourceLine("词源页面", source);
+            });
         } else if (cards("etymology").isEmpty() && cards("morphology").isEmpty()
                 && explanations.isEmpty() && supplements("component").isEmpty()) {
             empty("暂未收录可核对的词源。", "并非所有英文单词都能拆成前缀、词根和后缀。");
@@ -209,11 +279,14 @@ final class LearningPanel extends JPanel {
                 .filter(s -> s.synonyms().stream().anyMatch(w -> !w.equalsIgnoreCase(word))).toList();
         if (!senses.isEmpty()) {
             heading("按词义分组");
-            for (LexicalSense sense : limit(senses, 8)) {
-                heading(pos(sense.pos()) + " · " + sense.definition());
+            for (LexicalSense sense : limit(senses, 3, "synonyms-wordnet")) {
+                card(() -> {
+                paragraph(pos(sense.pos()) + " · " + sense.definition(), 12, Theme.INK);
+                gap(6);
                 for (String synonym : sense.synonyms()) if (!synonym.equalsIgnoreCase(word)) term(synonym, gloss(synonym));
+                });
             }
-            more(senses.size(), 8); wordnetSource();
+            more(senses.size(), 3, "synonyms-wordnet");
             paragraph("词旁中文来自 ECDICT，可能包含其他义项；分组以本组英文释义为准。", 10, Theme.MUTED);
         } else if (cards("synonym").isEmpty() && supplements("synonym").isEmpty()) {
             empty("暂未收录可展示的近义词。", "同一词义下没有其他词时，不会拿相关词来充数。");
@@ -222,9 +295,10 @@ final class LearningPanel extends JPanel {
         if (!relations.isEmpty()) {
             heading("中文词典近义关系");
             paragraph("保留词典给出的词性、义项和使用标签。未标义项的关系只作查阅线索，不表示可以直接替换。", 11, Theme.MUTED);
-            for (SupplementItem item : limit(relations, 8)) term(item.first(), item.second() + "\n" + item.attribution());
-            more(relations.size(), 8);
+            for (SupplementItem item : limit(relations, 5, "synonyms-open")) term(item.first(), item.second());
+            more(relations.size(), 5, "synonyms-open");
         }
+        if (!senses.isEmpty()) disclosure("synonyms-credit", "词典资料出处", "收起词典资料出处", false, this::wordnetSource);
         curatedSources();
         openSources("synonym");
     }
@@ -234,37 +308,80 @@ final class LearningPanel extends JPanel {
                 .map(s -> s.length() > 160 ? s.substring(0, 160) + "…" : s).orElse("暂无中文释义");
     }
     private void term(String value, String description) {
+        if ("learning-card".equals(body.getName())) termContent(value, description);
+        else card(() -> termContent(value, description));
+    }
+    private void termContent(String value, String description) {
         JButton button = Theme.button(value, false); button.setAlignmentX(Component.LEFT_ALIGNMENT);
         button.setFont(Theme.latin(Font.BOLD, 14));
         boolean exists = dictionary.lookup(value).isPresent(); button.setEnabled(exists);
         button.setToolTipText(exists ? "点击查看 " + value : "当前主词库未收录此词");
         button.addActionListener(e -> navigate.accept(value)); body.add(button); gap(4);
-        if (!description.isBlank()) paragraph(description, 12, Theme.MUTED); gap(12);
+        if (!description.isBlank()) paragraph(description, 12, Theme.INK);
+        gap(6);
     }
-    private void heading(String text) { gap(10); paragraph(text, 12, Theme.GREEN); gap(5); }
+    private void heading(String text) {
+        gap(8);
+        JTextArea area = new WrappedText(text, 13, Theme.GREEN);
+        area.setFont(Theme.font(Font.BOLD, 13)); body.add(area); gap(8);
+    }
     private void paragraph(String text, int size, Color color) {
         JTextArea area = new WrappedText(text, size, color);
         area.setAlignmentX(Component.LEFT_ALIGNMENT); body.add(area); gap(3);
     }
     private void gap(int height) { body.add(Box.createVerticalStrut(height)); }
     private void empty(String title, String detail) { gap(12); paragraph(title, 14, Theme.INK); paragraph(detail, 12, Theme.MUTED); }
-    private <T> List<T> limit(List<T> list, int limit) { return expanded.contains(selected) ? list : list.subList(0, Math.min(list.size(), limit)); }
-    private void more(int count, int limit) {
+    private String stateKey(String key) { return selected + ":" + key; }
+    private boolean isExpanded(String key) { return expanded.contains(stateKey(key)); }
+    private <T> List<T> limit(List<T> list, int limit, String key) {
+        return isExpanded(key) ? list : list.subList(0, Math.min(list.size(), limit));
+    }
+    private void more(int count, int limit, String key) {
         if (count <= limit) return;
-        JButton button = Theme.button(expanded.contains(selected) ? "收起" : "展开其余 " + (count-limit) + " 项", false);
-        button.setAlignmentX(Component.LEFT_ALIGNMENT);
-        button.addActionListener(e -> { if (!expanded.add(selected)) expanded.remove(selected); render(); });
+        JButton button = textButton(isExpanded(key) ? "收起" : "展开其余 " + (count-limit) + " 项");
+        button.setName(key + "-more");
+        button.addActionListener(e -> { toggleState(key); render(); });
         body.add(button); gap(10);
+    }
+    private void toggleState(String key) { if (!expanded.add(stateKey(key))) expanded.remove(stateKey(key)); }
+    private JButton textButton(String label) {
+        JButton button = new JButton(label);
+        button.setAlignmentX(Component.LEFT_ALIGNMENT);
+        button.setFont(Theme.font(Font.PLAIN, 11)); button.setForeground(Theme.GREEN);
+        button.setContentAreaFilled(false); button.setBorder(new EmptyBorder(6, 0, 6, 2));
+        button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        return button;
+    }
+    private void disclosure(String key, String closed, String open, boolean defaultOpen, Runnable contents) {
+        boolean visible = defaultOpen != isExpanded(key);
+        JButton button = textButton(visible ? open : closed);
+        button.setName(key);
+        button.getAccessibleContext().setAccessibleDescription(visible ? "已展开，按空格收起" : "已收起，按空格展开");
+        button.addActionListener(e -> { toggleState(key); render(); });
+        body.add(button);
+        if (visible) contents.run();
+        gap(4);
+    }
+    /** Each item keeps its own readable block while retaining selectable source text. */
+    private void card(Runnable contents) {
+        JPanel parent = body;
+        JPanel item = new ReadingColumn();
+        item.setName("learning-card");
+        item.setOpaque(true); item.setBackground(Theme.PAPER);
+        item.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Theme.LINE), new EmptyBorder(10, 12, 8, 12)));
+        item.setAlignmentX(Component.LEFT_ALIGNMENT);
+        body = item;
+        try { contents.run(); } finally { body = parent; }
+        parent.add(item); gap(10);
     }
     private void wordnetSource() { paragraph("来源：Open English WordNet 2025 / Princeton WordNet · CC BY 4.0", 10, Theme.MUTED); }
     private void curatedSources() {
         List<CuratedItem> sources = cards("source");
         if (sources.isEmpty()) return;
-        gap(8); paragraph("中文学习整理与双语例句：拾词原创", 10, Theme.MUTED);
-        JButton button = Theme.button(showSources ? "收起参考来源" : "参考来源（" + sources.size() + "）", false);
-        button.setAlignmentX(Component.LEFT_ALIGNMENT);
-        button.addActionListener(e -> { showSources = !showSources; render(); }); body.add(button); gap(6);
-        if (showSources) for (CuratedItem item : sources) sourceLine(item.first(), item.second());
+        disclosure("curated-sources", "参考来源（" + sources.size() + "）", "收起参考来源", false, () -> {
+            paragraph("中文学习整理与双语例句：拾词原创", 10, Theme.MUTED);
+            for (CuratedItem item : sources) sourceLine(item.first(), item.second());
+        });
     }
     private void sourceLine(String title, String url) {
         JTextArea area = new WrappedText(title + "\n" + url, 10, Theme.MUTED);
@@ -275,17 +392,14 @@ final class LearningPanel extends JPanel {
         List<SupplementItem> items = data.supplemental(word).stream().filter(i -> included.contains(i.kind())).toList();
         if (items.isEmpty()) return;
         gap(8);
-        JButton button = Theme.button(showOpenSources ? "收起开放资料出处" : "开放资料出处", false);
-        button.setAlignmentX(Component.LEFT_ALIGNMENT);
-        button.addActionListener(e -> { showOpenSources = !showOpenSources; render(); }); body.add(button); gap(6);
-        if (showOpenSources) {
+        disclosure("open-sources", "开放资料出处", "收起开放资料出处", false, () -> {
             Set<String> seen = new HashSet<>();
             for (SupplementItem item : items) if (seen.add(item.attribution() + item.sourceUrl())) {
                 sourceLine(item.attribution(), item.sourceUrl());
             }
             sourceLine("许可与编辑记录（亦见程序目录 licenses）",
                     "https://creativecommons.org/licenses/by/2.0/fr/\nhttps://creativecommons.org/licenses/by-sa/4.0/");
-        }
+        });
     }
     private static String pos(String code) {
         return switch (code) { case "n" -> "名词"; case "v" -> "动词"; case "a", "s" -> "形容词"; case "r" -> "副词"; default -> code; };
@@ -344,14 +458,46 @@ final class LearningPanel extends JPanel {
         };
     }
 
+    /** Measures every nested block at its assigned width; BoxLayout caches stale wrapped heights on resize. */
+    private static final class ReadingColumn extends JPanel {
+        ReadingColumn() { super(null); setOpaque(false); setAlignmentX(Component.LEFT_ALIGNMENT); }
+        private int availableWidth() {
+            Insets padding = getInsets();
+            return Math.max(1, (getWidth() > 0 ? getWidth() : 330) - padding.left - padding.right);
+        }
+        private Dimension measure(Component child, int width) {
+            child.setSize(width, Math.max(1, child.getHeight()));
+            return child.getPreferredSize();
+        }
+        @Override public Dimension getPreferredSize() {
+            Insets padding = getInsets();
+            int height = padding.top + padding.bottom;
+            for (Component child : getComponents()) if (child.isVisible()) height += measure(child, availableWidth()).height;
+            return new Dimension(1, height);
+        }
+        @Override public Dimension getMinimumSize() { return new Dimension(1, getPreferredSize().height); }
+        @Override public Dimension getMaximumSize() { return new Dimension(Integer.MAX_VALUE, getPreferredSize().height); }
+        @Override public void doLayout() {
+            Insets padding = getInsets(); int y = padding.top; int width = availableWidth();
+            for (Component child : getComponents()) if (child.isVisible()) {
+                Dimension preferred = measure(child, width);
+                int childWidth = child instanceof JButton ? Math.min(width, preferred.width) : width;
+                child.setBounds(padding.left, y, childWidth, preferred.height);
+                y += preferred.height;
+            }
+        }
+    }
+
     /** Computes wrapping from the actual layout width instead of an estimated row count. */
     private static final class WrappedText extends JTextArea {
         WrappedText(String text, int size, Color color) {
             super(text); setEditable(false); setOpaque(false); setLineWrap(true); setWrapStyleWord(true);
             setFont(Theme.font(Font.PLAIN, size)); setForeground(color); setBorder(null);
+            setAlignmentX(Component.LEFT_ALIGNMENT);
         }
         @Override public Dimension getPreferredSize() {
-            int available = getParent() == null ? 330 : getParent().getWidth();
+            Container parent = getParent();
+            int available = parent == null ? 330 : parent.getWidth() - parent.getInsets().left - parent.getInsets().right;
             if (available <= 0) available = 330;
             setSize(available, Short.MAX_VALUE);
             Dimension size = super.getPreferredSize(); size.width = 1; return size;

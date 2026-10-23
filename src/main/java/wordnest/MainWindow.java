@@ -38,6 +38,9 @@ final class MainWindow extends JFrame {
     private final JLabel libraryCount = Theme.label("还没有收藏", 12, Theme.MUTED);
     private final ClipboardWatcher watcher;
     private final javax.swing.Timer saveNoteTimer;
+    private final TraySupport tray;
+    private final BackgroundController background;
+    private final javax.swing.Timer trayMonitor;
     private JTextArea noteArea;
     private JLabel noteState;
     private JButton favoriteButton;
@@ -72,19 +75,62 @@ final class MainWindow extends JFrame {
         if (Toolkit.getDefaultToolkit().isAlwaysOnTopSupported()) setAlwaysOnTop(pin.isSelected());
         else { pin.setSelected(false); pin.setEnabled(false); }
         watch.setSelected(Boolean.parseBoolean(settings.getProperty("clipboard", "true")));
-        pin.addActionListener(e -> { setAlwaysOnTop(pin.isSelected()); writeSettings(); });
-        watch.addActionListener(e -> {
-            watcher.setEnabled(loaded && watch.isSelected()); writeSettings();
-            status(watch.isSelected() ? "复制查词已开启 · 仅识别单个英文单词" : "复制查词已暂停", false);
+        tray = new TraySupport(icon(), this::restoreFromTray, this::exitFromTray,
+                this::setClipboardEnabled, this::openPreferencesFromTray);
+        tray.setClipboardEnabled(watch.isSelected());
+        background = new BackgroundController(settings, new BackgroundController.Host() {
+            @Override public boolean flushNote() { return MainWindow.this.flushNote(); }
+            @Override public boolean traySupported() {
+                try { return SystemTray.isSupported(); }
+                catch (RuntimeException | AWTError error) { return false; }
+            }
+            @Override public boolean ensureTray() { return tray.install(); }
+            @Override public int windowState() { return getExtendedState(); }
+            @Override public void hideWindow() { setVisible(false); }
+            @Override public void showWindow(int state, boolean focus) {
+                setAutoRequestFocus(focus);
+                try {
+                    setExtendedState(state);
+                    if (!isVisible()) setVisible(true);
+                    if (focus) { toFront(); requestFocus(); }
+                } finally { setAutoRequestFocus(true); }
+            }
+            @Override public BackgroundController.CloseDecision askClose(boolean available) { return askCloseAction(available); }
+            @Override public void saveSettings() { writeSettingsStrict(); }
+            @Override public void inform(String text) { status(text, true); }
+            @Override public void stopWatchers() { stopBackgroundWork(); }
+            @Override public void removeTray() { tray.close(); }
+            @Override public void disposeWindow() { dispose(); }
+            @Override public void exitApplication() { System.exit(0); }
         });
+        trayMonitor = new javax.swing.Timer(2000, e -> {
+            if (!background.isHiddenToTray()) return;
+            boolean trayAvailable;
+            try { trayAvailable = tray.isInstalled(); }
+            catch (RuntimeException | AWTError error) { trayAvailable = false; }
+            if (!trayAvailable) background.recoverLostTray();
+        });
+        pin.addActionListener(e -> { setAlwaysOnTop(pin.isSelected()); writeSettings(); });
+        watch.addActionListener(e -> setClipboardEnabled(watch.isSelected()));
         lookupTab.addActionListener(e -> pages.show(pagePanel, "lookup"));
         libraryTab.addActionListener(e -> { if (flushNote()) { refreshLibrary(); pages.show(pagePanel, "library"); } else lookupTab.setSelected(true); });
         search.addActionListener(e -> lookup(search.getText(), false));
         addWindowListener(new WindowAdapter() {
             @Override public void windowClosing(WindowEvent e) {
-                if (!flushNote()) return;
-                watcher.stop(); writeSettings(); dispose(); System.exit(0);
+                if (!modalOpen) { background.requestClose(); showTrayHint(); }
             }
+            @Override public void windowOpened(WindowEvent e) {
+                tray.install();
+                trayMonitor.start();
+            }
+            @Override public void windowClosed(WindowEvent e) {
+                stopBackgroundWork();
+                tray.close();
+            }
+        });
+        addWindowStateListener(e -> {
+            background.onWindowStateChanged(e.getOldState(), e.getNewState());
+            showTrayHint();
         });
         getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("control L"), "search");
         getRootPane().getActionMap().put("search", new AbstractAction() {
@@ -95,9 +141,98 @@ final class MainWindow extends JFrame {
     }
 
     private JPanel header() {
-        JButton help = Theme.button("说明", false); help.setFont(Theme.font(Font.PLAIN, 11));
-        help.addActionListener(e -> showAbout());
+        JButton help = Theme.button("设置", false); help.setFont(Theme.font(Font.PLAIN, 11));
+        help.addActionListener(e -> showPreferences());
         return new LookupToolbar(lookupTab, libraryTab, pin, watch, help);
+    }
+
+    /** Explicit user restoration from the tray or a second EXE launch. */
+    void restoreFromTray() { background.restoreFromTray(); }
+
+    private void exitFromTray() { if (!modalOpen) background.explicitExit(); }
+
+    private void openPreferencesFromTray() {
+        if (modalOpen) return;
+        restoreFromTray();
+        showPreferences();
+    }
+
+    private void stopBackgroundWork() {
+        watcher.stop(); saveNoteTimer.stop(); trayMonitor.stop();
+    }
+
+    private void setClipboardEnabled(boolean enabled) {
+        watch.setSelected(enabled);
+        watcher.setEnabled(loaded && enabled);
+        tray.setClipboardEnabled(enabled);
+        if (writeSettings()) status(enabled ? "复制查词已开启 · 仅识别单个英文单词" : "复制查词已暂停", false);
+    }
+
+    private void showTrayHint() {
+        if (!background.isHiddenToTray()) return;
+        try { tray.showBackgroundHintOnce(); }
+        catch (RuntimeException | AWTError ignored) { /* Notifications are optional. */ }
+    }
+
+    private BackgroundController.CloseDecision askCloseAction(boolean trayAvailable) {
+        JPanel content = Theme.panel(new BorderLayout(0, 14));
+        JTextArea explanation = Theme.text(trayAvailable
+                ? "最小化到系统托盘后，拾词会继续在后台运行。\n双击右下角的拾词图标，或再次打开 EXE，即可显示窗口。\n若未看到图标，请展开任务栏右下角的小箭头。"
+                : "当前系统托盘不可用。可以退出拾词，或取消并保留窗口。", 13, Theme.INK, 370);
+        content.add(explanation, BorderLayout.CENTER);
+        JCheckBox remember = new JCheckBox("记住我的选择（可在设置中更改）");
+        remember.setOpaque(false); content.add(remember, BorderLayout.SOUTH);
+        Object[] options = trayAvailable
+                ? new Object[]{"最小化到系统托盘", "退出程序", "取消"}
+                : new Object[]{"退出程序", "取消"};
+        boolean previousModal = modalOpen; modalOpen = true;
+        try {
+            int choice = JOptionPane.showOptionDialog(this, content, "关闭拾词时…",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            BackgroundController.CloseChoice action = choice < 0 ? BackgroundController.CloseChoice.CANCEL
+                    : trayAvailable ? switch (choice) {
+                        case 0 -> BackgroundController.CloseChoice.TRAY;
+                        case 1 -> BackgroundController.CloseChoice.EXIT;
+                        default -> BackgroundController.CloseChoice.CANCEL;
+                    } : choice == 0 ? BackgroundController.CloseChoice.EXIT : BackgroundController.CloseChoice.CANCEL;
+            return new BackgroundController.CloseDecision(action, remember.isSelected());
+        } finally { modalOpen = previousModal; }
+    }
+
+    private void showPreferences() {
+        if (modalOpen) return;
+        JPanel content = Theme.panel(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0; c.gridy = 0; c.weightx = 1; c.fill = GridBagConstraints.HORIZONTAL;
+        c.insets = new Insets(0, 0, 8, 0);
+        content.add(Theme.label("点击关闭按钮 × 时", 13, Theme.INK), c);
+        JComboBox<String> close = new JComboBox<>(new String[]{"每次询问", "最小化到系统托盘", "退出程序"});
+        close.setSelectedIndex(background.closeAction().ordinal());
+        close.getAccessibleContext().setAccessibleName("关闭窗口时");
+        c.gridy++; content.add(close, c);
+        c.gridy++; c.insets = new Insets(12, 0, 8, 0);
+        content.add(Theme.label("点击最小化按钮 − 时", 13, Theme.INK), c);
+        JComboBox<String> minimize = new JComboBox<>(new String[]{"最小化到任务栏", "最小化到系统托盘"});
+        minimize.setSelectedIndex(background.minimizeAction().ordinal());
+        minimize.getAccessibleContext().setAccessibleName("最小化窗口时");
+        c.gridy++; c.insets = new Insets(0, 0, 12, 0); content.add(minimize, c);
+        c.gridy++; content.add(Theme.text("后台运行时，复制查词仍按开关状态工作，不会自动弹出窗口。\n可从托盘菜单或再次打开 EXE 恢复；右键托盘图标可彻底退出。", 12, Theme.MUTED, 370), c);
+        Object[] options = {"保存", "取消", "关于与说明"};
+        modalOpen = true;
+        try {
+            for (;;) {
+                int choice = JOptionPane.showOptionDialog(this, content, "窗口与后台设置",
+                        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                if (choice == 2) { showAbout(); continue; }
+                if (choice != 0) return;
+                if (background.setPreferences(BackgroundController.CloseAction.values()[close.getSelectedIndex()],
+                        BackgroundController.MinimizeAction.values()[minimize.getSelectedIndex()])) {
+                    status("已保存窗口与后台设置", false); return;
+                }
+                JOptionPane.showMessageDialog(this, "设置暂时无法保存，请检查数据目录的写入权限后重试。",
+                        "设置未保存", JOptionPane.WARNING_MESSAGE);
+            }
+        } finally { modalOpen = false; }
     }
 
     private JPanel lookupPage() {
@@ -179,7 +314,7 @@ final class MainWindow extends JFrame {
                 } catch (Exception e) {
                     Throwable cause = e.getCause() == null ? e : e.getCause();
                     showEmpty("暂时无法打开词库", "本地数据已保留。\n" + cause.getMessage(), null);
-                    footer.setText("加载失败 · 请查看「说明」中的数据位置");
+                    footer.setText("加载失败 · 请查看「设置 → 关于与说明」中的数据位置");
                     status("未修改已有收藏文件", true);
                 }
             }
@@ -347,28 +482,33 @@ final class MainWindow extends JFrame {
         return "\"" + safe.replace("\"", "\"\"") + "\"";
     }
     private void showAbout() {
-        String info = "拾词 WordNest  0.4.1\n\n" +
+        String info = "拾词 WordNest  0.4.2\n\n" +
                 "手动输入单词，或在其他软件中复制单个英文单词。\n中文、句子和图片不会改变当前词条。\n复制查词不会抢焦点，可随时用顶部按钮暂停。\n\n" +
+                "关闭时可选择后台运行或退出；顶部「设置」可更改记住的选择。\n托盘图标可能收在右下角的小箭头中，双击即可显示窗口。\n再次打开 EXE 也可唤回窗口；右键托盘菜单可彻底退出。\n\n" +
                 "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n你的个人例句会自动保存到生词本。\n所有查询在本机完成，不调用网络或 AI 服务。\n\n" +
                 "英汉例句：Tatoeba 社区语料与拾词原创。\n派生和近义词：Open English WordNet / 中文维基词典。\n词源：中文维基词典与 etymology-db（2023 快照）。\n新增资料优先覆盖常用词与雅思标签词；355 张原有完整中文卡片继续保留。\n各项实际覆盖见程序目录 LEARNING_COVERAGE.md。\n每个分页标明来源；社区资料可能有疏漏，缺项不会自动补写。\n\n" +
                 "本地收藏与设置：\n" + dataDir + "\n\n快捷键：Ctrl+L 聚焦搜索，Enter 查询。";
-        modalOpen = true;
+        boolean previousModal = modalOpen; modalOpen = true;
         try { JOptionPane.showMessageDialog(this, info, "关于拾词", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(icon())); }
-        finally { modalOpen = false; }
+        finally { modalOpen = previousModal; }
     }
 
     private void readSettings() {
         Path path = dataDir.resolve("settings.properties");
         if (Files.isRegularFile(path)) try (Reader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) { settings.load(reader); } catch (Exception ignored) { }
     }
-    private void writeSettings() {
+    private boolean writeSettings() {
+        try { writeSettingsStrict(); return true; }
+        catch (UncheckedIOException e) { status("设置暂时无法保存", true); return false; }
+    }
+    private void writeSettingsStrict() {
         settings.setProperty("pin", Boolean.toString(pin.isSelected())); settings.setProperty("clipboard", Boolean.toString(watch.isSelected()));
         Path temporary = dataDir.resolve("settings.properties.tmp");
         try {
             try (Writer writer = Files.newBufferedWriter(temporary, StandardCharsets.UTF_8)) { settings.store(writer, "WordNest local preferences"); }
             try { Files.move(temporary, dataDir.resolve("settings.properties"), StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING); }
             catch (AtomicMoveNotSupportedException e) { Files.move(temporary, dataDir.resolve("settings.properties"), StandardCopyOption.REPLACE_EXISTING); }
-        } catch (IOException e) { status("设置暂时无法保存", true); }
+        } catch (IOException e) { throw new UncheckedIOException(e); }
     }
     private void status(String text, boolean error) {
         message.setText(text); message.setForeground(error ? new Color(0xA3583D) : Theme.MUTED); message.setToolTipText(text);
