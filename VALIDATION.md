@@ -1,6 +1,6 @@
 # WordNest 验证记录
 
-当前发行 0.7.3：最新历史、托盘、设置布局检查见文末；以下保留此前实际验证结果，不将历史测试冒充本次重跑。
+当前发行 0.7.5：本版更名与句中用法检查见文末；此前版本的测试记录仅作历史参考，不视为本次重跑。
 
 # WordNest 0.7.0 验证记录（2026-10-23）
 
@@ -186,10 +186,15 @@ PreferencesPanelTest 在 FlatLaf 100%、150%、200% 缩放配置下各通过 26 
 - Java 17 目标编译及 Windows app-image 构建成功，程序文件 `词巢.exe` 的 ProductName 为“词巢”、FileVersion/ProductVersion 均为 0.7.4；从 EXE 提取的小图标可辨认绿色词巢和 A 字母卡。
 - `词巢.exe --self-check` 退出码 0，报告 `status=PASS`、`app.version=0.7.4`、`headless=true`、`dictionary.entries=3403176`。TrayMenuFontTest 30、TraySupportTest 14、BackgroundControllerTest 121、ActivationRequestsTest 40 项及 ThemeTest 通过；未操作真实桌面窗口或托盘。
 - 最终源码重编后，LearningPanelTest **12,491 项**离屏断言通过，包含旧资源署名在可见出处中显示为“词巢”的检查；`prepare_open_learning.py --check` 与固定资源逐字节一致。
-- 原 `%LOCALAPPDATA%\WordNest` 个人数据目录和单实例协议保持不变，未迁移或删除收藏、笔记、历史、复习数据。GitHub Release 0.7.3 仍为旧名称与旧图标；本段只记录本地 0.7.4 的实际验证。
+- 原 `%LOCALAPPDATA%\WordNest` 个人数据目录和单实例协议保持不变，未迁移或删除收藏、笔记、历史、复习数据。0.7.4 未单独发布，本段只记录当时本地构建的实际验证。
 
 ## 0.7.5 推荐例句句中用法（2026-10-24）
 
 - `example-usage.tsv` 为 release 的三条已核对双语例句分别记录动词“放走（犯人）”、动词“喷出（墨汁）”及 release date 中的名词“发布”。在英文原句之前展示，保留原译文和 Tatoeba 出处；没有逐句标注的例句不从词典通用释义推测。
 - 最终程序 JAR 的 LearningPanelTest **12,627 项**无窗口断言通过，检查同一单词在三句中的不同词性/译法、未标注句子不显示推测结果，以及 340 / 440 / 640 像素宽度布局；已查看带“朗读例句”按钮的 340 像素离屏预览。
 - 最终 Windows app-image 的 `词巢.exe --self-check` 退出码 0，报告含 `status=PASS`、`app.version=0.7.5`、`headless=true`、`learning.exampleUsage.notes=3` 和 `dictionary.entries=3403176`。真实桌面窗口和托盘未操作。
+
+## 0.7.5 发布前复查（2026-10-24）
+
+- 正式发布用 Windows ZIP 从已通过自检的 0.7.5 app-image 更新随包文档后生成。ZIP 内 **351 个文件**与 app-image 的同名文件逐一核对长度和 SHA256，一致；未改动程序或词库二进制。
+- 发布用 `词巢.exe --self-check` 再次退出码 0，报告 `status=PASS`、`app.version=0.7.5`、`headless=true`、`dictionary.entries=3403176`、`learning.exampleUsage.notes=3`。这是无窗口检查，真实桌面窗口、托盘与语音输出仍待人工验收。
