@@ -113,7 +113,7 @@ final class LearningPanel extends JPanel {
         }
         if (!candidates.isEmpty()) disclosure("examples-selection", "筛选依据与来源说明", "收起筛选说明", false, () -> {
             paragraph("优先展示含查询词或来源明确标注词形、3–24 个英文词、180 字符以内、带句末标点且无省略或分段的句子。同等匹配条件下，先展示已有中文学习卡例句，其次原创练习和社区语料；同类再按长度排序。", 11, Theme.MUTED);
-            paragraph("这些可检查的信号只用于阅读排序，不判断语法、自然度或译文准确性，也不代表人工审校。社区例句没有对应的词典义项标注，不自动归入下方义项。", 11, Theme.MUTED);
+            paragraph("这些可检查的信号只用于阅读排序，不判断语法、自然度或译文准确性，也不代表人工审校。标有「本句用法」的词性和词义由词巢逐句整理；未核对的句子不自动猜测。社区例句没有对应的词典义项标注，不自动归入下方义项。", 11, Theme.MUTED);
             paragraph("大小写、空白与标点差异相同的英文合并展示，保留缩略形式与单词边界。原始 " + selection.rawCount()
                     + " 条记录整理为 " + selection.uniqueCount() + " 组；所有不同的原句、原译文和来源都可在各卡出处中查看。", 11, Theme.MUTED);
         });
@@ -145,6 +145,9 @@ final class LearningPanel extends JPanel {
         card(() -> {
             paragraph(String.format("%02d", number) + "  " + item.label(), 10, Theme.GREEN);
             gap(5);
+            ExampleUsage.find(word, item.english()).ifPresent(note ->
+                    paragraph("本句用法 · " + word + "：" + note.partOfSpeech() + " · " + note.meaningInContext(),
+                            12, Theme.GREEN));
             sentence(item.english(), group.matchedForm());
             paragraph(item.chinese(), 13, Theme.INK);
             if (!group.matchedForm().isBlank() && !group.matchedForm().equalsIgnoreCase(word))

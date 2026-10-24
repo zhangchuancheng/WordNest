@@ -149,7 +149,7 @@ if (Test-Path -LiteralPath (Join-Path $PackageOutputPath '词巢')) {
 $packageArguments = @(
     '--type', 'app-image',
     '--name', '词巢',
-    '--app-version', '0.7.4',
+    '--app-version', '0.7.5',
     '--vendor', '词巢',
     '--description', '词巢：离线英汉词典与生词本',
     '--input', $inputPath,

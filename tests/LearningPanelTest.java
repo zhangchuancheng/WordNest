@@ -37,6 +37,7 @@ public final class LearningPanelTest {
             try {
                 check(Window.getWindows().length == 0, "No windows exist before panel tests");
                 certificate(learning, dictionary, output);
+                checkedBilingualUsage(learning, dictionary, output);
                 scaledSentenceWrapping(learning, dictionary, output);
                 progressiveDisclosure(grouped, englishOnly, dictionary, output);
                 qualityAndSenses(quality, fallback, dictionary, output);
@@ -81,6 +82,30 @@ public final class LearningPanelTest {
         namedButton(panel, "examples-related").doClick();
         check(!text(panel).contains("he held several valuable securities"), "Related examples collapse without removing bilingual material");
         check(text(panel).contains("Where's my birth certificate?"), "Bilingual example survives other section toggles");
+    }
+
+    private static void checkedBilingualUsage(LearningRepository learning, DictionaryRepository dictionary,
+                                              Path output) throws Exception {
+        LearningPanel panel = new LearningPanel("release", learning, dictionary, ignored -> { }, ignored -> { });
+        check(text(usageCard(panel, "Don't release that prisoner.")).contains("本句用法 · release：动词 · 放走（犯人）"),
+                "Prisoner example identifies release as a verb meaning to let someone go");
+        check(text(usageCard(panel, "An octopus can release ink when it gets into danger."))
+                        .contains("本句用法 · release：动词 · 喷出（墨汁）"),
+                "Ink example keeps a different contextual meaning for the same verb");
+        check(text(usageCard(panel, "Apple is still very secretive with regard to the release date and the price."))
+                        .contains("本句用法 · release：名词 · 发布；release date 指发布日期"),
+                "Release date identifies the noun use rather than borrowing a verb label");
+        for (int width : WIDTHS) render(panel, width, output.resolve("release-usage-" + width + ".png"));
+        LearningPanel unreviewed = new LearningPanel("certificate", learning, dictionary, ignored -> { });
+        check(!text(unreviewed).contains("本句用法"),
+                "Unreviewed corpus examples do not guess a part of speech or translation");
+    }
+
+    private static Container usageCard(Container root, String sentence) {
+        return components(root).stream().filter(c -> c instanceof Container panel
+                        && "learning-card".equals(panel.getName()) && text(panel).contains(sentence))
+                .map(c -> (Container)c).findFirst()
+                .orElseThrow(() -> new AssertionError("Missing bilingual card: " + sentence));
     }
 
     private static void scaledSentenceWrapping(LearningRepository learning, DictionaryRepository dictionary, Path output) throws Exception {

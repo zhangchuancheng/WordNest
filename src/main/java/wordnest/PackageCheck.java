@@ -64,6 +64,9 @@ final class PackageCheck {
                     || learning.curated("relevant").stream().noneMatch(item -> item.kind().equals("example"))) {
                 throw new IllegalStateException("Learning resources are missing or incomplete");
             }
+            if (ExampleUsage.count() < 3 || ExampleUsage.find("release", "Don't release that prisoner.").isEmpty())
+                throw new IllegalStateException("Checked example usage is missing");
+            report.setProperty("learning.exampleUsage.notes", Integer.toString(ExampleUsage.count()));
             report.setProperty("learning.lexical.words", Integer.toString(learning.lexicalWords()));
             report.setProperty("learning.origin.words", Integer.toString(learning.originWords()));
             report.setProperty("learning.curated.words", Integer.toString(learning.curatedWords()));
@@ -96,7 +99,7 @@ final class PackageCheck {
             report.setProperty("learning.curated.four.sections", Integer.toString(curatedWords.size()));
             report.putAll(LearningCoverage.verify(learning, dictionary));
             report.putAll(Theme.verify());
-            report.setProperty("app.version", "0.7.4");
+            report.setProperty("app.version", "0.7.5");
             report.setProperty("status", "PASS");
         } catch (Exception e) {
             report.setProperty("status", "FAIL");

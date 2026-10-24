@@ -187,3 +187,9 @@ PreferencesPanelTest 在 FlatLaf 100%、150%、200% 缩放配置下各通过 26 
 - `词巢.exe --self-check` 退出码 0，报告 `status=PASS`、`app.version=0.7.4`、`headless=true`、`dictionary.entries=3403176`。TrayMenuFontTest 30、TraySupportTest 14、BackgroundControllerTest 121、ActivationRequestsTest 40 项及 ThemeTest 通过；未操作真实桌面窗口或托盘。
 - 最终源码重编后，LearningPanelTest **12,491 项**离屏断言通过，包含旧资源署名在可见出处中显示为“词巢”的检查；`prepare_open_learning.py --check` 与固定资源逐字节一致。
 - 原 `%LOCALAPPDATA%\WordNest` 个人数据目录和单实例协议保持不变，未迁移或删除收藏、笔记、历史、复习数据。GitHub Release 0.7.3 仍为旧名称与旧图标；本段只记录本地 0.7.4 的实际验证。
+
+## 0.7.5 推荐例句句中用法（2026-10-24）
+
+- `example-usage.tsv` 为 release 的三条已核对双语例句分别记录动词“放走（犯人）”、动词“喷出（墨汁）”及 release date 中的名词“发布”。在英文原句之前展示，保留原译文和 Tatoeba 出处；没有逐句标注的例句不从词典通用释义推测。
+- 最终程序 JAR 的 LearningPanelTest **12,627 项**无窗口断言通过，检查同一单词在三句中的不同词性/译法、未标注句子不显示推测结果，以及 340 / 440 / 640 像素宽度布局；已查看带“朗读例句”按钮的 340 像素离屏预览。
+- 最终 Windows app-image 的 `词巢.exe --self-check` 退出码 0，报告含 `status=PASS`、`app.version=0.7.5`、`headless=true`、`learning.exampleUsage.notes=3` 和 `dictionary.entries=3403176`。真实桌面窗口和托盘未操作。

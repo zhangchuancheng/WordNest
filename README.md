@@ -2,7 +2,7 @@
 
 面向 Windows 的离线英汉查词与生词本。阅读时复制英文单词或简短词组，即可查询收录的中文释义、音标和英文解释；还可切换“例句、派生、词根、近义词”四个学习分页，记录自己的例句、分轮复习，并使用本机英文语音朗读。
 
-本地当前版本：**0.7.4**。使用 Java 17 / Swing，合并后内置 ECDICT **3,403,176 条词条**。本版整合历史容量设置、托盘中文菜单和设置窗口布局修复；支持复制简短词组、输入格式整理和来源明确的词形候选；保留分轮复习、本机朗读、查词历史、收藏恢复与例句整理。日常使用不需要账号、API Key 或联网服务。
+本地当前版本：**0.7.5**。使用 Java 17 / Swing，合并后内置 ECDICT **3,403,176 条词条**。推荐双语例句开始提供逐句核对的目标词词性与中文译法；历史容量设置、托盘中文菜单、短语与词形查询、分轮复习、本机朗读和收藏恢复继续保留。日常使用不需要账号、API Key 或联网服务。
 
 原项目及 GitHub 仓库名仍为 WordNest，个人数据目录也沿用此名以兼容旧版。项目创建与维护：[zhangchuancheng](https://github.com/zhangchuancheng)。第三方词库、语料与界面库保留各自作者署名及许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
@@ -16,7 +16,7 @@
 
 ## 启动
 
-**0.7.4 本地版已更名为“词巢”**，使用选定的橙底绿色词巢和 A 字母卡图标；程序文件为 `词巢.exe`，本地安装目录是 `%LOCALAPPDATA%\Programs\词巢\0.7.4`。上方 GitHub 下载链接目前还是 0.7.3 旧名称版本。更新时先从旧版托盘退出，再打开桌面“词巢”快捷方式。原有 `%LOCALAPPDATA%\WordNest` 数据继续共用，无须迁移。
+**0.7.5 本地版继续使用“词巢”名称与橙底绿色词巢图标**；程序文件为 `词巢.exe`，本地安装目录是 `%LOCALAPPDATA%\Programs\词巢\0.7.5`。上方 GitHub 下载链接目前还是 0.7.3 旧名称版本。更新时先从旧版托盘退出，再打开桌面“词巢”快捷方式。原有 `%LOCALAPPDATA%\WordNest` 数据继续共用，无须迁移。
 
 ### Windows 便携版
 
@@ -84,6 +84,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run.ps1
 ### 延续 0.5.0：例句按可核对的规则排序
 
 例句页默认展示最多 3 组“推荐双语例句”：优先实际包含查询词或来源明确记录词形的短句，并依据长度、句末标点、是否省略或分段筛选。在都符合筛选条件且词形匹配程度相同时，已有学习卡优先，其次原创练习、社区语料，同类再优先较短的句子。具体条件可展开“筛选依据与来源说明”查看。若没有满足条件的短句，会在“双语语料参考”中保留一条；其余内容放入“更多语料”，不会从原资料中删除。
+
+已逐句核对的例句会在英文原句前显示“本句用法”，写明查询词在**这句里**的词性和中文译法。例如 release 在“放走犯人”“喷出墨汁”和 release date 中分别标为不同用法。标注来自本项目的人工学习整理，不是 Tatoeba 自带的词典义项；目前只覆盖已核对的句子，其他例句不会从词条的通用释义自动猜测。
 
 英文归一后重复的例句合并展示；不同的原句、原译文、作者、编号、许可和链接仍可在“出处”或“出处与原译文”中查看。排序与去重只整理展示，**不代表人工审校，也不保证语法、自然度或译文准确性**。
 
@@ -214,17 +216,17 @@ ECDICT 基础 CSV 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`，�
 # 生成 Java 17+ 可运行的 JAR
 .\scripts\build.ps1 -JdkPath 'C:\Path\To\Your\JDK'
 
-# 生成 0.7.4 独立便携目录；不会安装到系统
+# 生成 0.7.5 独立便携目录；不会安装到系统
 .\scripts\build.ps1 `
   -JdkPath 'C:\Path\To\Your\JDK' `
   -RuntimePath 'C:\Path\To\Temurin-JRE-17' `
-  -BuildVariant v074 `
-  -PackageOutputPath 'C:\Path\To\词巢-Windows-0.7.4'
+  -BuildVariant v075 `
+  -PackageOutputPath 'C:\Path\To\词巢-Windows-0.7.5'
 ```
 
 第二条命令使用 `jpackage --type app-image`，输出 `词巢/词巢.exe`。`-RuntimePath` 指向包含 `bin/java.exe` 的合法可分发运行时。本次运行时为 Eclipse Temurin 17.0.20.1+1；开发机上的 Oracle JDK 只负责构建，不随包分发。
 
-脚本仅清理带有本项目标记的构建子目录。如果目标已有“词巢”文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v074` 将构建结果放入 `build/v074/classes` 和 `build/v074/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
+脚本仅清理带有本项目标记的构建子目录。如果目标已有“词巢”文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v075` 将构建结果放入 `build/v075/classes` 和 `build/v075/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
 
 ### 重新生成数据
 
@@ -368,6 +370,7 @@ src/main/java/wordnest/
   Theme.java                 绿色界面与统一标题栏
   LearningPanel.java         四个学习分页与来源展示
   ExampleSelection.java      例句筛选、排序与保留来源的合并展示
+  ExampleUsage.java          逐句核对的词性与中文译法
   LearningRepository.java    学习资料查询和义项结构
   IndexedLearningData.java   数据验证、词头索引与按需解码
   DictionaryRepository.java  ECDICT 索引、内存映射与查询
@@ -385,6 +388,7 @@ src/main/resources/
   learning-curated.tsv        355 个词头的中文学习卡及来源行
   curated-words.txt           随包覆盖清单，用于全部学习卡自检
   learning-open.bin.gz       常用与雅思标签词补充资料
+  example-usage.tsv          已核对例句的目标词用法标注
   expanded-coverage.tsv      7,684 个优先词的实际覆盖清单
   app.ico                    词巢多尺寸 Windows 图标
   app.png                    窗口与托盘共用的词巢图案
