@@ -97,7 +97,7 @@ public final class LookupSessionTest {
         LookupNavigationBar bar = new LookupNavigationBar(() -> events.add("back"),
                 () -> events.add("forward"), () -> events.add("recent"));
         JButton back = (JButton) bar.getComponent(0), forward = (JButton) bar.getComponent(1), recent = (JButton) bar.getComponent(2);
-        check(!back.isEnabled() && !forward.isEnabled() && !recent.isEnabled(), "Empty navigation has no actionable buttons");
+        check(!back.isEnabled() && !forward.isEnabled() && recent.isEnabled(), "Empty history remains accessible for capacity settings");
         bar.update(true, false, 100);
         back.doClick(); forward.doClick(); recent.doClick();
         check(events.equals(List.of("back", "recent")), "Only enabled controls dispatch their own actions");

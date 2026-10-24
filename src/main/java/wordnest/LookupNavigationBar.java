@@ -17,7 +17,7 @@ final class LookupNavigationBar extends JPanel {
         back.setName("history-back"); forward.setName("history-forward"); recent.setName("history-recent");
         back.setToolTipText("返回上一个词（Alt+←）");
         forward.setToolTipText("前进到下一个词（Alt+→）");
-        recent.setToolTipText("最近查询的 100 个词，仅保存在本机");
+        recent.setToolTipText("查看最近查询；可设置最多保留 50 或 100 条，仅保存在本机");
         for (JButton button : new JButton[]{back, forward, recent}) {
             button.setFont(Theme.font(Font.PLAIN, 12));
             add(button);
@@ -32,6 +32,6 @@ final class LookupNavigationBar extends JPanel {
         back.setEnabled(canBack);
         forward.setEnabled(canForward);
         recent.setText(recentCount == 0 ? "历史" : "历史 · " + recentCount);
-        recent.setEnabled(recentCount > 0);
+        recent.setEnabled(true);
     }
 }

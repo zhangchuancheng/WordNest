@@ -2,16 +2,13 @@ package wordnest;
 
 import java.awt.AWTError;
 import java.awt.AWTException;
-import java.awt.CheckboxMenuItem;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;
-import java.awt.event.ItemEvent;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -28,7 +25,7 @@ final class TraySupport implements AutoCloseable {
     // Mutable tray state is confined to the AWT event dispatch thread.
     private SystemTray systemTray;
     private TrayIcon trayIcon;
-    private CheckboxMenuItem clipboardItem;
+    private TrayPopup popup;
     private boolean clipboardEnabled;
     private boolean backgroundHintShown;
     private volatile String failureReason = "";
@@ -68,7 +65,7 @@ final class TraySupport implements AutoCloseable {
             // Windows maps the native default action to double-click and keyboard activation.
             // Using only the ActionListener avoids dispatching the same double-click twice.
             candidateIcon.addActionListener(e -> dispatch(eventSource, showWindow));
-            MenuControls controls = createMenu(clipboardEnabled,
+            TrayPopup candidatePopup = new TrayPopup(
                 () -> dispatch(eventSource, showWindow),
                 enabled -> dispatch(eventSource, () -> {
                     clipboardEnabled = enabled;
@@ -77,11 +74,19 @@ final class TraySupport implements AutoCloseable {
                 }),
                 () -> dispatch(eventSource, openSettings),
                 () -> dispatch(eventSource, exitApplication));
-            candidateIcon.setPopupMenu(controls.popup());
+            candidateIcon.addMouseListener(new MouseAdapter() {
+                @Override public void mouseReleased(MouseEvent e) {
+                    if (e.isPopupTrigger() || e.getButton() == MouseEvent.BUTTON3) {
+                        dispatch(eventSource, () -> candidatePopup.show(e.getX(), e.getY(), clipboardEnabled));
+                    }
+                }
+            });
+            // Do not attach an AWT PopupMenu: its native Windows text renderer can
+            // show missing-glyph boxes even when Java2D's font coverage checks pass.
             candidateTray.add(candidateIcon);
             systemTray = candidateTray;
             trayIcon = candidateIcon;
-            clipboardItem = controls.clipboard();
+            popup = candidatePopup;
             failureReason = "";
             return true;
         } catch (SecurityException e) {
@@ -98,8 +103,7 @@ final class TraySupport implements AutoCloseable {
     void setClipboardEnabled(boolean enabled) {
         onEdt(() -> {
             clipboardEnabled = enabled;
-            // CheckboxMenuItem.setState does not generate an ItemEvent.
-            if (clipboardItem != null) clipboardItem.setState(enabled);
+            if (popup != null) popup.setClipboardEnabled(enabled);
             if (trayIcon != null) trayIcon.setToolTip(tooltip());
             return null;
         });
@@ -144,7 +148,8 @@ final class TraySupport implements AutoCloseable {
         TrayIcon oldIcon = trayIcon;
         systemTray = null;
         trayIcon = null;
-        clipboardItem = null;
+        if (popup != null) popup.close();
+        popup = null;
         removeSafely(oldTray, oldIcon);
     }
 
@@ -155,32 +160,6 @@ final class TraySupport implements AutoCloseable {
         } catch (SecurityException | UnsupportedOperationException | AWTError ignored) {
             // Native removal can race with desktop shutdown; the JVM also removes icons on exit.
         }
-    }
-
-    record MenuControls(PopupMenu popup, CheckboxMenuItem clipboard) { }
-
-    /** Builds menu objects only; does not register a tray icon or create native peers. */
-    static MenuControls createMenu(boolean clipboardEnabled, Runnable showWindow,
-                                   Consumer<Boolean> clipboardChanged, Runnable openSettings,
-                                   Runnable exitApplication) {
-        PopupMenu menu = new PopupMenu();
-        // AWT menus do not inherit Swing/FlatLaf fonts. Set a physical Chinese font
-        // before creating peers so both normal and checkbox items inherit it.
-        menu.setFont(Theme.font(Font.PLAIN, 13));
-        menu.add(menuItem("显示拾词", showWindow));
-        CheckboxMenuItem clipboard = new CheckboxMenuItem("复制查词", clipboardEnabled);
-        clipboard.addItemListener(e -> clipboardChanged.accept(e.getStateChange() == ItemEvent.SELECTED));
-        menu.add(clipboard);
-        menu.add(menuItem("窗口与后台设置…", openSettings));
-        menu.addSeparator();
-        menu.add(menuItem("退出拾词", exitApplication));
-        return new MenuControls(menu, clipboard);
-    }
-
-    private static MenuItem menuItem(String label, Runnable action) {
-        MenuItem item = new MenuItem(label);
-        item.addActionListener(e -> action.run());
-        return item;
     }
 
     private String tooltip() {

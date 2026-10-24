@@ -22,13 +22,14 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * The latest 100 distinct successful lookups, plus independent session navigation.
+ * The latest 50 or 100 distinct successful lookups, plus independent session navigation.
  * Callers supply the dictionary's canonical headword, after saving any edited notes.
  * A persistence failure never changes either in-memory list or the session position.
  */
 public final class LookupHistory {
     private static final String HEADER = "WORDNEST-HISTORY\t1";
-    private static final int LIMIT = 100;
+    private static final int MAX_LIMIT = 100;
+    private int limit = MAX_LIMIT;
     private static final int MAX_WORD_LENGTH = 120;
     private static final int MAX_FILE_BYTES = 64 * 1024;
     private final Path directory;
@@ -81,10 +82,10 @@ public final class LookupHistory {
      */
     public synchronized void record(String word) throws IOException {
         String canonical = validateWord(word);
-        List<String> updated = new ArrayList<>(LIMIT);
+        List<String> updated = new ArrayList<>(limit);
         updated.add(canonical);
         for (String prior : recent) {
-            if (!key(prior).equals(key(canonical)) && updated.size() < LIMIT) updated.add(prior);
+            if (!key(prior).equals(key(canonical)) && updated.size() < limit) updated.add(prior);
         }
         List<String> snapshot = List.copyOf(updated);
         // Skip needless disk writes, including a repeated query of the latest word.
@@ -167,8 +168,11 @@ public final class LookupHistory {
         } catch (CharacterCodingException ex) {
             throw invalid("不是有效的 UTF-8 文本", ex);
         }
-        if (lines.isEmpty() || !HEADER.equals(lines.get(0))) throw invalid("文件格式不正确", null);
-        if (lines.size() > LIMIT + 1) throw invalid("记录超过 100 条", null);
+        if (lines.isEmpty()) throw invalid("文件格式不正确", null);
+        if (HEADER.equals(lines.get(0))) limit = 100;
+        else if ("WORDNEST-HISTORY\t2\t50".equals(lines.get(0))) limit = 50;
+        else throw invalid("文件格式不正确", null);
+        if (lines.size() > limit + 1) throw invalid("记录超过 " + limit + " 条", null);
         List<String> loaded = new ArrayList<>();
         HashSet<String> keys = new HashSet<>();
         for (int index = 1; index < lines.size(); index++) {
@@ -190,14 +194,30 @@ public final class LookupHistory {
         return new IOException("查词历史" + reason + "，原文件已保留：" + file, cause);
     }
 
+    public synchronized int limit() { return limit; }
+
+    /** Save the preference and trimmed records together; failures preserve all state. */
+    public synchronized void setLimit(int requested) throws IOException {
+        if (requested != 50 && requested != 100) throw new IllegalArgumentException("Expected 50 or 100");
+        if (requested == limit) return;
+        List<String> trimmed = List.copyOf(recent.subList(0, Math.min(requested, recent.size())));
+        persist(trimmed, requested);
+        recent = trimmed;
+        limit = requested;
+    }
+
     private void persist(List<String> snapshot) throws IOException {
+        persist(snapshot, limit);
+    }
+
+    private void persist(List<String> snapshot, int savedLimit) throws IOException {
         if (file == null) return;
         Path temporary = Files.createTempFile(directory, ".history-", ".tmp");
         try {
             try (FileChannel channel = FileChannel.open(temporary, StandardOpenOption.WRITE,
                     StandardOpenOption.TRUNCATE_EXISTING);
                  BufferedWriter writer = new BufferedWriter(Channels.newWriter(channel, StandardCharsets.UTF_8))) {
-                writer.write(HEADER);
+                writer.write(savedLimit == 100 ? HEADER : "WORDNEST-HISTORY\t2\t50");
                 writer.newLine();
                 for (String word : snapshot) {
                     writer.write(Base64.getEncoder().encodeToString(word.getBytes(StandardCharsets.UTF_8)));

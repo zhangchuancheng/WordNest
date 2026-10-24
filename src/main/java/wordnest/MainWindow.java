@@ -229,38 +229,38 @@ final class MainWindow extends JFrame {
 
     private void showPreferences() {
         if (modalOpen) return;
-        JPanel content = Theme.panel(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = 0; c.gridy = 0; c.weightx = 1; c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(0, 0, 8, 0);
-        content.add(Theme.label("点击关闭按钮 × 时", 13, Theme.INK), c);
-        JComboBox<String> close = new JComboBox<>(new String[]{"每次询问", "最小化到系统托盘", "退出程序"});
-        close.setSelectedIndex(background.closeAction().ordinal());
-        close.getAccessibleContext().setAccessibleName("关闭窗口时");
-        c.gridy++; content.add(close, c);
-        c.gridy++; c.insets = new Insets(12, 0, 8, 0);
-        content.add(Theme.label("点击最小化按钮 − 时", 13, Theme.INK), c);
-        JComboBox<String> minimize = new JComboBox<>(new String[]{"最小化到任务栏", "最小化到系统托盘"});
-        minimize.setSelectedIndex(background.minimizeAction().ordinal());
-        minimize.getAccessibleContext().setAccessibleName("最小化窗口时");
-        c.gridy++; c.insets = new Insets(0, 0, 12, 0); content.add(minimize, c);
-        c.gridy++; content.add(Theme.text("复制查词支持英文单词和短语（最多 8 词 / 120 字符）。\n后台运行时仍按开关状态工作，不会自动弹出窗口。\n可从托盘菜单或再次打开 EXE 恢复；右键托盘图标可彻底退出。", 12, Theme.MUTED, 370), c);
-        Object[] options = {"保存", "取消", "关于与说明"};
+        JDialog dialog = new JDialog(this, "窗口与后台设置", true);
+        PreferencesPanel content = new PreferencesPanel(background.closeAction().ordinal(),
+                background.minimizeAction().ordinal());
+        content.save.addActionListener(e -> {
+            if (background.setPreferences(BackgroundController.CloseAction.values()[content.close.getSelectedIndex()],
+                    BackgroundController.MinimizeAction.values()[content.minimize.getSelectedIndex()])) {
+                status("已保存窗口与后台设置", false);
+                dialog.dispose();
+            } else JOptionPane.showMessageDialog(dialog, "设置暂时无法保存，请检查数据目录的写入权限后重试。",
+                    "设置未保存", JOptionPane.WARNING_MESSAGE);
+        });
+        content.cancel.addActionListener(e -> dialog.dispose());
+        content.about.addActionListener(e -> showAbout());
+        dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        dialog.setContentPane(content);
+        dialog.getRootPane().setDefaultButton(content.save);
+        dialog.getRootPane().registerKeyboardAction(e -> dialog.dispose(), KeyStroke.getKeyStroke("ESCAPE"),
+                JComponent.WHEN_IN_FOCUSED_WINDOW);
+        dialog.setResizable(true);
+        dialog.pack();
+        Rectangle available = getGraphicsConfiguration().getBounds();
+        Insets screenInsets = Toolkit.getDefaultToolkit().getScreenInsets(getGraphicsConfiguration());
+        available = new Rectangle(available.x + screenInsets.left, available.y + screenInsets.top,
+                available.width - screenInsets.left - screenInsets.right,
+                available.height - screenInsets.top - screenInsets.bottom);
+        dialog.setSize(Math.min(dialog.getWidth(), available.width), Math.min(dialog.getHeight(), available.height));
+        dialog.setMinimumSize(new Dimension(Math.min(340, available.width), Math.min(220, available.height)));
+        dialog.setLocationRelativeTo(this);
+        dialog.setLocation(TrayPopup.position(dialog.getX(), dialog.getY(), dialog.getSize(), available));
         modalOpen = true;
-        try {
-            for (;;) {
-                int choice = JOptionPane.showOptionDialog(this, content, "窗口与后台设置",
-                        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                if (choice == 2) { showAbout(); continue; }
-                if (choice != 0) return;
-                if (background.setPreferences(BackgroundController.CloseAction.values()[close.getSelectedIndex()],
-                        BackgroundController.MinimizeAction.values()[minimize.getSelectedIndex()])) {
-                    status("已保存窗口与后台设置", false); return;
-                }
-                JOptionPane.showMessageDialog(this, "设置暂时无法保存，请检查数据目录的写入权限后重试。",
-                        "设置未保存", JOptionPane.WARNING_MESSAGE);
-            }
-        } finally { modalOpen = false; }
+        try { dialog.setVisible(true); }
+        finally { modalOpen = false; dialog.dispose(); }
     }
 
     private JPanel lookupPage() {
@@ -610,14 +610,35 @@ final class MainWindow extends JFrame {
     }
 
     private void showHistory() {
-        if (modalOpen || history == null || history.recent().isEmpty()) return;
+        if (modalOpen || history == null) return;
         JList<String> list = new JList<>(history.recent().toArray(String[]::new));
         list.setFont(Theme.font(Font.PLAIN, 14)); list.setFixedCellHeight(30);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); list.setSelectedIndex(0);
         list.setSelectionBackground(Theme.PALE); list.setSelectionForeground(Theme.INK);
         JScrollPane scroll = new JScrollPane(list); scroll.setPreferredSize(new Dimension(330, 280));
         JPanel content = Theme.panel(new BorderLayout(0, 9));
-        content.add(Theme.label("最近 100 个成功查询的词，仅保存在本机", 12, Theme.MUTED), BorderLayout.NORTH);
+        JPanel options = Theme.panel(new BorderLayout(0, 6));
+        options.add(Theme.label("超出上限自动删除最早记录，仅保存在本机", 12, Theme.MUTED), BorderLayout.NORTH);
+        JComboBox<Integer> capacity = new JComboBox<>(new Integer[]{50, 100});
+        capacity.setSelectedItem(history.limit());
+        JPanel capacityRow = Theme.panel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        capacityRow.add(Theme.label("最多保留（条）：", 12, Theme.MUTED));
+        capacityRow.add(capacity);
+        options.add(capacityRow, BorderLayout.CENTER);
+        content.add(options, BorderLayout.NORTH);
+        capacity.addActionListener(e -> {
+            int requested = (Integer) capacity.getSelectedItem();
+            try {
+                history.setLimit(requested);
+                list.setListData(history.recent().toArray(String[]::new));
+                if (!history.recent().isEmpty()) list.setSelectedIndex(0);
+                updateNavigation();
+                status("查词历史最多保留 " + requested + " 条，超出时自动清理", false);
+            } catch (IOException failure) {
+                capacity.setSelectedItem(history.limit());
+                status("历史上限未能保存，原设置和记录已保留", true);
+            }
+        });
         content.add(scroll, BorderLayout.CENTER);
         modalOpen = true;
         int choice;

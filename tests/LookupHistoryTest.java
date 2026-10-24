@@ -20,6 +20,7 @@ public final class LookupHistoryTest {
         Path root = Files.createTempDirectory("wordnest-history-test-");
         try {
             testPersistenceAndLimit(root.resolve("recent"));
+            testConfigurableLimit(root.resolve("capacity"));
             testNavigationAndStartup(root.resolve("navigation"));
             testUnicodeAndInvalidWords(root.resolve("unicode"));
             testCorruptFiles(root.resolve("corrupt"));
@@ -65,6 +66,31 @@ public final class LookupHistoryTest {
         check(new LookupHistory(directory).recent().isEmpty(), "clear survives restart");
         check(Files.readString(directory.resolve("history.tsv")).strip().equals(HEADER.strip()), "cleared file has only its format header");
         check(noTemporaryFiles(directory), "successful writes leave no temporary files");
+    }
+
+    private static void testConfigurableLimit(Path directory) throws Exception {
+        LookupHistory history = new LookupHistory(directory);
+        check(history.limit() == 100, "default is 100");
+        for (int i = 0; i < 105; i++) history.record("word" + i);
+        history.setLimit(50);
+        check(history.recent().size() == 50 && history.recent().get(49).equals("word55"), "shrinking keeps newest 50");
+        history = new LookupHistory(directory);
+        check(history.limit() == 50 && history.recent().size() == 50, "limit and trimmed list survive restart");
+        history.record("WORD75");
+        check(history.recent().size() == 50 && history.recent().get(0).equals("WORD75"), "deduplication at 50");
+        history.record("newest");
+        check(history.recent().size() == 50 && !history.recent().contains("word55"), "50 limit evicts oldest");
+        history.setLimit(100);
+        check(history.recent().size() == 50, "increasing does not restore evicted words");
+        history.record("another");
+        check(new LookupHistory(directory).recent().size() == 51, "larger capacity survives restart");
+        history.setLimit(50);
+        history.clear();
+        check(new LookupHistory(directory).limit() == 50, "clear preserves preference");
+        LookupHistory fallback = LookupHistory.sessionOnly();
+        fallback.setLimit(50);
+        for (int i = 0; i < 60; i++) fallback.record("word" + i);
+        check(fallback.recent().size() == 50, "session-only mode respects chosen limit");
     }
 
     private static void testNavigationAndStartup(Path directory) throws Exception {
@@ -201,6 +227,8 @@ public final class LookupHistoryTest {
         check(history.recent().equals(recent), "failed record preserves in-memory recent snapshot");
         check(history.current().orElseThrow().equals("apple") && history.peekForward().orElseThrow().equals("banana"),
                 "failed record preserves navigation position and forward branch");
+        expectIOException(() -> history.setLimit(50), "failed capacity save is reported");
+        check(history.limit() == 100 && history.recent().equals(recent), "failed capacity change rolls back");
         expectIOException(history::clear, "failed clear is reported");
         check(history.recent().equals(recent) && history.current().orElseThrow().equals("apple") && history.canForward(),
                 "failed clear preserves every in-memory state");

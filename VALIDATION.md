@@ -1,3 +1,7 @@
+# WordNest 验证记录
+
+当前发行 0.7.3：最新历史、托盘、设置布局检查见文末；以下保留此前实际验证结果，不将历史测试冒充本次重跑。
+
 # WordNest 0.7.0 验证记录（2026-10-23）
 
 本版扩充离线主词库，并增加输入格式整理、短语查询与基于显式关系的词形候选。以下记录本轮实际完成的检查；0.6.0 及更早版本的数字在后文单独保留，不能视为新版已重复执行的结果。
@@ -154,3 +158,23 @@ python scripts/assemble_curated.py --check 检查原有卡片；python scripts/p
 另有一项内容验收条件：ECDICT 带 ielts 标签且 BNC 或 FRQ 正排名不超过 5,000 的 2,583 个词全部有英汉例句；缺少其中任何一个，原生包检查都会失败。这是第三方词库标签与排名的交集，不是“雅思全部词汇”声明。
 
 两个数据生成器已通过 --check，逐字节重现随包资源。原生验证报告为 work/wordnest-v04-final-native-check.properties。此无窗口自检在个人数据目录、单实例锁和界面初始化之前执行，不读取收藏、设置或剪贴板。
+
+
+## 0.7.1 历史容量（2026-10-24）
+
+Java 17 无窗口验证：LookupHistoryTest 267 项、LookupSessionTest 54 项通过；涵盖默认上限、50/100 切换、即时清理、重启持久化、去重、写入失败回滚、内存降级与空历史入口。编译通过。未操作真实窗口。
+
+
+## 0.7.2 托盘中文菜单（2026-10-24）
+
+旧版仅检查 AWT 字体继承和 canDisplayUpTo，不能证明原生 Windows 菜单绘制正常；用户截图再次出现方块。改用 Swing 控件和 Java2D，与主窗口一致，不再向 TrayIcon 挂接 AWT PopupMenu。TrayMenuFontTest 30 项、TraySupportTest 14 项、BackgroundControllerTest 121 项、ActivationRequestsTest 40 项通过。实际菜单控件已离屏绘制并检查中文可读性。未打开真实托盘菜单；系统前台焦点、失焦关闭及多显示器现场行为仍待实际使用确认。
+
+
+## 0.7.3 设置布局（2026-10-24）
+
+PreferencesPanelTest 在 FlatLaf 100%、150%、200% 缩放配置下各通过 26 项检查，覆盖 340×220、500×400、640×520 内容区域，核对底部按钮边界和高度、小窗口滚动及正文宽度跟随。实际面板已离屏绘制检查；未操作真实桌面窗口。
+
+
+## 0.7.3 发布前复查（2026-10-24）
+
+本次以最终程序 JAR 重跑 LookupHistoryTest 267、LookupSessionTest 54、TrayMenuFontTest 30、TraySupportTest 14、BackgroundControllerTest 121、ActivationRequestsTest 40、PreferencesPanelTest 26，共 552 项通过。最终程序未再改代码；使用已通过自检的 0.7.3 app-image，仅更新随包文档。

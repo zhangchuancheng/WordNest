@@ -92,7 +92,7 @@ final class PackageCheck {
             report.setProperty("learning.curated.four.sections", Integer.toString(curatedWords.size()));
             report.putAll(LearningCoverage.verify(learning, dictionary));
             report.putAll(Theme.verify());
-            report.setProperty("app.version", "0.7.0");
+            report.setProperty("app.version", "0.7.3");
             report.setProperty("status", "PASS");
         } catch (Exception e) {
             report.setProperty("status", "FAIL");
