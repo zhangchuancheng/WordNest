@@ -132,8 +132,8 @@ final class TraySupport implements AutoCloseable {
         onEdt(() -> {
             if (!backgroundHintShown && isInstalledOnEdt()) {
                 backgroundHintShown = true;
-                trayIcon.displayMessage("拾词仍在后台运行",
-                    "双击托盘图标恢复窗口；右键菜单可修改设置或退出拾词。", TrayIcon.MessageType.NONE);
+                trayIcon.displayMessage("词巢仍在后台运行",
+                    "双击托盘图标恢复窗口；右键菜单可修改设置或退出词巢。", TrayIcon.MessageType.NONE);
             }
             return null;
         });
@@ -163,7 +163,7 @@ final class TraySupport implements AutoCloseable {
     }
 
     private String tooltip() {
-        return "拾词 · WordNest — 双击显示窗口 · 复制查词" + (clipboardEnabled ? "已开启" : "已暂停");
+        return "词巢 — 双击显示窗口 · 复制查词" + (clipboardEnabled ? "已开启" : "已暂停");
     }
 
     private void dispatch(TrayIcon eventSource, Runnable action) {

@@ -139,19 +139,19 @@ if (-not (Test-Path -LiteralPath $jpackage)) {
     throw "jpackage.exe was not found in $JdkPath. Use a complete JDK 17 or newer."
 }
 if (-not $PackageOutputPath) {
-    $PackageOutputPath = Join-Path (Split-Path $projectRoot -Parent) 'WordNest-Windows'
+    $PackageOutputPath = Join-Path (Split-Path $projectRoot -Parent) '词巢-Windows'
 }
 $PackageOutputPath = [IO.Path]::GetFullPath($PackageOutputPath)
-if (Test-Path -LiteralPath (Join-Path $PackageOutputPath 'WordNest')) {
+if (Test-Path -LiteralPath (Join-Path $PackageOutputPath '词巢')) {
     $PackageOutputPath += '-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff')
     Write-Host "An earlier package was preserved. New destination: $PackageOutputPath"
 }
 $packageArguments = @(
     '--type', 'app-image',
-    '--name', 'WordNest',
-    '--app-version', '0.7.3',
-    '--vendor', 'WordNest',
-    '--description', 'Offline English-Chinese desktop dictionary and vocabulary notebook',
+    '--name', '词巢',
+    '--app-version', '0.7.4',
+    '--vendor', '词巢',
+    '--description', '词巢：离线英汉词典与生词本',
     '--input', $inputPath,
     '--main-jar', 'wordnest.jar',
     '--main-class', 'wordnest.App',
@@ -165,7 +165,7 @@ if (Test-Path -LiteralPath $iconPath) { $packageArguments += @('--icon', $iconPa
 Write-Host 'Creating a portable Windows app (no installer or system changes)...'
 & $jpackage @packageArguments
 if ($LASTEXITCODE -ne 0) { throw "jpackage failed with exit code $LASTEXITCODE" }
-$appPath = Join-Path $PackageOutputPath 'WordNest'
+$appPath = Join-Path $PackageOutputPath '词巢'
 Copy-Item -LiteralPath (Join-Path $resourcePath 'expanded-coverage.tsv') -Destination (Join-Path $appPath 'learning-coverage.tsv') -Force
 foreach ($folder in @('licenses', 'docs')) {
     $folderPath = Join-Path $projectRoot $folder
@@ -179,4 +179,4 @@ foreach ($document in @('README.md', '使用说明.txt', 'THIRD_PARTY_NOTICES.md
         Copy-Item -LiteralPath $documentPath -Destination $appPath -Force
     }
 }
-Write-Host "Portable application created: $(Join-Path $appPath 'WordNest.exe')"
+Write-Host "Portable application created: $(Join-Path $appPath '词巢.exe')"

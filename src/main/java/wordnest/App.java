@@ -36,7 +36,7 @@ public final class App {
                 try { if (lock != null) lock.release(); if (lockChannel != null) lockChannel.close(); } catch (Exception ignored) { }
             }));
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "无法打开本地数据目录：\n" + dataDir + "\n" + e.getMessage(), "拾词启动失败", JOptionPane.ERROR_MESSAGE); return;
+            JOptionPane.showMessageDialog(null, "无法打开本地数据目录：\n" + dataDir + "\n" + e.getMessage(), "词巢启动失败", JOptionPane.ERROR_MESSAGE); return;
         }
         SwingUtilities.invokeLater(() -> {
             try {
@@ -54,7 +54,7 @@ public final class App {
                 window.setVisible(true);
                 activationTimer.start();
             }
-            catch (Exception e) { JOptionPane.showMessageDialog(null, "启动失败：" + e.getMessage(), "拾词", JOptionPane.ERROR_MESSAGE); }
+            catch (Exception e) { JOptionPane.showMessageDialog(null, "启动失败：" + e.getMessage(), "词巢", JOptionPane.ERROR_MESSAGE); }
         });
     }
 
@@ -65,9 +65,9 @@ public final class App {
             Thread.currentThread().interrupt();
         } catch (Exception ignored) { }
         JOptionPane.showMessageDialog(null,
-                "拾词已经在运行，但暂时没有收到显示窗口的确认。\n"
-                        + "请从系统托盘的拾词图标选择“显示窗口”，或查看任务栏。\n"
+                "词巢已经在运行，但暂时没有收到显示窗口的确认。\n"
+                        + "请从系统托盘的词巢图标选择“显示词巢”，或查看任务栏。\n"
                         + "如果仍在使用旧版，请先退出旧版后再打开新版。",
-                "拾词", JOptionPane.INFORMATION_MESSAGE);
+                "词巢", JOptionPane.INFORMATION_MESSAGE);
     }
 }

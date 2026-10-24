@@ -278,6 +278,9 @@ public final class LearningPanelTest {
                 for (int width : WIDTHS) render(panel, width,
                         word.equals("abandon") ? output.resolve("open-" + word + "-" + tab + "-" + width + ".png") : null);
                 expandAll(panel);
+                if (word.equals("allocate") && tab.equals("例句"))
+                    check(text(panel).contains("词巢原创学习例句") && !text(panel).contains("拾词原创"),
+                            "Bundled legacy attribution uses the current name in visible source details");
                 for (int width : WIDTHS) render(panel, width, null);
             }
         }

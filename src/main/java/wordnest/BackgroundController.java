@@ -128,7 +128,7 @@ final class BackgroundController {
         if (!hiddenToTray || transitioning || exiting) return;
         transitioning = true;
         try {
-            keepVisible("系统托盘图标已失效，拾词已恢复窗口。请重新选择最小化到托盘，或通过设置更改关闭方式。");
+            keepVisible("系统托盘图标已失效，词巢已恢复窗口。请重新选择最小化到托盘，或通过设置更改关闭方式。");
         } finally {
             transitioning = false;
         }
@@ -138,14 +138,14 @@ final class BackgroundController {
         rememberCurrentState();
         if (!flushSafely()) return false;
         if (!supportsTray()) {
-            keepVisible("当前系统不支持通知区域托盘，拾词已保留在窗口中。可在设置中改为最小化到任务栏或直接退出。");
+            keepVisible("当前系统不支持通知区域托盘，词巢已保留在窗口中。可在设置中改为最小化到任务栏或直接退出。");
             return false;
         }
         boolean installed;
         try { installed = host.ensureTray(); }
         catch (RuntimeException error) { installed = false; }
         if (!installed) {
-            keepVisible("未能添加系统托盘图标，拾词已保留在窗口中。请稍后重试，或选择直接退出。");
+            keepVisible("未能添加系统托盘图标，词巢已保留在窗口中。请稍后重试，或选择直接退出。");
             return false;
         }
         if (remember && !savePreferences(CloseAction.TRAY, minimizeAction())) {
@@ -169,7 +169,7 @@ final class BackgroundController {
         } else {
             try { host.saveSettings(); }
             catch (RuntimeException error) {
-                keepVisible("设置保存失败，拾词尚未退出。请检查数据目录后重试。");
+                keepVisible("设置保存失败，词巢尚未退出。请检查数据目录后重试。");
                 return false;
             }
         }
@@ -186,7 +186,7 @@ final class BackgroundController {
         boolean saved;
         try { saved = host.flushNote(); }
         catch (RuntimeException error) { saved = false; }
-        if (!saved) keepVisible("例句尚未保存成功，拾词已保留在窗口中。请先处理保存问题，再最小化到托盘或退出。");
+        if (!saved) keepVisible("例句尚未保存成功，词巢已保留在窗口中。请先处理保存问题，再最小化到托盘或退出。");
         return saved;
     }
 

@@ -1,6 +1,7 @@
 package wordnest;
 
 import javax.swing.*;
+import javax.imageio.ImageIO;
 import javax.swing.border.*;
 import javax.swing.event.*;
 import java.awt.*;
@@ -60,7 +61,7 @@ final class MainWindow extends JFrame {
     private boolean loaded;
 
     MainWindow(Path dataDir) {
-        super("拾词 · WordNest");
+        super("词巢");
         this.dataDir = dataDir;
         readSettings();
         int preferredRate;
@@ -72,7 +73,7 @@ final class MainWindow extends JFrame {
             writeSettings();
         });
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-        setIconImage(icon());
+        setIconImages(List.of(icon(16), icon(32), icon(64)));
         Rectangle available = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         setSize(Math.min(520, available.width), Math.min(740, available.height - 20));
         setMinimumSize(new Dimension(Math.min(440, available.width), Math.min(570, available.height - 20)));
@@ -94,7 +95,7 @@ final class MainWindow extends JFrame {
         else { pin.setSelected(false); pin.setEnabled(false); }
         watch.setSelected(Boolean.parseBoolean(settings.getProperty("clipboard", "true")));
         watch.setToolTipText("复制英文单词或短语查询，最多 8 词 / 120 字符；整段或多行内容不触发查询");
-        tray = new TraySupport(icon(), this::restoreFromTray, this::exitFromTray,
+        tray = new TraySupport(icon(32), this::restoreFromTray, this::exitFromTray,
                 this::setClipboardEnabled, this::openPreferencesFromTray);
         tray.setClipboardEnabled(watch.isSelected());
         background = new BackgroundController(settings, new BackgroundController.Host() {
@@ -205,8 +206,8 @@ final class MainWindow extends JFrame {
     private BackgroundController.CloseDecision askCloseAction(boolean trayAvailable) {
         JPanel content = Theme.panel(new BorderLayout(0, 14));
         JTextArea explanation = Theme.text(trayAvailable
-                ? "最小化到系统托盘后，拾词会继续在后台运行。\n双击右下角的拾词图标，或再次打开 EXE，即可显示窗口。\n若未看到图标，请展开任务栏右下角的小箭头。"
-                : "当前系统托盘不可用。可以退出拾词，或取消并保留窗口。", 13, Theme.INK, 370);
+                ? "最小化到系统托盘后，词巢会继续在后台运行。\n双击右下角的词巢图标，或再次打开 EXE，即可显示窗口。\n若未看到图标，请展开任务栏右下角的小箭头。"
+                : "当前系统托盘不可用。可以退出词巢，或取消并保留窗口。", 13, Theme.INK, 370);
         content.add(explanation, BorderLayout.CENTER);
         JCheckBox remember = new JCheckBox("记住我的选择（可在设置中更改）");
         remember.setOpaque(false); content.add(remember, BorderLayout.SOUTH);
@@ -215,7 +216,7 @@ final class MainWindow extends JFrame {
                 : new Object[]{"退出程序", "取消"};
         boolean previousModal = modalOpen; modalOpen = true;
         try {
-            int choice = JOptionPane.showOptionDialog(this, content, "关闭拾词时…",
+            int choice = JOptionPane.showOptionDialog(this, content, "关闭词巢时…",
                     JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
             BackgroundController.CloseChoice action = choice < 0 ? BackgroundController.CloseChoice.CANCEL
                     : trayAvailable ? switch (choice) {
@@ -669,7 +670,7 @@ final class MainWindow extends JFrame {
         if (reviewStore == null) { status("复习记录未能读取，原文件已保留；查词与生词本仍可使用", true); return; }
         if (!flushNote()) return;
         speech.stop();
-        JDialog dialog = new JDialog(this, "拾词 · 计划复习", true);
+        JDialog dialog = new JDialog(this, "词巢 · 计划复习", true);
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ReviewPanel content = new ReviewPanel(reviewStore, favorites::list, () -> {
             dialog.dispose(); refreshLibrary(); pages.show(pagePanel, "library"); libraryTab.setSelected(true);
@@ -698,7 +699,7 @@ final class MainWindow extends JFrame {
     private void export() {
         if (favorites == null || favorites.list().isEmpty()) { status("生词本还是空的，先收藏一个词吧", false); return; }
         if (!flushNote()) return;
-        JFileChooser chooser = new JFileChooser(); chooser.setDialogTitle("导出生词本"); chooser.setSelectedFile(new File("WordNest-生词本.csv"));
+        JFileChooser chooser = new JFileChooser(); chooser.setDialogTitle("导出生词本"); chooser.setSelectedFile(new File("词巢-生词本.csv"));
         modalOpen = true;
         try {
             if (chooser.showSaveDialog(this) != JFileChooser.APPROVE_OPTION) return;
@@ -722,15 +723,15 @@ final class MainWindow extends JFrame {
         return "\"" + safe.replace("\"", "\"\"") + "\"";
     }
     private void showAbout() {
-        String info = "拾词 WordNest  0.7.0\n\n" +
+        String info = "词巢 0.7.4\n\n" +
                 "手动输入单词或短语，或在其他软件中复制英文内容（最多 8 词 / 120 字符）。\n支持连字符、撇号与首尾标点；多行、网址、邮箱、中文和代码样式内容不触发复制查询。\n先查原词，再整理空白与标点；未命中时仅使用 ECDICT 明确记录的词形。\n唯一原形会标明「按原形查询」，多个原形请从候选条手动选择。\n复制查词不会抢焦点，可随时用顶部按钮暂停；未命中保留当前词条。\n\n" +
                 "关闭时可选择后台运行或退出；顶部「设置」可更改记住的选择。\n托盘图标可能收在右下角的小箭头中，双击即可显示窗口。\n再次打开 EXE 也可唤回窗口；右键托盘菜单可彻底退出。\n\n" +
-                "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n个人例句自动保存在本机，取消收藏仍保留，可从生词本恢复。\n查词历史保留最近 100 个词，可清空；所有查询在本机完成，不调用网络或 AI 服务。\n\n" +
-                "英汉例句：Tatoeba 社区语料与拾词原创。\n派生和近义词：Open English WordNet / 中文维基词典。\n词源：中文维基词典与 etymology-db（2023 快照）。\n新增资料优先覆盖常用词与雅思标签词；355 张原有完整中文卡片继续保留。\n各项实际覆盖见程序目录 LEARNING_COVERAGE.md。\n每个分页标明来源；社区资料可能有疏漏，缺项不会自动补写。\n\n" +
+                "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n个人例句自动保存在本机，取消收藏仍保留，可从生词本恢复。\n查词历史可选保留最近 50 或 100 个词，可清空；所有查询在本机完成，不调用网络或 AI 服务。\n\n" +
+                "英汉例句：Tatoeba 社区语料与词巢原创。\n派生和近义词：Open English WordNet / 中文维基词典。\n词源：中文维基词典与 etymology-db（2023 快照）。\n新增资料优先覆盖常用词与雅思标签词；355 张原有完整中文卡片继续保留。\n各项实际覆盖见程序目录 LEARNING_COVERAGE.md。\n每个分页标明来源；社区资料可能有疏漏，缺项不会自动补写。\n\n" +
                 "计划复习：每轮 10 / 20 词，显示释义后选择忘记或记住；答题进度与下次复习时间自动保存在本机。\n朗读使用 Windows 已安装的英文桌面语音，支持语音选择、调速与停止。\n\n" +
                 "本地收藏、笔记、历史、复习与设置：\n" + dataDir + "\n\n快捷键：Ctrl+L 聚焦搜索，Enter 查询，Alt+← / → 后退 / 前进。";
         boolean previousModal = modalOpen; modalOpen = true;
-        try { JOptionPane.showMessageDialog(this, info, "关于拾词", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(icon())); }
+        try { JOptionPane.showMessageDialog(this, info, "关于词巢", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(icon())); }
         finally { modalOpen = previousModal; }
     }
 
@@ -773,13 +774,28 @@ final class MainWindow extends JFrame {
         return new DocumentListener() { public void insertUpdate(DocumentEvent e) { action.run(); } public void removeUpdate(DocumentEvent e) { action.run(); } public void changedUpdate(DocumentEvent e) { action.run(); } };
     }
     private static void onChange(JTextField field, Runnable action) { field.getDocument().addDocumentListener(listener(action)); }
-    static BufferedImage icon() {
-        BufferedImage image = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB); Graphics2D g = image.createGraphics();
-        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g.setColor(Theme.GREEN); g.fillRoundRect(0, 0, 64, 64, 18, 18);
-        g.setColor(new Color(0xEFF5E8)); g.setStroke(new BasicStroke(3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-        g.drawRoundRect(15, 17, 34, 31, 5, 5); g.drawLine(32, 19, 32, 47);
-        g.drawLine(21, 26, 26, 26); g.drawLine(21, 33, 26, 33); g.drawLine(38, 26, 43, 26); g.drawLine(38, 33, 43, 33);
-        g.dispose(); return image;
+    private static final BufferedImage ICON_SOURCE = loadIcon();
+
+    private static BufferedImage loadIcon() {
+        try (InputStream input = MainWindow.class.getResourceAsStream("/app.png")) {
+            if (input == null) throw new IllegalStateException("词巢图标资源缺失");
+            BufferedImage image = ImageIO.read(input);
+            if (image == null) throw new IllegalStateException("词巢图标无法读取");
+            return image;
+        } catch (IOException failure) {
+            throw new IllegalStateException("词巢图标无法读取", failure);
+        }
+    }
+
+    static BufferedImage icon() { return icon(64); }
+
+    static BufferedImage icon(int size) {
+        BufferedImage image = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = image.createGraphics();
+        try {
+            g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+            g.drawImage(ICON_SOURCE, 0, 0, size, size, null);
+        } finally { g.dispose(); }
+        return image;
     }
 }

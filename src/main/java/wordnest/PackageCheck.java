@@ -47,7 +47,11 @@ final class PackageCheck {
             if (sample.translation().isBlank() || sample.phonetic().isBlank() || sample.definition().isBlank()) {
                 throw new IllegalStateException("Dictionary sample is incomplete");
             }
-            if (App.class.getResource("/app.ico") == null) throw new IllegalStateException("Icon resource is missing");
+            if (App.class.getResource("/app.ico") == null || App.class.getResource("/app.png") == null)
+                throw new IllegalStateException("Icon resource is missing");
+            java.awt.image.BufferedImage smallIcon = MainWindow.icon(16);
+            if (smallIcon.getWidth() != 16 || smallIcon.getHeight() != 16 || (smallIcon.getRGB(0, 0) >>> 24) != 0)
+                throw new IllegalStateException("The new tray icon is missing or malformed");
             if (App.class.getResource("/speech/windows-speech.ps1") == null)
                 throw new IllegalStateException("Local Windows speech bridge is missing");
             report.setProperty("speech.bridge", "bundled; voice availability requires Windows runtime check");
@@ -92,7 +96,7 @@ final class PackageCheck {
             report.setProperty("learning.curated.four.sections", Integer.toString(curatedWords.size()));
             report.putAll(LearningCoverage.verify(learning, dictionary));
             report.putAll(Theme.verify());
-            report.setProperty("app.version", "0.7.3");
+            report.setProperty("app.version", "0.7.4");
             report.setProperty("status", "PASS");
         } catch (Exception e) {
             report.setProperty("status", "FAIL");

@@ -18,14 +18,14 @@ if ($JavaPath) {
     if ($javaCommand) { $JavaPath = $javaCommand.Source }
 }
 if (-not $JavaPath -or -not (Test-Path -LiteralPath $JavaPath)) {
-    throw 'Java 17 or newer is required for the source launcher. Use the portable WordNest.exe package, or pass -JavaPath <JDK/JRE folder>.'
+    throw 'Java 17 or newer is required for the source launcher. Use the portable 词巢.exe package, or pass -JavaPath <JDK/JRE folder>.'
 }
 $javaConsole = Join-Path (Split-Path $JavaPath -Parent) 'java.exe'
 if (Test-Path -LiteralPath $javaConsole) {
     $version = (& $javaConsole --version | Out-String)
     if ($LASTEXITCODE -ne 0) { throw 'Could not read the selected Java runtime version.' }
     if ($version -match '(?m)^(?:openjdk|java)(?: version)?\s+"?(\d+)') {
-        if ([int]$Matches[1] -lt 17) { throw 'WordNest requires Java 17 or newer.' }
+        if ([int]$Matches[1] -lt 17) { throw '词巢 requires Java 17 or newer.' }
     }
 }
 Start-Process -FilePath $JavaPath -ArgumentList @('-Xmx512m', '-Dfile.encoding=UTF-8', '-jar', ('"' + $jarPath + '"')) -WorkingDirectory $projectRoot -WindowStyle Hidden

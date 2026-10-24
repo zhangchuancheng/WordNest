@@ -32,7 +32,7 @@ final class TrayPopup implements AutoCloseable {
                 screen = device.getDefaultConfiguration(); break;
             }
         }
-        JDialog dialog = new JDialog((Window) null, "拾词菜单", Dialog.ModalityType.MODELESS, screen);
+        JDialog dialog = new JDialog((Window) null, "词巢菜单", Dialog.ModalityType.MODELESS, screen);
         window = dialog;
         dialog.setUndecorated(true);
         dialog.setType(Window.Type.POPUP);
@@ -82,13 +82,13 @@ final class TrayPopup implements AutoCloseable {
         panel.setBackground(Theme.PAPER);
         panel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Theme.LINE),
                 BorderFactory.createEmptyBorder(6, 6, 6, 6)));
-        JButton show = action("显示拾词", showWindow);
+        JButton show = action("显示词巢", showWindow);
         JCheckBox clipboard = new JCheckBox("复制查词", enabled);
         clipboard.setFont(Theme.font(Font.PLAIN, 13));
         clipboard.setForeground(Theme.INK); clipboard.setOpaque(false);
         clipboard.addActionListener(e -> clipboardChanged.accept(clipboard.isSelected()));
         JButton settings = action("窗口与后台设置…", openSettings);
-        JButton exit = action("退出拾词", exitApplication);
+        JButton exit = action("退出词巢", exitApplication);
         AbstractButton[] items = {show, clipboard, settings, exit};
         for (int i = 0; i < items.length; i++) {
             AbstractButton item = items[i];

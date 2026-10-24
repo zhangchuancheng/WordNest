@@ -250,6 +250,7 @@ def build(snapshot, check=False):
             raise ValueError('Invalid original example: '+w)
         if en in practice_sentences:raise ValueError('Duplicate original sentence')
         practice_sentences.add(en)
+        # Keep the pinned resource byte-for-byte reproducible; LearningPanel updates this legacy display label.
         rows.append([w,'practice',en,zh,'拾词原创学习例句 · 非考试真题','拾词原创学习例句'])
     rows.sort()
     counts=collections.Counter();byword=collections.defaultdict(list)

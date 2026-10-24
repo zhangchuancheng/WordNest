@@ -1,12 +1,12 @@
-# 拾词 WordNest
+# 词巢
 
 面向 Windows 的离线英汉查词与生词本。阅读时复制英文单词或简短词组，即可查询收录的中文释义、音标和英文解释；还可切换“例句、派生、词根、近义词”四个学习分页，记录自己的例句、分轮复习，并使用本机英文语音朗读。
 
-当前版本：**0.7.3**。使用 Java 17 / Swing，合并后内置 ECDICT **3,403,176 条词条**。本版整合历史容量设置、托盘中文菜单和设置窗口布局修复；支持复制简短词组、输入格式整理和来源明确的词形候选；保留分轮复习、本机朗读、查词历史、收藏恢复与例句整理。日常使用不需要账号、API Key 或联网服务。
+本地当前版本：**0.7.4**。使用 Java 17 / Swing，合并后内置 ECDICT **3,403,176 条词条**。本版整合历史容量设置、托盘中文菜单和设置窗口布局修复；支持复制简短词组、输入格式整理和来源明确的词形候选；保留分轮复习、本机朗读、查词历史、收藏恢复与例句整理。日常使用不需要账号、API Key 或联网服务。
 
-项目创建与维护：[zhangchuancheng](https://github.com/zhangchuancheng)。第三方词库、语料与界面库保留各自作者署名及许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
+原项目及 GitHub 仓库名仍为 WordNest，个人数据目录也沿用此名以兼容旧版。项目创建与维护：[zhangchuancheng](https://github.com/zhangchuancheng)。第三方词库、语料与界面库保留各自作者署名及许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
-[下载 Windows 便携版](https://github.com/zhangchuancheng/WordNest/releases/latest) · [查看版本记录](CHANGELOG.md) · [反馈问题](https://github.com/zhangchuancheng/WordNest/issues)
+[下载已公开的 0.7.3 便携版](https://github.com/zhangchuancheng/WordNest/releases/latest) · [查看版本记录](CHANGELOG.md) · [反馈问题](https://github.com/zhangchuancheng/WordNest/issues)
 
 ![WordNest 0.7.0 扩充词库、本机朗读与查词正文](docs/ui-preview.png)
 
@@ -15,6 +15,8 @@
 上图由 0.7.0 的实际 Swing 控件离屏绘制，页脚使用本包实际词条数量；导航数量和语音列表为演示状态，例句来自随包资料。不含操作系统窗口标题栏或系统托盘菜单，也不是实际桌面的操作截图。
 
 ## 启动
+
+**0.7.4 本地版已更名为“词巢”**，使用选定的橙底绿色词巢和 A 字母卡图标；程序文件为 `词巢.exe`，本地安装目录是 `%LOCALAPPDATA%\Programs\词巢\0.7.4`。上方 GitHub 下载链接目前还是 0.7.3 旧名称版本。更新时先从旧版托盘退出，再打开桌面“词巢”快捷方式。原有 `%LOCALAPPDATA%\WordNest` 数据继续共用，无须迁移。
 
 ### Windows 便携版
 
@@ -26,7 +28,7 @@
 
 点击关闭按钮 × 时，默认询问“最小化到系统托盘”或“退出程序”，也可取消；勾选“记住我的选择”后会沿用该选择。顶部“设置”可以随时修改关闭与最小化方式，详见下文。
 
-0.7.3 使用独立的便携目录与 ZIP，保留旧版本包。升级前先**手动完全退出旧版**：如果仍在托盘运行，右键拾词图标选择“退出拾词”。随后备份 `%LOCALAPPDATA%\WordNest`，再完整解压新包到新目录并启动新版。不同版本共用此目录中的个人数据，不要向旧程序文件夹零散覆盖文件。生词本沿用 0.5.0 的 v2 格式，复习进度沿用 0.6.0 的独立 `review.tsv`；新增 `dictionary-cache` 是可重建的词库缓存。**从 0.4.x 升级时，首次写入旧生词本仍会迁移为 v2，0.4.x 不能直接读取**。回退步骤见[本地数据与隐私](#本地数据与隐私)。
+0.7.3 使用独立的便携目录与 ZIP，保留旧版本包。升级前先**手动完全退出旧版**：如果仍在托盘运行，右键旧版托盘图标选择“退出拾词”。随后备份 `%LOCALAPPDATA%\WordNest`，再完整解压新包到新目录并启动新版。不同版本共用此目录中的个人数据，不要向旧程序文件夹零散覆盖文件。生词本沿用 0.5.0 的 v2 格式，复习进度沿用 0.6.0 的独立 `review.tsv`；新增 `dictionary-cache` 是可重建的词库缓存。**从 0.4.x 升级时，首次写入旧生词本仍会迁移为 v2，0.4.x 不能直接读取**。回退步骤见[本地数据与隐私](#本地数据与隐私)。
 
 **旧版托盘菜单显示方框时**：双击托盘图标恢复主窗口，点击顶部“设置”，把“点击关闭按钮 × 时”改为“退出程序”，点击“保存”，再点击窗口 × 退出。旧实例未退出时，再次打开 EXE 只会唤回旧窗口，不会自动切换为新版。
 
@@ -71,7 +73,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run.ps1
 
 朗读使用 Windows `System.Speech` 能发现的已安装英文桌面语音，在本机合成，不上传文字、不联网请求，也不会自动下载语音。可选范围取决于系统已有声音；Windows 设置中出现的自然语音或其他应用语音不一定能被此接口使用。没有可用英文语音时会提示，其他查词与复习功能仍可使用。“我的例句”按输入文本朗读，不先翻译；建议用英文例句，混入中文不保证读音合适。语音合成读音也不等同于词典录音。
 
-需要自行添加系统语音时，可参考[微软的 Windows 10 / 11 文本转语音安装说明](https://support.microsoft.com/en-gb/education/learning-accelerators/download-languages-and-voices-for-immersive-reader-read-mode-and-read-aloud)。是否可供 WordNest 使用，仍以应用内列出的可用英文桌面语音为准。
+需要自行添加系统语音时，可参考[微软的 Windows 10 / 11 文本转语音安装说明](https://support.microsoft.com/en-gb/education/learning-accelerators/download-languages-and-voices-for-immersive-reader-read-mode-and-read-aloud)。是否可供词巢使用，仍以应用内列出的可用英文桌面语音为准。
 
 ### 延续 0.5.0：查过的词可回看，取消收藏可恢复
 
@@ -137,8 +139,8 @@ WordNet 英文例句按原资料的真实义项分组，保留英文释义和义
 - **关闭 × / Alt+F4**：默认每次询问，可选“最小化到系统托盘”“退出程序”或“取消”。勾选“记住我的选择”后，下次按保存的方式处理。
 - **最小化 −**：默认最小化到任务栏。顶部“设置”中的“窗口与后台设置”可分别修改关闭与最小化方式，关闭方式也可改回“每次询问”。
 - **托盘后台运行**：窗口隐藏后，复制查词仍按开关状态工作，查到单词不会主动弹出窗口。托盘图标可能收在 Windows 任务栏右下角的小箭头中。
-- **恢复窗口**：双击托盘图标，或右键选择“显示拾词”；再次运行同一数据目录下的 `WordNest.exe` 也会请求唤回已运行的窗口。
-- **托盘菜单**：可开关“复制查词”、打开“窗口与后台设置…”或选择“退出拾词”。**右键 → 退出拾词**会完全退出，不受记住的关闭方式影响。
+- **恢复窗口**：双击托盘图标，或右键选择“显示词巢”；再次运行同一数据目录下的 `词巢.exe` 也会请求唤回已运行的窗口。
+- **托盘菜单**：可开关“复制查词”、打开“窗口与后台设置…”或选择“退出词巢”。**右键 → 退出词巢**会完全退出，不受记住的关闭方式影响。
 
 无法进入托盘时，应用会保留或恢复窗口并提示。笔记或设置保存失败时也不会直接退出，请先处理提示中的保存问题。退出后再进行数据备份或更换版本；仅把窗口藏到托盘不等于退出。
 
@@ -190,7 +192,7 @@ ECDICT 基础 CSV 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`，�
 └─ activation.*         运行期间使用的本地窗口唤回文件
 ```
 
-在资源管理器地址栏输入 `%LOCALAPPDATA%\WordNest` 可打开目录。备份时先完全退出应用；托盘中运行的版本请右键图标选择“退出拾词”，然后复制整个目录。`favorites.tsv`、`history.tsv` 和 `review.tsv` 是应用内部格式，文字字段使用 Base64 编码；要用 Excel 查看当前收藏请使用 CSV 导出。CSV 不包含复习进度或已取消收藏条目，也不能导回应用，因此不能代替完整数据目录备份。数据没有加密，同一 Windows 用户可访问这些文件。
+在资源管理器地址栏输入 `%LOCALAPPDATA%\WordNest` 可打开目录。备份时先完全退出应用；托盘中运行的版本请右键图标选择“退出词巢”，然后复制整个目录。`favorites.tsv`、`history.tsv` 和 `review.tsv` 是应用内部格式，文字字段使用 Base64 编码；要用 Excel 查看当前收藏请使用 CSV 导出。CSV 不包含复习进度或已取消收藏条目，也不能导回应用，因此不能代替完整数据目录备份。数据没有加密，同一 Windows 用户可访问这些文件。
 
 `dictionary-cache` 可从随包资源重新建立，备份个人数据时可以省略这个子目录。主词库压缩分片合计 **102,087,251 字节（约 97.4 MiB）**，解压后的单份词库缓存为 **363,707,041 字节（约 346.9 MiB）**；这些是文件大小，不是应用总内存占用。清理缓存前先完全退出应用，仅删除这个缓存子目录，下次启动会重新建立；不要删除包含收藏和笔记的整个 `WordNest` 数据目录。
 
@@ -212,17 +214,17 @@ ECDICT 基础 CSV 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`，�
 # 生成 Java 17+ 可运行的 JAR
 .\scripts\build.ps1 -JdkPath 'C:\Path\To\Your\JDK'
 
-# 生成 0.7.3 独立便携目录；不会安装到系统
+# 生成 0.7.4 独立便携目录；不会安装到系统
 .\scripts\build.ps1 `
   -JdkPath 'C:\Path\To\Your\JDK' `
   -RuntimePath 'C:\Path\To\Temurin-JRE-17' `
-  -BuildVariant v070 `
-  -PackageOutputPath 'C:\Path\To\WordNest-Windows-0.7.3'
+  -BuildVariant v074 `
+  -PackageOutputPath 'C:\Path\To\词巢-Windows-0.7.4'
 ```
 
-第二条命令使用 `jpackage --type app-image`，输出 `WordNest/WordNest.exe`。`-RuntimePath` 指向包含 `bin/java.exe` 的合法可分发运行时。本次运行时为 Eclipse Temurin 17.0.20.1+1；开发机上的 Oracle JDK 只负责构建，不随包分发。
+第二条命令使用 `jpackage --type app-image`，输出 `词巢/词巢.exe`。`-RuntimePath` 指向包含 `bin/java.exe` 的合法可分发运行时。本次运行时为 Eclipse Temurin 17.0.20.1+1；开发机上的 Oracle JDK 只负责构建，不随包分发。
 
-脚本仅清理带有本项目标记的构建子目录。如果目标已有 WordNest 文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v070` 将构建结果放入 `build/v070/classes` 和 `build/v070/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
+脚本仅清理带有本项目标记的构建子目录。如果目标已有“词巢”文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v074` 将构建结果放入 `build/v074/classes` 和 `build/v074/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
 
 ### 重新生成数据
 
@@ -384,7 +386,8 @@ src/main/resources/
   curated-words.txt           随包覆盖清单，用于全部学习卡自检
   learning-open.bin.gz       常用与雅思标签词补充资料
   expanded-coverage.tsv      7,684 个优先词的实际覆盖清单
-  app.ico                    自绘书本图标
+  app.ico                    词巢多尺寸 Windows 图标
+  app.png                    窗口与托盘共用的词巢图案
 data/learning/               原始分片、选词表和频率/考试标签依据
 lib/                        固定版本 FlatLaf 及 Windows x64 DLL
 docs/                       实际控件布局预览

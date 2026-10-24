@@ -79,9 +79,10 @@ final class LearningPanel extends JPanel {
     private void examples() {
         List<ExampleSelection.Candidate> candidates = new ArrayList<>();
         for (CuratedItem item : cards("example")) candidates.add(new ExampleSelection.Candidate(
-                item.first(), item.second(), "拾词原创 · 非考试真题", item.third(), "", word, ExampleSelection.SourceKind.CURATED));
+                item.first(), item.second(), "词巢原创 · 非考试真题", item.third(), "", word, ExampleSelection.SourceKind.CURATED));
         for (SupplementItem item : supplements("practice")) candidates.add(new ExampleSelection.Candidate(
-                item.first(), item.second(), "拾词原创学习例句 · 非考试真题", item.attribution(), item.sourceUrl(), word, ExampleSelection.SourceKind.PRACTICE));
+                item.first(), item.second(), "词巢原创学习例句 · 非考试真题", brandLegacyLabel(item.attribution()),
+                brandLegacyLabel(item.sourceUrl()), word, ExampleSelection.SourceKind.PRACTICE));
         for (SupplementItem item : supplements("example")) {
             String form = word;
             int marker = item.attribution().indexOf("例句词形：");
@@ -437,13 +438,16 @@ final class LearningPanel extends JPanel {
         List<CuratedItem> sources = cards("source");
         if (sources.isEmpty()) return;
         disclosure("curated-sources", "参考来源（" + sources.size() + "）", "收起参考来源", false, () -> {
-            paragraph("中文学习整理与双语例句：拾词原创", 10, Theme.MUTED);
+            paragraph("中文学习整理与双语例句：词巢原创", 10, Theme.MUTED);
             for (CuratedItem item : sources) sourceLine(item.first(), item.second());
         });
     }
     private void sourceLine(String title, String url) {
-        JTextArea area = new WrappedText(title + "\n" + url, 10, Theme.MUTED);
+        JTextArea area = new WrappedText(brandLegacyLabel(title) + "\n" + brandLegacyLabel(url), 10, Theme.MUTED);
         area.setToolTipText("可选中文字复制来源地址"); body.add(area); gap(4);
+    }
+    private static String brandLegacyLabel(String text) {
+        return text.replace("拾词原创学习例句", "词巢原创学习例句");
     }
     private void openSources(String... kinds) {
         Set<String> included = Set.of(kinds);

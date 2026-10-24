@@ -26,7 +26,7 @@ final class Theme {
         // Keep the title bar local to this application; do not change Windows colors.
         // FlatLaf retains native Windows movement, resize, snap and system buttons.
         UIManager.put("TitlePane.useWindowDecorations", true);
-        if (!FlatLightLaf.setup()) throw new IllegalStateException("Could not initialize the WordNest theme");
+        if (!FlatLightLaf.setup()) throw new IllegalStateException("Could not initialize the 词巢 theme");
         // Also provide Swing decorations if native decoration support is unavailable.
         JFrame.setDefaultLookAndFeelDecorated(true);
         JDialog.setDefaultLookAndFeelDecorated(true);

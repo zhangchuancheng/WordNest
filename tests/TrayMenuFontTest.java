@@ -20,7 +20,7 @@ public final class TrayMenuFontTest {
                     () -> actions.add("show"), changes::add,
                     () -> actions.add("settings"), () -> actions.add("exit"));
             JPanel panel = controls.panel();
-            List<String> labels = List.of("显示拾词", "复制查词", "窗口与后台设置…", "退出拾词");
+            List<String> labels = List.of("显示词巢", "复制查词", "窗口与后台设置…", "退出词巢");
             check(panel.getComponentCount() == 4, "All tray actions present");
             check(controls.clipboard().isSelected(), "Enabled copy lookup retained");
             for (int i = 0; i < 4; i++) {

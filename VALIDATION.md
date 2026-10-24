@@ -178,3 +178,12 @@ PreferencesPanelTest 在 FlatLaf 100%、150%、200% 缩放配置下各通过 26 
 ## 0.7.3 发布前复查（2026-10-24）
 
 本次以最终程序 JAR 重跑 LookupHistoryTest 267、LookupSessionTest 54、TrayMenuFontTest 30、TraySupportTest 14、BackgroundControllerTest 121、ActivationRequestsTest 40、PreferencesPanelTest 26，共 552 项通过。最终程序未再改代码；使用已通过自检的 0.7.3 app-image，仅更新随包文档。
+
+
+## 0.7.4 词巢品牌更新（2026-10-24）
+
+- 使用用户选定的 C2 词巢字母卡图案。`design/selected-icon.png` 保存原图；随包 `app.png` 为 256px，`app.ico` 含 16、24、32、48、64、128、256px。窗口采用 16/32/64px 资源，托盘使用 32px 资源。
+- Java 17 目标编译及 Windows app-image 构建成功，程序文件 `词巢.exe` 的 ProductName 为“词巢”、FileVersion/ProductVersion 均为 0.7.4；从 EXE 提取的小图标可辨认绿色词巢和 A 字母卡。
+- `词巢.exe --self-check` 退出码 0，报告 `status=PASS`、`app.version=0.7.4`、`headless=true`、`dictionary.entries=3403176`。TrayMenuFontTest 30、TraySupportTest 14、BackgroundControllerTest 121、ActivationRequestsTest 40 项及 ThemeTest 通过；未操作真实桌面窗口或托盘。
+- 最终源码重编后，LearningPanelTest **12,491 项**离屏断言通过，包含旧资源署名在可见出处中显示为“词巢”的检查；`prepare_open_learning.py --check` 与固定资源逐字节一致。
+- 原 `%LOCALAPPDATA%\WordNest` 个人数据目录和单实例协议保持不变，未迁移或删除收藏、笔记、历史、复习数据。GitHub Release 0.7.3 仍为旧名称与旧图标；本段只记录本地 0.7.4 的实际验证。
