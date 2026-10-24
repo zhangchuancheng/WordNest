@@ -19,6 +19,7 @@ final class MainWindow extends JFrame {
     private final Path dataDir;
     private final Properties settings = new Properties();
     private DictionaryRepository dictionary;
+    private LookupResolver resolver;
     private LearningRepository learning = LearningRepository.empty();
     private FavoritesStore favorites;
     private ReviewStore reviewStore;
@@ -30,7 +31,8 @@ final class MainWindow extends JFrame {
     private final JButton retainedFavorites = Theme.button("最近取消收藏", false);
     private String lastUnfavoritedWord;
     private WordEntry current;
-    private final JTextField search = field("输入英文单词，按 Enter 查询");
+    private final JTextField search = field("输入英文单词或短语，按 Enter 查询");
+    private final LookupCandidatesPanel candidates = new LookupCandidatesPanel(value -> lookup(value, false));
     private final JTextField librarySearch = field("搜索收藏的单词或例句");
     private final JPanel details = Theme.panel(new BorderLayout());
     private final CardLayout pages = new CardLayout();
@@ -40,7 +42,7 @@ final class MainWindow extends JFrame {
     private final JToggleButton lookupTab = Theme.toggle("查词");
     private final JToggleButton libraryTab = Theme.toggle("生词本  0");
     private final JLabel footer = Theme.label("正在打开离线词库…", 11, Theme.MUTED);
-    private final JLabel message = Theme.label("准备就绪后，复制一个英文单词试试看。", 11, Theme.MUTED);
+    private final JLabel message = Theme.label("准备就绪后，复制英文单词或短语试试看。", 11, Theme.MUTED);
     private final DefaultListModel<SavedWord> libraryModel = new DefaultListModel<>();
     private final JList<SavedWord> library = new JList<>(libraryModel);
     private final JLabel libraryCount = Theme.label("还没有收藏", 12, Theme.MUTED);
@@ -91,6 +93,7 @@ final class MainWindow extends JFrame {
         if (Toolkit.getDefaultToolkit().isAlwaysOnTopSupported()) setAlwaysOnTop(pin.isSelected());
         else { pin.setSelected(false); pin.setEnabled(false); }
         watch.setSelected(Boolean.parseBoolean(settings.getProperty("clipboard", "true")));
+        watch.setToolTipText("复制英文单词或短语查询，最多 8 词 / 120 字符；整段或多行内容不触发查询");
         tray = new TraySupport(icon(), this::restoreFromTray, this::exitFromTray,
                 this::setClipboardEnabled, this::openPreferencesFromTray);
         tray.setClipboardEnabled(watch.isSelected());
@@ -190,7 +193,7 @@ final class MainWindow extends JFrame {
         watch.setSelected(enabled);
         watcher.setEnabled(loaded && enabled);
         tray.setClipboardEnabled(enabled);
-        if (writeSettings()) status(enabled ? "复制查词已开启 · 仅识别单个英文单词" : "复制查词已暂停", false);
+        if (writeSettings()) status(enabled ? "复制查词已开启 · 支持英文单词和短语" : "复制查词已暂停", false);
     }
 
     private void showTrayHint() {
@@ -241,7 +244,7 @@ final class MainWindow extends JFrame {
         minimize.setSelectedIndex(background.minimizeAction().ordinal());
         minimize.getAccessibleContext().setAccessibleName("最小化窗口时");
         c.gridy++; c.insets = new Insets(0, 0, 12, 0); content.add(minimize, c);
-        c.gridy++; content.add(Theme.text("后台运行时，复制查词仍按开关状态工作，不会自动弹出窗口。\n可从托盘菜单或再次打开 EXE 恢复；右键托盘图标可彻底退出。", 12, Theme.MUTED, 370), c);
+        c.gridy++; content.add(Theme.text("复制查词支持英文单词和短语（最多 8 词 / 120 字符）。\n后台运行时仍按开关状态工作，不会自动弹出窗口。\n可从托盘菜单或再次打开 EXE 恢复；右键托盘图标可彻底退出。", 12, Theme.MUTED, 370), c);
         Object[] options = {"保存", "取消", "关于与说明"};
         modalOpen = true;
         try {
@@ -268,6 +271,7 @@ final class MainWindow extends JFrame {
         searchRow.add(go, BorderLayout.EAST);
         JPanel lookupControls = Theme.panel(new BorderLayout(0, 7));
         lookupControls.add(searchRow, BorderLayout.NORTH);
+        lookupControls.add(candidates, BorderLayout.CENTER);
         navigation = new LookupNavigationBar(() -> navigateHistory(false), () -> navigateHistory(true), this::showHistory);
         JPanel navigationAndSpeech = Theme.panel(new BorderLayout(0, 5));
         navigationAndSpeech.add(navigation, BorderLayout.NORTH);
@@ -340,16 +344,17 @@ final class MainWindow extends JFrame {
             private boolean learningFailed;
             private LookupHistory loadedHistory;
             private boolean historyFailed;
+            private LookupResolver loadedResolver;
+            private boolean resolverFailed;
             @Override protected DictionaryRepository doInBackground() throws Exception {
                 loadedFavorites = new FavoritesStore(dataDir);
                 try { loadedReview = new ReviewStore(dataDir); }
                 catch (IOException e) { /* Preserve damaged review data; dictionary and notes remain available. */ }
                 try { loadedHistory = new LookupHistory(dataDir); }
                 catch (IOException e) { loadedHistory = LookupHistory.sessionOnly(); historyFailed = true; }
-                InputStream in = MainWindow.class.getResourceAsStream("/dictionary.bin.gz");
-                if (in == null) throw new IOException("找不到随软件附带的离线词库");
-                DictionaryRepository loadedDictionary;
-                try (in) { loadedDictionary = DictionaryRepository.load(in); }
+                DictionaryRepository loadedDictionary = DictionaryRepository.loadBundled(dataDir.resolve("dictionary-cache"));
+                try { loadedResolver = LookupResolver.loadBundled(loadedDictionary); }
+                catch (IOException e) { loadedResolver = LookupResolver.withoutInflections(loadedDictionary); resolverFailed = true; }
                 try { loadedLearning = LearningRepository.load(); }
                 catch (IOException e) { learningFailed = true; }
                 return loadedDictionary;
@@ -357,6 +362,7 @@ final class MainWindow extends JFrame {
             @Override protected void done() {
                 try {
                     dictionary = get(); favorites = loadedFavorites; learning = loadedLearning; loaded = true;
+                    resolver = loadedResolver;
                     reviewStore = loadedReview;
                     history = loadedHistory;
                     lookupSession = new LookupSession(history, dictionary::lookup, MainWindow.this::flushNote, MainWindow.this::displayWord);
@@ -364,7 +370,8 @@ final class MainWindow extends JFrame {
                     refreshLibrary();
                     lookup(settings.getProperty("lastWord", "relevant"), false, false);
                     watcher.setEnabled(watch.isSelected());
-                    status(watch.isSelected() ? "已开启复制查词 · 不抢占正在阅读的窗口" : "输入单词查询，或开启复制查词", false);
+                    status(watch.isSelected() ? "已开启复制单词 / 短语查词 · 不抢占窗口" : "输入单词或短语查询，或开启复制查词", false);
+                    if (resolverFailed) status("词形资料未能加载，单词和短语的精确查询仍可使用", true);
                     if (learningFailed) status("学习资料加载失败，基础查词和生词本仍可使用", true);
                     if (historyFailed) status("历史记录未能读取，原文件已保留；本次查询历史仅保存在内存", true);
                 } catch (Exception e) {
@@ -383,32 +390,48 @@ final class MainWindow extends JFrame {
 
     private void lookup(String text, boolean automatic, boolean remember) {
         if (!loaded) { status("词库正在加载，请稍候", false); return; }
-        String query = text.strip();
-        if (query.isEmpty() || query.length() > 120 || query.contains("\n")) {
+        LookupResolver.Result result = resolver.resolve(text);
+        String query = result.normalized();
+        if (result.kind() == LookupResolver.MatchKind.INVALID) {
             if (!automatic) status("请输入一个单词或简短词组", true);
             return;
         }
-        if (current != null && query.equalsIgnoreCase(current.word()) && automatic) return;
-        Optional<WordEntry> result = dictionary.lookup(query);
-        if (result.isEmpty()) {
-            if (automatic) { status("未收录「" + query + "」，已保留当前词条", false); return; }
+        if (result.kind() == LookupResolver.MatchKind.AMBIGUOUS) {
+            candidates.showCandidates(result);
+            pages.show(pagePanel, "lookup"); lookupTab.setSelected(true);
+            status("找到多个词形候选，请选择；当前词条与笔记保持不变", false);
+            return;
+        }
+        if (!result.hasSingleMatch()) {
+            if (automatic) { status(result.truncated() ? "词形组合较多，请缩短查询；已保留当前词条"
+                    : "未收录「" + query + "」，已保留当前词条", false); return; }
             if (!flushNote()) return;
+            candidates.clear();
             current = null; noteArea = null; noteState = null; favoriteButton = null;
             speech.stop();
             List<String> suggestions = dictionary.suggest(query, 5);
-            showEmpty("没有找到这个词", "检查一下拼写，或试试单词原形。", suggestions);
+            showEmpty("没有找到这个词或短语", result.truncated() ? "词形组合较多，请缩短查询或直接输入原形。"
+                    : "原词、规范化拼写和已收录词形均未命中。\n可检查拼写或缩短短语；不会自动补写释义。", suggestions);
             updateNavigation();
             status("离线词库并不包含所有词汇", false); return;
         }
-        LookupSession.Result outcome = lookupSession.visit(result.get(), remember);
+        WordEntry entry = result.candidates().get(0);
+        if (automatic && current != null && entry.word().equals(current.word())) {
+            if (result.kind() == LookupResolver.MatchKind.INFLECTION) status("按原形「" + entry.word() + "」查询", false);
+            return;
+        }
+        LookupSession.Result outcome = lookupSession.visit(entry, remember);
         if (!outcome.opened()) return;
         status(outcome.warning().isEmpty()
-                ? automatic ? "已查询复制的单词 · " + current.word() : "查询完成 · " + current.word()
+                ? result.kind() == LookupResolver.MatchKind.INFLECTION ? "按原形「" + current.word() + "」查询"
+                    : result.kind() == LookupResolver.MatchKind.NORMALIZED ? "已规范化查询 · " + current.word()
+                    : automatic ? "已查询复制的单词 / 短语 · " + current.word() : "查询完成 · " + current.word()
                 : outcome.warning(), !outcome.warning().isEmpty());
     }
 
     private void displayWord(WordEntry entry) {
         speech.stop();
+        candidates.clear();
         current = entry;
         search.setText(current.word());
         settings.setProperty("lastWord", current.word());
@@ -678,8 +701,8 @@ final class MainWindow extends JFrame {
         return "\"" + safe.replace("\"", "\"\"") + "\"";
     }
     private void showAbout() {
-        String info = "拾词 WordNest  0.6.0\n\n" +
-                "手动输入单词，或在其他软件中复制单个英文单词。\n中文、句子和图片不会改变当前词条。\n复制查词不会抢焦点，可随时用顶部按钮暂停。\n\n" +
+        String info = "拾词 WordNest  0.7.0\n\n" +
+                "手动输入单词或短语，或在其他软件中复制英文内容（最多 8 词 / 120 字符）。\n支持连字符、撇号与首尾标点；多行、网址、邮箱、中文和代码样式内容不触发复制查询。\n先查原词，再整理空白与标点；未命中时仅使用 ECDICT 明确记录的词形。\n唯一原形会标明「按原形查询」，多个原形请从候选条手动选择。\n复制查词不会抢焦点，可随时用顶部按钮暂停；未命中保留当前词条。\n\n" +
                 "关闭时可选择后台运行或退出；顶部「设置」可更改记住的选择。\n托盘图标可能收在右下角的小箭头中，双击即可显示窗口。\n再次打开 EXE 也可唤回窗口；右键托盘菜单可彻底退出。\n\n" +
                 "释义来自 ECDICT 离线词库（MIT）。\n部分词条缺音标或英文释义；词形、释义可能有疏漏。\n个人例句自动保存在本机，取消收藏仍保留，可从生词本恢复。\n查词历史保留最近 100 个词，可清空；所有查询在本机完成，不调用网络或 AI 服务。\n\n" +
                 "英汉例句：Tatoeba 社区语料与拾词原创。\n派生和近义词：Open English WordNet / 中文维基词典。\n词源：中文维基词典与 etymology-db（2023 快照）。\n新增资料优先覆盖常用词与雅思标签词；355 张原有完整中文卡片继续保留。\n各项实际覆盖见程序目录 LEARNING_COVERAGE.md。\n每个分页标明来源；社区资料可能有疏漏，缺项不会自动补写。\n\n" +

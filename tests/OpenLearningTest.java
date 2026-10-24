@@ -15,7 +15,7 @@ public final class OpenLearningTest {
     private static final Pattern CJK = Pattern.compile("[\\x{3400}-\\x{9fff}]");
     public static void main(String[] args) throws Exception {
         LearningRepository data = LearningRepository.load();
-        DictionaryRepository dictionary = DictionaryRepository.load(App.class.getResourceAsStream("/dictionary.bin.gz"));
+        DictionaryRepository dictionary = DictionaryTestResources.load();
         var coverage = LearningCoverage.verify(data, dictionary);
         List<String> words;
         try (var input = App.class.getResourceAsStream("/expanded-coverage.tsv")) {

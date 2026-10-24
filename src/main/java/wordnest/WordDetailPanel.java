@@ -87,6 +87,13 @@ final class WordDetailPanel extends JPanel {
             english.revalidate(); revalidate(); repaint();
         });
         english.add(toggle, BorderLayout.NORTH); english.add(englishContent, BorderLayout.CENTER); card.add(english);
+        if (java.util.Arrays.asList(entry.tags().split("\\s+")).contains("wn-expanded")) {
+            gap(card, 8);
+            JLabel source = Theme.label("来源：ECDICT 扩充词库", 11, Theme.MUTED);
+            source.setName("expanded-dictionary-source"); source.setAlignmentX(LEFT_ALIGNMENT);
+            source.setToolTipText("历史社区资料，部分为网络释义；原文按来源保留，可能有疏漏。");
+            card.add(source);
+        }
         if (lemmaButton != null) { gap(card, 12); lemmaButton.setAlignmentX(LEFT_ALIGNMENT); card.add(lemmaButton); }
     }
 

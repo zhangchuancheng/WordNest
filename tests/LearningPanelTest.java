@@ -24,7 +24,7 @@ public final class LearningPanelTest {
     public static void main(String[] args) throws Exception {
         if (!GraphicsEnvironment.isHeadless()) throw new AssertionError("Run with -Djava.awt.headless=true");
         Path output = Path.of(args[0]); Files.createDirectories(output);
-        DictionaryRepository dictionary = DictionaryRepository.load(App.class.getResourceAsStream("/dictionary.bin.gz"));
+        DictionaryRepository dictionary = DictionaryTestResources.load();
         LearningRepository learning = LearningRepository.load();
         LearningRepository grouped = fixture(true);
         LearningRepository englishOnly = fixture(false);

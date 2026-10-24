@@ -1,3 +1,29 @@
+# WordNest 0.7.0 验证记录（2026-10-23）
+
+本版扩充离线主词库，并增加输入格式整理、短语查询与基于显式关系的词形候选。以下记录本轮实际完成的检查；0.6.0 及更早版本的数字在后文单独保留，不能视为新版已重复执行的结果。
+
+- 数据转换以固定 SHA-256 核对原有基础资源、官方 ECDICT 1.0.28 ZIP 和 SQLite。完整读回比对合并后 **3,403,176 条**记录；原有 **770,611 条**优先，新增 **2,632,565 条**，不以扩充记录覆盖同名原词条。
+- 另行执行独立只读扫描，未调用构建脚本的验证函数：逐条核对 WND2 偏移、UTF-8 字段和 UTF-16 查询键排序；从基础 WND1 读取六字段序列化字节，与合并库中的对应记录逐条 SHA-256 比较，**770,611 条全部字节一致**。所有新增记录均有 `wn-expanded` 来源标签；未写入源数据或个人文件。
+- 独立扫描重算字段覆盖：音标 **353,030**、中文释义 **3,386,635**、英文释义 **177,409**，与元数据一致。完整 WND2 和 3 个分片 SHA-256 均匹配；词形索引 **161,859 对**排序且无重复，覆盖 **161,398 个形式**，**141,977 个目标词头**全部实际存在。
+- `ExpandedDictionaryTest`：**2,037 项通过**，实际使用 Eclipse Temurin 17.0.20.1、`-Xmx512m`、真实新版词库与独立测试缓存。覆盖精确条目数、原词条优先、新词条来源、规范化、词形回退、无命中、前缀边界和重复查询；加载原有 355 张学习卡，未创建窗口或读取个人数据。
+- 上述单次运行测得首次新缓存加载 **3.537 秒**、复用缓存加载 **0.268 秒**；词库、解析器及学习资料加载后保留的 Java 堆增量约 **108.0 MiB**，2,000 次 lookup/resolve 合计 **0.028 秒**。这些是同一机器上的一次测量，不是速度承诺，也不是进程总 RSS 或内存映射文件大小。
+- `DictionaryStorageTest`：**81 项通过**，覆盖缓存存储与失败保护，含 **2,000,003 条**模拟词条在 `-Xmx96m` 下读取；`CoreTest` **1,045 项通过**。模拟大库检查与真实 3,403,176 条集成检查分别记录，不相互替代。
+- 查询与候选回归：`LookupResolverTest` **34 项**、`ClipboardWatcherTest` **46 项**、`LookupCandidatesPanelTest` **19 项**、`LookupResolverBundledTest` **11 项**通过。覆盖格式整理、120 字符与 8 词限制、精确优先、显式词形回退、歧义手选、无命中与候选保留；剪贴板测试使用注入数据，不读取真实剪贴板。
+- 使用真实 WND2 重新运行：`FavoritesRecoveryTest` **73**、`LookupHistoryTest` **256**、`LookupSessionTest` **54**、`ExampleSelectionTest` **31**、`WordDetailPanelTest` **8,026**、`LearningPanelTest` **12,490**、`CuratedCoverageTest` **6,810**、`OpenLearningTest` **202,239**、`LearningRepositoryTest --full` **504** 项，全部通过。数据模型测试使用临时目录；需要主词库的控件和覆盖检查通过共享辅助类加载新版资源，缓存位于隔离测试目录。
+- 复习与朗读回归：`ReviewStoreTest` **119**、`ReviewPanelTest` **57**、`SpeechServiceTest` **21**、`WindowsSpeechEngineTest` **18**、`SpeechControlsTest` **101**、`SpeechButtonsTest` **76** 项通过。朗读服务使用假引擎或假进程，控件仅记录回调文字，没有播放声音。
+- 后台与主题回归：`BackgroundControllerTest` **121**、`ActivationRequestsTest` **40**、`TraySupportTest` **14** 项通过；`ThemeTest` 检查依赖、主题及零 Window。主页面、例句和复习的 README 预览更新为 0.7.0 实际控件离屏图；页脚取实际词条数，导航与语音列表为演示状态，复习进度使用临时文件。
+- 真实数据中 `took into account` 已有扩充词条，优先精确命中；`takes a back seat → take a back seat` 和 `making a bad start → make a bad start` 才是本轮核对的实际词形回退。`large language model`、`deepfake`、`doomscrolling` 仍未收录；条目数量增加不代表所有现代新词都得到覆盖。
+- 候选 Windows app-image 构建成功。实际 `WordNest.exe --self-check` 退出码 **0**，报告 `status=PASS`、`app.version=0.7.0`、`headless=true`、`dictionary.entries=3403176`、`lookup.normalization.phrases.inflections=PASS`，`java.home` 指向包内 runtime；EXE FileVersion 与 ProductVersion 均为 **0.7.0**。此自检不创建应用窗口或打开个人数据目录。
+- 另从候选包 JAR 编译测试，运行时 classpath 仅含测试类、候选包 JAR 及依赖：`ExpandedDictionaryTest` 再次 **2,037 项通过**，`LookupResolverTest` **34**、`ClipboardWatcherTest` **46**、`LookupCandidatesPanelTest` **19** 项通过。候选包单次测得首次新缓存 **3.694 秒**、复用缓存 **0.304 秒**、加载后保留的 Java 堆增量 **108.1 MiB**、2,000 次查询 **0.037 秒**；与前述开发构建测量分开记录，同样不代表跨机器性能或进程总内存。
+
+主词库完整 WND2 为 **363,707,041 字节（约 346.9 MiB）**，压缩分片合计 **102,087,251 字节（约 97.4 MiB）**。来源、转换规则、字段覆盖与各文件哈希见 `licenses/dictionary-expanded-source.json`。这些检查证明结构与来源保留，不证明全部历史释义在语义、专业准确性或时效上可靠。
+
+本轮不操作实际桌面，不以复制测试字符串代替跨应用剪贴板验收；无窗口、无声检查与真实窗口、焦点、系统 DPI、快捷键、音量和听音验收属于不同范围。本轮没有重跑 `TrayMenuFontTest` 或真实 Windows 语音合成；其结果仅在下方 0.6.0 历史记录中保留。
+
+复现时以 Java 17 目标编译 `tests/*.java`，将 `DictionaryTestResources.java` 一并纳入；只运行本节明确列出的 headless main，不能因源码已编译就运行会创建 JFrame 的 `MainWindowStateTest`。真实词库控件与覆盖检查通过 `-Dwordnest.testCache=<隔离测试路径>` 共享可重建缓存，不使用用户数据目录；`ExpandedDictionaryTest` 自身以命令行参数接收测试缓存路径。完整命令示例见 README。
+
+---
+
 # WordNest 0.6.0 验证记录（2026-10-23）
 
 本版新增有限轮次、固定间隔的计划复习，以及 Windows 本机英文语音朗读。生产源码与全部测试以 `javac --release 17 -encoding UTF-8` 编译；本轮检查实际使用 Eclipse Temurin 17.0.20.1，新增功能的最终测试直接加载候选 Windows 包中的 JAR。

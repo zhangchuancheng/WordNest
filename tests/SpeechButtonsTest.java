@@ -14,7 +14,7 @@ public final class SpeechButtonsTest {
     public static void main(String[] args) throws Exception {
         if (!GraphicsEnvironment.isHeadless()) throw new AssertionError("Headless mode required");
         Path output = Path.of(args[0]); Files.createDirectories(output);
-        DictionaryRepository dictionary = DictionaryRepository.load(App.class.getResourceAsStream("/dictionary.bin.gz"));
+        DictionaryRepository dictionary = DictionaryTestResources.load();
         LearningRepository learning = LearningRepository.load();
         SwingUtilities.invokeAndWait(() -> {
             Theme.install();

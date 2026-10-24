@@ -1,32 +1,32 @@
 # 拾词 WordNest
 
-面向 Windows 的离线英汉查词与生词本。阅读时复制单个英文单词，即可查看中文释义、音标和英文解释；还可切换“例句、派生、词根、近义词”四个学习分页，记录自己的例句、分轮复习，并使用本机英文语音朗读。
+面向 Windows 的离线英汉查词与生词本。阅读时复制英文单词或简短词组，即可查询收录的中文释义、音标和英文解释；还可切换“例句、派生、词根、近义词”四个学习分页，记录自己的例句、分轮复习，并使用本机英文语音朗读。
 
-当前版本：**0.6.0**。使用 Java 17 / Swing，内置 ECDICT **770,611 条词条**。本版增加每轮 10 / 20 词、可保存进度的计划复习，以及 Windows 本机英文语音朗读；保留查词历史、收藏恢复与例句整理。日常使用不需要账号、API Key 或联网服务。
+当前版本：**0.7.0**。使用 Java 17 / Swing，合并后内置 ECDICT **3,403,176 条词条**。本版扩充离线查询范围，支持复制简短词组、输入格式整理和来源明确的词形候选；保留分轮复习、本机朗读、查词历史、收藏恢复与例句整理。日常使用不需要账号、API Key 或联网服务。
 
 项目创建与维护：[zhangchuancheng](https://github.com/zhangchuancheng)。第三方词库、语料与界面库保留各自作者署名及许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
 [下载 Windows 便携版](https://github.com/zhangchuancheng/WordNest/releases/latest) · [查看版本记录](CHANGELOG.md) · [反馈问题](https://github.com/zhangchuancheng/WordNest/issues)
 
-![WordNest 0.6.0 本机朗读与查词正文](docs/ui-preview.png)
+![WordNest 0.7.0 扩充词库、本机朗读与查词正文](docs/ui-preview.png)
 
-![WordNest 0.6.0 双语例句与整句朗读](docs/learning-preview.png)
+![WordNest 0.7.0 双语例句与整句朗读](docs/learning-preview.png)
 
-上图由 0.6.0 的实际 Swing 控件离屏绘制；导航数量和语音列表为演示状态，例句来自随包资料。不含操作系统窗口标题栏或系统托盘菜单，也不是实际桌面的操作截图。
+上图由 0.7.0 的实际 Swing 控件离屏绘制，页脚使用本包实际词条数量；导航数量和语音列表为演示状态，例句来自随包资料。不含操作系统窗口标题栏或系统托盘菜单，也不是实际桌面的操作截图。
 
 ## 启动
 
 ### Windows 便携版
 
-1. 到 [0.6.0 下载页](https://github.com/zhangchuancheng/WordNest/releases/tag/v0.6.0) 下载 `WordNest-0.6.0-Windows-x64.zip` 并完整解压。普通用户不需要下载源码压缩包。
+1. 到 [0.7.0 下载页](https://github.com/zhangchuancheng/WordNest/releases/tag/v0.7.0) 下载 `WordNest-0.7.0-Windows-x64.zip` 并完整解压。普通用户不需要下载源码压缩包。
 2. 打开其中的 `WordNest` 文件夹，双击 `WordNest.exe`。
-3. 等待离线资料加载完成，输入单词并按 Enter。
+3. 首次启动会从随包资源建立本机词库缓存，请等待加载完成，再输入单词或简短词组并按 Enter。后续启动复用缓存，过程不需要联网。
 
 便携版内置 Windows x64 的 Eclipse Temurin Java 运行时，**无需另外安装 Java**。请保留整个文件夹，包括 `app`、`runtime`、文档和许可证；单独复制 EXE 无法运行。下载页同时提供源码 ZIP、SHA-256 校验和与单独的使用说明。
 
 点击关闭按钮 × 时，默认询问“最小化到系统托盘”或“退出程序”，也可取消；勾选“记住我的选择”后会沿用该选择。顶部“设置”可以随时修改关闭与最小化方式，详见下文。
 
-0.6.0 使用独立的便携目录与 ZIP，保留旧版本包。升级前先**手动完全退出旧版**：如果仍在托盘运行，右键拾词图标选择“退出拾词”。随后备份 `%LOCALAPPDATA%\WordNest`，再完整解压新包到新目录并启动新版。不同版本共用此目录中的个人数据，不要向旧程序文件夹零散覆盖文件。0.6.0 沿用 0.5.0 的生词本 v2 格式，复习进度另存为 `review.tsv`；**从 0.4.x 升级时，首次写入旧生词本仍会迁移为 v2，0.4.x 不能直接读取**。回退步骤见[本地数据与隐私](#本地数据与隐私)。
+0.7.0 使用独立的便携目录与 ZIP，保留旧版本包。升级前先**手动完全退出旧版**：如果仍在托盘运行，右键拾词图标选择“退出拾词”。随后备份 `%LOCALAPPDATA%\WordNest`，再完整解压新包到新目录并启动新版。不同版本共用此目录中的个人数据，不要向旧程序文件夹零散覆盖文件。生词本沿用 0.5.0 的 v2 格式，复习进度沿用 0.6.0 的独立 `review.tsv`；新增 `dictionary-cache` 是可重建的词库缓存。**从 0.4.x 升级时，首次写入旧生词本仍会迁移为 v2，0.4.x 不能直接读取**。回退步骤见[本地数据与隐私](#本地数据与隐私)。
 
 **旧版托盘菜单显示方框时**：双击托盘图标恢复主窗口，点击顶部“设置”，把“点击关闭按钮 × 时”改为“退出程序”，点击“保存”，再点击窗口 × 退出。旧实例未退出时，再次打开 EXE 只会唤回旧窗口，不会自动切换为新版。
 
@@ -43,11 +43,19 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run.ps1
 
 ## 界面与阅读
 
-### 0.6.0：计划复习与本机朗读
+### 0.7.0：扩充离线词库，保留原有释义
 
-![WordNest 0.6.0 计划复习题面](docs/review-preview.png)
+完整保留原有 **770,611 条**词条，并从 ECDICT 1.0.28 官方 SQLite 数据的 3,402,564 条记录中补入 **2,632,565 个原库没有的词头**，合并后为 **3,403,176 条**。相同词头始终优先保留原库内容，避免扩库替换现有释义。新增词条显示“**来源：ECDICT 扩充词库**”，来源提示会说明其历史社区与网络释义背景。
 
-复习预览使用随包词条与临时测试进度，未读取个人生词本。
+扩充数据来自历史发行：发布页日期为 **2017-09-20**，SQLite 附件在 **2018 年**上传。它增加了词组、变形词、专名与专业表达的查询范围，**仍不覆盖所有新词**。部分释义可能混杂或过时，未逐条专业审定；新增查询词条不代表同时补齐音标、英文释义或四个学习分页，也没有生成新例句或自动译文。
+
+词形候选只依据 ECDICT `exchange` 字段中明确记录的关系，不靠截词尾猜原形。词库使用带索引的随包资源，首次解压到 `%LOCALAPPDATA%\WordNest\dictionary-cache`，之后通过内存映射读取；该缓存可以重新生成，不包含个人笔记或复习进度。
+
+### 延续 0.6.0：计划复习与本机朗读
+
+![WordNest 0.7.0 计划复习题面](docs/review-preview.png)
+
+复习预览由 0.7.0 的实际控件离屏绘制，使用随包词条与临时测试进度，未读取个人生词本。
 
 打开“生词本 → 计划复习”，选择“**10 词一轮**”或“**20 词一轮**”，点“开始复习”；如果上轮尚未完成，点“继续本轮”接着已保存的那一轮，不会按新数量重开。先回忆单词，点击“显示释义”核对，再选择“忘记”或“记住”。每次回答后保存当前进度与下次复习时间，完成后显示“本轮完成”及记住、忘记、取消收藏跳过的数量；有可复习词时可点“开始下一轮”，不会无止境循环。关掉复习窗口或退出程序后仍可继续未完成的一轮，尚未评分的当前题需重新显示释义。
 
@@ -73,7 +81,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\run.ps1
 
 WordNet 英文例句按原资料的真实义项分组，保留英文释义和义项编号；没有配套中文译文，不自动补译。社区双语句没有对应的词典义项标注，不会靠猜测归入这些义项。未出现查询拼写的 WordNet 句子仍放在“补充英文例句”，可能使用词形变化或同义词。
 
-常用搭配、原始词源记录和参考来源按需展开；四个分页和各分组的展开状态互相独立，切换词条后恢复默认。派生与近义词支持点击查询，卡片随实际可用宽度换行。本版沿用 0.4.3 的托盘中文字体修复，没有扩充词库或加入自动翻译。
+常用搭配、原始词源记录和参考来源按需展开；四个分页和各分组的展开状态互相独立，切换词条后恢复默认。派生与近义词支持点击查询，卡片随实际可用宽度换行。0.5.0 的例句整理与 0.4.3 的托盘中文字体修复继续保留，本版未加入自动翻译。
 
 ### 延续 0.4.1 的释义与配色
 
@@ -88,7 +96,8 @@ WordNet 英文例句按原资料的真实义项分组，保留英文释义和义
 | 操作 | 说明 |
 | --- | --- |
 | 手动查词 | 输入单词或主词库收录的简短词组，按 Enter 或点击查询；不区分英文大小写。 |
-| 复制查词 | 开启顶部“复制查词”，在其他软件中复制单个英文单词。窗口更新词条，设计上不主动抢焦点。 |
+| 复制查词 | 开启顶部“复制查词”，在其他软件中复制英文单词或简短词组，查询词库已收录内容；设计上不主动抢焦点。 |
+| 词形候选 | 精确与格式整理查询都未命中时，尝试词库明确记录的词形关系；唯一有效原形自动打开，多个候选由下拉框手选后点“查看”。 |
 | 窗口置顶 | 使用顶部“置顶”按钮，方便边阅读边查看。 |
 | 例句分页 | 优先显示最多 3 组符合短句条件的双语例句，其余在“更多语料”。重复英文合并展示，原句、原译文与来源仍在出处中；WordNet 按真实义项分组。 |
 | 派生分页 | 查看常见派生词和词典明确记录的派生关系，点击主词库已收录的相关词继续查词。 |
@@ -105,7 +114,11 @@ WordNet 英文例句按原资料的真实义项分组，保留英文释义和义
 | 导出 CSV | 导出全部收藏，包含单词、音标、中英释义、个人例句与收藏时间；UTF-8 编码。 |
 | Ctrl+L | 在应用窗口内聚焦搜索框，Enter 执行查询。 |
 
-复制查词去除首尾空白后，只接受英文字母组成的 `[A-Za-z]+` 单词，原剪贴板文本最多 80 个字符。中文、整句、图片、数字、连字符和撇号不会替换当前词条；未收录的单词也会保留当前结果并提示。启动或重新启用复制查词时，不立即查询剪贴板里的旧内容，检测间隔约 650 毫秒。
+复制查词接受原文本最多 **120 字符**、整理后最多 **8 个英文词**的内容，支持词内撇号和连字符，例如 `can't`、`well-being`。会整理全角英文、弯引号、Unicode 连字符、多余空格、NBSP 与制表符，并去除首尾引号和常见句读标点。多行、过长内容、中文、数字、图片、URL、邮箱及常见代码符号不会触发查询。它不判断语义上是否为完整句子：8 词以内的纯英文短句可能通过过滤，但仍只查询已有词条，**不做整句翻译**。
+
+查询先尝试原输入，再尝试整理后的形式，例如 `can’t → can't`、`well‑being → well-being`；两者均未命中时，才按显式词形关系查找原形。例如 `takes a back seat → take a back seat`；唯一有效原形自动打开，并提示“按原形「…」查询”。如果有多个可能原形，会显示“有多个可能原形，请手动选择。”，在“请选择原形…”中选中后点“查看”，或点“收起”；选择前不替换当前词条、笔记或历史。候选较多时也需手选或缩短查询，不根据上下文猜选。已收录的 `took into account` 会直接命中，不改查原形。
+
+手动查询同样限制为 120 字符，但可精确查询词库已收录的 `C++` 等特殊词头。自动复制未命中时保留当前结果并提示；手动未命中时，在当前笔记成功保存后显示“没有找到这个词或短语”。启动或重新启用复制查词时，不立即查询剪贴板里的旧内容，检测间隔约 650 毫秒。词形索引无法加载时会提示，精确查词和格式整理仍可用。
 
 个人例句最多 20,000 字符。切词或退出前也会尝试保存；若提示失败，请先保留编辑内容并检查数据目录。复习或文件选择等对话框显示期间，自动查词会暂停影响当前操作。
 
@@ -125,11 +138,11 @@ WordNet 英文例句按原资料的真实义项分组，保留英文释义和义
 
 ## 资料覆盖与阅读边界
 
-**770,611 是主词库条目数，不是每个学习分页的覆盖数。** 下列数字分别来自独立数据集，覆盖相互重叠，不能相加当作词汇总量。
+**3,403,176 是合并去重后的主词库条目数，不是基础词汇数，也不是每个学习分页的覆盖数。** 下列数字分别来自独立数据集，覆盖相互重叠，不能相加当作词汇总量。
 
 | 资料 | 本包实际覆盖 | 内容与限制 |
 | --- | ---: | --- |
-| ECDICT 主词库 | 770,611 条 | 中文释义 768,739 条；音标 218,065 条；英文释义 160,884 条。 |
+| ECDICT 合并主词库 | 3,403,176 条 | 中文释义 3,386,635 条；音标 353,030 条；英文释义 177,409 条。保留原库 770,611 条，补入 2,632,565 条。 |
 | Open English WordNet 2025 | 127,311 个不区分大小写的词头 | 185,129 条义项记录；其中 35,702 个词头有例句、91,058 个有同义词、27,254 个有派生关系。 |
 | Wiktionary / etymology-db 2023-12 | 134,158 个词头 | 筛选得到 309,779 条词源与构词关系。 |
 | 中文学习卡 | 355 个词头 | 至少 710 条原创中英例句；每词均有搭配、派生或同词族说明、中文近义辨析、构词或词源提示。 |
@@ -151,7 +164,7 @@ organize / organise、recognize / recognise、behavior / behaviour、labor / lab
 - relevant 的 re- / lev / -ant 标为历史形式的助记拆分，不当作现代英语可任意拼接的构词规则；同源词不自动等于近义词。
 - 缺少释义、音标、例句或关系时明确显示缺项，不根据拼写猜词根，不自动补写词典例句。部分页面先显示有限条目，可按“展开其余”继续查看。
 
-ECDICT 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`；Open English WordNet 固定为 2025 edition；etymology-db 固定为 2023-12 发行数据。上游、处理规则、校验值和许可见 [第三方说明](THIRD_PARTY_NOTICES.md) 与 licenses 目录。
+ECDICT 基础 CSV 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`，扩充 SQLite 来自官方 1.0.28 发行，两个来源分别固定校验值；词形索引仅使用其 `exchange` 显式关系。Open English WordNet 固定为 2025 edition；etymology-db 固定为 2023-12 发行数据。上游、处理规则、校验值和许可见 [第三方说明](THIRD_PARTY_NOTICES.md) 与 licenses 目录。
 
 当前版本没有联网查询、OCR、整句翻译、运行时 AI 生成、云同步、CSV 导入或完整备份管理界面。朗读依赖本机可用英文语音，复习采用上述固定间隔规则；音标沿用主词库，不额外区分英美音标。主词库含词组、变形词和专业词，条目数不等于互不重复的基础词汇数。
 
@@ -166,11 +179,16 @@ ECDICT 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`；Open English
 ├─ history.tsv          最近 100 个不同的成功查询词
 ├─ review.tsv           每词复习档位、下次到期时间与未完成轮次进度
 ├─ settings.properties  窗口、查词、关闭与最小化方式、朗读语音和语速
+├─ dictionary-cache/    可重建的离线词库缓存，不含个人学习数据
 ├─ app.lock             防止同一数据目录被多个实例同时修改
 └─ activation.*         运行期间使用的本地窗口唤回文件
 ```
 
 在资源管理器地址栏输入 `%LOCALAPPDATA%\WordNest` 可打开目录。备份时先完全退出应用；托盘中运行的版本请右键图标选择“退出拾词”，然后复制整个目录。`favorites.tsv`、`history.tsv` 和 `review.tsv` 是应用内部格式，文字字段使用 Base64 编码；要用 Excel 查看当前收藏请使用 CSV 导出。CSV 不包含复习进度或已取消收藏条目，也不能导回应用，因此不能代替完整数据目录备份。数据没有加密，同一 Windows 用户可访问这些文件。
+
+`dictionary-cache` 可从随包资源重新建立，备份个人数据时可以省略这个子目录。主词库压缩分片合计 **102,087,251 字节（约 97.4 MiB）**，解压后的单份词库缓存为 **363,707,041 字节（约 346.9 MiB）**；这些是文件大小，不是应用总内存占用。清理缓存前先完全退出应用，仅删除这个缓存子目录，下次启动会重新建立；不要删除包含收藏和笔记的整个 `WordNest` 数据目录。
+
+**从 0.6.0 升级：** 个人收藏、笔记、历史、复习和设置文件格式不变，新增词库缓存单独存放。扩充词库不会修改已有收藏记录中的释义或个人例句。
 
 **从 0.5.0 升级：** 生词本保持 v2，已有收藏、取消收藏笔记和历史继续使用。复习进度单独建立；0.5.0 没有计划复习和朗读设置界面，回退后也不能使用这些新增功能。退出并复制完整数据目录可保留新版进度，避免只备份生词本而漏掉 `review.tsv`。
 
@@ -188,17 +206,17 @@ ECDICT 固定于提交 `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`；Open English
 # 生成 Java 17+ 可运行的 JAR
 .\scripts\build.ps1 -JdkPath 'C:\Path\To\Your\JDK'
 
-# 生成 0.6.0 独立便携目录；不会安装到系统
+# 生成 0.7.0 独立便携目录；不会安装到系统
 .\scripts\build.ps1 `
   -JdkPath 'C:\Path\To\Your\JDK' `
   -RuntimePath 'C:\Path\To\Temurin-JRE-17' `
-  -BuildVariant v060 `
-  -PackageOutputPath 'C:\Path\To\WordNest-Windows-0.6.0'
+  -BuildVariant v070 `
+  -PackageOutputPath 'C:\Path\To\WordNest-Windows-0.7.0'
 ```
 
 第二条命令使用 `jpackage --type app-image`，输出 `WordNest/WordNest.exe`。`-RuntimePath` 指向包含 `bin/java.exe` 的合法可分发运行时。本次运行时为 Eclipse Temurin 17.0.20.1+1；开发机上的 Oracle JDK 只负责构建，不随包分发。
 
-脚本仅清理带有本项目标记的构建子目录。如果目标已有 WordNest 文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v060` 将构建结果放入 `build/v060/classes` 和 `build/v060/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
+脚本仅清理带有本项目标记的构建子目录。如果目标已有 WordNest 文件夹，会改用带时间戳的新目录保留旧包。`-BuildVariant v070` 将构建结果放入 `build/v070/classes` 和 `build/v070/input`；源码启动脚本仍使用默认的 `build/input/wordnest.jar`。完成便携目录后，可将整个目录及许可证一并压成 ZIP，不能只打包 EXE。
 
 ### 重新生成数据
 
@@ -224,9 +242,43 @@ python .\scripts\prepare_etymology.py --source 'C:\Path\To\etymology-2023-12.csv
 
 前两个脚本按固定来源下载并核对数据；词源脚本只读取指定的本地文件，不自动下载。词源原文件地址和 SHA-256 见 `licenses/Etymology-data-NOTICE.md`。转换会写入资源目录与相关溯源说明，修改后需要重新构建。词源二进制压缩为 2,721,192 字节，展开为 20,111,260 字节；这不是整个应用的内存占用。
 
+重新生成 0.7.0 的合并词库时，先按[第三方说明](THIRD_PARTY_NOTICES.md#ecdict-离线词库与词形索引)准备官方 `ecdict-sqlite-28.zip`，再执行：
+
+```powershell
+python .\scripts\prepare_expanded_dictionary.py `
+  --archive 'C:\Path\To\ecdict-sqlite-28.zip' `
+  --work-dir '.\build\dictionary-expanded'
+```
+
+脚本校验基础资源、ZIP 和 SQLite 的固定 SHA-256，保留原库优先，写出 WND2 分片、词形索引与来源元数据，并逐条读回比对。它只读取指定的本地输入，不自动下载；临时数据库和未压缩资源留在指定工作目录中，运行前需预留磁盘空间。日常构建与使用不需要重新执行数据转换。
+
 ## 验证记录
 
-本版真实验证结果见 [VALIDATION.md](VALIDATION.md)。0.6.0 的验证范围为复习调度与进度持久化、朗读服务及失败保护的无窗口检查、Swing 控件离屏检查和原生 EXE 自检；具体完成项和统计以该文件为准。**未操作实际桌面，未进行真实窗口、托盘、焦点、快捷键或系统 DPI 交互验收**；语音可用性及声音输出的具体验证也以该文件为准，不能仅凭控件显示就认定已听音验收。
+本版真实验证结果见 [VALIDATION.md](VALIDATION.md)，包括完整词库读回、原词条保留、缓存与查询检查；具体完成项、统计和运行环境以该文件为准。单次加载计时与保留的 Java 堆不等于通用性能承诺或进程总内存。**未操作实际桌面，未进行真实窗口、托盘、焦点、快捷键或系统 DPI 交互验收**；0.6.0 的语音与复习验证在该文件中保留为历史记录，不能仅凭控件显示就认定已听音验收。
+
+### 0.7.0：复现无窗口检查
+
+先构建应用 JAR，再编译全部测试源码，以纳入共享的 `DictionaryTestResources`。以下只运行明确的 headless 入口，缓存与预览均放在项目 `build` 下，不使用个人数据目录：
+
+```powershell
+$wordnestJdk = 'C:\Path\To\Your\JDK'
+$wordnestJava = 'C:\Path\To\Temurin-JRE-17\bin\java.exe'
+.\scripts\build.ps1 -JdkPath $wordnestJdk
+New-Item -ItemType Directory -Force .\build\test-classes | Out-Null
+$wordnestTests = @(Get-ChildItem -LiteralPath .\tests -Filter '*.java' | ForEach-Object FullName)
+& "$wordnestJdk\bin\javac.exe" --release 17 -encoding UTF-8 `
+  -cp '.\build\input\wordnest.jar;.\lib\flatlaf-3.7.2.jar' `
+  -d .\build\test-classes @wordnestTests
+$wordnestClasspath = '.\build\test-classes;.\build\input\wordnest.jar;.\lib\flatlaf-3.7.2.jar'
+$wordnestTestCache = Join-Path (Resolve-Path .\build).Path 'verification-cache'
+& $wordnestJava '-Djava.awt.headless=true' -Xmx512m `
+  -cp $wordnestClasspath wordnest.ExpandedDictionaryTest $wordnestTestCache
+& $wordnestJava '-Djava.awt.headless=true' -Xmx512m `
+  "-Dwordnest.testCache=$wordnestTestCache" -cp $wordnestClasspath `
+  wordnest.LearningPanelTest .\build\learning-preview
+```
+
+其他真实词库控件测试同样可传入 `-Dwordnest.testCache=<隔离缓存目录>` 复用缓存，具体入口与结果见 `VALIDATION.md`。编译全部测试不等于应运行全部测试；**`MainWindowStateTest` 会创建 JFrame，不属于本轮允许执行的无窗口检查**。测试缓存不得指向 `%LOCALAPPDATA%\WordNest`。
 
 0.4.2 的历史验证包括 Java 17 无窗口逻辑与数据检查、真实 Swing JPanel 离屏布局及原生 EXE 自检。窗口与托盘功能当时使用无窗口 host 和临时文件验证逻辑，未进行真实桌面的关闭、最小化、唤回、焦点或系统 DPI 交互验收，也未读取真实剪贴板。以下 0.2.0 与 0.1.0 段落同样保留为历史记录。
 
@@ -242,26 +294,7 @@ python .\scripts\prepare_etymology.py --source 'C:\Path\To\etymology-2023-12.csv
 
 新增 IndexedLearningData 按词头建立索引，LearningRepository 按需解码。分页测试只构造 JPanel 并绘制离屏图片，**不创建任何 Window，不访问剪贴板，不注入鼠标键盘输入**。测试调用按钮处理器，不执行桌面点击。已查看生成的例句和词根离屏预览，在所测尺寸下未发现裁切。
 
-0.2.0 **未再次执行桌面交互、跨程序复制、焦点或人工重启验收**。本轮预览存于工作目录，下面的复现命令输出到 build/learning-preview；预览不放进运行资源目录，不能证明真实桌面上的全部布局或交互效果。
-
-在项目根目录复现无窗口测试：
-
-```powershell
-$jdk = 'C:\Path\To\Your\JDK'
-$java = 'C:\Path\To\Temurin-JRE-17\bin\java.exe'
-New-Item -ItemType Directory -Force .\build\test-classes | Out-Null
-$sources = @(Get-ChildItem -LiteralPath .\src\main\java\wordnest -Filter '*.java' | ForEach-Object FullName)
-& "$jdk\bin\javac.exe" --release 17 -encoding UTF-8 `
-  -cp '.\lib\flatlaf-3.7.2.jar' `
-  -d .\build\test-classes @sources `
-  .\tests\LearningRepositoryTest.java .\tests\LearningPanelTest.java
-& $java '-Djava.awt.headless=true' -Xmx512m `
-  -cp '.\build\test-classes;.\src\main\resources;.\lib\flatlaf-3.7.2.jar' `
-  wordnest.LearningRepositoryTest --full
-& $java '-Djava.awt.headless=true' -Xmx512m `
-  -cp '.\build\test-classes;.\src\main\resources;.\lib\flatlaf-3.7.2.jar' `
-  wordnest.LearningPanelTest .\build\learning-preview
-```
+0.2.0 **未再次执行桌面交互、跨程序复制、焦点或人工重启验收**。当时预览存于工作目录，不放进运行资源目录，不能证明真实桌面上的全部布局或交互效果。当前源码的复现方式见前面的 0.7.0 命令；当前测试加载新版词库，结果不能直接当作当年的断言数量。
 
 ### 0.2.0 便携 EXE 历史自检
 
@@ -320,6 +353,8 @@ src/main/java/wordnest/
   WordDetailPanel.java       中文词性分行与英文释义折叠
   LookupToolbar.java         紧凑查词工具栏
   LookupNavigationBar.java   查词历史与前进后退按钮
+  LookupCandidatesPanel.java 多个词形候选的手动选择
+  LookupResolver.java        输入整理、精确优先与显式词形查询
   LookupHistory.java         本机最近查询与独立会话导航
   LookupSession.java         切词前笔记保存与历史位置协调
   Theme.java                 绿色界面与统一标题栏
@@ -327,13 +362,15 @@ src/main/java/wordnest/
   ExampleSelection.java      例句筛选、排序与保留来源的合并展示
   LearningRepository.java    学习资料查询和义项结构
   IndexedLearningData.java   数据验证、词头索引与按需解码
-  DictionaryRepository.java  ECDICT 读取和查询
+  DictionaryRepository.java  ECDICT 索引、内存映射与查询
+  DictionaryResources.java   随包分片校验与可重建缓存
   FavoritesStore.java        收藏、取消收藏笔记与 v1 迁移保护
   ReviewStore.java           固定间隔复习调度与可续轮次持久化
   ReviewPanel.java           10 / 20 词复习、回答与完成结果
   SpeechService.java         本机语音发现、朗读、取消与状态
 src/main/resources/
-  dictionary.bin.gz          ECDICT 主词库
+  dictionary.bin.gz          原有基础词库与合并输入
+  dictionary/               当前 WND2 主词库分片、manifest 与词形索引
   lexical.bin.gz             Open English WordNet 学习资料
   etymology.bin.gz            独立 CC BY-SA 3.0 词源数据
   etymology.metadata.json.gz  词源转换记录

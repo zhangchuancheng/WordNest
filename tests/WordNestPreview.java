@@ -13,7 +13,7 @@ public final class WordNestPreview {
     public static void main(String[] args) throws Exception {
         if (!GraphicsEnvironment.isHeadless()) throw new AssertionError("Headless mode is required");
         Path output = Path.of(args[0]); Files.createDirectories(output);
-        DictionaryRepository dictionary = DictionaryRepository.load(App.class.getResourceAsStream("/dictionary.bin.gz"));
+        DictionaryRepository dictionary = DictionaryTestResources.load();
         LearningRepository learning = LearningRepository.load();
         SpeechService previewSpeech = new SpeechService(new PreviewSpeechEngine());
         previewSpeech.voices().join();
@@ -72,8 +72,9 @@ public final class WordNestPreview {
         scroll.getVerticalScrollBar().setUnitIncrement(20); page.add(scroll, BorderLayout.CENTER);
         root.add(page, BorderLayout.CENTER);
         JPanel footer = Theme.panel(new BorderLayout(0, 4)); Theme.pad(footer, 10, 19, 10, 19);
-        footer.add(Theme.label("已开启复制查词 · 不抢占正在阅读的窗口", 11, Theme.MUTED), BorderLayout.NORTH);
-        footer.add(Theme.label("本地离线  ·  770,611 个词条  ·  ECDICT", 11, Theme.MUTED), BorderLayout.SOUTH);
+        footer.add(Theme.label("已开启复制单词 / 短语查词 · 不抢占窗口", 11, Theme.MUTED), BorderLayout.NORTH);
+        footer.add(Theme.label("本地离线  ·  " + java.text.NumberFormat.getIntegerInstance().format(dictionary.size())
+                + " 个词条  ·  ECDICT", 11, Theme.MUTED), BorderLayout.SOUTH);
         root.add(footer, BorderLayout.SOUTH);
         return root;
     }

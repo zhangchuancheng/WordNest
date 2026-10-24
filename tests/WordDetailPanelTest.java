@@ -18,7 +18,7 @@ public final class WordDetailPanelTest {
         if (!GraphicsEnvironment.isHeadless()) throw new AssertionError("Run with -Djava.awt.headless=true");
         Path output = Path.of(args[0]);
         Files.createDirectories(output);
-        DictionaryRepository dictionary = DictionaryRepository.load(App.class.getResourceAsStream("/dictionary.bin.gz"));
+        DictionaryRepository dictionary = DictionaryTestResources.load();
         SwingUtilities.invokeAndWait(() -> {
             Theme.install();
             try {

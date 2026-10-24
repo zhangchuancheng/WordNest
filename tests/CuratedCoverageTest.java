@@ -14,7 +14,7 @@ public final class CuratedCoverageTest {
     private static final Pattern CHINESE = Pattern.compile("[\\x{3400}-\\x{9fff}]");
     public static void main(String[] args) throws Exception {
         LearningRepository learning = LearningRepository.load();
-        DictionaryRepository dictionary = DictionaryRepository.load(App.class.getResourceAsStream("/dictionary.bin.gz"));
+        DictionaryRepository dictionary = DictionaryTestResources.load();
         List<String> words;
         try (var stream = App.class.getResourceAsStream("/curated-words.txt")) {
             check(stream != null, "coverage manifest bundled");

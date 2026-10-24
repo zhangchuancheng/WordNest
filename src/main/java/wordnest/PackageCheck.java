@@ -23,9 +23,26 @@ final class PackageCheck {
         report.setProperty("os.arch", System.getProperty("os.arch"));
         report.setProperty("headless", System.getProperty("java.awt.headless", "false"));
         int result = 0;
-        try (InputStream input = App.class.getResourceAsStream("/dictionary.bin.gz")) {
-            if (input == null) throw new IllegalStateException("Dictionary resource is missing");
-            DictionaryRepository dictionary = DictionaryRepository.load(input);
+        try {
+            Path cache = Path.of(reportFile).toAbsolutePath().getParent().resolve("dictionary-check-cache");
+            long loadStarted = System.nanoTime();
+            DictionaryRepository dictionary = DictionaryRepository.loadBundled(cache);
+            report.setProperty("dictionary.load.seconds", String.format(java.util.Locale.ROOT, "%.3f",
+                    (System.nanoTime() - loadStarted) / 1_000_000_000.0));
+            report.setProperty("dictionary.cache", cache.toString());
+            if (dictionary.size() != 3_403_176) throw new IllegalStateException("Expanded dictionary count mismatch");
+            if (!dictionary.lookup("tokenization").orElseThrow().tags().contains("wn-expanded"))
+                throw new IllegalStateException("Expanded dictionary source marker missing");
+            LookupResolver resolver = LookupResolver.loadBundled(dictionary);
+            for (String[] probe : new String[][]{{"in  terms of", "in terms of"}, {"environment,", "environment"},
+                    {"well\u2013preserved", "well-preserved"}, {"takes a back seat", "take a back seat"}}) {
+                LookupResolver.Result match = resolver.resolve(probe[0]);
+                if (!match.hasSingleMatch() || !match.candidates().get(0).word().equalsIgnoreCase(probe[1]))
+                    throw new IllegalStateException("Lookup probe failed: " + probe[0]);
+            }
+            if (!ClipboardWatcher.isLookupText("look forward to") || ClipboardWatcher.isLookupText("https://example.org"))
+                throw new IllegalStateException("Phrase clipboard filter failed");
+            report.setProperty("lookup.normalization.phrases.inflections", "PASS");
             WordEntry sample = dictionary.lookup("algorithm").orElseThrow();
             if (sample.translation().isBlank() || sample.phonetic().isBlank() || sample.definition().isBlank()) {
                 throw new IllegalStateException("Dictionary sample is incomplete");
@@ -75,7 +92,7 @@ final class PackageCheck {
             report.setProperty("learning.curated.four.sections", Integer.toString(curatedWords.size()));
             report.putAll(LearningCoverage.verify(learning, dictionary));
             report.putAll(Theme.verify());
-            report.setProperty("app.version", "0.6.0");
+            report.setProperty("app.version", "0.7.0");
             report.setProperty("status", "PASS");
         } catch (Exception e) {
             report.setProperty("status", "FAIL");

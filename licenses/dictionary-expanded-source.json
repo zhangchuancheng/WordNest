@@ -1,0 +1,73 @@
+{
+  "name": "WordNest expanded ECDICT dictionary",
+  "release": "0.7.0",
+  "source_url": "https://github.com/skywind3000/ECDICT/releases/download/1.0.28/ecdict-sqlite-28.zip",
+  "upstream_tag": "1.0.28",
+  "release_published_at": "2017-09-20",
+  "sqlite_asset_uploaded": "2018-05",
+  "archive_sha256": "ea01f76a3b3351021ce47077e89234465cc9441c8793054495320d06c0c3f3f6",
+  "sqlite_sha256": "2b5b40c2bdba04da0a51c8672e090f166987d5d895f32eb3fbfc5a516455fc75",
+  "base_resource_sha256": "0eeddb7903a116161a8baef7b448b7673f377910b240003b8486f95e69e5a92a",
+  "base_source_metadata": "dictionary-source.json",
+  "base": {
+    "source_rows": 770611,
+    "added": 770611,
+    "empty_words_skipped": 0
+  },
+  "expanded": {
+    "source_rows": 3402564,
+    "added": 2632565,
+    "empty_words_skipped": 0
+  },
+  "entries": 3403176,
+  "coverage": {
+    "phonetic": 353030,
+    "chinese_translation": 3386635,
+    "english_definition": 177409
+  },
+  "raw_bytes": 363707041,
+  "raw_sha256": "139883192ee4a9ffced05f82aba091205e03585f09ceb0e772f262c0da8edd56",
+  "compressed_bytes": 102087251,
+  "parts": [
+    {
+      "name": "part-000.gz",
+      "bytes": 41943040,
+      "sha256": "5ad70060163a84a5a10b6b6122861ff26807ea8f925d37ac6fbdf86ddb71e297"
+    },
+    {
+      "name": "part-001.gz",
+      "bytes": 41943040,
+      "sha256": "2c17369144e4a16b8274df8fdd6111ae5c9fc5468a2d7e6f85d468ab5a8337c9"
+    },
+    {
+      "name": "part-002.gz",
+      "bytes": 18201171,
+      "sha256": "d50c756883ce80915e5a3687a931f2133f19f413453e615b7b75a7444ab2d073"
+    }
+  ],
+  "inflections": {
+    "pairs": 161859,
+    "forms": 161398,
+    "lemmas": 141977,
+    "sha256": "47a3b8fb3cc093c1276c6a02a48a5acb6af604694144c3c3347688e63f10ed0b",
+    "bytes": 834224
+  },
+  "format": "WND2: int32 magic/count, count+1 absolute int32 offsets, seven length-prefixed UTF-8 fields (key + six original fields)",
+  "transformations": [
+    "Existing base entries take precedence; add only missing case-insensitive headwords from expanded data.",
+    "Expand source literal backslash-n and strip leading/trailing whitespace; preserve original text.",
+    "Deduplicate by lowercase spelling and sort keys in Java UTF-16 order.",
+    "Append wn-expanded provenance tag only to added expanded records.",
+    "Build inflection pairs exclusively from explicit ECDICT exchange p/d/i/3/r/t/s/0 relationships; no stemming or lemma.en.txt.",
+    "No automatically generated translations, examples, pronunciation or word origins."
+  ],
+  "validation": {
+    "all_records_round_trip": true,
+    "base_precedence": true
+  },
+  "licenses": [
+    "ECDICT-LICENSE.txt",
+    "ECDICT-1.0.28-LICENSE.txt"
+  ],
+  "limitations": "Historical community dictionary includes noisy web glosses, proper names and inflected forms. Entry count does not equal distinct base vocabulary or complete learning-card coverage."
+}

@@ -27,7 +27,7 @@ public final class ReviewPanelTest {
             onEdt(() -> emptyFavorites(root.resolve("empty")));
             onEdt(() -> longContent(root.resolve("long")));
             if (previewDirectory != null) {
-                DictionaryRepository dictionary = DictionaryRepository.load(ReviewPanelTest.class.getResourceAsStream("/dictionary.bin.gz"));
+                DictionaryRepository dictionary = DictionaryTestResources.load();
                 onEdt(() -> realWordPreviews(root.resolve("preview"), dictionary));
             }
             check(Window.getWindows().length == 0, "tests did not construct any Window");
