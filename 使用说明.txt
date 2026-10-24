@@ -1,7 +1,7 @@
 词巢 0.7.5 · Windows 64 位便携版
 
 启动
-1. 从 https://github.com/zhangchuancheng/WordNest/releases/tag/v0.7.5 下载 词巢-0.7.5-Windows-x64.zip，完整解压后打开其中的“词巢”文件夹。
+1. 从 https://github.com/zhangchuancheng/WordNest/releases/tag/v0.7.5 下载 WordNest-0.7.5-Windows-x64.zip，完整解压后打开其中的“词巢”文件夹。
 2. 双击 词巢.exe；无需安装 Java、配置 API 或联网。
 3. 首次启动会从随包资源建立词库缓存，请等待加载完成，再输入英文单词或简短词组并按 Enter；Ctrl+L 可聚焦搜索框。后续启动复用缓存，过程不需要联网。
 请保留整个文件夹，app、runtime、文档和许可证需要一起保留，不能只取出 EXE。

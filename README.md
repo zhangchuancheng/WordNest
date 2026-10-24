@@ -20,7 +20,7 @@
 
 ### Windows 便携版
 
-1. 到 [0.7.5 下载页](https://github.com/zhangchuancheng/WordNest/releases/tag/v0.7.5) 下载 `词巢-0.7.5-Windows-x64.zip` 并完整解压。普通用户不需要下载源码压缩包。
+1. 到 [0.7.5 下载页](https://github.com/zhangchuancheng/WordNest/releases/tag/v0.7.5) 下载 `WordNest-0.7.5-Windows-x64.zip` 并完整解压。普通用户不需要下载源码压缩包。
 2. 打开其中的 `词巢` 文件夹，双击 `词巢.exe`。
 3. 首次启动会从随包资源建立本机词库缓存，请等待加载完成，再输入单词或简短词组并按 Enter。后续启动复用缓存，过程不需要联网。
 
